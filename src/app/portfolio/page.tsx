@@ -332,7 +332,7 @@ export default function Portfolio() {
             <div className="relative bg-gradient-to-r from-slate-800/60 to-slate-900/60 border border-slate-700/50 backdrop-blur-xl rounded-3xl p-12 md:p-16 text-center">
               <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to Create Something Amazing?</h2>
               <p className="text-xl text-gray-300 max-w-2xl mx-auto mb-10">
-                Let's discuss your project and bring your vision to life with our proven expertise.
+                Let&apos;s discuss your project and bring your vision to life with our proven expertise.
               </p>
               <a href="/contact" className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-indigo-600 to-blue-600 hover:shadow-xl hover:shadow-indigo-500/50 rounded-xl font-semibold transition-all duration-300 hover:scale-105">
                 Start Your Project

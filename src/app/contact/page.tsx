@@ -93,13 +93,13 @@ export default function Contact() {
         <section className="text-center mb-20 animate-slideUp" style={{ animationDelay: '0.1s' }}>
           <p className="text-sm text-blue-400 mb-4 tracking-wide">GET IN TOUCH</p>
           <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-            Let's Create Something{" "}
+            Let&apos;s Create Something{" "}
             <span className="bg-gradient-to-r from-indigo-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent">
               Amazing Together
             </span>
           </h1>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-            Have a project in mind? We're excited to hear about it. Reach out and let's build something extraordinary.
+            Have a project in mind? We&apos;re excited to hear about it. Reach out and let&apos;s build something extraordinary.
           </p>
         </section>
 
@@ -273,7 +273,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <p className="text-green-400 font-semibold text-sm">Message sent successfully! ✓</p>
-                      <p className="text-green-300 text-xs mt-0.5">We'll reply within 24 hours.</p>
+                      <p className="text-green-300 text-xs mt-0.5">We&apos;ll reply within 24 hours.</p>
                     </div>
                   </div>
                 )}
@@ -318,7 +318,7 @@ export default function Contact() {
                   </div>
                   <div className="flex-1">
                     <h3 className="font-bold text-lg mb-2 text-white">Available Times</h3>
-                    <p className="text-gray-300 text-sm leading-relaxed">Monday - Friday, 9 AM - 6 PM PKT. Let's connect at a time that works best for you.</p>
+                    <p className="text-gray-300 text-sm leading-relaxed">Monday - Friday, 9 AM - 6 PM PKT. Let&apos;s connect at a time that works best for you.</p>
                   </div>
                 </div>
               </div>
@@ -354,7 +354,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h2 className="text-3xl md:text-4xl font-bold mb-3 bg-gradient-to-r from-indigo-300 via-blue-300 to-cyan-300 bg-clip-text text-transparent">Prefer to Email?</h2>
-                    <p className="text-gray-300 text-lg leading-relaxed">Send us an email directly and we'll get back to you within 24 hours with a personalized response.</p>
+                    <p className="text-gray-300 text-lg leading-relaxed">Send us an email directly and we&apos;ll get back to you within 24 hours with a personalized response.</p>
                   </div>
                 </div>
                 
