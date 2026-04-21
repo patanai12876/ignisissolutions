@@ -43,7 +43,7 @@ export default function Footer() {
 
   {/* LinkedIn */}
   <a
-    href="#"
+    href="https://www.linkedin.com/company/ignisis-solutions/"
     className="p-2 rounded-lg bg-white/5 hover:bg-[#0A66C2] hover:text-white transition"
   >
     <Linkedin size={18} />
