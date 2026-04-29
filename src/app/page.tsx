@@ -96,12 +96,12 @@ export default function Home() {
       {/* PORTFOLIO SHOWCASE */}
       <section className="container py-20 animate-slideUp border-t border-white/10" style={{ animationDelay: '0.4s' }}>
         <div className="text-center mb-16">
-          <p className="text-sm text-teal-400 font-semibold tracking-widest uppercase mb-3">
+          <p className="text-sm text-indigo-400 font-semibold tracking-widest uppercase mb-3">
             ✨ Our Work
           </p>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             Delivering Exceptional{" "}
-            <span className="bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-indigo-400 to-blue-400 bg-clip-text text-transparent">
               Results
             </span>
           </h2>
@@ -112,16 +112,16 @@ export default function Home() {
 
         {/* Portfolio Stats Grid */}
         <div className="grid md:grid-cols-3 gap-8 mb-16">
-          <div className="text-center p-6 rounded-xl bg-white/5 backdrop-blur-md border border-white/10 hover:border-teal-500/40 hover:bg-white/10 transition">
-            <div className="text-4xl font-bold text-teal-400 mb-2">50+</div>
+          <div className="text-center p-6 rounded-xl bg-white/5 backdrop-blur-md border border-white/10 hover:border-indigo-500/40 hover:bg-white/10 transition">
+            <div className="text-4xl font-bold text-indigo-400 mb-2">50+</div>
             <p className="text-gray-400">Projects Delivered</p>
           </div>
-          <div className="text-center p-6 rounded-xl bg-white/5 backdrop-blur-md border border-white/10 hover:border-teal-500/40 hover:bg-white/10 transition">
-            <div className="text-4xl font-bold text-cyan-400 mb-2">30+</div>
+          <div className="text-center p-6 rounded-xl bg-white/5 backdrop-blur-md border border-white/10 hover:border-indigo-500/40 hover:bg-white/10 transition">
+            <div className="text-4xl font-bold text-blue-400 mb-2">30+</div>
             <p className="text-gray-400">Happy Clients</p>
           </div>
-          <div className="text-center p-6 rounded-xl bg-white/5 backdrop-blur-md border border-white/10 hover:border-teal-500/40 hover:bg-white/10 transition">
-            <div className="text-4xl font-bold text-blue-400 mb-2">98%</div>
+          <div className="text-center p-6 rounded-xl bg-white/5 backdrop-blur-md border border-white/10 hover:border-indigo-500/40 hover:bg-white/10 transition">
+            <div className="text-4xl font-bold text-indigo-400 mb-2">98%</div>
             <p className="text-gray-400">Client Satisfaction</p>
           </div>
         </div>
@@ -130,7 +130,7 @@ export default function Home() {
         <div className="text-center">
           <a
             href="/portfolio"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold bg-gradient-to-r from-teal-500 to-cyan-500 hover:scale-105 hover:shadow-xl hover:shadow-teal-500/30 transition duration-300"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold bg-gradient-to-r from-indigo-600 to-blue-500 hover:scale-105 hover:shadow-xl hover:shadow-blue-500/30 transition duration-300"
           >
             View Full Portfolio
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
