@@ -47,7 +47,7 @@ export default function Portfolio() {
               </h1>
             </div>
             <p className="text-lg text-gray-300 leading-relaxed">
-              We've delivered cutting-edge solutions across web, mobile, and branding. See how we've helped businesses transform their digital presence.
+              We&apos;ve delivered cutting-edge solutions across web, mobile, and branding. See how we&apos;ve helped businesses transform their digital presence.
             </p>
             <div className="flex gap-4 pt-4">
               <a href="/contact" className="px-8 py-3 bg-gradient-to-r from-teal-500 to-cyan-500 hover:shadow-lg hover:shadow-teal-500/30 rounded-lg font-semibold transition-all hover:scale-105">
@@ -222,7 +222,7 @@ export default function Portfolio() {
             Ready to Start Your Project?
           </h2>
           <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-            Let's work together to bring your vision to life with cutting-edge solutions.
+            Let&apos;s work together to bring your vision to life with cutting-edge solutions.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="/contact" className="px-8 py-4 bg-gradient-to-r from-teal-500 to-cyan-500 hover:shadow-lg hover:shadow-teal-500/30 rounded-lg font-semibold transition-all hover:scale-105">
