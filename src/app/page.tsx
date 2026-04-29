@@ -8,7 +8,7 @@ export default function Home() {
       <div className="relative z-10 animate-fadeIn">
       {/* HERO */}
       <section className="container py-24 md:py-32 text-center relative animate-slideUp" style={{ animationDelay: '0.1s' }}>
-
+      
         {/* gradient glow background */}
         <div className="absolute inset-0 z-0 bg-gradient-to-r from-indigo-600/20 via-blue-500/15 to-cyan-500/20 blur-3xl opacity-30 pointer-events-none"></div>
 
@@ -93,8 +93,56 @@ export default function Home() {
       </section>
 
 
+      {/* PORTFOLIO SHOWCASE */}
+      <section className="container py-20 animate-slideUp border-t border-white/10" style={{ animationDelay: '0.4s' }}>
+        <div className="text-center mb-16">
+          <p className="text-sm text-teal-400 font-semibold tracking-widest uppercase mb-3">
+            ✨ Our Work
+          </p>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            Delivering Exceptional{" "}
+            <span className="bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">
+              Results
+            </span>
+          </h2>
+          <p className="text-gray-400 max-w-2xl mx-auto">
+            Explore our portfolio of successful projects that have transformed businesses and created lasting impact.
+          </p>
+        </div>
+
+        {/* Portfolio Stats Grid */}
+        <div className="grid md:grid-cols-3 gap-8 mb-16">
+          <div className="text-center p-6 rounded-xl bg-white/5 backdrop-blur-md border border-white/10 hover:border-teal-500/40 hover:bg-white/10 transition">
+            <div className="text-4xl font-bold text-teal-400 mb-2">50+</div>
+            <p className="text-gray-400">Projects Delivered</p>
+          </div>
+          <div className="text-center p-6 rounded-xl bg-white/5 backdrop-blur-md border border-white/10 hover:border-teal-500/40 hover:bg-white/10 transition">
+            <div className="text-4xl font-bold text-cyan-400 mb-2">30+</div>
+            <p className="text-gray-400">Happy Clients</p>
+          </div>
+          <div className="text-center p-6 rounded-xl bg-white/5 backdrop-blur-md border border-white/10 hover:border-teal-500/40 hover:bg-white/10 transition">
+            <div className="text-4xl font-bold text-blue-400 mb-2">98%</div>
+            <p className="text-gray-400">Client Satisfaction</p>
+          </div>
+        </div>
+
+        {/* View Portfolio CTA */}
+        <div className="text-center">
+          <a
+            href="/portfolio"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold bg-gradient-to-r from-teal-500 to-cyan-500 hover:scale-105 hover:shadow-xl hover:shadow-teal-500/30 transition duration-300"
+          >
+            View Full Portfolio
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+      </section>
+
+
       {/* CTA */}
-      <section className="text-center py-20 relative">
+      <section className="text-center py-20 relative border-t border-white/10" style={{ animationDelay: '0.5s' }}>
 
         {/* subtle glow */}
         <div className="absolute inset-0 z-0 bg-gradient-to-r from-blue-500/20 to-indigo-500/20 blur-2xl opacity-30 pointer-events-none"></div>

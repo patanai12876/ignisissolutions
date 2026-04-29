@@ -2,6 +2,17 @@ import { Project } from '@/types'
 
 export const projects: Project[] = [
   {
+    id: 'tradesync-platform',
+    title: 'TradeSync - Copy Trading Platform',
+    category: 'web',
+    thumbnail: '/images/portfolio/tradesync.jpg',
+    images: ['/images/portfolio/tradesync-1.jpg', '/images/portfolio/tradesync-2.jpg', '/images/portfolio/tradesync-3.jpg'],
+    description: 'Professional copy trading platform enabling 150K+ traders to replicate professional trading strategies. Features real-time trade copying, risk management, live analytics, and 24/7 support. Built with Next.js and modern fintech integrations.',
+    techStack: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Vercel', 'Real-time APIs'],
+    liveUrl: 'https://trade-sync-seven.vercel.app',
+    completedDate: '2026-02-15'
+  },
+  {
     id: 'ecommerce-platform',
     title: 'E-Commerce Platform',
     category: 'web',
