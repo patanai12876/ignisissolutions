@@ -93,49 +93,21 @@ export default function Home() {
       </section>
 
 
-      {/* PORTFOLIO SHOWCASE */}
-      <section className="container py-20 animate-slideUp border-t border-white/10" style={{ animationDelay: '0.4s' }}>
-        <div className="text-center mb-16">
-          <p className="text-sm text-indigo-400 font-semibold tracking-widest uppercase mb-3">
-            ✨ Our Work
-          </p>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Delivering Exceptional{" "}
-            <span className="bg-gradient-to-r from-indigo-400 to-blue-400 bg-clip-text text-transparent">
-              Results
-            </span>
+      {/* FEATURED SHOWCASE - TRADESYNC */}
+      <section className="container py-16 animate-slideUp border-t border-white/10" style={{ animationDelay: '0.4s' }}>
+        <div className="max-w-3xl mx-auto text-center">
+          <p className="text-sm text-indigo-400 font-semibold tracking-widest uppercase mb-3">🚀 Featured Project</p>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Check Out <span className="bg-gradient-to-r from-indigo-400 to-blue-400 bg-clip-text text-transparent">TradeSync</span>
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            Explore our portfolio of successful projects that have transformed businesses and created lasting impact.
-          </p>
-        </div>
-
-        {/* Portfolio Stats Grid */}
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
-          <div className="text-center p-6 rounded-xl bg-white/5 backdrop-blur-md border border-white/10 hover:border-indigo-500/40 hover:bg-white/10 transition">
-            <div className="text-4xl font-bold text-indigo-400 mb-2">50+</div>
-            <p className="text-gray-400">Projects Delivered</p>
-          </div>
-          <div className="text-center p-6 rounded-xl bg-white/5 backdrop-blur-md border border-white/10 hover:border-indigo-500/40 hover:bg-white/10 transition">
-            <div className="text-4xl font-bold text-blue-400 mb-2">30+</div>
-            <p className="text-gray-400">Happy Clients</p>
-          </div>
-          <div className="text-center p-6 rounded-xl bg-white/5 backdrop-blur-md border border-white/10 hover:border-indigo-500/40 hover:bg-white/10 transition">
-            <div className="text-4xl font-bold text-indigo-400 mb-2">98%</div>
-            <p className="text-gray-400">Client Satisfaction</p>
-          </div>
-        </div>
-
-        {/* View Portfolio CTA */}
-        <div className="text-center">
-          <a
-            href="/portfolio"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold bg-gradient-to-r from-indigo-600 to-blue-500 hover:scale-105 hover:shadow-xl hover:shadow-blue-500/30 transition duration-300"
+          <p className="text-gray-400 mb-6">A professional copy trading platform serving 150K+ traders with real-time trade execution and advanced analytics.</p>
+          <a 
+            href="https://trade-sync-seven.vercel.app" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-block px-8 py-3 bg-gradient-to-r from-indigo-600 to-blue-500 hover:shadow-lg hover:shadow-blue-500/30 rounded-lg font-semibold transition-all hover:scale-105"
           >
-            View Full Portfolio
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
+            View Live Platform →
           </a>
         </div>
       </section>

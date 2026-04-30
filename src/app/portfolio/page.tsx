@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { projects } from '@/data/portfolio'
 import { Button } from '@/components/ui/Button'
 import { Badge } from '@/components/ui/Badge'
-import { Eye, ArrowRight, Zap, Award, Code2, X, ChevronLeft, ChevronRight, Star, Calendar, Briefcase, Users, TrendingUp } from 'lucide-react'
+import { Eye, ArrowRight, Zap, Award, Code2, X, ChevronLeft, ChevronRight, Star, Calendar } from 'lucide-react'
 
 export default function Portfolio() {
   const categories = ['all', 'web', 'mobile', 'branding', 'ai']
@@ -13,228 +13,16 @@ export default function Portfolio() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
   const filteredProjects = projects.filter(p => activeCategory === 'all' || p.category === activeCategory)
-  const featuredProjects = projects.slice(0, 3)
+  const featuredProjects = projects.slice(0, 2)
   
   const activeProjectData = selectedProject ? projects.find(p => p.id === selectedProject) : null
   const currentProject = activeProjectData
-
-  // Portfolio Statistics
-  const stats = [
-    { icon: Briefcase, label: 'Projects Completed', value: '50+' },
-    { icon: Users, label: 'Happy Clients', value: '30+' },
-    { icon: TrendingUp, label: 'Success Rate', value: '98%' }
-  ]
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 text-white overflow-hidden relative">
       {/* Global glow background */}
       <div className="absolute inset-0 z-0 bg-gradient-to-r from-indigo-600/20 via-blue-500/15 to-cyan-500/20 blur-3xl opacity-30"></div>
       
-      {/* HERO SECTION */}
-      <section className="relative z-10 container mx-auto px-4 py-20">
-        <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
-          {/* Left Content */}
-          <div className="space-y-6 animate-slideUp">
-            <div className="space-y-2">
-              <p className="text-sm text-indigo-400 font-semibold tracking-widest uppercase">
-                ✨ Creative Portfolio
-              </p>
-              <h1 className="text-5xl md:text-6xl font-bold leading-tight">
-                Showcase Our{" "}
-                <span className="bg-gradient-to-r from-indigo-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent">
-                  Best Work
-                </span>
-              </h1>
-            </div>
-            <p className="text-lg text-gray-300 leading-relaxed">
-              We&apos;ve delivered cutting-edge solutions across web, mobile, and branding. See how we&apos;ve helped businesses transform their digital presence.
-            </p>
-            <div className="flex gap-4 pt-4">
-              <a href="/contact" className="px-8 py-3 bg-gradient-to-r from-indigo-600 to-blue-500 hover:shadow-lg hover:shadow-blue-500/30 rounded-lg font-semibold transition-all hover:scale-105">
-                Start Your Project
-              </a>
-              <a href="/services" className="px-8 py-3 border border-gray-600 hover:bg-white/10 rounded-lg font-semibold transition-all">
-                Learn More
-              </a>
-            </div>
-          </div>
-
-          {/* Right Card - Portfolio Stats */}
-          <div className="relative animate-slideUp" style={{ animationDelay: '0.2s' }}>
-            <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 hover:border-indigo-500/30 transition">
-              <h3 className="text-2xl font-bold mb-6">Portfolio Overview</h3>
-              
-              {/* Performance Badge */}
-              <div className="flex items-center justify-between mb-6 pb-6 border-b border-white/10">
-                <div>
-                  <p className="text-xs text-gray-400 uppercase font-semibold mb-1">Total Projects</p>
-                  <p className="text-3xl font-bold">{projects.length}+</p>
-                </div>
-                <div className="text-right">
-                  <p className="text-indigo-400 font-semibold text-lg flex items-center gap-1 justify-end">
-                    <TrendingUp size={18} /> 98% Success
-                  </p>
-                </div>
-              </div>
-
-              {/* Featured Stats */}
-              <div className="space-y-3">
-                {stats.map((stat, idx) => {
-                  const Icon = stat.icon
-                  return (
-                    <div key={idx} className="flex items-center justify-between p-3 bg-white/5 rounded-lg hover:bg-white/10 transition">
-                      <div className="flex items-center gap-3">
-                        <div className="p-2 bg-indigo-500/20 rounded-lg">
-                          <Icon size={18} className="text-indigo-400" />
-                        </div>
-                        <span className="text-sm text-gray-400">{stat.label}</span>
-                      </div>
-                      <span className="font-bold text-lg">{stat.value}</span>
-                    </div>
-                  )
-                })}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* FEATURED PROJECTS */}
-      <section className="relative z-10 container mx-auto px-4 py-20 border-t border-white/10">
-        <div className="mb-12">
-          <h2 className="text-4xl font-bold mb-2">Featured Projects</h2>
-          <p className="text-gray-400">Hand-picked selection of our best work</p>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-6 mb-12">
-          {featuredProjects.map((project, idx) => (
-            <div
-              key={project.id}
-              onClick={() => setSelectedProject(project.id)}
-              className="group cursor-pointer rounded-xl overflow-hidden bg-white/5 border border-white/10 hover:border-indigo-500/50 transition-all duration-300 animate-slideUp"
-              style={{ animationDelay: `${0.3 + idx * 0.1}s` }}
-            >
-              <div className="relative overflow-hidden h-48 bg-gradient-to-b from-indigo-500/20 to-transparent">
-                <img
-                  src={project.thumbnail}
-                  alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all"></div>
-                <div className="absolute top-4 right-4">
-                  <Eye size={20} className="text-white opacity-0 group-hover:opacity-100 transition-opacity" />
-                </div>
-              </div>
-              <div className="p-6">
-                <div className="flex items-center justify-between mb-3">
-                  <h3 className="text-xl font-bold group-hover:text-indigo-300 transition-colors">{project.title}</h3>
-                  <Badge variant="default" className="capitalize">{project.category}</Badge>
-                </div>
-                <p className="text-sm text-gray-400 mb-4 line-clamp-2">{project.description}</p>
-                <div className="flex gap-2 flex-wrap">
-                  {project.techStack.slice(0, 2).map(tech => (
-                    <span key={tech} className="px-2 py-1 text-xs bg-indigo-500/20 text-indigo-300 rounded">
-                      {tech}
-                    </span>
-                  ))}
-                  {project.techStack.length > 2 && (
-                    <span className="px-2 py-1 text-xs text-gray-400">+{project.techStack.length - 2}</span>
-                  )}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* CATEGORY FILTER */}
-      <section className="relative z-10 container mx-auto px-4 py-12 border-t border-white/10">
-        <div className="mb-12">
-          <h2 className="text-4xl font-bold mb-2">All Projects</h2>
-          <p className="text-gray-400">Browse our complete portfolio</p>
-        </div>
-
-        {/* Category Filter */}
-        <div className="flex flex-wrap gap-3 mb-12">
-          {categories.map(category => (
-            <button
-              key={category}
-              onClick={() => setActiveCategory(category)}
-              className={`px-6 py-2 rounded-lg font-semibold transition-all capitalize ${
-                activeCategory === category
-                  ? 'bg-gradient-to-r from-indigo-600 to-blue-500 text-white shadow-lg shadow-blue-500/30'
-                  : 'bg-white/5 text-gray-300 border border-white/10 hover:border-indigo-500/50'
-              }`}
-            >
-              {category === 'all' ? '🎯 All' : category}
-            </button>
-          ))}
-        </div>
-
-        {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredProjects.map((project, idx) => (
-            <div
-              key={project.id}
-              onClick={() => setSelectedProject(project.id)}
-              className="group cursor-pointer rounded-xl overflow-hidden bg-white/5 border border-white/10 hover:border-indigo-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/10 animate-slideUp"
-              style={{ animationDelay: `${0.1 * (idx % 3)}s` }}
-            >
-              <div className="relative overflow-hidden h-56 bg-gradient-to-b from-indigo-500/10 to-transparent">
-                <img
-                  src={project.thumbnail}
-                  alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-all"></div>
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                  <div className="p-4 bg-black/60 rounded-full">
-                    <Eye size={28} className="text-indigo-300" />
-                  </div>
-                </div>
-              </div>
-              <div className="p-6">
-                <div className="mb-3">
-                  <Badge variant="default" className="capitalize mb-2">{project.category}</Badge>
-                  <h3 className="text-xl font-bold group-hover:text-indigo-300 transition-colors mb-2">{project.title}</h3>
-                </div>
-                <p className="text-sm text-gray-400 mb-4 line-clamp-2">{project.description}</p>
-                <div className="flex gap-2 flex-wrap">
-                  {project.techStack.slice(0, 3).map(tech => (
-                    <span key={tech} className="px-2 py-1 text-xs bg-indigo-500/20 text-indigo-300 rounded">
-                      {tech}
-                    </span>
-                  ))}
-                  {project.techStack.length > 3 && (
-                    <span className="px-2 py-1 text-xs text-gray-400">+{project.techStack.length - 3}</span>
-                  )}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* CTA SECTION */}
-      <section className="relative z-10 container mx-auto px-4 py-20 text-center border-t border-white/10">
-        <div className="space-y-6">
-          <h2 className="text-4xl md:text-5xl font-bold">
-            Ready to Start Your Project?
-          </h2>
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-            Let&apos;s work together to bring your vision to life with cutting-edge solutions.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/contact" className="px-8 py-4 bg-gradient-to-r from-indigo-600 to-blue-500 hover:shadow-lg hover:shadow-blue-500/30 rounded-lg font-semibold transition-all hover:scale-105">
-              Get Started Today
-            </a>
-            <a href="/services" className="px-8 py-4 border border-gray-600 hover:bg-white/10 rounded-lg font-semibold transition-all">
-              View Our Services
-            </a>
-          </div>
-        </div>
-      </section>
-
       {/* IMAGE GALLERY MODAL */}
       {selectedProject && currentProject && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm p-4">
