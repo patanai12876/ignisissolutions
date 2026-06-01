@@ -12,4 +12,15 @@ export const projects: Project[] = [
     liveUrl: 'https://trade-sync-seven.vercel.app',
     completedDate: '2026-02-15'
   },
+  {
+    id: 'fitpro-gym',
+    title: 'FitPro - Premium Gym & Fitness Platform',
+    category: 'web',
+    thumbnail: '/images/fitpro1.png',
+    images: ['/images/fitpro1.png', '/images/2.png', '/images/3.png', '/images/4.png'],
+    description: 'Modern gym and fitness platform with dynamic class scheduling, expert trainer profiles, and integrated contact system. Features real-time backend data fetching, responsive design, and seamless user experience. Built for fitness enthusiasts seeking professional training and community support.',
+    techStack: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Backend API Integration', 'Vercel'],
+    liveUrl: 'https://fit-pro-frontend.vercel.app/',
+    completedDate: '2026-05-20'
+  },
 ]
