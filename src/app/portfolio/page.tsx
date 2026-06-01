@@ -23,84 +23,108 @@ export default function Portfolio() {
       {/* Global glow background */}
       <div className="absolute inset-0 z-0 bg-gradient-to-r from-indigo-600/20 via-blue-500/15 to-cyan-500/20 blur-3xl opacity-30"></div>
       
-      {/* IMAGE GALLERY MODAL */}
-      {selectedProject && currentProject && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm p-4">
-          <div className="relative max-w-5xl w-full">
-            {/* Close button */}
-            <button
-              onClick={() => setSelectedProject(null)}
-              className="absolute -top-12 right-0 p-2 hover:bg-white/10 rounded-lg transition"
-            >
-              <X size={28} />
-            </button>
+      
+{/* MINIMAL IMAGE MODAL */}
+{selectedProject && currentProject && (
+  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
+    
+    <div className="relative w-full max-w-4xl">
+      
+      {/* Close */}
+      <button
+        onClick={() => setSelectedProject(null)}
+        className="absolute -top-12 right-0 text-gray-400 hover:text-white transition-colors"
+      >
+        <X size={28} />
+      </button>
 
-            {/* Image display */}
-            <div className="relative rounded-2xl overflow-hidden bg-slate-900 border border-slate-700/50">
-              <img
-                src={currentProject.images[currentImageIndex]}
-                alt={`${currentProject.title} - Image ${currentImageIndex + 1}`}
-                className="w-full h-auto max-h-96 object-cover"
-              />
-              
-              {/* Navigation arrows */}
-              {currentProject.images.length > 1 && (
-                <>
-                  <button
-                    onClick={() => setCurrentImageIndex(prev => prev === 0 ? currentProject.images.length - 1 : prev - 1)}
-                    className="absolute left-4 top-1/2 -translate-y-1/2 p-2 bg-black/50 hover:bg-black/70 rounded-lg transition backdrop-blur"
-                  >
-                    <ChevronLeft size={24} />
-                  </button>
-                  <button
-                    onClick={() => setCurrentImageIndex(prev => prev === currentProject.images.length - 1 ? 0 : prev + 1)}
-                    className="absolute right-4 top-1/2 -translate-y-1/2 p-2 bg-black/50 hover:bg-black/70 rounded-lg transition backdrop-blur"
-                  >
-                    <ChevronRight size={24} />
-                  </button>
-                </>
-              )}
-            </div>
+      {/* Image */}
+      <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-slate-900">
+        <img
+          src={currentProject.images[currentImageIndex]}
+          alt={currentProject.title}
+          className="w-full max-h-[80vh] object-cover"
+        />
 
-            {/* Image counter and info */}
-            <div className="mt-6 space-y-4">
-              <div className="flex items-center justify-between">
-                <div>
-                  <h3 className="text-2xl font-bold mb-2">{currentProject.title}</h3>
-                  <p className="text-gray-400">{currentProject.description}</p>
-                </div>
-                {currentProject.images.length > 1 && (
-                  <div className="text-sm text-gray-400 whitespace-nowrap ml-4">
-                    {currentImageIndex + 1} / {currentProject.images.length}
-                  </div>
-                )}
-              </div>
+        {/* Left Arrow */}
+        {currentProject.images.length > 1 && (
+          <button
+            onClick={() =>
+              setCurrentImageIndex((prev) =>
+                prev === 0
+                  ? currentProject.images.length - 1
+                  : prev - 1
+              )
+            }
+            className="absolute left-4 top-1/2 -translate-y-1/2 p-2 bg-black/40 hover:bg-black/60 rounded-full transition"
+          >
+            <ChevronLeft size={20} />
+          </button>
+        )}
 
-              {/* Tech stack */}
-              <div className="flex gap-2 flex-wrap">
-                {currentProject.techStack.map(tech => (
-                  <span key={tech} className="px-3 py-1 text-xs font-semibold bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 rounded-full">
-                    {tech}
-                  </span>
-                ))}
-              </div>
+        {/* Right Arrow */}
+        {currentProject.images.length > 1 && (
+          <button
+            onClick={() =>
+              setCurrentImageIndex((prev) =>
+                prev === currentProject.images.length - 1
+                  ? 0
+                  : prev + 1
+              )
+            }
+            className="absolute right-4 top-1/2 -translate-y-1/2 p-2 bg-black/40 hover:bg-black/60 rounded-full transition"
+          >
+            <ChevronRight size={20} />
+          </button>
+        )}
+      </div>
 
-              {/* Action button */}
-              {currentProject.liveUrl && (
-                <a
-                  href={currentProject.liveUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-indigo-600 to-blue-600 hover:shadow-lg hover:shadow-indigo-500/50 rounded-lg transition-all font-semibold"
-                >
-                  <Eye size={18} />
-                  Visit Live Project
-                </a>
-              )}
-            </div>
-          </div>
-        </div>
-      )}
+    
+{/* Bottom minimal info */}
+<div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 pt-5">
+  
+  {/* Left content */}
+  <div className="space-y-2">
+    <h3 className="text-xl font-semibold text-white">
+      {currentProject.title}
+    </h3>
+
+    <p className="text-sm text-gray-400 max-w-2xl leading-relaxed">
+      {currentProject.description}
+    </p>
+
+    {/* Tech stack */}
+    <div className="flex flex-wrap gap-2 pt-1">
+      {currentProject.techStack.slice(0, 3).map((tech) => (
+        <span
+          key={tech}
+          className="px-2.5 py-1 text-xs bg-white/5 border border-white/10 rounded-full text-gray-300"
+        >
+          {tech}
+        </span>
+      ))}
+    </div>
+  </div>
+
+  {/* Enhanced Live Demo Button */}
+  {currentProject.liveUrl && (
+    <a
+      href={currentProject.liveUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-500 hover:to-blue-500 transition-all duration-300 text-sm font-medium shadow-lg shadow-indigo-500/20 hover:shadow-indigo-500/40"
+    >
+      <ArrowRight size={16} />
+      Live Demo
+    </a>
+  )}
+</div>
+</div>
+</div>
+)}
+
+
+
 
       {/* Content wrapper */}
       <div className="relative z-10 animate-fadeIn">
@@ -170,49 +194,52 @@ export default function Portfolio() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 mb-16">
-            {featuredProjects.map((project, idx) => (
-              <div key={project.id} className="group relative overflow-hidden rounded-3xl cursor-pointer animate-slideUp" style={{ animationDelay: `${idx * 0.1}s` }}>
-                <div className="relative overflow-hidden h-96">
-                  <img src={project.thumbnail} alt={project.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300"></div>
-                  
-                  {/* Image count badge */}
-                  <div className="absolute top-4 right-4 px-3 py-2 bg-black/60 backdrop-blur rounded-lg text-sm font-semibold flex items-center gap-2">
-                    <span className="w-2 h-2 bg-indigo-400 rounded-full"></span>
-                    {project.images.length} images
-                  </div>
-                </div>
-                
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 flex flex-col justify-end p-8">
-                  <h3 className="text-3xl font-bold mb-3 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">{project.title}</h3>
-                  <p className="text-gray-300 text-sm mb-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 line-clamp-2">{project.description}</p>
-                  
-                  <div className="flex gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <button
-                      onClick={() => {
-                        setSelectedProject(project.id)
-                        setCurrentImageIndex(0)
-                      }}
-                      className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-indigo-600 to-blue-600 hover:shadow-lg hover:shadow-indigo-500/50 rounded-xl transition-all text-sm font-semibold"
-                    >
-                      <Eye size={18} />
-                      View Gallery
-                    </button>
-                    {project.liveUrl && (
-                      <a
-                        href={project.liveUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-white/10 hover:bg-white/20 rounded-xl transition-colors text-sm font-semibold"
-                      >
-                        <ArrowRight size={18} />
-                        Live Demo
-                      </a>
-                    )}
-                  </div>
-                </div>
-              </div>
-            ))}
+           {featuredProjects.map((project, idx) => (
+  <div
+    key={project.id}
+    className="group relative overflow-hidden rounded-3xl cursor-pointer animate-slideUp"
+    style={{ animationDelay: `${idx * 0.1}s` }}
+  >
+    <div className="relative overflow-hidden h-96">
+      <img
+        src={project.thumbnail}
+        alt={project.title}
+        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300"></div>
+    </div>
+
+    <div className="absolute inset-0 flex flex-col justify-end p-8">
+      
+      <h3 className="text-3xl font-bold mb-4">
+        {project.title}
+      </h3>
+
+      <div className="flex gap-3">
+        <button
+          onClick={() => {
+            setSelectedProject(project.id)
+            setCurrentImageIndex(0)
+          }}
+          className="px-4 py-2 bg-gradient-to-r from-indigo-600 to-blue-500 rounded-lg text-sm font-semibold transition"
+        >
+          View Gallery
+        </button>
+
+        {project.liveUrl && (
+          <a
+            href={project.liveUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-4 py-2 bg-white/10 hover:bg-white/20 rounded-lg text-sm font-semibold transition"
+          >
+            Live Demo
+          </a>
+        )}
+      </div>
+    </div>
+  </div>
+))}
           </div>
         </section>
 
@@ -239,69 +266,101 @@ export default function Portfolio() {
             ))}
           </div>
 
-          {/* PROJECTS GRID - IMAGE SHOWCASE */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredProjects.map((project, idx) => (
-              <div key={project.id} className="group relative overflow-hidden rounded-2xl border border-slate-700/50 hover:border-indigo-500/50 transition-all duration-500 bg-slate-800/30 backdrop-blur hover:bg-slate-800/60 animate-slideUp cursor-pointer h-full" style={{ animationDelay: `${idx * 0.05}s` }}>
-                {/* Main image with hover effect */}
-                <div className="relative overflow-hidden h-56">
-                  <img src={project.thumbnail} alt={project.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent opacity-40 group-hover:opacity-20 transition-opacity duration-300"></div>
-                  
-                  {/* Images count overlay */}
-                  <div className="absolute bottom-3 right-3 px-2 py-1 bg-black/50 backdrop-blur rounded text-xs font-semibold flex items-center gap-1">
-                    <span className="w-1.5 h-1.5 bg-indigo-400 rounded-full"></span>
-                    {project.images.length} pics
-                  </div>
-                </div>
+         
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+  {filteredProjects.map((project, idx) => (
+    <div
+      key={project.id}
+      className="group relative overflow-hidden rounded-2xl border border-slate-700/50 hover:border-indigo-500/50 transition-all duration-500 bg-slate-800/30 backdrop-blur hover:bg-slate-800/60 animate-slideUp h-full"
+      style={{ animationDelay: `${idx * 0.05}s` }}
+    >
+      {/* Project Image */}
+      <div
+        className="relative overflow-hidden h-56 cursor-pointer"
+        onClick={() => {
+          setSelectedProject(project.id)
+          setCurrentImageIndex(0)
+        }}
+      >
+        <img
+          src={project.thumbnail}
+          alt={project.title}
+          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+        />
 
-                <div className="p-6 space-y-4 flex flex-col h-full">
-                  <div className="space-y-2 flex-1">
-                    <h3 className="text-xl font-bold group-hover:text-indigo-400 transition-colors">{project.title}</h3>
-                    <p className="text-gray-400 text-sm leading-relaxed line-clamp-2">{project.description}</p>
-                  </div>
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent opacity-40 group-hover:opacity-20 transition-opacity duration-300"></div>
+      </div>
 
-                  {/* Tech stack badges */}
-                  <div className="flex gap-2 flex-wrap">
-                    {project.techStack.slice(0, 2).map(tech => (
-                      <span key={tech} className="px-3 py-1 text-xs font-semibold bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 rounded-full">
-                        {tech}
-                      </span>
-                    ))}
-                    {project.techStack.length > 2 && (
-                      <span className="px-3 py-1 text-xs font-semibold text-gray-400">+{project.techStack.length - 2}</span>
-                    )}
-                  </div>
+      {/* Content */}
+      <div className="p-6 space-y-4 flex flex-col h-full">
+        <div
+          className="space-y-2 flex-1 cursor-pointer"
+          onClick={() => {
+            setSelectedProject(project.id)
+            setCurrentImageIndex(0)
+          }}
+        >
+          <h3 className="text-xl font-bold group-hover:text-indigo-400 transition-colors">
+            {project.title}
+          </h3>
 
-                  {/* Action buttons */}
-                  <div className="flex gap-3 pt-2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
-                    <button
-                      onClick={() => {
-                        setSelectedProject(project.id)
-                        setCurrentImageIndex(0)
-                      }}
-                      className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-gradient-to-r from-indigo-600 to-blue-600 hover:shadow-lg hover:shadow-indigo-500/50 rounded-lg transition-all text-sm font-semibold"
-                    >
-                      <Eye size={16} />
-                      Gallery
-                    </button>
-                    {project.liveUrl && (
-                      <a
-                        href={project.liveUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 rounded-lg transition-colors text-sm font-semibold"
-                      >
-                        <ArrowRight size={16} />
-                        Visit
-                      </a>
-                    )}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
+          <p className="text-gray-400 text-sm leading-relaxed line-clamp-2">
+            {project.description}
+          </p>
+        </div>
+
+        {/* Tech Stack */}
+        <div className="flex gap-2 flex-wrap">
+          {project.techStack.slice(0, 2).map((tech) => (
+            <span
+              key={tech}
+              className="px-3 py-1 text-xs font-semibold bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 rounded-full"
+            >
+              {tech}
+            </span>
+          ))}
+
+          {project.techStack.length > 2 && (
+            <span className="px-3 py-1 text-xs font-semibold text-gray-400">
+              +{project.techStack.length - 2}
+            </span>
+          )}
+        </div>
+
+        {/* Buttons */}
+        <div className="flex items-center gap-3 pt-3">
+          <button
+            onClick={() => {
+              setSelectedProject(project.id)
+              setCurrentImageIndex(0)
+            }}
+            className="text-sm text-indigo-400 hover:text-indigo-300 transition-colors"
+          >
+            View Gallery
+          </button>
+
+          {project.liveUrl && (
+            <>
+              <span className="text-slate-600">•</span>
+
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                className="text-sm text-gray-300 hover:text-white transition-colors"
+              >
+                Live Demo
+              </a>
+            </>
+          )}
+        </div>
+      </div>
+    </div>
+  ))}
+</div>
+</section>
+
 
         {/* PREMIUM STATS SECTION */}
         <section className="container max-w-7xl mx-auto px-6 py-20 relative">
