@@ -96,7 +96,7 @@ export default function Home() {
       {/* FEATURED SHOWCASE - TRADESYNC */}
       <section className="container py-16 animate-slideUp border-t border-white/10" style={{ animationDelay: '0.4s' }}>
         <div className="max-w-3xl mx-auto text-center">
-          <p className="text-sm text-indigo-400 font-semibold tracking-widest uppercase mb-3">🚀 Featured Project</p>
+          <p className="text-sm text-indigo-400 font-semibold tracking-widest uppercase mb-3"> Featured Project</p>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Check Out <span className="bg-gradient-to-r from-indigo-400 to-blue-400 bg-clip-text text-transparent">TradeSync</span>
           </h2>
