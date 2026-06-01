@@ -94,21 +94,23 @@ export default function Home() {
 
 
       {/* FEATURED SHOWCASE - TRADESYNC */}
-      <section className="container py-16 animate-slideUp border-t border-white/10" style={{ animationDelay: '0.4s' }}>
-        <div className="max-w-3xl mx-auto text-center">
-          <p className="text-sm text-indigo-400 font-semibold tracking-widest uppercase mb-3"> Featured Project</p>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+      <section className="container py-24 md:py-32 animate-slideUp border-t border-white/10" style={{ animationDelay: '0.4s' }}>
+        <div className="max-w-2xl mx-auto text-center space-y-8">
+          <p className="text-sm text-indigo-400 font-semibold tracking-widest uppercase">🚀 Featured Project</p>
+          <h2 className="text-4xl md:text-5xl font-bold leading-tight">
             Check Out <span className="bg-gradient-to-r from-indigo-400 to-blue-400 bg-clip-text text-transparent">TradeSync</span>
           </h2>
-          <p className="text-gray-400 mb-6">A professional copy trading platform serving 150K+ traders with real-time trade execution and advanced analytics.</p>
-          <a 
-            href="https://trade-sync-seven.vercel.app" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="inline-block px-8 py-3 bg-gradient-to-r from-indigo-600 to-blue-500 hover:shadow-lg hover:shadow-blue-500/30 rounded-lg font-semibold transition-all hover:scale-105"
-          >
-            View Live Platform →
-          </a>
+          <p className="text-lg text-gray-300 leading-relaxed">A professional copy trading platform serving 150K+ traders with real-time trade execution and advanced analytics.</p>
+          <div>
+            <a 
+              href="https://trade-sync-seven.vercel.app" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-block px-8 py-4 bg-gradient-to-r from-indigo-600 to-blue-500 hover:shadow-lg hover:shadow-blue-500/40 rounded-lg font-semibold transition-all hover:scale-105"
+            >
+              View Live Platform →
+            </a>
+          </div>
         </div>
       </section>
 
