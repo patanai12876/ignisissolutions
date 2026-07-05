@@ -412,7 +412,7 @@ export default function Home() {
 
     <h2 className="text-4xl font-bold relative z-10">
 
-      Let's Build Something Impactful
+      Let&apos;s Build Something Impactful
 
     </h2>
 
