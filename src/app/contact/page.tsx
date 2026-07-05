@@ -23,7 +23,7 @@ const servicesList = [
   'Digital Marketing',
 ]
 
-const WHATSAPP_NUMBER = '923204009782'
+const WHATSAPP_NUMBER = '923289459359'
 const WHATSAPP_MESSAGE = 'Hello, I want to know more about your services.'
 
 export default function Contact() {
