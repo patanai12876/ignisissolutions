@@ -52,7 +52,7 @@ const services = [
   {
     title: "Business Consultation",
     desc: "Strategic growth planning for businesses.",
-    image: "/images/Business1.jpg",
+    image: "/images/business1.jpg",
     features: [
       "Business Strategy",
       "Growth Planning",
