@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 text-white overflow-hidden relative animate-slide-up">
+    <main className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 text-white overflow-x-hidden overflow-y-visible relative animate-slide-up">
 
 
       {/* GLOBAL BACKGROUND GLOW */}
@@ -38,13 +38,13 @@ export default function Home() {
               </p>
 
 
-              <h1 className="text-3xl md:text-6xl font-bold leading-tight">
+              <h1 className="text-3xl md:text-6xl font-bold leading-[1.25] overflow-visible">
 
 
                 We Build
 
 
-                <span className="block bg-gradient-to-r from-indigo-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                <span className="block bg-gradient-to-r from-indigo-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent leading-[1.1] overflow-visible">
 
                   Digital Experiences
 
@@ -305,7 +305,7 @@ export default function Home() {
 
             <h2 className="text-4xl md:text-4xl font-bold">
 
-              TradeSync
+              Brew and CO.
 
             </h2>
 
@@ -313,15 +313,14 @@ export default function Home() {
 
             <p className="text-gray-300 max-w-2xl mt-5 text-clip">
 
-              A professional copy trading platform with real-time execution,
-              analytics and advanced trading features.
+              A professional online Coffee Ordering Platform that allows users to browse the menu, select drinks and snacks, and place orders with a polished, user-friendly interface.
 
             </p>
 
 
 
             <a
-              href="https://trade-sync-seven.vercel.app"
+              href="https://brew-and-co-acyz.vercel.app/"
               target="_blank"
               className="inline-block mt-8 px-8 py-4 rounded-xl bg-gradient-to-r from-indigo-600 to-blue-500 font-semibold hover:scale-105 transition"
             >

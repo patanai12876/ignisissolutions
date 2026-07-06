@@ -39,11 +39,15 @@ export default function AboutPage() {
 
             <div className="relative bg-slate-800/40 border border-slate-700 backdrop-blur-xl rounded-2xl p-8 hover:shadow-xl hover:shadow-indigo-500/10 transition-all">
               <h3 className="text-xl font-semibold mb-4 text-white">
-                Our Mission
+                Our Mission and Vision
               </h3>
               <p className="text-gray-300">
                 To empower businesses with intelligent digital solutions that drive
                 growth, efficiency, and long-term success.
+              </p>
+              <p className="mt-4 text-gray-400">
+                We envision a future where every brand uses technology to connect,
+                innovate, and lead with purpose.
               </p>
             </div>
           </div>

@@ -27,9 +27,9 @@ export default function Navbar() {
         <div className="container flex items-center justify-between h-16">
 
           {/* LOGO */}
-          <Link href="/" className="text-lg font-bold tracking-wide">
-            <span className="text-white">Ignisis</span>
-            <span className="text-blue-400"> Solutions</span>
+          <Link href="/" className="flex items-center gap-3">
+            <img src="/images/logo3.png" alt="Ignisis Solutions" className="h-12 md:h-14 w-auto" />
+            <span className="sr-only">Ignisis Solutions</span>
           </Link>
 
           {/* DESKTOP LINKS */}

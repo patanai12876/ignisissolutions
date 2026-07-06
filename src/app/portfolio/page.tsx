@@ -7,7 +7,7 @@ import { Badge } from '@/components/ui/Badge'
 import { Eye, ArrowRight, Zap, Award, Code2, X, ChevronLeft, ChevronRight, Star, Calendar } from 'lucide-react'
 
 export default function Portfolio() {
-  const categories = ['all', 'web', 'mobile', 'branding', 'ai']
+  const categories = ['all', 'web', 'Digital Marketing', 'branding']
   const [activeCategory, setActiveCategory] = useState('all')
   const [selectedProject, setSelectedProject] = useState<string | null>(null)
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
@@ -26,24 +26,24 @@ export default function Portfolio() {
       
 {/* MINIMAL IMAGE MODAL */}
 {selectedProject && currentProject && (
-  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
+  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 backdrop-blur-2xl p-4">
     
-    <div className="relative w-full max-w-4xl">
+    <div className="relative w-full max-w-6xl rounded-[32px] overflow-hidden border border-white/10 bg-slate-950 shadow-2xl shadow-black/70">
       
       {/* Close */}
       <button
         onClick={() => setSelectedProject(null)}
-        className="absolute -top-12 right-0 text-gray-400 hover:text-white transition-colors"
+        className="absolute top-4 right-4 z-20 p-4 bg-slate-900/90 border border-white/10 rounded-full text-gray-200 hover:bg-slate-800 hover:text-white transition-colors"
       >
-        <X size={28} />
+        <X size={32} />
       </button>
 
       {/* Image */}
-      <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-slate-900">
+      <div className="relative overflow-hidden bg-slate-900">
         <img
           src={currentProject.images[currentImageIndex]}
           alt={currentProject.title}
-          className="w-full max-h-[80vh] object-cover"
+          className="w-full max-h-[85vh] object-cover"
         />
 
         {/* Left Arrow */}
@@ -81,15 +81,15 @@ export default function Portfolio() {
 
     
 {/* Bottom minimal info */}
-<div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 pt-5">
+<div className="bg-slate-950 p-8 md:p-10 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
   
   {/* Left content */}
-  <div className="space-y-2">
-    <h3 className="text-xl font-semibold text-white">
+  <div className="space-y-4 md:max-w-2xl">
+    <h3 className="text-2xl md:text-3xl font-semibold text-white">
       {currentProject.title}
     </h3>
 
-    <p className="text-sm text-gray-400 max-w-2xl leading-relaxed">
+    <p className="text-sm md:text-base text-gray-300 leading-relaxed">
       {currentProject.description}
     </p>
 
@@ -98,7 +98,7 @@ export default function Portfolio() {
       {currentProject.techStack.slice(0, 3).map((tech) => (
         <span
           key={tech}
-          className="px-2.5 py-1 text-xs bg-white/5 border border-white/10 rounded-full text-gray-300"
+          className="px-3 py-1.5 text-xs md:text-sm bg-white/5 border border-white/10 rounded-full text-gray-300"
         >
           {tech}
         </span>
@@ -106,18 +106,25 @@ export default function Portfolio() {
     </div>
   </div>
 
-  {/* Enhanced Live Demo Button */}
-  {currentProject.liveUrl && (
-    <a
-      href={currentProject.liveUrl}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-500 hover:to-blue-500 transition-all duration-300 text-sm font-medium shadow-lg shadow-indigo-500/20 hover:shadow-indigo-500/40"
+  <div className="flex flex-col sm:flex-row sm:items-center sm:gap-3">
+    {currentProject.liveUrl && (
+      <a
+        href={currentProject.liveUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-500 hover:to-blue-500 transition-all duration-300 text-sm font-medium shadow-lg shadow-indigo-500/20 hover:shadow-indigo-500/40"
+      >
+        <ArrowRight size={16} />
+        Live Demo
+      </a>
+    )}
+    <button
+      onClick={() => setSelectedProject(null)}
+      className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 transition-all duration-300 text-sm font-medium text-white"
     >
-      <ArrowRight size={16} />
-      Live Demo
-    </a>
-  )}
+      Close
+    </button>
+  </div>
 </div>
 </div>
 </div>
@@ -134,7 +141,7 @@ export default function Portfolio() {
             <div className="space-y-6 animate-slideInLeft">
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-500/10 border border-indigo-500/30 rounded-full w-fit">
                 <Star size={16} className="text-indigo-400" />
-                <span className="text-sm font-semibold text-indigo-400">Award-Winning Portfolio</span>
+                <span className="text-sm font-semibold text-indigo-400">Premium Portfolio</span>
               </div>
               
               <h1 className="text-5xl md:text-6xl font-bold leading-tight">
@@ -197,16 +204,20 @@ export default function Portfolio() {
            {featuredProjects.map((project, idx) => (
   <div
     key={project.id}
-    className="group relative overflow-hidden rounded-3xl cursor-pointer animate-slideUp"
+    className="group relative overflow-hidden rounded-3xl border border-slate-700/50 bg-slate-900/40 hover:border-indigo-500/50 hover:shadow-2xl transition-all duration-300 cursor-pointer animate-slideUp"
     style={{ animationDelay: `${idx * 0.1}s` }}
+    onClick={() => {
+      setSelectedProject(project.id)
+      setCurrentImageIndex(0)
+    }}
   >
-    <div className="relative overflow-hidden h-96">
+    <div className="relative overflow-hidden h-96 bg-slate-950">
       <img
         src={project.thumbnail}
         alt={project.title}
-        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+        className="w-full h-full object-contain transition-transform duration-700"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-60 transition-opacity duration-300"></div>
     </div>
 
     <div className="absolute inset-0 flex flex-col justify-end p-8">
@@ -217,7 +228,8 @@ export default function Portfolio() {
 
       <div className="flex gap-3">
         <button
-          onClick={() => {
+          onClick={(e) => {
+            e.stopPropagation()
             setSelectedProject(project.id)
             setCurrentImageIndex(0)
           }}
@@ -228,6 +240,7 @@ export default function Portfolio() {
 
         {project.liveUrl && (
           <a
+            onClick={(e) => e.stopPropagation()}
             href={project.liveUrl}
             target="_blank"
             rel="noopener noreferrer"

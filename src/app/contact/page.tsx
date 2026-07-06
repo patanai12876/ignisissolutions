@@ -293,7 +293,7 @@ export default function Contact() {
           {/* PERKS */}
           <div className="space-y-6">
             {/* Quick Response */}
-            <div className="group/card relative overflow-hidden">
+            <div className="group/card relative overflow-visible">
               <div className="absolute inset-0 bg-gradient-to-br from-indigo-600/30 to-blue-600/10 opacity-0 group-hover/card:opacity-100 blur-2xl transition duration-300 rounded-2xl"></div>
               <div className="relative bg-gradient-to-br from-indigo-600/20 to-blue-600/15 border border-indigo-500/40 hover:border-indigo-400/60 rounded-2xl p-6 transition-all duration-300 group-hover/card:shadow-xl group-hover/card:shadow-indigo-500/20 hover:translate-y-[-2px]">
                 <div className="flex items-start gap-4">
@@ -309,7 +309,7 @@ export default function Contact() {
             </div>
 
             {/* Available Times */}
-            <div className="group/card relative overflow-hidden">
+            <div className="group/card relative overflow-visible">
               <div className="absolute inset-0 bg-gradient-to-br from-blue-600/30 to-cyan-600/10 opacity-0 group-hover/card:opacity-100 blur-2xl transition duration-300 rounded-2xl"></div>
               <div className="relative bg-gradient-to-br from-blue-600/20 to-cyan-600/15 border border-blue-500/40 hover:border-blue-400/60 rounded-2xl p-6 transition-all duration-300 group-hover/card:shadow-xl group-hover/card:shadow-blue-500/20 hover:translate-y-[-2px]">
                 <div className="flex items-start gap-4">
@@ -318,14 +318,14 @@ export default function Contact() {
                   </div>
                   <div className="flex-1">
                     <h3 className="font-bold text-lg mb-2 text-white">Available Times</h3>
-                    <p className="text-gray-300 text-sm leading-relaxed">Monday - Friday, 9 AM - 6 PM PKT. Let&apos;s connect at a time that works best for you.</p>
+                    <p className="text-gray-300 text-sm leading-relaxed">Monday - Saturday, 9 AM - 10 PM PKT. Let&apos;s connect at a time that works best for you.</p>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Multiple Channels */}
-            <div className="group/card relative overflow-hidden">
+            <div className="group/card relative overflow-visible">
               <div className="absolute inset-0 bg-gradient-to-br from-cyan-600/30 to-indigo-600/10 opacity-0 group-hover/card:opacity-100 blur-2xl transition duration-300 rounded-2xl"></div>
               <div className="relative bg-gradient-to-br from-cyan-600/20 to-indigo-600/15 border border-cyan-500/40 hover:border-cyan-400/60 rounded-2xl p-6 transition-all duration-300 group-hover/card:shadow-xl group-hover/card:shadow-cyan-500/20 hover:translate-y-[-2px]">
                 <div className="flex items-start gap-4">

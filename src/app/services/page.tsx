@@ -8,7 +8,7 @@ const services = [
   {
     title: "Web Development",
     desc: "High-performance scalable websites & web apps.",
-    image: "/images/web.jpg.jpg",
+    image: "/images/web1.jpg",
     features: [
       "Custom Website Development",
       "Responsive Design",
@@ -17,64 +17,20 @@ const services = [
     ],
   },
   {
-    title: "UI/UX Design",
-    desc: "Modern, clean and conversion-focused interfaces.",
-    image: "/images/UI.jpg",
+    title: "Digital Marketing",
+    desc: "SEO, ads and growth strategies.",
+    image: "/images/digital.jpg",
     features: [
-      "User-Centered Design",
-      "Wireframing & Prototyping",
-      "Modern UI Systems",
-      "Conversion Optimization",
-    ],
-  },
-  {
-    title: "Business Consulting",
-    desc: "Strategic growth planning for businesses.",
-    image: "/images/Business.jpeg",
-    features: [
-      "Business Strategy",
-      "Growth Planning",
-      "Process Optimization",
-      "Market Analysis",
-    ],
-  },
-  {
-    title: "AI Automation",
-    desc: "Smart AI systems to automate workflows.",
-    image: "/images/AI automation.jpg",
-    features: [
-      "Workflow Automation",
-      "AI Chatbots",
-      "Data Processing",
-      "Smart Integrations",
-    ],
-  },
-  {
-    title: "Mobile App Development",
-    desc: "Cross-platform Android & iOS apps.",
-    image: "/images/MAD.avif",
-    features: [
-      "Android & iOS Apps",
-      "Cross-platform Development",
-      "App Optimization",
-      "User-Friendly UI",
-    ],
-  },
-  {
-    title: "E-Commerce Solutions",
-    desc: "Scalable online stores with secure checkout.",
-    image: "/images/E.webp",
-    features: [
-      "Online Store Development",
-      "Payment Integration",
-      "Admin Dashboard",
-      "Secure Checkout",
+      "SEO Optimization",
+      "Paid Ads Campaigns",
+      "Social Media Growth",
+      "Analytics & Reporting",
     ],
   },
   {
     title: "Branding",
     desc: "Strong brand identity with modern visuals.",
-    image: "/images/Brand.jpg",
+    image: "/images/branding.png",
     features: [
       "Logo Design",
       "Brand Guidelines",
@@ -83,14 +39,36 @@ const services = [
     ],
   },
   {
-    title: "Digital Marketing",
-    desc: "SEO, ads and growth strategies.",
-    image: "/images/digitak.webp",
+    title: "Social Media Management",
+    desc: "Social presence building to grow engagement and leads.",
+    image: "/images/sMM.png",
     features: [
-      "SEO Optimization",
-      "Paid Ads Campaigns",
-      "Social Media Growth",
-      "Analytics & Reporting",
+      "Content Strategy",
+      "Post Scheduling",
+      "Community Engagement",
+      "Performance Reporting",
+    ],
+  },
+  {
+    title: "Business Consultation",
+    desc: "Strategic growth planning for businesses.",
+    image: "/images/Business1.jpg",
+    features: [
+      "Business Strategy",
+      "Growth Planning",
+      "Process Optimization",
+      "Market Analysis",
+    ],
+  },
+  {
+    title: "E-Commerce Solutions",
+    desc: "Scalable online stores with secure checkout.",
+    image: "/images/commerce.webp",
+    features: [
+      "Online Store Development",
+      "Payment Integration",
+      "Admin Dashboard",
+      "Secure Checkout",
     ],
   },
 ];
@@ -146,7 +124,7 @@ export default function ServicesPage() {
             What We Offer
           </h2>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((s: {title: string; desc: string; image: string; features: string[]}, i: number) => (
               <div
                 key={i}
@@ -247,39 +225,67 @@ export default function ServicesPage() {
       {selected && (
         <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 px-4">
 
-          <div className="bg-slate-900 border border-slate-700 rounded-2xl max-w-2xl w-full p-6 relative">
+          <div className="bg-slate-900 border border-slate-700 rounded-2xl max-w-4xl w-full p-6 relative grid grid-cols-1 md:grid-cols-2 gap-6">
 
             <button
               onClick={() => setSelected(null)}
-              className="absolute top-3 right-3 text-gray-400 hover:text-white"
+              className="absolute top-3 right-3 text-gray-400 hover:text-white z-10"
             >
               ✕
             </button>
 
-            <div className="relative h-[220px] w-full rounded-xl overflow-hidden mb-5">
+            {/* Left: Image */}
+            <div className="relative h-56 md:h-[360px] w-full rounded-xl overflow-hidden">
               <Image src={selected.image} alt={selected.title} fill className="object-cover" />
             </div>
 
-            <h2 className="text-2xl font-bold mb-5">
-              {selected.title}
-            </h2>
+            {/* Right: Details */}
+            <div className="flex flex-col justify-between">
+              <div>
+                <h2 className="text-2xl font-bold mb-3">{selected.title}</h2>
 
-            <div className="space-y-3 mb-6">
-              {selected.features.map((f: string, i: number) => (
-                <div key={i} className="flex items-center gap-3 text-gray-300 text-sm">
-                  <span className="text-indigo-500">✔</span>
-                  {f}
+                <p className="text-gray-300 mb-4">{selected.desc}</p>
+
+                <div className="mb-4">
+                  <h4 className="text-sm font-semibold text-white mb-2">Key features</h4>
+                  <div className="space-y-2">
+                    {selected.features.map((f: string, i: number) => (
+                      <div key={i} className="flex items-center gap-3 text-gray-300 text-sm">
+                        <span className="text-indigo-500">✔</span>
+                        {f}
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              ))}
-            </div>
 
-            <div className="group relative">
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-indigo-600/20 to-blue-600/20 rounded-xl opacity-0 group-hover:opacity-100 blur-lg transition duration-300"></div>
-              <Link href="/contact">
-                <button className="relative w-full px-6 py-3 bg-gradient-to-r from-indigo-600 to-blue-500 hover:shadow-lg hover:shadow-indigo-500/40 rounded-xl font-semibold transition-all duration-300 hover:scale-105">
-                  Get Started
-                </button>
-              </Link>
+                <div className="grid grid-cols-2 gap-3 mb-4 text-sm">
+                  <div>
+                    <div className="text-gray-400">Ideal for</div>
+                    <div className="text-white font-medium">Startups, SMEs, Agencies</div>
+                  </div>
+                  <div>
+                    <div className="text-gray-400">Typical timeline</div>
+                    <div className="text-white font-medium">4 - 8 weeks</div>
+                  </div>
+                </div>
+
+                <div className="mb-4">
+                  <div className="text-gray-400 text-sm">Starting from</div>
+                  <div className="text-white font-semibold">Contact for pricing</div>
+                </div>
+              </div>
+
+              <div className="flex gap-3 mt-4">
+                <Link href={`/contact?service=${encodeURIComponent(selected.title)}`}>
+                  <button className="flex-1 px-4 py-2 bg-gradient-to-r from-indigo-600 to-blue-500 rounded-lg font-semibold hover:scale-105 transition">
+                    Get Started
+                  </button>
+                </Link>
+
+                <Link href={`/contact?service=${encodeURIComponent(selected.title)}&intent=proposal`} className="flex-1">
+                  <button className="w-full px-4 py-2 border border-white/10 rounded-lg text-sm text-white hover:bg-white/5 transition">Request Proposal</button>
+                </Link>
+              </div>
             </div>
 
           </div>
