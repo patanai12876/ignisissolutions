@@ -75,7 +75,7 @@ export default function Home() {
                   href="/contact"
                   className="px-8 py-4 rounded-xl font-semibold bg-gradient-to-r from-indigo-600 to-blue-500 hover:scale-105 transition shadow-lg shadow-blue-500/20"
                 >
-                  Get Free Consultation
+                  Book a meeting
                 </a>
 
 
@@ -171,8 +171,8 @@ export default function Home() {
 
 
             {[
-              ["150+", "Projects"],
-              ["50+", "Clients"],
+              ["500+", "Projects"],
+              ["350+", "Clients"],
               ["5+", "Years Experience"],
               ["24/7", "Support"]
             ].map((item,index)=>(
