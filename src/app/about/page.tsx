@@ -97,8 +97,8 @@ export default function AboutPage() {
         {/* SECTION 3: STATS */}
         <div className="mt-28 grid md:grid-cols-3 gap-10 text-center animate-slideUp" style={{ animationDelay: '0.3s' }}>
           {[
-            { number: "50+", label: "Clients Served" },
-            { number: "100+", label: "Projects Completed" },
+            { number: "350+", label: "Clients Served" },
+            { number: "500+", label: "Projects Completed" },
             { number: "5+", label: "Years Experience" },
           ].map((stat, i) => (
             <div

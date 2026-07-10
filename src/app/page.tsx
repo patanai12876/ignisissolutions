@@ -173,7 +173,7 @@ export default function Home() {
             {[
               ["500+", "Projects"],
               ["350+", "Clients"],
-              ["5+", "Years Experience"],
+              ["7+", "Years Experience"],
               ["24/7", "Support"]
             ].map((item,index)=>(
 
