@@ -2,6 +2,17 @@ import { Project } from '@/types'
 
 export const projects: Project[] = [
   {
+    id: 'evoo-one',
+    title: 'EVOO One - EV Mobility Platform',
+    category: 'web',
+    thumbnail: '/evoo/img 1.png',
+    images: ['/evoo/img 1.png', '/evoo/img 2.png', '/evoo/img 3.png', '/evoo/img 4.png'],
+    description: 'An electric vehicle company website focused on modern mobility, premium brand storytelling, and a smooth user experience. Built out of frustration with the ordinary commute, the platform highlights innovation and the future of urban travel.',
+    techStack: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Vercel'],
+    liveUrl: 'https://evoo-one.vercel.app/',
+    completedDate: '2026-07-10'
+  },
+  {
     id: 'brew-and-co',
     title: 'Brew and Co - Coffee Ordering Platform',
     category: 'web',
@@ -17,8 +28,8 @@ export const projects: Project[] = [
     title: 'FitPro - Premium Gym & Fitness Platform',
     category: 'web',
     thumbnail: '/fitpro/fitpro1.png',
-    images: ['/fitpro/fitpro1.png', '/fitpro/2.png', '/fitpro/3.png', '/fitpro/4.png ' , '/fitpro/5.png', '/fitpro/6.png', '/fitpro/7.png', '/fitpro/8.png', '/fitpro/9.png', '/fitpro/10.png',],
-    description: 'Modern gym and fitness platform with dynamic class scheduling, expert trainer profiles, and integrated contact system. Features real-time backend data fetching, responsive design, and seamless user experience. Built for fitness enthusiasts seeking professional training and community support.',
+    images: ['/fitpro/fitpro1.png', '/fitpro/2.png', '/fitpro/3.png', '/fitpro/4.png ', '/fitpro/5.png', '/fitpro/6.png', '/fitpro/7.png', '/fitpro/8.png', '/fitpro/9.png', '/fitpro/10.png'],
+    description: 'Modern gym and fitness platform with dynamic class scheduling, expert trainer profiles, and integrated contact system. Features real-time backend data fetching, responsive design, and seamless user experience.',
     techStack: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Backend API Integration', 'Vercel'],
     liveUrl: 'https://fit-pro-frontend.vercel.app/',
     completedDate: '2026-05-20'

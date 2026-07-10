@@ -26,9 +26,9 @@ export default function Portfolio() {
       
 {/* MINIMAL IMAGE MODAL */}
 {selectedProject && currentProject && (
-  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 backdrop-blur-2xl p-4">
+  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 backdrop-blur-2xl p-4 overflow-y-auto">
     
-    <div className="relative w-full max-w-6xl rounded-[32px] overflow-hidden border border-white/10 bg-slate-950 shadow-2xl shadow-black/70">
+    <div className="relative w-full max-w-6xl max-h-[95vh] overflow-hidden rounded-[32px] border border-white/10 bg-slate-950 shadow-2xl shadow-black/70">
       
       {/* Close */}
       <button
@@ -39,11 +39,11 @@ export default function Portfolio() {
       </button>
 
       {/* Image */}
-      <div className="relative overflow-hidden bg-slate-900">
+      <div className="relative overflow-hidden bg-slate-900 max-h-[70vh]">
         <img
           src={currentProject.images[currentImageIndex]}
           alt={currentProject.title}
-          className="w-full max-h-[85vh] object-cover"
+          className="w-full h-full max-h-[70vh] object-contain"
         />
 
         {/* Left Arrow */}
@@ -81,10 +81,10 @@ export default function Portfolio() {
 
     
 {/* Bottom minimal info */}
-<div className="bg-slate-950 p-8 md:p-10 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+<div className="bg-slate-950 p-8 md:p-10 flex flex-col gap-6 md:flex-row md:items-start md:justify-between overflow-y-auto pb-12">
   
   {/* Left content */}
-  <div className="space-y-4 md:max-w-2xl">
+  <div className="space-y-4 md:max-w-2xl w-full">
     <h3 className="text-2xl md:text-3xl font-semibold text-white">
       {currentProject.title}
     </h3>
@@ -106,7 +106,7 @@ export default function Portfolio() {
     </div>
   </div>
 
-  <div className="flex flex-col sm:flex-row sm:items-center sm:gap-3">
+  <div className="flex flex-col sm:flex-row sm:items-center sm:gap-3 w-full sm:w-auto pt-2 sm:pt-0">
     {currentProject.liveUrl && (
       <a
         href={currentProject.liveUrl}
