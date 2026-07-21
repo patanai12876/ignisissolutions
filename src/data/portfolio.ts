@@ -35,6 +35,19 @@ export const projects: Project[] = [
     completedDate: '2026-05-20'
   },
   {
+
+     id: 'SmileCare',
+    title: 'SmileCare - Healthy Smile, Happy Life',
+    category: 'web',
+    thumbnail: '/smile/smile 1.png',
+    images: ['/smile/smile 1.png',  '/smile/smile 2.png', '/smile/smile 3.png' ],
+    description: 'A Dental Clinic website that provides information about dental services, team members, and contact details. Features a clean design, responsive layout, and easy navigation for patients seeking dental care.',
+    techStack: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
+    liveUrl: 'https://dental-clinic-lyart-nu.vercel.app/',
+    completedDate: '2026-07-10'
+
+  },
+  {
     id: 'tradesync-platform',
     title: 'TradeSync - Copy Trading Platform',
     category: 'web',
