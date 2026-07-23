@@ -3,13 +3,13 @@ import { Project } from '@/types'
 export const projects: Project[] = [
   {
     id: 'evoo-one',
-    title: 'EVOO One - EV Mobility Platform',
+    title: 'E-bikes - EV Mobility Platform',
     category: 'web',
     thumbnail: '/evoo/img-1.png',
     images: ['/evoo/img-1.png', '/evoo/img-2.png', '/evoo/img-3.png', '/evoo/img-4.png'],
     description: 'An electric vehicle company website focused on modern mobility, premium brand storytelling, and a smooth user experience. Built out of frustration with the ordinary commute, the platform highlights innovation and the future of urban travel.',
     techStack: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Vercel'],
-    liveUrl: 'https://evoo-one.vercel.app/',
+    liveUrl: 'https://e-bikes-gamma.vercel.app/     ',
     completedDate: '2026-07-10'
   },
   {
