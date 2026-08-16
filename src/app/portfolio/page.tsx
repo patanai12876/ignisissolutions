@@ -557,14 +557,16 @@ export default function PortfolioPage() {
                     </div>
                   </div>
 
-                  <a
-                    href={selectedProject.liveUrl.trim()}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex h-fit items-center justify-center gap-2 rounded-xl bg-[#17A2C7] px-5 py-3 text-sm font-semibold text-[#0A1930] transition hover:bg-[#62d7ec]"
-                  >
-                    Visit Live Demo <ExternalLink size={16} />
-                  </a>
+                  {selectedProject.liveUrl && (
+                    <a
+                      href={selectedProject.liveUrl.trim()}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex h-fit items-center justify-center gap-2 rounded-xl bg-[#17A2C7] px-5 py-3 text-sm font-semibold text-[#0A1930] transition hover:bg-[#62d7ec]"
+                    >
+                      Visit Live Demo <ExternalLink size={16} />
+                    </a>
+                  )}
                 </div>
 
                 {selectedProject.images.length > 1 && (
