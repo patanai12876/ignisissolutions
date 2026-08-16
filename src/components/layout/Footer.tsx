@@ -1,96 +1,150 @@
 import Link from 'next/link'
-import { Facebook, Instagram, Linkedin, Twitter } from 'lucide-react'
+import {
+  ArrowUpRight,
+  Instagram,
+  Linkedin,
+  MapPin,
+  Phone,
+  Facebook,
+} from 'lucide-react'
+
+const navigation = [
+  { href: '/', label: 'Home' },
+  { href: '/about', label: 'About' },
+  { href: '/services', label: 'Services' },
+  { href: '/portfolio', label: 'Portfolio' },
+  { href: '/contact', label: 'Contact' },
+]
 
 export default function Footer() {
   const year = new Date().getFullYear()
 
   return (
-    <footer className="bg-slate-950 border-t border-white/10">
-
-      <div className="container py-16 grid md:grid-cols-3 gap-10">
-
-        {/* BRAND INFO */}
+    <footer className="border-t border-white/10 bg-[#071426] text-white">
+      <div className="mx-auto grid max-w-7xl gap-12 px-6 py-16 md:grid-cols-2 lg:grid-cols-[1.3fr_0.8fr_1.2fr]">
         <div>
-          <h2 className="text-xl font-bold mb-4">
-            Ignisis Solutions
-          </h2>
+          <Link href="/" className="inline-flex items-center">
+            <img
+              src="/images/logo.png"
+              alt="Ignisis Solutions"
+              className="h-20 w-50"
+            />
+          </Link>
 
-          <p className="text-gray-400 leading-relaxed">
-            Helping businesses grow with modern digital solutions,
-            automation and smart strategy.
+          <p className="mt-5 max-w-sm leading-relaxed text-slate-400">
+            A digital agency combining strategy, technology, design and
+            marketing to help businesses move forward with confidence.
           </p>
 
-          {/* SOCIAL MEDIA */}
-          <div className="flex gap-4 mt-6">
+          <div className="mt-6 flex gap-3">
+            <a
+              href="https://instagram.com/ignisissolutions"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visit Ignisis Solutions on Instagram"
+              className="rounded-lg border border-white/10 p-2.5 text-slate-300 transition hover:border-[#17A2C7] hover:bg-[#17A2C7] hover:text-[#0A1930]"
+            >
+              <Instagram size={18} />
+            </a>
 
-  {/* Facebook */}
-  <a
-    href="#"
-    className="p-2 rounded-lg bg-white/5 hover:bg-[#1877F2] hover:text-white transition"
-  >
-    <Facebook size={18} />
-  </a>
+            <a
+              href="https://www.linkedin.com/company/ignisis-solutions/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visit Ignisis Solutions on LinkedIn"
+              className="rounded-lg border border-white/10 p-2.5 text-slate-300 transition hover:border-[#17A2C7] hover:bg-[#17A2C7] hover:text-[#0A1930]"
+            >
+              <Linkedin size={18} />
+            </a>
 
-  {/* Instagram */}
-  <a
-    href="https://instagram.com/ignisissolutions"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="p-2 rounded-lg bg-white/5 transition hover:text-white hover:bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600"
-  >
-    <Instagram size={18} />
-  </a>
-
-  {/* LinkedIn */}
-  <a
-    href="https://www.linkedin.com/company/ignisis-solutions/"
-    className="p-2 rounded-lg bg-white/5 hover:bg-[#0A66C2] hover:text-white transition"
-  >
-    <Linkedin size={18} />
-  </a>
-
- 
-    
-
-</div>
-        </div>
-
-        {/* QUICK LINKS */}
-        <div>
-          <h3 className="font-semibold mb-4">Quick Links</h3>
-
-          <div className="space-y-2 text-gray-400">
-            <Link href="/" className="hover:text-white block">Home</Link>
-            <Link href="/about" className="hover:text-white block">About</Link>
-            <Link href="/services" className="hover:text-white block">Services</Link>
-            <Link href="/portfolio" className="hover:text-white block">Portfolio</Link>
-            <Link href="/contact" className="hover:text-white block">Contact</Link>
+            <a
+              href="https://www.facebook.com/profile.php?id=61592162813345"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visit Ignisis Solutions on Facebook"
+              className="rounded-lg border border-white/10 p-2.5 text-slate-300 transition hover:border-[#17A2C7] hover:bg-[#17A2C7] hover:text-[#0A1930]"
+            >
+              <Facebook size={18} />
+            </a>
           </div>
         </div>
 
-        {/* CTA SECTION */}
         <div>
-          <h3 className="font-semibold mb-4">Let’s Work Together</h3>
-
-          <p className="text-gray-400 mb-4">
-            Start your project with us today.
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#66d4eb]">
+            Navigate
           </p>
+
+          <div className="mt-5 space-y-3">
+            {navigation.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="block text-sm text-slate-400 transition hover:text-white"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#66d4eb]">
+            Visit or contact
+          </p>
+
+          <div className="mt-5 space-y-5">
+            <a
+              href="tel:+923025708769"
+              className="group flex items-start gap-3 text-slate-400 transition hover:text-white"
+            >
+              <Phone
+                size={18}
+                className="mt-0.5 shrink-0 text-[#17A2C7]"
+              />
+              <span>
+                <span className="block text-xs uppercase tracking-wider text-slate-500">
+                  Phone
+                </span>
+                <span className="mt-1 block text-sm">+92 302 5708769</span>
+              </span>
+            </a>
+
+            <a
+              href="https://www.google.com/maps/place/Ignisis+Solutions/data=!4m2!3m1!1s0x0:0xced23207e01bfe9d?sa=X&ved=1t:2428&ictx=111"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-start gap-3 text-slate-400 transition hover:text-white"
+            >
+              <MapPin
+                size={18}
+                className="mt-0.5 shrink-0 text-[#17A2C7]"
+              />
+              <span>
+                <span className="flex items-center gap-1 text-xs uppercase tracking-wider text-slate-500 group-hover:text-[#66d4eb]">
+                  Lahore, Pakistan <ArrowUpRight size={12} />
+                </span>
+                <span className="mt-1 block max-w-xs text-sm leading-relaxed">
+                  280 Model, Block N Town, Lahore, 54700
+                </span>
+              </span>
+            </a>
+          </div>
 
           <Link
             href="/contact"
-            className="inline-block px-5 py-3 rounded-lg bg-gradient-to-r from-indigo-600 to-blue-500 hover:scale-105 transition"
+            className="mt-7 inline-flex items-center gap-2 border-b border-[#17A2C7] pb-1 text-sm font-semibold text-white transition hover:text-[#66d4eb]"
           >
-            Get Started
+            Start a Project <ArrowUpRight size={16} />
           </Link>
         </div>
-
       </div>
 
-      {/* BOTTOM BAR */}
-      <div className="border-t border-white/10 py-6 text-center text-gray-500 text-sm">
-        © {year} Ignisis Solutions. All rights reserved.
+      <div className="border-t border-white/10">
+        <div className="mx-auto flex max-w-7xl flex-col gap-2 px-6 py-6 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+          <p>© {year} Ignisis Solutions. All rights reserved.</p>
+          <p>Built for businesses ready to move forward.</p>
+        </div>
       </div>
-
     </footer>
   )
 }

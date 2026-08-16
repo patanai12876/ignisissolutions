@@ -12,6 +12,29 @@ export const projects: Project[] = [
     liveUrl: 'https://e-bikes-gamma.vercel.app/     ',
     completedDate: '2026-07-10'
   },
+   {
+    id: 'SZ-Tensile',
+    title: 'S.Z Tensile - Shade Services',
+    category: 'web',
+    thumbnail: '/shade/sz1.png',
+    images: ['/shade/sz1.png', '/shade/sz2.png', '/shade/sz3.png', '/shade/sz4.png'],
+    description: 'S.Z Tensile provides high-quality shade solutions for residential and commercial properties. Our platform showcases our products, services, and customer testimonials.',
+    techStack: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Vercel'],
+    liveUrl: 'https://www.sztensile.com/     ',
+    completedDate: '2026-08-12'
+  },
+ 
+   {
+    id: 'char-ember',
+    title: 'Char Ember - Fast food & Online Ordering Platform',
+    category: 'web',
+    thumbnail: '/food/pic1.png',
+    images: ['/food/pic1.png', '/food/pic2.png', '/food/pic3.png', '/food/pic4.png'],
+    description: 'Char & Ember is a fast food and online ordering platform that allows users to browse menus, customize orders, and make payments seamlessly.',
+    techStack: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Stripe', 'API Integration'],
+    liveUrl: 'https://char-ember.vercel.app/',
+    completedDate: '2025-09-29'
+  },
   {
     id: 'brew-and-co',
     title: 'Brew and Co - Coffee Ordering Platform',

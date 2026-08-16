@@ -1,298 +1,440 @@
-"use client";
+'use client'
 
-import React, { useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
+import Link from 'next/link'
+import {
+  ArrowRight,
+  Check,
+  Code2,
+  Globe2,
+  Layers3,
+  Megaphone,
+  Palette,
+  Rocket,
+  Sparkles,
+  Target,
+  X,
+  Handshake,
+  LifeBuoy,
+  ShieldCheck,
+} from 'lucide-react'
+import { AnimatePresence, motion } from 'framer-motion'
+import { useEffect, useState } from 'react'
+
 
 const services = [
   {
-    title: "Web Development",
-    desc: "High-performance scalable websites & web apps.",
-    image: "/images/web1.jpg",
-    features: [
-      "Custom Website Development",
-      "Responsive Design",
-      "SEO Optimization",
-      "Fast Performance",
+    id: 'web-dev',
+    icon: Code2,
+    title: 'Web Development',
+    tagline: 'Fast, scalable websites and web apps.',
+    description:
+      'We build responsive, high-performance websites and web applications using modern frameworks — built to load fast, rank well and represent your business properly on every device.',
+    includes: [
+      'Custom-designed, responsive website (not a template)',
+      'Next.js / React build for speed and SEO',
+      'CMS or code-based content structure, your choice',
+      'On-page SEO foundation — metadata, sitemap, semantic HTML',
+      'Performance optimization and Core Web Vitals tuning',
+      'Deployment and launch support',
     ],
+    idealFor: 'Businesses that need a new website or a redesign that actually converts visitors.',
+    color: 'from-cyan-400/20 to-blue-500/5',
   },
   {
-    title: "Digital Marketing",
-    desc: "SEO, ads and growth strategies.",
-    image: "/images/digital.jpg",
-    features: [
-      "SEO Optimization",
-      "Paid Ads Campaigns",
-      "Social Media Growth",
-      "Analytics & Reporting",
+    id: 'ecommerce',
+    icon: Globe2,
+    title: 'E-commerce Solutions',
+    tagline: 'Stores built to sell and scale.',
+    description:
+      'Conversion-focused online stores that make it easy for customers to browse, choose and check out — built to integrate cleanly with your inventory and payment operations.',
+    includes: [
+      'Product catalog and category structure',
+      'Cart, checkout and payment gateway integration',
+      'Order and inventory-ready architecture',
+      'Mobile-first, fast-loading product pages',
+      'Search and filtering for larger catalogs',
+      'Analytics and conversion tracking setup',
     ],
+    idealFor: 'Businesses launching or upgrading an online store.',
+    color: 'from-blue-500/20 to-cyan-400/5',
   },
   {
-    title: "Branding",
-    desc: "Strong brand identity with modern visuals.",
-    image: "/images/branding.png",
-    features: [
-      "Logo Design",
-      "Brand Guidelines",
-      "Color System",
-      "Visual Identity",
+    id: 'software',
+    icon: Layers3,
+    title: 'Custom Software Development',
+    tagline: 'Tools built around how you work.',
+    description:
+      'When off-the-shelf software doesn\u2019t fit, we build internal tools, dashboards or platforms tailored to your actual workflow — not the other way around.',
+    includes: [
+      'Requirements discovery and technical planning',
+      'Custom web application or internal tool',
+      'Database design (PostgreSQL / Prisma)',
+      'API integrations with your existing systems',
+      'Role-based access where needed',
+      'Documentation and handover support',
     ],
+    idealFor: 'Businesses with a workflow or process that generic software doesn\u2019t solve.',
+    color: 'from-indigo-500/20 to-blue-500/5',
   },
   {
-    title: "Social Media Management",
-    desc: "Social presence building to grow engagement and leads.",
-    image: "/images/sMM.png",
-    features: [
-      "Content Strategy",
-      "Post Scheduling",
-      "Community Engagement",
-      "Performance Reporting",
+    id: 'marketing',
+    icon: Rocket,
+    title: 'Digital Marketing',
+    tagline: 'Campaigns connected to real goals.',
+    description:
+      'Marketing that\u2019s tied to business outcomes, not vanity metrics — getting your business in front of the right audience with a clear plan behind every campaign.',
+    includes: [
+      'Audience and competitor research',
+      'Search and social campaign strategy',
+      'Paid advertising setup and management',
+      'Content and messaging direction',
+      'Monthly performance reporting',
+      'Ongoing optimization based on results',
     ],
+    idealFor: 'Businesses that need consistent, qualified leads — not just traffic.',
+    color: 'from-cyan-400/20 to-indigo-500/5',
   },
   {
-    title: "Business Consultation",
-    desc: "Strategic growth planning for businesses.",
-    image: "/images/business1.jpg",
-    features: [
-      "Business Strategy",
-      "Growth Planning",
-      "Process Optimization",
-      "Market Analysis",
+    id: 'seo-consultancy',
+    icon: Target,
+    title: 'Business Consultancy',
+    tagline: 'Strategy behind the technology.',
+    description:
+      'Guidance on where to invest your digital budget — website, marketing, branding or software — based on what will actually move your business forward.',
+    includes: [
+      'Current digital presence audit',
+      'Prioritized roadmap of what to build first',
+      'Budget and timeline guidance',
+      'Technology and platform recommendations',
+      'Ongoing advisory as your business grows',
     ],
+    idealFor: 'Business owners who know they need to invest in digital, but not sure where to start.',
+    color: 'from-blue-500/20 to-indigo-500/5',
   },
   {
-    title: "E-Commerce Solutions",
-    desc: "Scalable online stores with secure checkout.",
-    image: "/images/commerce.webp",
-    features: [
-      "Online Store Development",
-      "Payment Integration",
-      "Admin Dashboard",
-      "Secure Checkout",
+    id: 'branding',
+    icon: Palette,
+    title: 'Branding',
+    tagline: 'Identities people remember and trust.',
+    description:
+      'A brand system that makes every customer touchpoint — your website, packaging, socials, ads — feel like one confident, consistent business.',
+    includes: [
+      'Brand strategy and positioning',
+      'Logo and visual identity system',
+      'Color palette and typography guidelines',
+      'Brand guideline document',
+      'Business collateral (cards, letterhead, etc.)',
+      'Social media brand kit',
     ],
+    idealFor: 'New businesses building an identity, or existing ones outgrowing theirs.',
+    color: 'from-violet-500/20 to-indigo-500/5',
   },
-];
+  {
+    id: 'graphic-design',
+    icon: Sparkles,
+    title: 'Graphic Designing',
+    tagline: 'On-brand design, every touchpoint.',
+    description:
+      'Ongoing creative support for the visuals your business needs day-to-day — kept consistent with your brand system, not designed in isolation.',
+    includes: [
+      'Social media post and ad creatives',
+      'Marketing and promotional material',
+      'Print design (brochures, banners, packaging)',
+      'Presentation and pitch deck design',
+      'Consistent use of brand guidelines',
+    ],
+    idealFor: 'Businesses that need regular, on-brand creative without hiring in-house.',
+    color: 'from-indigo-500/20 to-violet-500/5',
+  },
+]
 
-const process = [
-  { title: "Discovery", desc: "Understanding your business and goals" },
-  { title: "Strategy", desc: "Planning the best approach" },
-  { title: "Design", desc: "Creating UI/UX and structure" },
-  { title: "Development", desc: "Building the solution" },
-  { title: "Launch", desc: "Deploy and optimize" },
-];
+export default function Services() {
+  const [activeId, setActiveId] = useState<string | null>(null)
+  const active = services.find((s) => s.id === activeId) || null
 
-export default function ServicesPage() {
-  const [selected, setSelected] = useState<{
-    title: string;
-    desc: string;
-    image: string;
-    features: string[];
-  } | null>(null);
-  const [activeStep, setActiveStep] = useState(0);
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setActiveId(null)
+    }
+    window.addEventListener('keydown', onKey)
+    document.body.style.overflow = activeId ? 'hidden' : ''
+    return () => {
+      window.removeEventListener('keydown', onKey)
+      document.body.style.overflow = ''
+    }
+  }, [activeId])
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 text-white overflow-hidden relative">
-      {/* Global glow background - always visible */}
-      <div className="absolute inset-0 z-0 bg-gradient-to-r from-indigo-600/20 via-blue-500/15 to-cyan-500/20 blur-3xl opacity-30"></div>
-      
-      {/* Content wrapper */}
-      <div className="relative z-10 animate-fadeIn">
-      <div className="max-w-7xl mx-auto px-6 py-20 space-y-24 relative">
-
-        {/* HEADING */}
-        <section className="text-center max-w-3xl mx-auto mt-16 relative animate-slideUp" style={{ animationDelay: '0.1s' }}>
-          <div className="absolute -inset-20 bg-gradient-to-b from-indigo-600/20 to-transparent blur-2xl z-0 opacity-30"></div>
-          
-          <p className="text-sm text-blue-400 mb-4 tracking-wide">
-            COMPREHENSIVE SOLUTIONS
-          </p>
-          
-          <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-            Our{" "}
-            <span className="bg-gradient-to-r from-indigo-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent">
-              Services
-            </span>
-          </h1>
-          <p className="mt-6 text-lg text-gray-300 max-w-2xl mx-auto">
-            We provide end-to-end digital solutions tailored to help businesses grow, scale, and succeed in the modern digital landscape.
-          </p>
-        </section>
-
-        {/* SERVICES */}
-        <section className="relative animate-slideUp" style={{ animationDelay: '0.3s' }}>
-          <h2 className="text-3xl md:text-4xl font-bold mb-16 text-center">
-            What We Offer
-          </h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((s: {title: string; desc: string; image: string; features: string[]}, i: number) => (
-              <div
-                key={i}
-                onClick={() => setSelected(s)}
-                className="group cursor-pointer relative h-full"
-              >
-                <div className="absolute -inset-0.5 bg-gradient-to-r from-indigo-600/20 to-blue-600/20 rounded-2xl opacity-0 group-hover:opacity-100 blur-lg transition duration-300"></div>
-                
-                <div className="relative bg-slate-800/50 border border-slate-700 rounded-2xl overflow-hidden hover:border-indigo-500/60 transition-all duration-300 backdrop-blur-sm h-full flex flex-col">
-                  <div className="relative h-[200px] w-full overflow-hidden flex-shrink-0">
-                    <Image
-                      src={s.image}
-                      alt={s.title}
-                      fill
-                      className="object-cover opacity-75 group-hover:opacity-100 group-hover:scale-110 transition duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent" />
-                  </div>
-
-                  <div className="p-6 flex flex-col flex-grow">
-                    <h3 className="text-lg font-semibold group-hover:text-indigo-400 transition">{s.title}</h3>
-                    <p className="text-gray-400 text-sm mt-2 flex-grow">{s.desc}</p>
-                    <div className="mt-4 text-indigo-400 text-sm opacity-0 group-hover:opacity-100 transition">Learn more →</div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* PROCESS (CLICKABLE) */}
-        <section className="relative py-12">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold">
-              Our{" "}
-              <span className="bg-gradient-to-r from-indigo-400 to-blue-400 bg-clip-text text-transparent">
-                Process
-              </span>
-            </h2>
-            <p className="text-gray-400 mt-4">How we transform your ideas into reality</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-            {process.map((step: any, i: number) => {
-              const isActive = activeStep === i;
-
-              return (
-                <div
-                  key={i}
-                  onClick={() => setActiveStep(i)}
-                  className={`cursor-pointer rounded-xl p-6 border transition-all duration-300 backdrop-blur-sm ${
-                    isActive
-                      ? "bg-gradient-to-br from-indigo-600/30 to-blue-600/20 border-indigo-500 shadow-lg shadow-indigo-500/20 scale-105"
-                      : "bg-slate-800/40 border-slate-700 hover:border-indigo-400/50 hover:bg-slate-800/60"
-                  }`}
-                >
-                  <div
-                    className={`text-4xl font-bold mb-3 ${
-                      isActive ? "text-indigo-400" : "text-gray-600"
-                    }`}
-                  >
-                    {i + 1}
-                  </div>
-
-                  <h3 className="font-semibold text-lg">{step.title}</h3>
-
-                  <p className="text-gray-400 text-sm mt-3 leading-relaxed">
-                    {step.desc}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-        </section>
-
-        {/* CTA SECTION */}
-        <section className="relative py-16">
-          <div className="absolute inset-0 bg-gradient-to-r from-indigo-600/10 via-blue-600/10 to-cyan-600/10 rounded-3xl blur-2xl -z-10"></div>
-          
-          <div className="bg-gradient-to-r from-slate-800/60 to-slate-900/60 border border-slate-700/50 rounded-3xl p-12 md:p-16 text-center backdrop-blur-xl">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Ready to Transform Your Business?
-            </h2>
-            <p className="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
-              Let&apos;s work together to bring your vision to life. Contact us today to discuss your project and get a personalized consultation.
-            </p>
-            <Link href="/contact">
-              <button className="px-10 py-4 bg-gradient-to-r from-indigo-600 to-blue-500 rounded-xl font-semibold hover:shadow-lg hover:shadow-indigo-500/30 hover:scale-105 transition duration-300">
-                Get Started Now
-              </button>
-            </Link>
-          </div>
-        </section>
-
-      </div>
-
-      {/* MODAL */}
-      {selected && (
-        <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 px-4">
-
-          <div className="bg-slate-900 border border-slate-700 rounded-2xl max-w-4xl w-full p-6 relative grid grid-cols-1 md:grid-cols-2 gap-6">
-
-            <button
-              onClick={() => setSelected(null)}
-              className="absolute top-3 right-3 text-gray-400 hover:text-white z-10"
-            >
-              ✕
-            </button>
-
-            {/* Left: Image */}
-            <div className="relative h-56 md:h-[360px] w-full rounded-xl overflow-hidden">
-              <Image src={selected.image} alt={selected.title} fill className="object-cover" />
-            </div>
-
-            {/* Right: Details */}
-            <div className="flex flex-col justify-between">
-              <div>
-                <h2 className="text-2xl font-bold mb-3">{selected.title}</h2>
-
-                <p className="text-gray-300 mb-4">{selected.desc}</p>
-
-                <div className="mb-4">
-                  <h4 className="text-sm font-semibold text-white mb-2">Key features</h4>
-                  <div className="space-y-2">
-                    {selected.features.map((f: string, i: number) => (
-                      <div key={i} className="flex items-center gap-3 text-gray-300 text-sm">
-                        <span className="text-indigo-500">✔</span>
-                        {f}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-2 gap-3 mb-4 text-sm">
-                  <div>
-                    <div className="text-gray-400">Ideal for</div>
-                    <div className="text-white font-medium">Startups, SMEs, Agencies</div>
-                  </div>
-                  <div>
-                    <div className="text-gray-400">Typical timeline</div>
-                    <div className="text-white font-medium">4 - 8 weeks</div>
-                  </div>
-                </div>
-
-                <div className="mb-4">
-                  <div className="text-gray-400 text-sm">Starting from</div>
-                  <div className="text-white font-semibold">Contact for pricing</div>
-                </div>
-              </div>
-
-              <div className="flex gap-3 mt-4">
-                <Link href={`/contact?service=${encodeURIComponent(selected.title)}`}>
-                  <button className="flex-1 px-4 py-2 bg-gradient-to-r from-indigo-600 to-blue-500 rounded-lg font-semibold hover:scale-105 transition">
-                    Get Started
-                  </button>
-                </Link>
-
-                <Link href={`/contact?service=${encodeURIComponent(selected.title)}&intent=proposal`} className="flex-1">
-                  <button className="w-full px-4 py-2 border border-white/10 rounded-lg text-sm text-white hover:bg-white/5 transition">Request Proposal</button>
-                </Link>
-              </div>
-            </div>
-
-          </div>
+    <main className="overflow-x-hidden bg-[#0A1930] pt-24 text-white">
+      {/* PAGE HEADER */}
+      <section className="relative overflow-hidden">
+        <div className="pointer-events-none absolute inset-0">
+          <div className="absolute left-[8%] top-0 h-[24rem] w-[24rem] rounded-full bg-blue-600/15 blur-[120px]" />
+          <div className="absolute right-[-6rem] top-6 h-[26rem] w-[26rem] rounded-full bg-[#17A2C7]/10 blur-[130px]" />
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:48px_48px]" />
         </div>
-      )}
 
+        <div className="relative mx-auto max-w-7xl px-6 pb-14 pt-10 lg:pb-16 lg:pt-16">
+          <motion.p
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-xs font-semibold uppercase tracking-[0.18em] text-[#66d4eb]"
+          >
+            What We Do
+          </motion.p>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.05 }}
+            className="mt-5 max-w-3xl text-4xl font-bold leading-[1.15] sm:text-5xl lg:text-6xl"
+          >
+            Seven disciplines.{' '}
+            <span className="bg-gradient-to-r from-[#66d4eb] via-[#3da7e9] to-[#7187ff] bg-clip-text text-transparent">
+              One connected team.
+            </span>
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.1 }}
+            className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-300"
+          >
+            Click any service to see exactly what&apos;s included — no vague
+            promises, no scope surprises later.
+          </motion.p>
+        </div>
+      </section>
+
+      {/* SERVICE CARDS GRID */}
+      <section className="mx-auto max-w-7xl px-6 pb-24">
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {services.map(({ id, icon: Icon, title, tagline, color }, index) => (
+            <motion.button
+              key={id}
+              type="button"
+              onClick={() => setActiveId(id)}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.06 }}
+              whileHover={{ y: -6 }}
+              className={`group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br ${color} p-6 text-left transition hover:border-[#17A2C7]/50`}
+            >
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#0A1930]/60 text-[#66d4eb]">
+                <Icon size={22} />
+              </div>
+
+              <h3 className="mt-6 text-xl font-semibold">{title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">
+                {tagline}
+              </p>
+
+              <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[#66d4eb] transition group-hover:gap-3">
+                See what&apos;s included
+                <ArrowRight size={15} />
+              </span>
+            </motion.button>
+          ))}
+        </div>
+      </section>
+      {/* HOW WE WORK — process timeline */}
+<section className="border-y border-white/10 bg-[#08182e]">
+  <div className="mx-auto max-w-7xl px-6 py-24">
+    <div className="mx-auto max-w-2xl text-center">
+      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#66d4eb]">
+        How we work
+      </p>
+      <h2 className="mt-4 text-4xl font-bold sm:text-5xl">
+        Same process, every service.
+      </h2>
+      <p className="mt-5 leading-relaxed text-slate-400">
+        Whatever you bring us — a website, a brand, a software idea — it moves
+        through the same clear stages, so you always know what happens next.
+      </p>
+    </div>
+
+    <div className="relative mt-16">
+      {/* connecting line */}
+
+      <div className="grid gap-8 md:grid-cols-1 lg:grid-cols-5">
+        {[
+          { step: '01', title: 'Discovery call', text: 'We learn your business, goals and the real problem behind the request.' },
+          { step: '02', title: 'Proposal & scope', text: 'You get a clear scope, timeline and cost — no vague estimates.' },
+          { step: '03', title: 'Design & build', text: 'Design, development and content are built together, not in isolation.' },
+          { step: '04', title: 'Review & refine', text: 'You review real progress at each milestone, not just at the end.' },
+          { step: '05', title: 'Launch & support', text: 'We launch with you and stay reachable for what comes after.' },
+        ].map(({ step, title, text }, index) => (
+          <motion.div
+            key={step}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: index * 0.1 }}
+            className="relative flex gap-4 lg:flex-col lg:gap-0"
+          >
+            <span className="relative z-10 flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-[#17A2C7]/30 bg-[#0A1930] text-sm font-bold text-[#66d4eb] shadow-[0_0_25px_rgba(23,162,199,0.12)]">
+              {step}
+            </span>
+            <div className="pt-1 lg:pt-5">
+              <h3 className="font-semibold">{title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-slate-400">
+                {text}
+              </p>
+            </div>
+          </motion.div>
+        ))}
       </div>
     </div>
-  );
+  </div>
+</section>
+
+{/* WHY WORK WITH US — qualitative facts, no fabricated numbers */}
+<section className="mx-auto max-w-7xl px-6 py-24">
+  <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+    {[
+      { icon: Handshake, title: 'Direct communication', text: 'You talk to the people doing the work — not an account manager relaying messages.' },
+      { icon: ShieldCheck, title: 'Fixed scope, no surprises', text: 'What\u2019s agreed is what\u2019s delivered. Scope changes are discussed, not silently added.' },
+      { icon: Layers3, title: 'One team, every discipline', text: 'Design, development, branding and marketing come from the same team — not four vendors.' },
+      { icon: LifeBuoy, title: 'Support after launch', text: 'Launch isn\u2019t the finish line. We stay available for fixes, updates and next steps.' },
+    ].map(({ icon: Icon, title, text }, index) => (
+      <motion.div
+        key={title}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: index * 0.08 }}
+        whileHover={{ y: -6 }}
+        className="rounded-2xl border border-white/10 bg-white/[0.025] p-6 transition hover:border-[#17A2C7]/40"
+      >
+        <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#17A2C7]/15 text-[#66d4eb]">
+          <Icon size={20} />
+        </div>
+        <h3 className="mt-5 text-lg font-semibold">{title}</h3>
+        <p className="mt-2 text-sm leading-relaxed text-slate-400">{text}</p>
+      </motion.div>
+    ))}
+  </div>
+</section>
+
+      {/* FINAL CTA */}
+      {/* CTA */}
+<section className="bg-[#0A1930] px-4 py-10 sm:px-6 lg:py-14">
+  <div className="relative mx-auto max-w-7xl overflow-hidden rounded-3xl bg-[#123C6B] px-6 py-20 text-center lg:py-24">
+
+    <motion.div
+      animate={{ scale: [1, 1.12, 1] }}
+      transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
+      className="pointer-events-none absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#17A2C7]/20 blur-3xl"
+    />
+
+    <div className="relative">
+      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#66d4eb]">
+        Not sure which service you need?
+      </p>
+
+      <h2 className="mx-auto mt-5 max-w-3xl text-4xl font-bold sm:text-5xl">
+        Tell us the problem. We&apos;ll figure out the service.
+      </h2>
+
+      <Link
+        href="/contact"
+        className="mt-8 inline-flex items-center gap-2 rounded-xl bg-[#17A2C7] px-6 py-3.5 font-semibold text-[#0A1930] transition hover:-translate-y-0.5 hover:bg-[#5cd5eb]"
+      >
+        Discuss Your Project
+        <ArrowRight size={18} />
+      </Link>
+    </div>
+  </div>
+</section>
+
+      {/* SERVICE DETAIL MODAL */}
+      <AnimatePresence>
+        {active && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6"
+          >
+            {/* backdrop */}
+            <motion.div
+              onClick={() => setActiveId(null)}
+              className="absolute inset-0 bg-[#050d1c]/80 backdrop-blur-sm"
+            />
+
+            {/* panel */}
+            <motion.div
+              initial={{ opacity: 0, y: 24, scale: 0.97 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 16, scale: 0.97 }}
+              transition={{ duration: 0.25, ease: 'easeOut' }}
+className="custom-scrollbar relative max-h-[85vh] w-full max-w-3xl overflow-y-auto rounded-2xl border border-white/10 bg-[#0d2542] shadow-2xl"            >
+              <div className={`relative bg-gradient-to-br ${active.color} p-7 sm:p-9`}>
+                <button
+                  type="button"
+                  onClick={() => setActiveId(null)}
+                  className="absolute right-5 top-5 flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-[#0A1930]/60 text-slate-300 transition hover:border-[#17A2C7]/50 hover:text-white"
+                  aria-label="Close"
+                >
+                  <X size={17} />
+                </button>
+
+                <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-[#0A1930]/60 text-[#66d4eb]">
+                  <active.icon size={26} />
+                </div>
+
+                <h3 className="mt-6 max-w-md text-3xl font-bold">
+                  {active.title}
+                </h3>
+                <p className="mt-3 max-w-lg leading-relaxed text-slate-300">
+                  {active.description}
+                </p>
+              </div>
+
+              <div className="p-7 sm:p-9">
+                <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[#66d4eb]">
+                  What&apos;s included
+                </p>
+
+                <div className="mt-4 grid gap-3 sm:grid-cols-2">
+                  {active.includes.map((item) => (
+                    <div
+                      key={item}
+                      className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/[0.025] p-4"
+                    >
+                      <Check size={16} className="mt-0.5 shrink-0 text-[#17A2C7]" />
+                      <span className="text-sm leading-relaxed text-slate-200">
+                        {item}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="mt-7 rounded-xl border border-[#17A2C7]/20 bg-[#17A2C7]/5 p-4">
+                  <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[#66d4eb]">
+                    Ideal for
+                  </p>
+                  <p className="mt-2 text-sm leading-relaxed text-slate-200">
+                    {active.idealFor}
+                  </p>
+                </div>
+
+                <Link
+                  href="/contact"
+                  className="mt-7 inline-flex items-center gap-2 rounded-xl bg-[#17A2C7] px-6 py-3.5 font-semibold text-[#0A1930] transition hover:-translate-y-0.5 hover:bg-[#5cd5eb]"
+                >
+                  Discuss This Service
+                  <ArrowRight size={18} />
+                </Link>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </main>
+  )
 }
