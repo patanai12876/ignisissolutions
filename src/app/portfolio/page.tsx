@@ -402,14 +402,16 @@ export default function PortfolioPage() {
                       View Gallery <ArrowRight size={15} />
                     </button>
 
-                    <a
-                      href={project.liveUrl.trim()}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 text-sm font-medium text-slate-400 transition hover:text-white"
-                    >
-                      Live Demo <ArrowUpRight size={14} />
-                    </a>
+                    {project.liveUrl && (
+                      <a
+                        href={project.liveUrl.trim()}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 text-sm font-medium text-slate-400 transition hover:text-white"
+                      >
+                        Live Demo <ArrowUpRight size={14} />
+                      </a>
+                    )}
                   </div>
                 </div>
               </motion.article>
