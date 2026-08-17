@@ -23,51 +23,52 @@ export default function Footer() {
     <footer className="border-t border-white/10 bg-[#071426] text-white">
       <div className="mx-auto grid max-w-7xl gap-12 px-6 py-16 md:grid-cols-2 lg:grid-cols-[1.3fr_0.8fr_1.2fr]">
         <div>
-          <Link href="/" className="inline-flex items-center">
-            <img
-              src="/images/logo.png"
-              alt="Ignisis Solutions"
-              className="h-20 w-50"
-            />
-          </Link>
+  <Link href="/" className="inline-flex items-center -ml-8">
+    <img
+      src="/images/logo.png"
+      alt="Ignisis Solutions"
+      className="h-20 w-auto object-contain object-left"
+    />
+  </Link>
 
-          <p className="mt-5 max-w-sm leading-relaxed text-slate-400">
-            A digital agency combining strategy, technology, design and
-            marketing to help businesses move forward with confidence.
-          </p>
+  <p className="mt-5 max-w-sm leading-relaxed text-slate-400">
+    A digital agency combining strategy, technology, design and
+    marketing to help businesses move forward with confidence.
+  </p>
 
-          <div className="mt-6 flex gap-3">
-            <a
-              href="https://instagram.com/ignisissolutions"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Visit Ignisis Solutions on Instagram"
-              className="rounded-lg border border-white/10 p-2.5 text-slate-300 transition hover:border-[#17A2C7] hover:bg-[#17A2C7] hover:text-[#0A1930]"
-            >
-              <Instagram size={18} />
-            </a>
+  <div className="mt-6 flex gap-3">
+      <a
+      href="https://www.facebook.com/profile.php?id=61592162813345"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Visit Ignisis Solutions on Facebook"
+      className="rounded-lg border border-white/10 p-2.5 text-slate-300 transition hover:border-[#17A2C7] hover:bg-[#17A2C7] hover:text-[#0A1930]"
+    >
+      <Facebook size={18} />
+    </a>
+    <a
+      href="https://instagram.com/ignisissolutions"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Visit Ignisis Solutions on Instagram"
+      className="rounded-lg border border-white/10 p-2.5 text-slate-300 transition hover:border-[#17A2C7] hover:bg-[#17A2C7] hover:text-[#0A1930]"
+    >
+      <Instagram size={18} />
+    </a>
 
-            <a
-              href="https://www.linkedin.com/company/ignisis-solutions/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Visit Ignisis Solutions on LinkedIn"
-              className="rounded-lg border border-white/10 p-2.5 text-slate-300 transition hover:border-[#17A2C7] hover:bg-[#17A2C7] hover:text-[#0A1930]"
-            >
-              <Linkedin size={18} />
-            </a>
+    <a
+      href="https://www.linkedin.com/company/ignisis-solutions/"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Visit Ignisis Solutions on LinkedIn"
+      className="rounded-lg border border-white/10 p-2.5 text-slate-300 transition hover:border-[#17A2C7] hover:bg-[#17A2C7] hover:text-[#0A1930]"
+    >
+      <Linkedin size={18} />
+    </a>
 
-            <a
-              href="https://www.facebook.com/profile.php?id=61592162813345"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Visit Ignisis Solutions on Facebook"
-              className="rounded-lg border border-white/10 p-2.5 text-slate-300 transition hover:border-[#17A2C7] hover:bg-[#17A2C7] hover:text-[#0A1930]"
-            >
-              <Facebook size={18} />
-            </a>
-          </div>
-        </div>
+  
+  </div>
+</div>
 
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#66d4eb]">
@@ -124,7 +125,7 @@ export default function Footer() {
                   Lahore, Pakistan <ArrowUpRight size={12} />
                 </span>
                 <span className="mt-1 block max-w-xs text-sm leading-relaxed">
-                  280 Model, Block N Town, Lahore, 54700
+                  280 N Block, Model Town, Lahore, 54700
                 </span>
               </span>
             </a>

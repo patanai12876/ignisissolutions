@@ -62,7 +62,7 @@ export default function Navbar() {
         <div className="hidden lg:block">
           <Link
             href="/contact"
-            className="inline-flex items-center justify-center rounded-xl bg-[#17A2C7] px-5 py-2.5 text-sm font-semibold text-[#0A1930] transition hover:-translate-y-0.5 hover:bg-[#48c4e0] hover:shadow-[0_8px_24px_rgba(23,162,199,0.3)]"
+            className="inline-flex items-center justify-center rounded-xl bg-[#17A2C7] px-5 py-2.5 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#48c4e0] hover:shadow-[0_8px_24px_rgba(23,162,199,0.3)]"
           >
             Start a Project
           </Link>

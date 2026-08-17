@@ -135,7 +135,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:48px_48px]" />
         </div>
 
-        <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-6 pb-20 pt-14 lg:grid-cols-2 lg:pb-28 lg:pt-24">
+        <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-6 py-24 lg:grid-cols-2">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
@@ -154,14 +154,14 @@ export default function Home() {
 
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-slate-300">
               Ignisis Solutions helps businesses build stronger websites,
-              brands, software and marketing systems—so every digital effort
+              brands, software and marketing systems so every digital effort
               moves in the same direction.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 rounded-xl bg-[#17A2C7] px-6 py-3.5 font-semibold text-[#0A1930] transition hover:-translate-y-0.5 hover:bg-[#5cd5eb] hover:shadow-[0_10px_28px_rgba(23,162,199,0.25)]"
+                className="inline-flex items-center gap-2 rounded-xl bg-[#17A2C7] px-6 py-3.5 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#5cd5eb] hover:shadow-[0_10px_28px_rgba(23,162,199,0.25)]"
               >
                 Start a Project
                 <ArrowRight size={18} />
@@ -561,7 +561,7 @@ export default function Home() {
       </section>
 
       {/* SERVICES */}
-      <section className="mx-auto max-w-7xl px-6 py-24">
+      <section className="mx-auto max-w-7xl px-6 py-24 pt-5">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -576,7 +576,7 @@ export default function Home() {
           </h2>
           <p className="mt-5 leading-relaxed text-slate-400">
             Your business may need better technology, clearer branding, stronger
-            marketing—or all three working together. This is where we help.
+            marketing or all three working together. This is where we help.
           </p>
         </motion.div>
 
@@ -685,7 +685,7 @@ export default function Home() {
               </h2>
               <p className="mt-5 leading-relaxed text-slate-400">
                 Explore selected work across mobility, food, fitness and more.
-                Each project begins with a different business need—and ends with
+                Each project begins with a different business need and ends with
                 a clearer digital experience.
               </p>
             </div>
@@ -860,7 +860,7 @@ export default function Home() {
       <Testimonials />
 
      {/* FINAL CTA */}
-<section className="bg-[#0A1930] px-6 py-12 lg:py-16">
+<section className="bg-[#0A1930] px-6 py-24">
   <div className="relative mx-auto max-w-5xl overflow-hidden rounded-3xl bg-[#123C6B] px-6 py-14 text-center lg:px-10 lg:py-16">
     
     <motion.div

@@ -6,29 +6,34 @@ import { ChevronLeft, ChevronRight, Quote } from 'lucide-react'
 
 const testimonials = [
   {
-    quote: 'Add SECO’s approved client feedback here before publishing.',
-    name: 'SECO Team',
-    role: 'Lahore, Pakistan',
+    quote:
+      'Working with Ignisis Solutions was a smooth and professional experience. They understood our requirements quickly and delivered a modern digital presence that represents our construction business really well.',
+    name: 'Seco',
+    role: 'Construction Company',
   },
   {
-    quote: 'Add a verified local client review here before publishing.',
-    name: 'Local Client 02',
-    role: 'Pakistan',
+    quote:
+      'Ignisis Solutions did an excellent job understanding our brand and presenting our E-bike business in a clean and modern way. The communication was clear throughout the project and we are very happy with the final result.',
+    name: 'Evoo',
+    role: 'E-Bikes Company',
   },
   {
-    quote: 'Add a verified local client review here before publishing.',
-    name: 'Local Client 03',
-    role: 'Pakistan',
+    quote:
+      'The team understood our business and created a professional online presence that reflects the quality of our tensile shade solutions. The design is clean, modern and easy for our customers to navigate.',
+    name: 'Tensile Shades',
+    role: 'Tensile Shades Company',
   },
   {
-    quote: 'Add a verified international client review here before publishing.',
-    name: 'International Client 01',
-    role: 'International Client',
+    quote:
+      'Ignisis Solutions turned our ideas into a professional digital experience that feels both modern and practical. They were responsive, creative and paid attention to the small details that made a big difference.',
+    name: 'TTT Global Services',
+    role: 'International Compnay',
   },
   {
-    quote: 'Add a verified international client review here before publishing.',
-    name: 'International Client 02',
-    role: 'International Client',
+    quote:
+      'From the initial discussion to the final delivery, the process was straightforward and well organized. The team brought a fresh perspective to our brand and delivered a website that looks professional and works beautifully.',
+    name: 'Client',
+    role: 'Growing Business',
   },
 ]
 

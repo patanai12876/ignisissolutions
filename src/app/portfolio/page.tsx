@@ -157,7 +157,7 @@ export default function PortfolioPage() {
                     .getElementById('all-projects')
                     ?.scrollIntoView({ behavior: 'smooth' })
                 }
-                className="inline-flex items-center gap-2 rounded-xl bg-[#17A2C7] px-6 py-3.5 font-semibold text-[#0A1930] transition hover:-translate-y-0.5 hover:bg-[#62d7ec]"
+                className="inline-flex items-center gap-2 rounded-xl bg-[#17A2C7] px-6 py-3.5 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#62d7ec]"
               >
                 Explore Projects <ArrowRight size={18} />
               </button>
@@ -219,7 +219,7 @@ export default function PortfolioPage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-[#071426] via-transparent to-transparent" />
 
                   <div className="absolute inset-x-0 bottom-0 p-5">
-                    <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#66d4eb]">
+                    <p className="text-xs font-semibold uppercase tracking-[0.16em] text-white">
                       {categoryLabels[featuredProject.category] ||
                         featuredProject.category}
                     </p>
@@ -228,7 +228,7 @@ export default function PortfolioPage() {
                     </h2>
                   </div>
 
-                  <span className="absolute right-5 top-5 flex h-11 w-11 items-center justify-center rounded-full bg-[#17A2C7] text-[#0A1930] opacity-0 transition group-hover:opacity-100">
+                  <span className="absolute right-5 top-5 flex h-11 w-11 items-center justify-center rounded-full bg-white text-[#0A1930] opacity-0 transition group-hover:opacity-100">
                     <Eye size={19} />
                   </span>
                 </motion.button>
@@ -320,8 +320,8 @@ export default function PortfolioPage() {
                 onClick={() => setActiveCategory(category)}
                 className={`rounded-full border px-5 py-2.5 text-sm font-semibold transition ${
                   isActive
-                    ? 'border-[#17A2C7] bg-[#17A2C7] text-[#0A1930]'
-                    : 'border-white/10 text-slate-400 hover:border-[#17A2C7]/60 hover:text-white'
+                    ? 'border-[#17A2C7] bg-[#17A2C7] text-white'
+                    : 'border-white/10 text-white hover:border-[#17A2C7]/60 hover:text-white'
                 }`}
               >
                 {categoryLabels[category] ||
@@ -358,7 +358,7 @@ export default function PortfolioPage() {
 
                   <div className="absolute inset-0 bg-gradient-to-t from-[#071426]/85 via-transparent to-transparent" />
 
-                  <span className="absolute left-5 top-5 rounded-full border border-white/15 bg-[#0A1930]/80 px-3 py-1 text-xs font-semibold text-[#66d4eb] backdrop-blur-md">
+                  <span className="absolute left-5 top-5 rounded-full border border-white/15 bg-[#0A1930]/80 px-3 py-1 text-xs font-semibold text-white backdrop-blur-md">
                     {categoryLabels[project.category] || project.category}
                   </span>
 
@@ -448,7 +448,7 @@ export default function PortfolioPage() {
 
       <Link
         href="/contact"
-        className="mt-8 inline-flex items-center gap-2 rounded-xl bg-[#17A2C7] px-6 py-3.5 font-semibold text-[#0A1930] transition hover:-translate-y-0.5 hover:bg-[#62d7ec]"
+        className="mt-8 inline-flex items-center gap-2 rounded-xl bg-[#17A2C7] px-6 py-3.5 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#62d7ec]"
       >
         Start Your Project
         <ArrowRight size={18} />
@@ -480,7 +480,7 @@ export default function PortfolioPage() {
             >
               <div className="flex items-center justify-between border-b border-white/10 px-5 py-4 sm:px-7">
                 <div className="min-w-0 pr-4">
-                  <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#66d4eb]">
+                  <p className="text-xs font-semibold uppercase tracking-[0.16em] text-white">
                     {categoryLabels[selectedProject.category] ||
                       selectedProject.category}
                   </p>

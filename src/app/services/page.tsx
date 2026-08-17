@@ -16,6 +16,9 @@ import {
   Handshake,
   LifeBuoy,
   ShieldCheck,
+  Cloud,
+  MessageCircle,
+  TrendingUp,
 } from 'lucide-react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
@@ -40,25 +43,25 @@ const services = [
     idealFor: 'Businesses that need a new website or a redesign that actually converts visitors.',
     color: 'from-cyan-400/20 to-blue-500/5',
   },
-  {
-    id: 'ecommerce',
-    icon: Globe2,
-    title: 'E-commerce Solutions',
-    tagline: 'Stores built to sell and scale.',
+    {
+    id: 'saas-development',
+    icon: Cloud,
+    title: 'SaaS Development',
+    tagline: 'Scalable software solutions in the cloud.',
     description:
-      'Conversion-focused online stores that make it easy for customers to browse, choose and check out — built to integrate cleanly with your inventory and payment operations.',
+      'Build your SaaS product from the ground up — from idea validation to multi-tenant architecture ready for hundreds of users. We handle the backend, frontend, payments and scaling.',
     includes: [
-      'Product catalog and category structure',
-      'Cart, checkout and payment gateway integration',
-      'Order and inventory-ready architecture',
-      'Mobile-first, fast-loading product pages',
-      'Search and filtering for larger catalogs',
-      'Analytics and conversion tracking setup',
+      'Product roadmap and feature prioritization',
+      'Full-stack SaaS application development',
+      'Multi-tenant architecture setup',
+      'Payment and subscription integration',
+      'User authentication and role-based access',
+      'Cloud deployment and scalability planning',
     ],
-    idealFor: 'Businesses launching or upgrading an online store.',
-    color: 'from-blue-500/20 to-cyan-400/5',
+    idealFor: 'Entrepreneurs and businesses building their own SaaS product.',
+    color: 'from-sky-400/20 to-cyan-500/5',
   },
-  {
+   {
     id: 'software',
     icon: Layers3,
     title: 'Custom Software Development',
@@ -76,7 +79,7 @@ const services = [
     idealFor: 'Businesses with a workflow or process that generic software doesn\u2019t solve.',
     color: 'from-indigo-500/20 to-blue-500/5',
   },
-  {
+   {
     id: 'marketing',
     icon: Rocket,
     title: 'Digital Marketing',
@@ -95,21 +98,22 @@ const services = [
     color: 'from-cyan-400/20 to-indigo-500/5',
   },
   {
-    id: 'seo-consultancy',
-    icon: Target,
-    title: 'Business Consultancy',
-    tagline: 'Strategy behind the technology.',
+    id: 'social-media',
+    icon: MessageCircle,
+    title: 'Social Media Management',
+    tagline: 'Your presence, consistently managed.',
     description:
-      'Guidance on where to invest your digital budget — website, marketing, branding or software — based on what will actually move your business forward.',
+      'Strategic social media planning and execution — content that engages your audience, builds community and drives business results on the platforms where your customers actually are.',
     includes: [
-      'Current digital presence audit',
-      'Prioritized roadmap of what to build first',
-      'Budget and timeline guidance',
-      'Technology and platform recommendations',
-      'Ongoing advisory as your business grows',
+      'Social media strategy and content calendar',
+      'Weekly post creation and scheduling',
+      'Community engagement and response management',
+      'Campaign planning and execution',
+      'Analytics, insights and monthly reporting',
+      'Paid social ad management and optimization',
     ],
-    idealFor: 'Business owners who know they need to invest in digital, but not sure where to start.',
-    color: 'from-blue-500/20 to-indigo-500/5',
+    idealFor: 'Businesses that need consistent social presence without managing it in-house.',
+    color: 'from-pink-500/20 to-rose-500/5',
   },
   {
     id: 'branding',
@@ -129,7 +133,7 @@ const services = [
     idealFor: 'New businesses building an identity, or existing ones outgrowing theirs.',
     color: 'from-violet-500/20 to-indigo-500/5',
   },
-  {
+   {
     id: 'graphic-design',
     icon: Sparkles,
     title: 'Graphic Designing',
@@ -146,6 +150,60 @@ const services = [
     idealFor: 'Businesses that need regular, on-brand creative without hiring in-house.',
     color: 'from-indigo-500/20 to-violet-500/5',
   },
+   {
+    id: 'seo-consultancy',
+    icon: Target,
+    title: 'Business Consultancy',
+    tagline: 'Strategy behind the technology.',
+    description:
+      'Guidance on where to invest your digital budget — website, marketing, branding or software — based on what will actually move your business forward.',
+    includes: [
+      'Current digital presence audit',
+      'Prioritized roadmap of what to build first',
+      'Budget and timeline guidance',
+      'Technology and platform recommendations',
+      'Ongoing advisory as your business grows',
+    ],
+    idealFor: 'Business owners who know they need to invest in digital, but not sure where to start.',
+    color: 'from-blue-500/20 to-indigo-500/5',
+  },
+   {
+    id: 'business-growth',
+    icon: TrendingUp,
+    title: 'Digital Business Growth',
+    tagline: 'Sustainable growth strategy and execution.',
+    description:
+      'End-to-end digital growth from acquisition to retention — combining website, marketing, and product optimization to grow your customer base and revenue consistently.',
+    includes: [
+      'Growth audit and opportunity identification',
+      'Customer acquisition strategy',
+      'Conversion rate optimization',
+      'Customer retention and loyalty programs',
+      'Analytics and KPI tracking',
+      'Quarterly growth planning and reporting',
+    ],
+    idealFor: 'Businesses ready to scale and looking for a strategic partner in growth.',
+    color: 'from-green-500/20 to-emerald-500/5',
+  },
+  {
+    id: 'ecommerce',
+    icon: Globe2,
+    title: 'E-commerce Solutions',
+    tagline: 'Stores built to sell and scale.',
+    description:
+      'Conversion-focused online stores that make it easy for customers to browse, choose and check out — built to integrate cleanly with your inventory and payment operations.',
+    includes: [
+      'Product catalog and category structure',
+      'Cart, checkout and payment gateway integration',
+      'Order and inventory-ready architecture',
+      'Mobile-first, fast-loading product pages',
+      'Search and filtering for larger catalogs',
+      'Analytics and conversion tracking setup',
+    ],
+    idealFor: 'Businesses launching or upgrading an online store.',
+    color: 'from-blue-500/20 to-cyan-400/5',
+  },
+ 
 ]
 
 export default function Services() {
@@ -341,7 +399,7 @@ export default function Services() {
 
       <Link
         href="/contact"
-        className="mt-8 inline-flex items-center gap-2 rounded-xl bg-[#17A2C7] px-6 py-3.5 font-semibold text-[#0A1930] transition hover:-translate-y-0.5 hover:bg-[#5cd5eb]"
+        className="mt-8 inline-flex items-center gap-2 rounded-xl bg-[#17A2C7] px-6 py-3.5 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#5cd5eb]"
       >
         Discuss Your Project
         <ArrowRight size={18} />
@@ -425,7 +483,7 @@ className="custom-scrollbar relative max-h-[85vh] w-full max-w-3xl overflow-y-au
 
                 <Link
                   href="/contact"
-                  className="mt-7 inline-flex items-center gap-2 rounded-xl bg-[#17A2C7] px-6 py-3.5 font-semibold text-[#0A1930] transition hover:-translate-y-0.5 hover:bg-[#5cd5eb]"
+                  className="mt-7 inline-flex items-center gap-2 rounded-xl bg-[#17A2C7] px-6 py-3.5 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#5cd5eb]"
                 >
                   Discuss This Service
                   <ArrowRight size={18} />

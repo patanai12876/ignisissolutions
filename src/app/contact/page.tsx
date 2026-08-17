@@ -42,7 +42,7 @@ const contactChannels = [
   {
     icon: MapPin,
     label: 'Based in',
-    value: '280 Model, Block N Town, Lahore, 54700',
+    value: '280 N Block, Model Town, Lahore, 54700',
     href: 'https://www.google.com/maps/place/Ignisis+Solutions/data=!4m2!3m1!1s0x0:0xced23207e01bfe9d?sa=X&ved=1t:2428&ictx=111',
   },
 ]
@@ -50,8 +50,8 @@ const contactChannels = [
 type FormState = {
   name: string
   email: string
-  company: string
   phone: string
+  company: string
   service: string
   message: string
 }
@@ -59,8 +59,8 @@ type FormState = {
 const initialForm: FormState = {
   name: '',
   email: '',
-  company: '',
   phone: '',
+  company: '',
   service: '',
   message: '',
 }
@@ -74,6 +74,8 @@ export default function Contact() {
     const next: Partial<FormState> = {}
     if (form.name.trim().length < 2) next.name = 'Enter your full name.'
     if (!/^\S+@\S+\.\S+$/.test(form.email)) next.email = 'Enter a valid email.'
+    if (form.phone.trim().length < 10) next.phone = 'Enter a valid phone number.'
+    if (form.company.trim().length < 2) next.company = 'Enter your business name.'
     if (!form.service) next.service = 'Select a service.'
     if (form.message.trim().length < 10) next.message = 'Tell us a bit more about the project.'
     setErrors(next)
@@ -86,11 +88,6 @@ export default function Contact() {
 
     setStatus('submitting')
     try {
-      // Replace YOUR_FORM_ID with your Formspree form ID (see FORMSPREE_SETUP.md)
-
-      // Prepare services as array to match /api/send-email expectations
-      const servicesArray = form.service ? [form.service] : []
-
       const res = await fetch('/api/send-email', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -98,15 +95,12 @@ export default function Contact() {
           fullName: form.name,
           email: form.email,
           phone: form.phone,
-          services: servicesArray,
+          services: [form.service],
           message: form.message,
         }),
       })
 
-      if (!res.ok) {
-        const txt = await res.text().catch(() => '')
-        throw new Error('Request failed: ' + txt)
-      }
+      if (!res.ok) throw new Error('Request failed')
 
       setStatus('success')
       setForm(initialForm)
@@ -202,7 +196,7 @@ export default function Contact() {
                 <div className="grid gap-5 sm:grid-cols-2">
                   <div>
                     <label className="text-sm font-medium text-slate-300">
-                      Full name
+                      Full name <span className="text-red-400">*</span>
                     </label>
                     <input
                       type="text"
@@ -220,7 +214,7 @@ export default function Contact() {
 
                   <div>
                     <label className="text-sm font-medium text-slate-300">
-                      Email
+                      Email <span className="text-red-400">*</span>
                     </label>
                     <input
                       type="email"
@@ -237,61 +231,70 @@ export default function Contact() {
                   </div>
                 </div>
 
-                  <div>
-                    <label className="text-sm font-medium text-slate-300">
-                      Phone (optional)
-                    </label>
-                    <input
-                      type="tel"
-                      value={form.phone}
-                      onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                      className="mt-2 w-full rounded-xl border border-white/10 bg-[#0A1930] px-4 py-3 text-sm text-white outline-none transition placeholder:text-slate-500 focus:border-[#17A2C7]"
-                      placeholder="+92 302 5708769"
-                    />
-                  </div>
-
                 <div className="grid gap-5 sm:grid-cols-2">
                   <div>
                     <label className="text-sm font-medium text-slate-300">
-                      Company / business{' '}
-                      <span className="text-slate-500">(optional)</span>
+                      Company / business <span className="text-red-400">*</span>
                     </label>
                     <input
                       type="text"
                       value={form.company}
                       onChange={(e) => setForm({ ...form, company: e.target.value })}
-                      className="mt-2 w-full rounded-xl border border-white/10 bg-[#0A1930] px-4 py-3 text-sm text-white outline-none transition placeholder:text-slate-500 focus:border-[#17A2C7]"
+                      className={`mt-2 w-full rounded-xl border bg-[#0A1930] px-4 py-3 text-sm text-white outline-none transition placeholder:text-slate-500 focus:border-[#17A2C7] ${
+                        errors.company ? 'border-red-400/60' : 'border-white/10'
+                      }`}
                       placeholder="Business name"
                     />
+                    {errors.company && (
+                      <p className="mt-1.5 text-xs text-red-400">{errors.company}</p>
+                    )}
                   </div>
 
                   <div>
                     <label className="text-sm font-medium text-slate-300">
-                      Service of interest
+                      Phone number <span className="text-red-400">*</span>
                     </label>
-                    <select
-                      value={form.service}
-                      onChange={(e) => setForm({ ...form, service: e.target.value })}
-                      className={`mt-2 w-full rounded-xl border bg-[#0A1930] px-4 py-3 text-sm text-white outline-none transition focus:border-[#17A2C7] ${
-                        errors.service ? 'border-red-400/60' : 'border-white/10'
+                    <input
+                      type="tel"
+                      value={form.phone}
+                      onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                      className={`mt-2 w-full rounded-xl border bg-[#0A1930] px-4 py-3 text-sm text-white outline-none transition placeholder:text-slate-500 focus:border-[#17A2C7] ${
+                        errors.phone ? 'border-red-400/60' : 'border-white/10'
                       }`}
-                    >
-                      <option value="">Select a service</option>
-                      {serviceOptions.map((s) => (
-                        <option key={s} value={s}>
-                          {s}
-                        </option>
-                      ))}
-                    </select>
-                    {errors.service && (
-                      <p className="mt-1.5 text-xs text-red-400">{errors.service}</p>
+                      placeholder="+92 302 5708769"
+                    />
+                    {errors.phone && (
+                      <p className="mt-1.5 text-xs text-red-400">{errors.phone}</p>
                     )}
                   </div>
                 </div>
 
                 <div>
                   <label className="text-sm font-medium text-slate-300">
-                    Project details
+                    Service of interest <span className="text-red-400">*</span>
+                  </label>
+                  <select
+                    value={form.service}
+                    onChange={(e) => setForm({ ...form, service: e.target.value })}
+                    className={`mt-2 w-full rounded-xl border bg-[#0A1930] px-4 py-3 text-sm text-white outline-none transition focus:border-[#17A2C7] ${
+                      errors.service ? 'border-red-400/60' : 'border-white/10'
+                    }`}
+                  >
+                    <option value="">Select a service</option>
+                    {serviceOptions.map((s) => (
+                      <option key={s} value={s}>
+                        {s}
+                      </option>
+                    ))}
+                  </select>
+                  {errors.service && (
+                    <p className="mt-1.5 text-xs text-red-400">{errors.service}</p>
+                  )}
+                </div>
+
+                <div>
+                  <label className="text-sm font-medium text-slate-300">
+                    Project details <span className="text-red-400">*</span>
                   </label>
                   <textarea
                     rows={5}
@@ -317,7 +320,7 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={status === 'submitting'}
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#17A2C7] px-6 py-3.5 font-semibold text-[#0A1930] transition hover:-translate-y-0.5 hover:bg-[#5cd5eb] disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#17A2C7] px-6 py-3.5 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#5cd5eb] disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
                 >
                   {status === 'submitting' ? (
                     <>

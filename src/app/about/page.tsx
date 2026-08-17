@@ -22,7 +22,7 @@ const approach = [
   {
     icon: Compass,
     label: 'Understand',
-    text: 'Every engagement starts with your business goal, not a template — what you need to grow, not just what you need built.',
+    text: 'Every engagement starts with your business goal, not a template what you need to grow, not just what you need built.',
   },
   {
     icon: Layers3,
@@ -32,7 +32,7 @@ const approach = [
   {
     icon: Target,
     label: 'Execute',
-    text: 'We build with intent — clean code, considered design and messaging that moves people to act.',
+    text: 'We build with intent, clean code, considered design and messaging that moves people to act.',
   },
   {
     icon: Rocket,
@@ -50,7 +50,7 @@ const values = [
   {
     icon: Sparkles,
     title: 'Craft',
-    text: 'Every detail — from a button state to a headline — is made deliberately, not defaulted to a template.',
+    text: 'Every detail from a button state to a headline is made deliberately, not defaulted to a template.',
   },
   {
     icon: Handshake,
@@ -85,7 +85,7 @@ export default function About() {
     <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:48px_48px]" />
   </div>
 
-  <div className="relative mx-auto max-w-7xl px-6 pb-16 pt-14 lg:pb-20 lg:pt-20">
+  <div className="relative mx-auto max-w-7xl px-6 py-24">
     <motion.p
       initial={{ opacity: 0, y: 14 }}
       animate={{ opacity: 1, y: 0 }}
@@ -117,7 +117,7 @@ export default function About() {
         className="text-lg leading-relaxed text-slate-300"
       >
         Ignisis Solutions exists because most businesses don&apos;t need
-        more vendors — they need one team that understands how a website,
+        more vendors, they need one team that understands how a website,
         a brand and a marketing plan are supposed to work together.
       </motion.p>
 
@@ -132,7 +132,7 @@ export default function About() {
     >
       <Link
         href="/contact"
-        className="inline-flex items-center gap-2 rounded-xl bg-[#17A2C7] px-6 py-3.5 font-semibold text-[#0A1930] transition hover:-translate-y-0.5 hover:bg-[#5cd5eb] hover:shadow-[0_10px_28px_rgba(23,162,199,0.25)]"
+        className="inline-flex items-center gap-2 rounded-xl bg-[#17A2C7] px-6 py-3.5 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#5cd5eb] hover:shadow-[0_10px_28px_rgba(23,162,199,0.25)]"
       >
         Work With Us
         <ArrowRight size={18} />
@@ -171,7 +171,7 @@ export default function About() {
 
       {/* STORY */}
       <section className="border-y border-white/10 bg-[#08182e]">
-        <div className="mx-auto grid max-w-7xl gap-10 px-6 py-20 lg:grid-cols-[0.85fr_1.15fr] lg:py-24">
+        <div className="mx-auto grid max-w-7xl gap-10 px-6 py-24 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#66d4eb]">
               Why we exist
@@ -192,7 +192,7 @@ export default function About() {
                 together
               </span>
               , not in silos. Most businesses end up hiring a developer, a
-              designer and a marketer separately — and spend more time
+              designer and a marketer separately and spend more time
               managing the gap between them than actually growing.
             </motion.p>
 
@@ -201,11 +201,11 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="leading-relaxed text-slate-400"
+              className="text-lg leading-relaxed text-slate-300"
             >
               We bring web development, software, branding and marketing
-              under one team, so every part of your digital presence — your
-              site, your identity, your campaigns — is built from the same
+              under one team, so every part of your digital presence, your
+              site, your identity, your campaigns, is built from the same
               understanding of your business, not reassembled from
               disconnected vendors.
             </motion.p>
@@ -215,7 +215,7 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="leading-relaxed text-slate-400"
+              className="text-lg leading-relaxed text-slate-300"
             >
               That&apos;s the difference we build for: not just a finished
               website, but a digital direction your business can keep growing
@@ -242,7 +242,6 @@ export default function About() {
         </motion.div>
 
         <div className="relative mt-14 grid gap-5 md:grid-cols-4">
-          <div className="absolute left-0 right-0 top-[38px] hidden h-px bg-gradient-to-r from-transparent via-[#17A2C7]/30 to-transparent md:block" />
 
           {approach.map(({ icon: Icon, label, text }, index) => (
             <motion.div
@@ -356,7 +355,7 @@ export default function About() {
 
       {/* FINAL CTA */}
    {/* FINAL CTA */}
-<section className="bg-[#0A1930] px-4 py-10 sm:px-6 lg:py-14">
+<section className="bg-[#0A1930] px-4 py-24 sm:px-6">
   <div className="relative mx-auto max-w-5xl overflow-hidden rounded-3xl bg-[#123C6B] px-6 py-14 text-center sm:px-10 lg:py-16">
 
     <motion.div
@@ -381,7 +380,7 @@ export default function About() {
 
       <Link
         href="/contact"
-        className="mt-8 inline-flex items-center gap-2 rounded-xl bg-[#17A2C7] px-6 py-3.5 font-semibold text-[#0A1930] transition hover:-translate-y-0.5 hover:bg-[#5cd5eb]"
+        className="mt-8 inline-flex items-center gap-2 rounded-xl bg-[#17A2C7] px-6 py-3.5 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#5cd5eb]"
       >
         Work With Us
         <ArrowRight size={18} />
