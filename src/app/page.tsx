@@ -77,7 +77,7 @@ const projects = [
     href: 'https://brew-and-co-acyz.vercel.app/',
     icon: Layers3,
     visual: 'from-[#68442c] via-[#31261f] to-[#0A1930]',
-    image: '/brew/1.png',
+    image: '/brew/p1.png',
   },
   {
     name: 'FitPro',
@@ -87,7 +87,7 @@ const projects = [
     href: 'https://fit-pro-frontend.vercel.app/',
     icon: Sparkles,
     visual: 'from-[#542738] via-[#291f30] to-[#0A1930]',
-    image: '/fitpro/fitpro1.png',
+    image: '/fitpro/piz1.png',
   },
 ]
 
@@ -773,7 +773,7 @@ export default function Home() {
           </div>
 
           <div className="relative space-y-1">
-            <div className="absolute bottom-10 left-[21px] top-10 hidden w-px bg-white/10 sm:block" />
+            
 
             {[
               ['01', 'Understand', 'We learn about your business, audience, offer and the actual goal behind the project.'],
