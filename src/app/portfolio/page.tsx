@@ -228,7 +228,7 @@ export default function PortfolioPage() {
                     </h2>
                   </div>
 
-                  <span className="absolute right-5 top-5 flex h-11 w-11 items-center justify-center rounded-full bg-white text-[#0A1930] opacity-0 transition group-hover:opacity-100">
+                  <span className="absolute right-5 top-5 flex h-11 w-11 items-center justify-center rounded-full bg-[#17A2C7] text-white opacity-0 transition group-hover:opacity-100">
                     <Eye size={19} />
                   </span>
                 </motion.button>
@@ -362,7 +362,7 @@ export default function PortfolioPage() {
                     {categoryLabels[project.category] || project.category}
                   </span>
 
-                  <span className="absolute bottom-5 right-5 flex h-11 w-11 items-center justify-center rounded-full bg-[#17A2C7] text-[#0A1930] opacity-0 transition group-hover:opacity-100">
+                  <span className="absolute bottom-5 right-5 flex h-11 w-11 items-center justify-center rounded-full bg-[#17A2C7] text-white opacity-0 transition group-hover:opacity-100">
                     <Eye size={19} />
                   </span>
                 </button>

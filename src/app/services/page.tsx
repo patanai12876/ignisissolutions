@@ -309,7 +309,7 @@ export default function Services() {
         Same process, every service.
       </h2>
       <p className="mt-5 leading-relaxed text-slate-400">
-        Whatever you bring us — a website, a brand, a software idea — it moves
+        Whatever you bring us a website, a brand, a software idea it moves
         through the same clear stages, so you always know what happens next.
       </p>
     </div>
