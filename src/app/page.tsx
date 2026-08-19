@@ -561,7 +561,7 @@ export default function Home() {
       </section>
 
       {/* SERVICES */}
-      <section className="mx-auto max-w-7xl px-6 py-24 pt-5">
+      <section className="mx-auto max-w-7xl px-6 py-16 lg:py-20">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -580,7 +580,7 @@ export default function Home() {
           </p>
         </motion.div>
 
-        <div className="mt-12 grid gap-7 lg:grid-cols-[0.75fr_1.25fr]">
+        <div className="mt-20 grid gap-7 lg:grid-cols-[0.75fr_1.25fr]">
           <div className="space-y-2">
             {serviceGroups.map((group) => {
               const Icon = group.icon
