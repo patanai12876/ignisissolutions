@@ -21,7 +21,7 @@ export default function Footer() {
 
   return (
     <footer className="border-t border-white/10 bg-[#071426] text-white">
-      <div className="mx-auto grid max-w-7xl gap-12 px-6 py-16 md:grid-cols-2 lg:grid-cols-[1.3fr_0.8fr_1.2fr]">
+      <div className="mx-auto grid max-w-7xl gap-12 px-6 py-16 md:grid-cols-2 lg:grid-cols-[1.3fr_0.7fr_0.7fr_1.2fr]">
         <div>
   <Link href="/" className="inline-flex items-center -ml-8">
     <img
@@ -85,6 +85,27 @@ export default function Footer() {
                 {link.label}
               </Link>
             ))}
+          </div>
+        </div>
+
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#66d4eb]">
+            Legal
+          </p>
+
+          <div className="mt-5 space-y-3">
+            <Link
+              href="/privacy-policy"
+              className="block text-sm text-slate-400 transition hover:text-white"
+            >
+              Privacy Policy
+            </Link>
+            <Link
+              href="/terms-and-conditions"
+              className="block text-sm text-slate-400 transition hover:text-white"
+            >
+              Terms &amp; Conditions
+            </Link>
           </div>
         </div>
 

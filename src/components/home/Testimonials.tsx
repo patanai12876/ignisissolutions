@@ -27,7 +27,7 @@ const testimonials = [
     quote:
       'Ignisis Solutions turned our ideas into a professional digital experience that feels both modern and practical. They were responsive, creative and paid attention to the small details that made a big difference.',
     name: 'TTT Global Services',
-    role: 'International Compnay',
+    role: 'International Company',
   },
   {
     quote:
