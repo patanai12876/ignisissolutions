@@ -31,7 +31,7 @@ const services = [
     title: 'Web Development',
     tagline: 'Fast, scalable websites and web apps.',
     description:
-      'We build responsive, high-performance websites and web applications using modern frameworks — built to load fast, rank well and represent your business properly on every device.',
+      'We build responsive, high-performance websites and web applications using modern framework built to load fast, rank well and represent your business properly on every device.',
     includes: [
       'Custom-designed, responsive website (not a template)',
       'Next.js / React build for speed and SEO',
@@ -49,7 +49,7 @@ const services = [
     title: 'SaaS Development',
     tagline: 'Scalable software solutions in the cloud.',
     description:
-      'Build your SaaS product from the ground up — from idea validation to multi-tenant architecture ready for hundreds of users. We handle the backend, frontend, payments and scaling.',
+      'Build your SaaS product from the ground up from idea validation to multi-tenant architecture ready for hundreds of users. We handle the backend, frontend, payments and scaling.',
     includes: [
       'Product roadmap and feature prioritization',
       'Full-stack SaaS application development',
@@ -67,7 +67,7 @@ const services = [
     title: 'Custom Software Development',
     tagline: 'Tools built around how you work.',
     description:
-      'When off-the-shelf software doesn\u2019t fit, we build internal tools, dashboards or platforms tailored to your actual workflow — not the other way around.',
+      'When off-the-shelf software doesn\u2019t fit, we build internal tools, dashboards or platforms tailored to your actual workflow not the other way around.',
     includes: [
       'Requirements discovery and technical planning',
       'Custom web application or internal tool',
@@ -85,7 +85,7 @@ const services = [
     title: 'Digital Marketing',
     tagline: 'Campaigns connected to real goals.',
     description:
-      'Marketing that\u2019s tied to business outcomes, not vanity metrics — getting your business in front of the right audience with a clear plan behind every campaign.',
+      'Marketing that\u2019s tied to business outcomes, not vanity metrics getting your business in front of the right audience with a clear plan behind every campaign.',
     includes: [
       'Audience and competitor research',
       'Search and social campaign strategy',
@@ -94,7 +94,7 @@ const services = [
       'Monthly performance reporting',
       'Ongoing optimization based on results',
     ],
-    idealFor: 'Businesses that need consistent, qualified leads — not just traffic.',
+    idealFor: 'Businesses that need consistent, qualified leads not just traffic.',
     color: 'from-cyan-400/20 to-indigo-500/5',
   },
   {
@@ -103,7 +103,7 @@ const services = [
     title: 'Social Media Management',
     tagline: 'Your presence, consistently managed.',
     description:
-      'Strategic social media planning and execution — content that engages your audience, builds community and drives business results on the platforms where your customers actually are.',
+      'Strategic social media planning and execution content that engages your audience, builds community and drives business results on the platforms where your customers actually are.',
     includes: [
       'Social media strategy and content calendar',
       'Weekly post creation and scheduling',
@@ -121,7 +121,7 @@ const services = [
     title: 'Branding',
     tagline: 'Identities people remember and trust.',
     description:
-      'A brand system that makes every customer touchpoint — your website, packaging, socials, ads — feel like one confident, consistent business.',
+      'A brand system that makes every customer touchpoint your website, packaging, socials, ads feel like one confident, consistent business.',
     includes: [
       'Brand strategy and positioning',
       'Logo and visual identity system',
@@ -139,7 +139,7 @@ const services = [
     title: 'Graphic Designing',
     tagline: 'On-brand design, every touchpoint.',
     description:
-      'Ongoing creative support for the visuals your business needs day-to-day — kept consistent with your brand system, not designed in isolation.',
+      'Ongoing creative support for the visuals your business needs day-to-day kept consistent with your brand system, not designed in isolation.',
     includes: [
       'Social media post and ad creatives',
       'Marketing and promotional material',
@@ -156,7 +156,7 @@ const services = [
     title: 'Business Consultancy',
     tagline: 'Strategy behind the technology.',
     description:
-      'Guidance on where to invest your digital budget — website, marketing, branding or software — based on what will actually move your business forward.',
+      'Guidance on where to invest your digital budget website, marketing, branding or software based on what will actually move your business forward.',
     includes: [
       'Current digital presence audit',
       'Prioritized roadmap of what to build first',
@@ -173,7 +173,7 @@ const services = [
     title: 'Digital Business Growth',
     tagline: 'Sustainable growth strategy and execution.',
     description:
-      'End-to-end digital growth from acquisition to retention — combining website, marketing, and product optimization to grow your customer base and revenue consistently.',
+      'End-to-end digital growth from acquisition to retention combining website, marketing, and product optimization to grow your customer base and revenue consistently.',
     includes: [
       'Growth audit and opportunity identification',
       'Customer acquisition strategy',
@@ -191,7 +191,7 @@ const services = [
     title: 'E-commerce Solutions',
     tagline: 'Stores built to sell and scale.',
     description:
-      'Conversion-focused online stores that make it easy for customers to browse, choose and check out — built to integrate cleanly with your inventory and payment operations.',
+      'Conversion-focused online stores that make it easy for customers to browse, choose and check out built to integrate cleanly with your inventory and payment operations.',
     includes: [
       'Product catalog and category structure',
       'Cart, checkout and payment gateway integration',
@@ -260,7 +260,7 @@ export default function Services() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-300"
           >
-            Click any service to see exactly what&apos;s included — no vague
+            Click any service to see exactly what&apos;s included no vague
             promises, no scope surprises later.
           </motion.p>
         </div>
@@ -320,7 +320,7 @@ export default function Services() {
       <div className="grid gap-8 md:grid-cols-1 lg:grid-cols-5">
         {[
           { step: '01', title: 'Discovery call', text: 'We learn your business, goals and the real problem behind the request.' },
-          { step: '02', title: 'Proposal & scope', text: 'You get a clear scope, timeline and cost — no vague estimates.' },
+          { step: '02', title: 'Proposal & scope', text: 'You get a clear scope, timeline and cost no vague estimates.' },
           { step: '03', title: 'Design & build', text: 'Design, development and content are built together, not in isolation.' },
           { step: '04', title: 'Review & refine', text: 'You review real progress at each milestone, not just at the end.' },
           { step: '05', title: 'Launch & support', text: 'We launch with you and stay reachable for what comes after.' },
@@ -353,9 +353,9 @@ export default function Services() {
 <section className="mx-auto max-w-7xl px-6 py-24">
   <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
     {[
-      { icon: Handshake, title: 'Direct communication', text: 'You talk to the people doing the work — not an account manager relaying messages.' },
+      { icon: Handshake, title: 'Direct communication', text: 'You talk to the people doing the work not an account manager relaying messages.' },
       { icon: ShieldCheck, title: 'Fixed scope, no surprises', text: 'What\u2019s agreed is what\u2019s delivered. Scope changes are discussed, not silently added.' },
-      { icon: Layers3, title: 'One team, every discipline', text: 'Design, development, branding and marketing come from the same team — not four vendors.' },
+      { icon: Layers3, title: 'One team, every discipline', text: 'Design, development, branding and marketing come from the same team not four vendors.' },
       { icon: LifeBuoy, title: 'Support after launch', text: 'Launch isn\u2019t the finish line. We stay available for fixes, updates and next steps.' },
     ].map(({ icon: Icon, title, text }, index) => (
       <motion.div

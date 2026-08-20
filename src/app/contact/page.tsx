@@ -149,7 +149,7 @@ export default function Contact() {
             className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-300"
           >
             Share a few details below and we&apos;ll get back to you with next
-            steps — usually within one business day.
+            steps usually within one business day.
           </motion.p>
         </div>
       </section>
@@ -171,7 +171,7 @@ export default function Contact() {
                 </div>
                 <h3 className="mt-6 text-2xl font-bold">Message sent.</h3>
                 <p className="mt-2 max-w-sm text-sm leading-relaxed text-slate-400">
-                  Thanks for reaching out — we&apos;ll review your message and
+                  Thanks for reaching out we&apos;ll review your message and
                   get back to you shortly.
                 </p>
                 <button
@@ -383,7 +383,7 @@ export default function Contact() {
                 <p className="text-sm font-semibold">Response time</p>
               </div>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">
-                We reply to every inquiry within one business day — usually
+                We reply to every inquiry within one business day usually
                 sooner.
               </p>
             </motion.div>
