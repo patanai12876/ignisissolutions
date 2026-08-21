@@ -15,6 +15,12 @@ const siteUrl = 'https://ignisissolutions-phi.vercel.app'
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
 
+  icons: {
+    icon: '/images/favicon.png',
+    shortcut: '/images/favicon.png',
+    apple: '/images/favicon.png',
+  },
+
   title: {
     default: 'Ignisis Solutions | Digital Agency for Web, Software & Marketing',
     template: '%s | Ignisis Solutions',
