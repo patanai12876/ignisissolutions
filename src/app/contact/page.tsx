@@ -111,7 +111,7 @@ export default function Contact() {
   }
 
   return (
-    <main className="overflow-x-hidden bg-[#0A1930] pt-16 text-white">
+    <main className="overflow-x-hidden bg-[#0A1930] pt-24 text-white">
       {/* PAGE HEADER */}
       <section className="relative overflow-hidden">
         <div className="pointer-events-none absolute inset-0">

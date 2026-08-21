@@ -120,7 +120,7 @@ export default function PortfolioPage() {
   }
 
   return (
-    <main className="overflow-x-hidden bg-[#0A1930] pt-16 text-white">
+    <main className="overflow-x-hidden bg-[#0A1930] pt-10 text-white">
       {/* HERO */}
       <section className="relative overflow-hidden border-b border-white/10">
         <div className="pointer-events-none absolute inset-0">
