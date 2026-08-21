@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { MessageCircle } from 'lucide-react'
 
-const WHATSAPP_NUMBER = '923289459359'
+const WHATSAPP_NUMBER = '923025708769'
 const WHATSAPP_MESSAGE = 'Hello, I want to discuss a project with Ignisis Solutions.'
 
 export default function WhatsAppButton() {

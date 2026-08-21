@@ -248,9 +248,9 @@ export default function Services() {
             transition={{ duration: 0.7, delay: 0.05 }}
             className="mt-5 max-w-3xl text-4xl font-bold leading-[1.15] sm:text-5xl lg:text-6xl"
           >
-            Seven disciplines.{' '}
+            Providing{' '}
             <span className="bg-gradient-to-r from-[#66d4eb] via-[#3da7e9] to-[#7187ff] bg-clip-text text-transparent">
-              One connected team.
+              End to End digital soluions.
             </span>
           </motion.h1>
 
@@ -416,7 +416,7 @@ export default function Services() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6"
+            className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6"
           >
             {/* backdrop */}
             <motion.div
@@ -430,12 +430,12 @@ export default function Services() {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 16, scale: 0.97 }}
               transition={{ duration: 0.25, ease: 'easeOut' }}
-className="custom-scrollbar relative max-h-[85vh] w-full max-w-3xl overflow-y-auto rounded-2xl border border-white/10 bg-[#0d2542] shadow-2xl"            >
-              <div className={`relative bg-gradient-to-br ${active.color} p-7 sm:p-9`}>
+className="custom-scrollbar relative max-h-[90vh] w-full max-w-3xl overflow-y-auto rounded-2xl border border-white/10 bg-[#0d2542] shadow-2xl"            >
+              <div className={`relative bg-gradient-to-br ${active.color} p-5 sm:p-9`}>
                 <button
                   type="button"
                   onClick={() => setActiveId(null)}
-                  className="absolute right-5 top-5 flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-[#0A1930]/60 text-slate-300 transition hover:border-[#17A2C7]/50 hover:text-white"
+                  className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-[#0A1930]/60 text-slate-300 transition hover:border-[#17A2C7]/50 hover:text-white sm:right-5 sm:top-5"
                   aria-label="Close"
                 >
                   <X size={17} />
@@ -445,7 +445,7 @@ className="custom-scrollbar relative max-h-[85vh] w-full max-w-3xl overflow-y-au
                   <active.icon size={26} />
                 </div>
 
-                <h3 className="mt-6 max-w-md text-3xl font-bold">
+                <h3 className="mt-6 max-w-md pr-10 text-2xl font-bold sm:text-3xl">
                   {active.title}
                 </h3>
                 <p className="mt-3 max-w-lg leading-relaxed text-slate-300">
@@ -453,7 +453,7 @@ className="custom-scrollbar relative max-h-[85vh] w-full max-w-3xl overflow-y-au
                 </p>
               </div>
 
-              <div className="p-7 sm:p-9">
+              <div className="p-5 sm:p-9">
                 <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[#66d4eb]">
                   What&apos;s included
                 </p>
@@ -483,7 +483,7 @@ className="custom-scrollbar relative max-h-[85vh] w-full max-w-3xl overflow-y-au
 
                 <Link
                   href="/contact"
-                  className="mt-7 inline-flex items-center gap-2 rounded-xl bg-[#17A2C7] px-6 py-3.5 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#5cd5eb]"
+                  className="mt-7 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#17A2C7] px-6 py-3.5 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#5cd5eb] sm:w-auto"
                 >
                   Discuss This Service
                   <ArrowRight size={18} />

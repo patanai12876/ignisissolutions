@@ -186,14 +186,20 @@ export default function About() {
               viewport={{ once: true }}
               className="text-lg leading-relaxed text-slate-300"
             >
-              Ignisis Solutions was built on a simple belief:{' '}
-              <span className="font-semibold text-white">
-                technology, design and marketing work best when they work
-                together
+              <span className="sm:hidden">
+                Ignisis brings technology, design and marketing together in one
+                team, so businesses can grow without managing separate vendors.
               </span>
-              , not in silos. Most businesses end up hiring a developer, a
-              designer and a marketer separately and spend more time
-              managing the gap between them than actually growing.
+              <span className="hidden sm:inline">
+                Ignisis Solutions was built on a simple belief:{' '}
+                <span className="font-semibold text-white">
+                  technology, design and marketing work best when they work
+                  together
+                </span>
+                , not in silos. Most businesses end up hiring a developer, a
+                designer and a marketer separately and spend more time
+                managing the gap between them than actually growing.
+              </span>
             </motion.p>
 
             <motion.p
@@ -203,11 +209,17 @@ export default function About() {
               transition={{ delay: 0.1 }}
               className="text-lg leading-relaxed text-slate-300"
             >
-              We bring web development, software, branding and marketing
-              under one team, so every part of your digital presence, your
-              site, your identity, your campaigns, is built from the same
-              understanding of your business, not reassembled from
-              disconnected vendors.
+              <span className="sm:hidden">
+                We build websites, software, brands and campaigns from one
+                clear understanding of your business.
+              </span>
+              <span className="hidden sm:inline">
+                We bring web development, software, branding and marketing
+                under one team, so every part of your digital presence, your
+                site, your identity, your campaigns, is built from the same
+                understanding of your business, not reassembled from
+                disconnected vendors.
+              </span>
             </motion.p>
 
             <motion.p
@@ -217,9 +229,15 @@ export default function About() {
               transition={{ delay: 0.2 }}
               className="text-lg leading-relaxed text-slate-300"
             >
-              That&apos;s the difference we build for: not just a finished
-              website, but a digital direction your business can keep growing
-              with.
+              <span className="sm:hidden">
+                Not just a finished website, but a digital direction built to
+                keep your business moving forward.
+              </span>
+              <span className="hidden sm:inline">
+                That&apos;s the difference we build for: not just a finished
+                website, but a digital direction your business can keep growing
+                with.
+              </span>
             </motion.p>
           </div>
         </div>
@@ -387,7 +405,7 @@ export default function About() {
       </Link>
 
       <div className="mx-auto mt-8 flex max-w-md items-center justify-center gap-3 text-sm text-slate-300">
-        <Check size={16} className="text-[#66d4eb]" />
+       
         One team for strategy, creativity and technology.
       </div>
     </div>

@@ -158,10 +158,10 @@ export default function Home() {
               moves in the same direction.
             </p>
 
-            <div className="mt-8 flex flex-wrap gap-4">
+            <div className="mt-8 flex flex-nowrap gap-3">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 rounded-xl bg-[#17A2C7] px-6 py-3.5 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#5cd5eb] hover:shadow-[0_10px_28px_rgba(23,162,199,0.25)]"
+                className="inline-flex shrink-0 items-center gap-2 rounded-xl bg-[#17A2C7] px-4 py-3 text-sm font-semibold whitespace-nowrap text-white transition hover:-translate-y-0.5 hover:bg-[#5cd5eb] hover:shadow-[0_10px_28px_rgba(23,162,199,0.25)] sm:px-6 sm:py-3.5 sm:text-base"
               >
                 Start a Project
                 <ArrowRight size={18} />
@@ -169,7 +169,7 @@ export default function Home() {
 
               <Link
                 href="/portfolio"
-                className="inline-flex items-center gap-2 rounded-xl border border-white/20 px-6 py-3.5 font-semibold transition hover:border-[#17A2C7]/70 hover:bg-white/5"
+                className="inline-flex shrink-0 items-center gap-2 rounded-xl border border-white/20 px-4 py-3 text-sm font-semibold whitespace-nowrap transition hover:border-[#17A2C7]/70 hover:bg-white/5 sm:px-6 sm:py-3.5 sm:text-base"
               >
                 View Our Work
               </Link>
@@ -580,7 +580,7 @@ export default function Home() {
         </motion.div>
 
         <div className="mt-20 grid gap-7 lg:grid-cols-[0.75fr_1.25fr]">
-          <div className="space-y-2">
+          <div className="grid grid-cols-3 gap-2 lg:block lg:space-y-2">
             {serviceGroups.map((group) => {
               const Icon = group.icon
               const selected = activeService === group.id
@@ -590,15 +590,15 @@ export default function Home() {
                   key={group.id}
                   type="button"
                   onClick={() => setActiveService(group.id)}
-                  className={`flex w-full items-center justify-between rounded-xl border px-5 py-5 text-left transition ${
+                  className={`flex min-h-[76px] w-full items-center justify-center rounded-xl border px-2 py-3 text-center transition lg:min-h-0 lg:justify-between lg:px-5 lg:py-5 lg:text-left ${
                     selected
                       ? 'border-[#17A2C7]/60 bg-[#17A2C7]/10'
                       : 'border-white/10 bg-white/[0.025] hover:border-white/25 hover:bg-white/[0.05]'
                   }`}
                 >
-                  <span className="flex items-center gap-4">
+                  <span className="flex flex-col items-center gap-2 lg:flex-row lg:gap-4">
                     <span
-                      className={`flex h-10 w-10 items-center justify-center rounded-lg ${
+                      className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg lg:h-10 lg:w-10 ${
                         selected
                           ? 'bg-[#17A2C7] text-[#0A1930]'
                           : 'bg-white/5 text-slate-300'
@@ -607,10 +607,10 @@ export default function Home() {
                       <Icon size={19} />
                     </span>
                     <span>
-                      <span className="block text-lg font-semibold">
+                      <span className="block text-sm font-semibold lg:text-lg">
                         {group.label}
                       </span>
-                      <span className="mt-1 block text-sm text-slate-400">
+                      <span className="mt-1 hidden text-sm text-slate-400 lg:block">
                         {group.id === 'build' && 'Websites, stores and software'}
                         {group.id === 'grow' && 'Marketing and business strategy'}
                         {group.id === 'brand' && 'Identity and visual design'}
@@ -620,7 +620,7 @@ export default function Home() {
 
                   <ArrowRight
                     size={18}
-                    className={selected ? 'text-[#66d4eb]' : 'text-slate-500'}
+                    className={`hidden lg:block ${selected ? 'text-[#66d4eb]' : 'text-slate-500'}`}
                   />
                 </button>
               )

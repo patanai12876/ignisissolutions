@@ -11,6 +11,7 @@ import {
   MessageCircle,
   Phone,
   Send,
+  ChevronDown,
 } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { useState } from 'react'
@@ -273,20 +274,27 @@ export default function Contact() {
                   <label className="text-sm font-medium text-slate-300">
                     Service of interest <span className="text-red-400">*</span>
                   </label>
-                  <select
-                    value={form.service}
-                    onChange={(e) => setForm({ ...form, service: e.target.value })}
-                    className={`mt-2 w-full rounded-xl border bg-[#0A1930] px-4 py-3 text-sm text-white outline-none transition focus:border-[#17A2C7] ${
-                      errors.service ? 'border-red-400/60' : 'border-white/10'
-                    }`}
-                  >
-                    <option value="">Select a service</option>
-                    {serviceOptions.map((s) => (
-                      <option key={s} value={s}>
-                        {s}
-                      </option>
-                    ))}
-                  </select>
+                  <div className="relative mt-2">
+                    <select
+                      value={form.service}
+                      onChange={(e) => setForm({ ...form, service: e.target.value })}
+                      className={`w-full appearance-none rounded-xl border bg-[#0A1930] px-4 py-3 pr-12 text-sm text-white outline-none transition focus:border-[#17A2C7] ${
+                        errors.service ? 'border-red-400/60' : 'border-white/10'
+                      }`}
+                    >
+                      <option value="">Select a service</option>
+                      {serviceOptions.map((s) => (
+                        <option key={s} value={s}>
+                          {s}
+                        </option>
+                      ))}
+                    </select>
+                    <ChevronDown
+                      size={17}
+                      aria-hidden="true"
+                      className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-slate-400"
+                    />
+                  </div>
                   {errors.service && (
                     <p className="mt-1.5 text-xs text-red-400">{errors.service}</p>
                   )}

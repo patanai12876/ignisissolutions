@@ -213,7 +213,7 @@ export default function PortfolioPage() {
                   <img
                     src={featuredProject.thumbnail}
                     alt={featuredProject.title}
-                    className="h-72 w-full object-cover transition duration-700 group-hover:scale-105 sm:h-80"
+                    className="block h-auto w-full bg-[#071426] transition duration-700"
                   />
 
                   <div className="absolute inset-0 bg-gradient-to-t from-[#071426] via-transparent to-transparent" />
