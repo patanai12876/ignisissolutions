@@ -10,7 +10,7 @@ const inter = Inter({
   display: 'swap',
 })
 
-const siteUrl = 'https://ignisissolutions-phi.vercel.app'
+const siteUrl = 'https://ignisissolutions.com'
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

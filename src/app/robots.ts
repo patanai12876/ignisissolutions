@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://ignisissolutions-phi.vercel.app/sitemap.xml',
+    sitemap: 'https://ignisissolutions.com/sitemap.xml',
   }
 }
