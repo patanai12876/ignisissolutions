@@ -126,7 +126,7 @@ export default function Home() {
   const ActiveIcon = activeGroup.icon
   const [activeNode, setActiveNode] = useState('business')
   return (
-    <main className="overflow-x-hidden bg-[#0A1930] pt-16 text-white">
+    <main className="overflow-x-hidden bg-[#0A1930] pt-24 text-white">
       {/* HERO */}
       <section className="relative overflow-hidden">
         <div className="pointer-events-none absolute inset-0">
@@ -135,7 +135,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:48px_48px]" />
         </div>
 
-        <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-6 py-16 lg:grid-cols-2 lg:py-16">
+        <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-6 py-8 lg:grid-cols-2 lg:py-16">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
@@ -181,8 +181,7 @@ export default function Home() {
             </div>
           </motion.div>
 
-          {/* INTERACTIVE HERO VISUAL */}
-    {/* INTERACTIVE HERO VISUAL — live product mockup */}
+         
 {/* INTERACTIVE HERO VISUAL — DIGITAL GROWTH ORBIT */}
 <motion.div
   initial={{ opacity: 0, x: 35 }}
@@ -208,7 +207,7 @@ export default function Home() {
     <div className="absolute right-0 top-10 h-48 w-48 rounded-full bg-[#123C6B]/30 blur-[90px]" />
   </div>
 
-  <div className="relative flex min-h-[500px] items-center justify-center overflow-visible">
+  <div className="relative flex min-h-[410px] items-center justify-center overflow-visible lg:min-h-[500px]">
 
     {/* =========================
         OUTER ORBIT
@@ -561,7 +560,7 @@ export default function Home() {
       </section>
 
       {/* SERVICES */}
-      <section className="mx-auto max-w-7xl px-6 py-16 lg:py-20">
+      <section className=" mx-auto max-w-7xl px-6 py-16 lg:py-20">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
