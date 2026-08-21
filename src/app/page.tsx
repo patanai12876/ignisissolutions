@@ -126,7 +126,7 @@ export default function Home() {
   const ActiveIcon = activeGroup.icon
   const [activeNode, setActiveNode] = useState('business')
   return (
-    <main className="overflow-x-hidden bg-[#0A1930] pt-24 text-white">
+    <main className="overflow-x-hidden bg-[#0A1930] pt-20 lg:pt-24 text-white">
       {/* HERO */}
       <section className="relative overflow-hidden">
         <div className="pointer-events-none absolute inset-0">

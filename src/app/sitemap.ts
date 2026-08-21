@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next'
 
-const siteUrl = 'https://ignisissolutions-phi.vercel.app'
+const siteUrl = 'https://www.ignisissolutions.com/'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [

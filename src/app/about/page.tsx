@@ -76,7 +76,7 @@ const capabilities = [
 
 export default function About() {
   return (
-    <main className="overflow-x-hidden bg-[#0A1930] pt-16 text-white">
+    <main className="overflow-x-hidden bg-[#0A1930] pt-20 lg:pt-24 text-white">
       {/* PAGE HEADER */}
       {/* PAGE HEADER — editorial style, no side panel */}
 <section className="relative overflow-hidden border-b border-white/10">

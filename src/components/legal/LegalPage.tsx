@@ -33,7 +33,7 @@ export default function LegalPage({
   const [openSection, setOpenSection] = useState(sections[0]?.id ?? '')
 
   return (
-    <main className="overflow-x-hidden bg-[#0A1930] pt-24 text-white">
+    <main className="overflow-x-hidden bg-[#0A1930] pt-20 lg:pt-24 text-white">
       <section className="relative overflow-hidden border-b border-white/10">
         <div className="pointer-events-none absolute inset-0">
           <div className="absolute left-[8%] top-0 h-[24rem] w-[24rem] rounded-full bg-blue-600/15 blur-[120px]" />
