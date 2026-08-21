@@ -149,7 +149,7 @@ export default function PortfolioPage() {
               from premium brand websites to customer-focused online platforms.
             </p>
 
-            <div className="mt-8 flex flex-wrap gap-4">
+            <div className="mt-8 flex flex-nowrap gap-3">
               <button
                 type="button"
                 onClick={() =>
@@ -157,14 +157,14 @@ export default function PortfolioPage() {
                     .getElementById('all-projects')
                     ?.scrollIntoView({ behavior: 'smooth' })
                 }
-                className="inline-flex items-center gap-2 rounded-xl bg-[#17A2C7] px-6 py-3.5 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#62d7ec]"
+                className="inline-flex shrink-0 items-center gap-2 rounded-xl bg-[#17A2C7] px-4 py-3 text-sm font-semibold whitespace-nowrap text-white transition hover:-translate-y-0.5 hover:bg-[#62d7ec] sm:px-6 sm:py-3.5 sm:text-base"
               >
                 Explore Projects <ArrowRight size={18} />
               </button>
 
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 rounded-xl border border-white/20 px-6 py-3.5 font-semibold transition hover:border-[#17A2C7]/70 hover:bg-white/5"
+                className="inline-flex shrink-0 items-center gap-2 rounded-xl border border-white/20 px-4 py-3 text-sm font-semibold whitespace-nowrap transition hover:border-[#17A2C7]/70 hover:bg-white/5 sm:px-6 sm:py-3.5 sm:text-base"
               >
                 Start a Similar Project
               </Link>
@@ -353,7 +353,7 @@ export default function PortfolioPage() {
                   <img
                     src={project.thumbnail}
                     alt={project.title}
-                    className="h-60 w-full object-cover transition duration-700 group-hover:scale-105"
+                    className="h-60 w-full bg-[#071426] object-contain transition duration-700"
                   />
 
                   <div className="absolute inset-0 bg-gradient-to-t from-[#071426]/85 via-transparent to-transparent" />
