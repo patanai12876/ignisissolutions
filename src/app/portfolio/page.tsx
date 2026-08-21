@@ -129,7 +129,7 @@ export default function PortfolioPage() {
           <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:48px_48px]" />
         </div>
 
-        <div className="relative mx-auto grid max-w-7xl gap-12 px-6 py-10 lg:grid-cols-[1fr_1fr] lg:items-center lg:py-16">
+        <div className="relative mx-auto grid max-w-7xl gap-12 px-6 py-20 lg:grid-cols-[1fr_1fr] lg:items-center lg:py-16">
           <motion.div
             initial={{ opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}
