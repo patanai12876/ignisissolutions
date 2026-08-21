@@ -23,11 +23,11 @@ export default function Footer() {
     <footer className="border-t border-white/10 bg-[#071426] text-white">
       <div className="mx-auto grid max-w-7xl gap-12 px-6 py-16 md:grid-cols-2 lg:grid-cols-[1.3fr_0.7fr_0.7fr_1.2fr]">
         <div>
-  <Link href="/" className="relative -top-1 -ml-8 inline-flex items-center">
+  <Link href="/" className="inline-flex items-center -ml-8">
     <img
       src="/images/logo.png"
       alt="Ignisis Solutions"
-      className="h-12 w-auto object-contain object-left"
+      className="h-20 w-auto object-contain object-left"
     />
   </Link>
 
@@ -146,7 +146,7 @@ export default function Footer() {
                   Lahore, Pakistan <ArrowUpRight size={12} />
                 </span>
                 <span className="mt-1 block max-w-xs text-sm leading-relaxed">
-                  280 N Block, Model Town, Lahore
+                  280 N Block, Model Town, Lahore, 54700
                 </span>
               </span>
             </a>

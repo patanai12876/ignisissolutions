@@ -31,8 +31,8 @@ export default function Navbar() {
           <img
             src="/images/logo.png"
             alt="Ignisis Solutions"
-            className="h-10 w-auto object-contain sm:h-12 md:h-14"
-            style={{ maxWidth: 180 }}
+            className="h-16 w-auto sm:h-20 md:h-24"
+            style={{ maxWidth: 220 }}
           />
         </Link>
 
