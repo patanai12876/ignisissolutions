@@ -120,7 +120,7 @@ export default function PortfolioPage() {
   }
 
   return (
-    <main className="overflow-x-hidden bg-[#0A1930] pt-24 text-white">
+    <main className="overflow-x-hidden bg-[#0A1930] pt-16 text-white">
       {/* HERO */}
       <section className="relative overflow-hidden border-b border-white/10">
         <div className="pointer-events-none absolute inset-0">
@@ -129,7 +129,7 @@ export default function PortfolioPage() {
           <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:48px_48px]" />
         </div>
 
-        <div className="relative mx-auto grid max-w-7xl gap-12 px-6 py-16 lg:grid-cols-[1fr_1fr] lg:items-center lg:py-24">
+        <div className="relative mx-auto grid max-w-7xl gap-12 px-6 py-10 lg:grid-cols-[1fr_1fr] lg:items-center lg:py-16">
           <motion.div
             initial={{ opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}

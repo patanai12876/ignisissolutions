@@ -76,7 +76,7 @@ const capabilities = [
 
 export default function About() {
   return (
-    <main className="overflow-x-hidden bg-[#0A1930] pt-24 text-white">
+    <main className="overflow-x-hidden bg-[#0A1930] pt-16 text-white">
       {/* PAGE HEADER */}
       {/* PAGE HEADER — editorial style, no side panel */}
 <section className="relative overflow-hidden border-b border-white/10">
@@ -85,7 +85,7 @@ export default function About() {
     <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:48px_48px]" />
   </div>
 
-  <div className="relative mx-auto max-w-7xl px-6 py-24">
+  <div className="relative mx-auto max-w-7xl px-6 py-12 lg:py-16">
     <motion.p
       initial={{ opacity: 0, y: 14 }}
       animate={{ opacity: 1, y: 0 }}
