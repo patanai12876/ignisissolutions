@@ -191,7 +191,7 @@ export default function PortfolioPage() {
                   <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#66d4eb]">
                     Featured Project
                   </p>
-                  <p className="mt-1 text-sm font-semibold">{featuredProject.title}</p>
+                  <p className="mt-1 text-xs font-semibold sm:text-sm">{featuredProject.title}</p>
                 </div>
 
                 <span className="rounded-full border border-white/10 px-3 py-1 text-xs text-slate-400">
@@ -218,12 +218,12 @@ export default function PortfolioPage() {
 
                   <div className="absolute inset-0 bg-gradient-to-t from-[#071426] via-transparent to-transparent" />
 
-                  <div className="absolute inset-x-0 bottom-0 p-5">
-                    <p className="text-xs font-semibold uppercase tracking-[0.16em] text-white">
+                  <div className="absolute inset-x-0 bottom-0 p-3 sm:p-5">
+                    <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-white sm:text-xs sm:tracking-[0.16em]">
                       {categoryLabels[featuredProject.category] ||
                         featuredProject.category}
                     </p>
-                    <h2 className="mt-2 text-2xl font-bold">
+                    <h2 className="mt-1 text-base font-bold sm:mt-2 sm:text-2xl">
                       {featuredProject.title}
                     </h2>
                   </div>
