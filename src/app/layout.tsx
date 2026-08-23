@@ -14,6 +14,7 @@ const siteUrl = 'https://ignisissolutions.com'
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
+  applicationName: 'Ignisis Solutions',
 
   icons: {
     icon: '/images/favicon.png',
@@ -135,6 +136,14 @@ const organizationSchema = {
   },
 }
 
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Ignisis Solutions',
+  alternateName: 'Ignisis Solutions Digital Agency',
+  url: siteUrl,
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -147,6 +156,12 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(organizationSchema),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(websiteSchema),
           }}
         />
 
