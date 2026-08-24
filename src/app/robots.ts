@@ -1,11 +1,13 @@
 import type { MetadataRoute } from 'next'
 
+const siteUrl = 'https://ignisissolutions.com'
+
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://ignisissolutions.com/sitemap.xml',
+    sitemap: `${siteUrl}/sitemap.xml`,
   }
 }

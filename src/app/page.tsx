@@ -20,7 +20,7 @@ import {
   Megaphone,
 } from 'lucide-react'
 import { AnimatePresence, motion } from 'framer-motion'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Testimonials from '@/components/home/Testimonials'
 
 
@@ -58,12 +58,29 @@ const serviceGroups = [
   },
 ]
 
+const capabilities = [
+  { icon: Code2, label: 'Web Development' },
+  { icon: Search, label: 'SEO & Growth' },
+  { icon: Megaphone, label: 'Digital Marketing' },
+  { icon: Palette, label: 'Branding & Design' },
+  { icon: Smartphone, label: 'Mobile Experiences' },
+  { icon: TrendingUp, label: 'Business Strategy' },
+]
+
+const heroServices = [
+  'Web Development',
+  'Digital Marketing',
+  'SEO Solutions',
+  'Custom Software',
+  'Branding & Design',
+]
+
 const projects = [
   {
     name: 'Evoo',
     category: 'EV Mobility Platform',
     description:
-      'A modern mobility brand experience built around premium storytelling and a smooth digital journey.',
+  'A modern e-commerce and web application developed for an E-bikes brand, focused on product presentation, user experience and brand growth.',
     href: 'https://e-bikes-gamma.vercel.app/',
     icon: Globe2,
     visual: 'from-[#1e5559] via-[#12373f] to-[#0A1930]',
@@ -73,7 +90,7 @@ const projects = [
     name: 'Brew and Co.',
     category: 'Coffee Ordering Platform',
     description:
-      'A polished ordering experience that helps customers explore, choose and order with ease.',
+  'A modern coffee ordering platform designed to give customers a fast, intuitive experience across menus, products and online ordering.',
     href: 'https://brew-and-co-acyz.vercel.app/',
     icon: Layers3,
     visual: 'from-[#68442c] via-[#31261f] to-[#0A1930]',
@@ -83,7 +100,7 @@ const projects = [
     name: 'FitPro',
     category: 'Fitness Platform',
     description:
-      'A high-energy platform connecting trainers, classes and customer enquiries in one experience.',
+  'A  fitness website built to showcase services, connect customers with trainers and generate enquiries through a focused digital experience.',
     href: 'https://fit-pro-frontend.vercel.app/',
     icon: Sparkles,
     visual: 'from-[#542738] via-[#291f30] to-[#0A1930]',
@@ -97,26 +114,28 @@ const faqs = [
     answer:
       'We work with startups, small-to-medium businesses and established companies that need a stronger website, brand, software product or digital growth strategy.',
   },
-  {
-    question: 'Can you handle both design and development?',
-    answer:
-      'Yes. Ignisis brings design, development, branding and marketing together, so your business has one connected digital direction instead of disconnected vendors.',
-  },
-  {
-    question: 'Can I start with one service first?',
-    answer:
-      'Absolutely. You can begin with a website, brand identity, e-commerce store, software idea or marketing requirement. We will help you identify the best first step.',
-  },
+{
+  question: 'Do you provide digital marketing services in Lahore?',
+  answer:
+    'Yes. Ignisis Solutions provides SEO, Google Ads, Meta Ads and digital marketing services for businesses in Lahore and across Pakistan.',
+},
+{
+  question: 'Do you work with international clients?',
+  answer:
+    'Yes. Although Ignisis Solutions is based in Lahore, Pakistan, we work and collaborate with international clients remotely.',
+},
+{
+  question: 'Do you build custom websites and software?',
+  answer:
+    'Yes. We develop modern websites, e-commerce platforms and custom software solutions tailored to each business and its goals.',
+},
+
 ]
-const testimonial = {
-  quote:
-    'PASTE A REAL CLIENT REVIEW HERE. Keep it short, specific and exactly as the client said it.',
-  name: 'Client Name',
-  role: 'Company / Project',
-}
+
 
 export default function Home() {
   const [activeService, setActiveService] = useState('build')
+  const [heroServiceIndex, setHeroServiceIndex] = useState(0)
   const [openFaq, setOpenFaq] = useState<number | null>(null)
 
   const activeGroup =
@@ -125,6 +144,15 @@ export default function Home() {
 
   const ActiveIcon = activeGroup.icon
   const [activeNode, setActiveNode] = useState('business')
+
+  useEffect(() => {
+    const interval = window.setInterval(() => {
+      setHeroServiceIndex((current) => (current + 1) % heroServices.length)
+    }, 2600)
+
+    return () => window.clearInterval(interval)
+  }, [])
+
   return (
     <main className="overflow-x-hidden bg-[#0A1930] pt-20 lg:pt-24 text-white">
       {/* HERO */}
@@ -142,28 +170,58 @@ export default function Home() {
             transition={{ duration: 0.7 }}
           >
             <p className="mb-5 text-xs font-semibold uppercase tracking-[0.18em] text-[#66d4eb]">
-              Digital Agency & Business Solutions
+              Digital Agency for Modern Businesses
             </p>
 
             <h1 className="max-w-2xl text-4xl font-bold leading-[1.15] sm:text-5xl lg:text-6xl">
-              We build digital experiences that{' '}
-              <span className="bg-gradient-to-r from-[#66d4eb] via-[#3da7e9] to-[#7187ff] bg-clip-text text-transparent">
-                grow businesses.
-              </span>
+              We Build, Market &amp; Grow Your Business with
+<span className="mt-3 block overflow-hidden bg-gradient-to-r from-[#66d4eb] via-[#3da7e9] to-[#7187ff] bg-clip-text text-transparent">
+  <span className="relative block h-[1.25em] overflow-hidden">
+    <AnimatePresence initial={false} mode="wait">
+      <motion.span
+        key={heroServices[heroServiceIndex]}
+        initial={{
+          y: '100%',
+          opacity: 0,
+        }}
+        animate={{
+          y: '0%',
+          opacity: 1,
+        }}
+        exit={{
+          y: '-100%',
+          opacity: 0,
+        }}
+        transition={{
+          y: {
+            duration: 0.65,
+            ease: [0.76, 0, 0.24, 1],
+          },
+          opacity: {
+            duration: 0.35,
+            ease: 'easeOut',
+          },
+        }}
+        className="absolute inset-0 block"
+      >
+        {heroServices[heroServiceIndex]}
+      </motion.span>
+    </AnimatePresence>
+  </span>
+</span>
             </h1>
 
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-slate-300">
-              Ignisis Solutions helps businesses build stronger websites,
-              brands, software and marketing systems so every digital effort
-              moves in the same direction.
+              Ignisis Solutions is a Lahore-based digital agency helping
+              businesses build powerful digital experiences, reach the right
+              audience, and achieve sustainable growth.
             </p>
-
             <div className="mt-8 flex flex-nowrap gap-3">
               <Link
                 href="/contact"
                 className="inline-flex shrink-0 items-center gap-2 rounded-xl bg-[#17A2C7] px-4 py-3 text-sm font-semibold whitespace-nowrap text-white transition hover:-translate-y-0.5 hover:bg-[#5cd5eb] hover:shadow-[0_10px_28px_rgba(23,162,199,0.25)] sm:px-6 sm:py-3.5 sm:text-base"
               >
-                Start a Project
+                Requst Free Audit
                 <ArrowRight size={18} />
               </Link>
 
@@ -570,12 +628,15 @@ export default function Home() {
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#66d4eb]">
             What we can do for your business
           </p>
-          <h2 className="mt-4 text-4xl font-bold sm:text-5xl">
-            Not just a website. A stronger digital direction.
-          </h2>
+<h2 className="mt-4 text-4xl font-bold sm:text-5xl">
+  Digital Marketing, Web Development & Growth.
+</h2>
           <p className="mt-5 leading-relaxed text-slate-400">
-            Your business may need better technology, clearer branding, stronger
-            marketing or all three working together. This is where we help.
+            <p className="mt-5 leading-relaxed text-slate-400">
+  From web development and custom software to SEO, digital marketing,
+  e-commerce and branding, we provide end to end digital solutions that
+  help businesses grow online.
+</p>
           </p>
         </motion.div>
 
@@ -586,10 +647,16 @@ export default function Home() {
               const selected = activeService === group.id
 
               return (
-                <button
+                <motion.button
                   key={group.id}
                   type="button"
                   onClick={() => setActiveService(group.id)}
+                  animate={selected ? { opacity: [1, 0.55, 1] } : { opacity: 1 }}
+                  transition={
+                    selected
+                      ? { duration: 2.8, repeat: Infinity, ease: 'easeInOut' }
+                      : { duration: 0.2 }
+                  }
                   className={`flex min-h-[76px] w-full items-center justify-center rounded-xl border px-2 py-3 text-center transition lg:min-h-0 lg:justify-between lg:px-5 lg:py-5 lg:text-left ${
                     selected
                       ? 'border-[#17A2C7]/60 bg-[#17A2C7]/10'
@@ -622,7 +689,7 @@ export default function Home() {
                     size={18}
                     className={`hidden lg:block ${selected ? 'text-[#66d4eb]' : 'text-slate-500'}`}
                   />
-                </button>
+                </motion.button>
               )
             })}
           </div>
@@ -670,6 +737,28 @@ export default function Home() {
           </AnimatePresence>
         </div>
       </section>
+
+      {/* SCROLLING CAPABILITIES MARQUEE */}
+      <div className="relative border-t border-white/10 bg-[#08182e] py-5">
+        <div className="flex overflow-hidden">
+          <motion.div
+            animate={{ x: ['0%', '-50%'] }}
+            transition={{ duration: 22, repeat: Infinity, ease: 'linear' }}
+            className="flex shrink-0 items-center gap-10 pr-10"
+          >
+            {[...capabilities, ...capabilities].map(({ icon: Icon, label }, index) => (
+              <span
+                key={`${label}-${index}`}
+                className="flex shrink-0 items-center gap-2.5 text-sm font-semibold uppercase tracking-[0.1em] text-slate-400"
+              >
+                <Icon size={15} className="text-[#66d4eb]" />
+                {label}
+                <span className="ml-8 text-[#17A2C7]/40">/</span>
+              </span>
+            ))}
+          </motion.div>
+        </div>
+      </div>
 
       {/* PROJECT PROOF */}
       <section className="border-y border-white/10 bg-[#08182e]">

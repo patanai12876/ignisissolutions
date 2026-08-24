@@ -27,7 +27,7 @@ export default function WhatsAppButton() {
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.94 }}
       aria-label="Chat with Ignisis Solutions on WhatsApp"
-      className="group fixed bottom-6 right-6 z-40 flex h-14 w-14 items-center justify-center rounded-full border border-emerald-300/40 bg-emerald-500 text-white shadow-[0_8px_30px_rgba(16,185,129,0.4)]"
+      className="group fixed bottom-6 right-6 z-40 hidden h-14 w-14 items-center justify-center rounded-full border border-emerald-300/40 bg-emerald-500 text-white shadow-[0_8px_30px_rgba(16,185,129,0.4)] lg:flex"
     >
       <span className="absolute inset-0 rounded-full border border-emerald-300/40 animate-ping opacity-40" />
       <MessageCircle size={26} className="relative" />

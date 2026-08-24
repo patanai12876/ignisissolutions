@@ -57,6 +57,16 @@
     }
   }
 
+  @keyframes selectedServiceBlink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.58;
+    }
+  }
+
   .animate-fadeIn {
     animation: fadeIn 0.5s ease-out;
   }
@@ -76,6 +86,12 @@
 
   .animate-slideInRight {
     animation: slideInRight 0.6s ease-out;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .animate-selected-service-blink {
+      animation: selectedServiceBlink 3.2s ease-in-out infinite;
+    }
   }
 }
 

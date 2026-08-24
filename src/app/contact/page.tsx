@@ -137,9 +137,9 @@ export default function Contact() {
             transition={{ duration: 0.7, delay: 0.05 }}
             className="mt-5 max-w-3xl text-4xl font-bold leading-[1.15] sm:text-5xl lg:text-6xl"
           >
-            Tell us what you&apos;re trying to{' '}
+            Contact Ignisis  {' '}
             <span className="bg-gradient-to-r from-[#66d4eb] via-[#3da7e9] to-[#7187ff] bg-clip-text text-transparent">
-              build or fix.
+              Solutions
             </span>
           </motion.h1>
 
@@ -149,8 +149,7 @@ export default function Contact() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-300"
           >
-            Share a few details below and we&apos;ll get back to you with next
-            steps usually within one business day.
+          Tell us what you&apos;re trying to build, improve or grow.
           </motion.p>
         </div>
       </section>
@@ -420,6 +419,49 @@ export default function Contact() {
             </motion.div>
           </div>
         </div>
+      </section>
+
+      {/* OFFICE LOCATION */}
+      <section className="mx-auto max-w-7xl px-6 pb-24">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="overflow-hidden rounded-2xl border border-white/10 bg-white/[0.025]"
+        >
+          <div className="px-6 pb-6 pt-8 sm:px-8">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#66d4eb]">
+              Lahore Office
+            </p>
+            <h2 className="mt-3 text-3xl font-bold sm:text-4xl">
+              Visit Ignisis Solutions in Lahore.
+            </h2>
+            <p className="mt-3 text-sm text-slate-300">
+              280 N Block, Model Town, Lahore, 54700, Pakistan.
+            </p>
+          </div>
+
+          <div className="relative aspect-[16/8] min-h-[280px] w-full border-y border-white/10 bg-[#102742]">
+            <iframe
+              title="Ignisis Solutions office location in Lahore"
+              src="https://www.google.com/maps?q=Ignisis%20Solutions%2C%20280%20N%20Block%2C%20Model%20Town%2C%20Lahore&output=embed"
+              className="absolute inset-0 h-full w-full grayscale-[15%]"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
+
+          <div className="px-6 py-4 sm:px-8">
+            <a
+              href={contactChannels[2].href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-[#66d4eb] transition hover:text-white"
+            >
+              Open in Google Maps <ArrowRight size={15} />
+            </a>
+          </div>
+        </motion.div>
       </section>
     </main>
   )

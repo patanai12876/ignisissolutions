@@ -7,7 +7,7 @@ export const projects: Project[] = [
     category: 'web',
     thumbnail: '/evoo/img-1.png',
     images: ['/evoo/img-1.png', '/evoo/img-2.png', '/evoo/img-3.png', '/evoo/img-4.png'],
-    description: 'An electric vehicle company website focused on modern mobility, premium brand storytelling, and a smooth user experience. Built out of frustration with the ordinary commute, the platform highlights innovation and the future of urban travel.',
+    description: 'A modern EV mobility website focused on premium storytelling and a smooth user experience.',
     techStack: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Vercel'],
     liveUrl: 'https://e-bikes-gamma.vercel.app/     ',
     completedDate: '2026-07-10'
@@ -18,7 +18,7 @@ export const projects: Project[] = [
     category: 'web',
     thumbnail: '/shade/sz1.png',
     images: ['/shade/sz1.png', '/shade/sz2.png', '/shade/sz3.png', '/shade/sz4.png'],
-    description: 'S.Z Tensile provides high-quality shade solutions for residential and commercial properties. Our platform showcases our products, services, and customer testimonials.',
+    description: 'A responsive website showcasing S.Z Tensile shade solutions, services, and testimonials.',
     techStack: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Vercel'],
     liveUrl: 'https://www.sztensile.com/     ',
     completedDate: '2026-08-12'
@@ -32,7 +32,7 @@ export const projects: Project[] = [
     category: 'web',
     thumbnail: '/food/pic1.png',
     images: ['/food/pic1.png', '/food/pic2.png', '/food/pic3.png'],
-    description: 'Char & Ember is a fast food and online ordering platform that allows users to browse menus, customize orders, and make payments seamlessly.',
+    description: 'A fast-food ordering platform for browsing menus, customizing orders, and making payments.',
     techStack: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Stripe', 'API Integration'],
     liveUrl: 'https://char-ember.vercel.app/',
     completedDate: '2025-09-29'
@@ -43,7 +43,7 @@ export const projects: Project[] = [
     category: 'web',
     thumbnail: '/seco/s1.png',
     images: ['/seco/s1.png', '/seco/s2.png', '/seco/s3.png', '/seco/s4.png'],
-    description: 'Trusted name in Pakistan construction industry since 1963, specializing in roads, bridges, underpasses, and government infrastructure projects.',
+    description: 'A corporate website presenting Seco Developers construction and infrastructure projects.',
     techStack: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Stripe', 'API Integration'],
     liveUrl: 'https://secodevelopers.com/',
     completedDate: '2025-09-29'
@@ -54,7 +54,7 @@ export const projects: Project[] = [
     category: 'web',
     thumbnail: '/brew/p1.png',
     images: ['/brew/p1.png', '/brew/p2.png', '/brew/p3.png', ],
-    description: 'Brew and Co is a coffee ordering platform that lets users browse the menu, select drinks and snacks, and place orders with a polished, user-friendly interface.',
+    description: 'A polished coffee ordering platform for browsing products and placing orders.',
     techStack: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Stripe', 'API Integration'],
     liveUrl: 'https://brew-and-co-acyz.vercel.app/',
     completedDate: '2026-06-10'
@@ -65,7 +65,7 @@ export const projects: Project[] = [
     category: 'web',
     thumbnail: '/ttt/p3.png',
     images: ['/ttt/p3.png', '/ttt/p2.png', '/ttt/p4.png', '/ttt/p1.png'],
-    description: 'TTT Global Services is a comprehensive platform offering training, trading, and travel services. The website provides information about our services, client testimonials, and an easy-to-navigate interface for users to explore our offerings.',
+    description: 'A service platform for exploring TTT Global training, trading, and travel offerings.',
     techStack: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'API'],
     liveUrl: 'https://tttglobalservice.com/     ',
     completedDate: '2026-08-12'
@@ -76,7 +76,7 @@ export const projects: Project[] = [
     category: 'web',
     thumbnail: '/fitpro/piz1.png',
     images: ['/fitpro/piz1.png', '/fitpro/p2.png', '/fitpro/p3.png', '/fitpro/p4.png '],
-    description: 'Modern gym and fitness platform with dynamic class scheduling, expert trainer profiles, and integrated contact system. Features real-time backend data fetching, responsive design, and seamless user experience.',
+    description: 'A fitness platform with class scheduling, trainer profiles, and an integrated contact system.',
     techStack: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Backend API Integration', 'Vercel'],
     liveUrl: 'https://fit-pro-frontend.vercel.app/',
     completedDate: '2026-05-20'
@@ -88,7 +88,7 @@ export const projects: Project[] = [
     category: 'web',
     thumbnail: '/smile/s1.png',
     images: ['/smile/s1.png',  '/smile/s2.png', '/smile/s3.png', '/smile/s4.png' ],
-    description: 'A Dental Clinic website that provides information about dental services, team members, and contact details. Features a clean design, responsive layout, and easy navigation for patients seeking dental care.',
+    description: 'A clean dental clinic website featuring services, team information, and easy contact options.',
     techStack: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
     liveUrl: 'https://dental-clinic-lyart-nu.vercel.app/',
     completedDate: '2026-07-10'
@@ -100,7 +100,7 @@ export const projects: Project[] = [
     category: 'web',
     thumbnail: '/trade/p1.png',
     images: ['/trade/p1.png', '/trade/p2.png', '/trade/p3.png', '/trade/p4.png'],
-    description: 'Professional copy trading platform enabling 150K+ traders to replicate professional trading strategies. Features real-time trade copying, risk management, live analytics, and 24/7 support. Built with Next.js and modern fintech integrations.',
+    description: 'A fintech platform for copy trading, risk management, and real-time performance analytics.',
     techStack: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Vercel', 'Real-time APIs'],
     liveUrl: 'https://trade-sync-seven.vercel.app',
     completedDate: '2026-02-15'
