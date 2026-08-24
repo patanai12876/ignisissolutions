@@ -175,7 +175,7 @@ export default function Home() {
 
             <h1 className="max-w-2xl text-4xl font-bold leading-[1.15] sm:text-5xl lg:text-6xl">
               We Build, Market &amp; Grow Your Business with
-<span className="mt-3 block overflow-hidden bg-gradient-to-r from-[#66d4eb] via-[#3da7e9] to-[#7187ff] bg-clip-text text-transparent">
+<span className="mt-3 block overflow-hidden">
   <span className="relative block h-[1.25em] overflow-hidden">
     <AnimatePresence initial={false} mode="wait">
       <motion.span
@@ -187,6 +187,7 @@ export default function Home() {
         animate={{
           y: '0%',
           opacity: 1,
+          backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
         }}
         exit={{
           y: '-100%',
@@ -201,8 +202,23 @@ export default function Home() {
             duration: 0.28,
             ease: 'easeOut',
           },
+          backgroundPosition: {
+            duration: 2.9,
+            repeat: Infinity,
+            ease: 'easeInOut',
+          },
         }}
-        className="absolute inset-0 block"
+        style={{
+          backgroundImage:
+            'linear-gradient(90deg, #66d4eb 0%, #ffffff 45%, #17a2c7 70%, #66d4eb 100%)',
+          backgroundSize: '260% auto',
+          backgroundPosition: '0% 50%',
+          backgroundClip: 'text',
+          WebkitBackgroundClip: 'text',
+          color: 'transparent',
+          WebkitTextFillColor: 'transparent',
+        }}
+        className="absolute left-0 top-0 block w-max whitespace-nowrap"
       >
         {heroServices[heroServiceIndex]}
       </motion.span>

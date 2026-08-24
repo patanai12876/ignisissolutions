@@ -67,6 +67,16 @@
     }
   }
 
+  @keyframes heroGradientSlide {
+    0%,
+    100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
   .animate-fadeIn {
     animation: fadeIn 0.5s ease-out;
   }
@@ -91,6 +101,11 @@
   @media (prefers-reduced-motion: no-preference) {
     .animate-selected-service-blink {
       animation: selectedServiceBlink 3.2s ease-in-out infinite;
+    }
+
+    .hero-gradient-slide {
+      background-size: 220% auto;
+      animation: heroGradientSlide 3.2s ease-in-out infinite;
     }
   }
 }
