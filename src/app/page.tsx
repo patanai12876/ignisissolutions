@@ -148,7 +148,7 @@ export default function Home() {
   useEffect(() => {
     const interval = window.setInterval(() => {
       setHeroServiceIndex((current) => (current + 1) % heroServices.length)
-    }, 2600)
+    }, 2200)
 
     return () => window.clearInterval(interval)
   }, [])
@@ -194,11 +194,11 @@ export default function Home() {
         }}
         transition={{
           y: {
-            duration: 0.65,
+            duration: 0.48,
             ease: [0.76, 0, 0.24, 1],
           },
           opacity: {
-            duration: 0.35,
+            duration: 0.28,
             ease: 'easeOut',
           },
         }}

@@ -22,7 +22,7 @@ export default function ScrollToTop() {
       type="button"
       onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
       aria-label="Scroll to top"
-      className="fixed bottom-6 left-5 z-40 flex h-10 w-10 items-center justify-center rounded-full border border-emerald-300/30 bg-[#123c06] text-white shadow-[0_8px_24px_rgba(0,0,0,0.3)] transition hover:scale-105 hover:bg-[#1a5609] active:scale-95"
+      className="fixed bottom-6 left-5 z-40 flex h-10 w-10 items-center justify-center rounded-full border border-[#66d4eb]/50 bg-[#17A2C7] text-white shadow-[0_8px_24px_rgba(0,0,0,0.3)] transition hover:scale-105 hover:bg-[#48c4e0] active:scale-95"
     >
       <ChevronUp size={18} />
     </button>

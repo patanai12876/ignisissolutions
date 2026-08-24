@@ -23,11 +23,11 @@ export default function Footer() {
     <footer className="border-t border-white/10 bg-[#071426] text-white">
       <div className="mx-auto grid max-w-7xl gap-12 px-6 py-16 md:grid-cols-2 lg:grid-cols-[1.3fr_0.7fr_0.7fr_1.2fr]">
         <div>
-  <Link href="/" className="relative -top-1 -ml-8 inline-flex items-center">
+  <Link href="/" className="relative -top-1 -ml-5 inline-flex items-center">
     <img
       src="/images/logo.png"
       alt="Ignisis Solutions"
-      className="h-12 w-auto object-contain object-left"
+      className="h-16 w-auto object-contain object-left"
     />
   </Link>
 

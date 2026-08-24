@@ -324,6 +324,12 @@ export default function About() {
 
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {[
+   {
+    icon: Rocket,
+    title: 'Digital Marketing',
+    text: 'Campaigns connected to real goals.',
+    href: '/services/digital-marketing',
+  },
   {
     icon: Code2,
     title: 'Web Development',
@@ -342,12 +348,7 @@ export default function About() {
     text: 'Tools built around how you work.',
     href: '/services/custom-software-development',
   },
-  {
-    icon: Rocket,
-    title: 'Digital Marketing',
-    text: 'Campaigns connected to real goals.',
-    href: '/services/digital-marketing',
-  },
+ 
   {
     icon: Palette,
     title: 'Branding',

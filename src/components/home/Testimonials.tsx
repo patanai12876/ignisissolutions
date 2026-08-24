@@ -32,7 +32,7 @@ const testimonials = [
   {
     quote:
       'From the initial discussion to the final delivery, the process was straightforward and well organized. The team brought a fresh perspective to our brand and delivered a website that looks professional and works beautifully.',
-    name: 'Client',
+    name: 'M.Burhan',
     role: 'Growing Business',
   },
 ]

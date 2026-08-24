@@ -1,7 +1,8 @@
 'use client'
 
 import Link from 'next/link'
-import { ClipboardCheck, MessageCircle, Phone } from 'lucide-react'
+import { ClipboardCheck, Phone } from 'lucide-react'
+import { FaWhatsapp } from 'react-icons/fa'
 
 const WHATSAPP_NUMBER = '923025708769'
 const WHATSAPP_MESSAGE = 'Hello, I want to discuss a project with Ignisis Solutions.'
@@ -27,7 +28,7 @@ export default function MobileActionBar() {
         rel="noopener noreferrer"
         className="flex min-h-11 flex-col items-center justify-center gap-0.5 rounded-lg bg-white/[0.08] text-[11px] font-semibold text-white transition active:bg-white/15"
       >
-        <MessageCircle size={16} aria-hidden="true" />
+        <FaWhatsapp size={16} aria-hidden="true" />
         <span>WhatsApp</span>
       </a>
       <Link

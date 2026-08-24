@@ -25,6 +25,64 @@ import { useEffect, useState } from 'react'
 
 
 const services = [
+
+   {
+    id: 'marketing',
+    icon: Rocket,
+    title: 'Digital Marketing',
+    slug: 'digital-marketing',
+    tagline: 'Campaigns connected to real goals.',
+    description:
+      'Marketing that\u2019s tied to business outcomes, not vanity metrics getting your business in front of the right audience with a clear plan behind every campaign.',
+    includes: [
+      'Audience and competitor research',
+      'Search and social campaign strategy',
+      'Paid advertising setup and management',
+      'Content and messaging direction',
+      'Monthly performance reporting',
+      'Ongoing optimization based on results',
+    ],
+    idealFor: 'Businesses that need consistent, qualified leads not just traffic.',
+    color: 'from-cyan-400/20 to-indigo-500/5',
+  },
+  {
+    id: 'social-media',
+    icon: MessageCircle,
+    title: 'Social Media Management',
+    slug: 'social-media-management',
+    tagline: 'Your presence, consistently managed.',
+    description:
+      'Strategic social media planning and execution content that engages your audience, builds community and drives business results on the platforms where your customers actually are.',
+    includes: [
+      'Social media strategy and content calendar',
+      'Weekly post creation and scheduling',
+      'Community engagement and response management',
+      'Campaign planning and execution',
+      'Analytics, insights and monthly reporting',
+      'Paid social ad management and optimization',
+    ],
+    idealFor: 'Businesses that need consistent social presence without managing it in-house.',
+    color: 'from-pink-500/20 to-rose-500/5',
+  },
+   {
+    id: 'branding',
+    icon: Palette,
+    title: 'Branding',
+    slug: 'branding',
+    tagline: 'Identities people remember and trust.',
+    description:
+      'A brand system that makes every customer touchpoint your website, packaging, socials, ads feel like one confident, consistent business.',
+    includes: [
+      'Brand strategy and positioning',
+      'Logo and visual identity system',
+      'Color palette and typography guidelines',
+      'Brand guideline document',
+      'Business collateral (cards, letterhead, etc.)',
+      'Social media brand kit',
+    ],
+    idealFor: 'New businesses building an identity, or existing ones outgrowing theirs.',
+    color: 'from-violet-500/20 to-indigo-500/5',
+  },
   {
     id: 'web-dev',
     icon: Code2,
@@ -81,63 +139,6 @@ const services = [
     ],
     idealFor: 'Businesses with a workflow or process that generic software doesn\u2019t solve.',
     color: 'from-indigo-500/20 to-blue-500/5',
-  },
-   {
-    id: 'marketing',
-    icon: Rocket,
-    title: 'Digital Marketing',
-    slug: 'digital-marketing',
-    tagline: 'Campaigns connected to real goals.',
-    description:
-      'Marketing that\u2019s tied to business outcomes, not vanity metrics getting your business in front of the right audience with a clear plan behind every campaign.',
-    includes: [
-      'Audience and competitor research',
-      'Search and social campaign strategy',
-      'Paid advertising setup and management',
-      'Content and messaging direction',
-      'Monthly performance reporting',
-      'Ongoing optimization based on results',
-    ],
-    idealFor: 'Businesses that need consistent, qualified leads not just traffic.',
-    color: 'from-cyan-400/20 to-indigo-500/5',
-  },
-  {
-    id: 'social-media',
-    icon: MessageCircle,
-    title: 'Social Media Management',
-    slug: 'social-media-management',
-    tagline: 'Your presence, consistently managed.',
-    description:
-      'Strategic social media planning and execution content that engages your audience, builds community and drives business results on the platforms where your customers actually are.',
-    includes: [
-      'Social media strategy and content calendar',
-      'Weekly post creation and scheduling',
-      'Community engagement and response management',
-      'Campaign planning and execution',
-      'Analytics, insights and monthly reporting',
-      'Paid social ad management and optimization',
-    ],
-    idealFor: 'Businesses that need consistent social presence without managing it in-house.',
-    color: 'from-pink-500/20 to-rose-500/5',
-  },
-  {
-    id: 'branding',
-    icon: Palette,
-    title: 'Branding',
-    slug: 'branding',
-    tagline: 'Identities people remember and trust.',
-    description:
-      'A brand system that makes every customer touchpoint your website, packaging, socials, ads feel like one confident, consistent business.',
-    includes: [
-      'Brand strategy and positioning',
-      'Logo and visual identity system',
-      'Color palette and typography guidelines',
-      'Brand guideline document',
-      'Business collateral (cards, letterhead, etc.)',
-      'Social media brand kit',
-    ],
-    idealFor: 'New businesses building an identity, or existing ones outgrowing theirs.',
-    color: 'from-violet-500/20 to-indigo-500/5',
   },
    {
     id: 'graphic-design',
