@@ -296,7 +296,7 @@ export default function DigitalBusinessGrowthPage() {
               </p>
 
               <h2 className="mt-4 text-4xl font-bold leading-tight sm:text-5xl">
-                More traffic isn't enough.
+                More traffic isn&apos;t enough.
                 <span className="block text-[#66d4eb]">
                   Growth needs a system.
                 </span>
@@ -579,7 +579,7 @@ export default function DigitalBusinessGrowthPage() {
 
             <p className="mx-auto mt-5 max-w-xl leading-relaxed text-slate-200">
               Tell us where your business is today, what you want to achieve
-              and where you are facing challenges. We'll help you identify the
+              and where you are facing challenges. We&apos;ll help you identify the
               right opportunities for growth.
             </p>
 
