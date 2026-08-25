@@ -175,8 +175,8 @@ export default function Home() {
 
             <h1 className="max-w-2xl text-4xl font-bold leading-[1.15] sm:text-5xl lg:text-6xl">
               We Build, Market &amp; Grow Your Business with
-<span className="mt-3 block overflow-hidden">
-  <span className="relative block h-[1.25em] overflow-hidden">
+<span className="mt-3 block overflow-visible">
+  <span className="relative block h-[1.35em] overflow-visible">
     <AnimatePresence initial={false} mode="wait">
       <motion.span
         key={heroServices[heroServiceIndex]}
@@ -218,7 +218,7 @@ export default function Home() {
           color: 'transparent',
           WebkitTextFillColor: 'transparent',
         }}
-        className="absolute left-0 top-0 block w-max whitespace-nowrap"
+        className="absolute left-0 top-0 block w-max whitespace-nowrap leading-[1.2]"
       >
         {heroServices[heroServiceIndex]}
       </motion.span>
