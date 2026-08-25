@@ -249,11 +249,7 @@ export default function Home() {
               </Link>
             </div>
 
-            <div className="mt-10 flex items-center gap-3 text-sm text-slate-400">
-              <Check size={17} className="text-[#17A2C7]" />
-              One team for strategy, creativity and technology.
-            </div>
-          </motion.div>
+
 
          
 {/* INTERACTIVE HERO VISUAL — DIGITAL GROWTH ORBIT */}
