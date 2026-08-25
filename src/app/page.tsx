@@ -68,8 +68,8 @@ const capabilities = [
 ]
 
 const heroServices = [
-  'Web Development',
   'Digital Marketing',
+  'Web Development',
   'SEO Solutions',
   'Custom Software',
   'Branding & Design',
