@@ -142,12 +142,12 @@ export default function PortfolioPage() {
               Selected Work
             </p>
 
-          <h1 className="mt-5 max-w-2xl text-4xl font-bold leading-[1.12] sm:text-5xl lg:text-6xl">
-   Ignisis Solution&apos;s{' '}
-  <span className="text-[#66d4eb]">Portfolio.</span>
+             <h1 className="mt-5 max-w-2xl text-3xl font-bold leading-[1.08] sm:text-5xl lg:text-6xl">
+           Ignisis Solution&apos;s{' '}
+          <span className="block text-[#66d4eb] sm:inline">Portfolio.</span>
 </h1>
 
-           <p className="mt-6 max-w-xl text-lg leading-relaxed text-slate-300">
+              <p className="mt-5 max-w-xl text-base leading-relaxed text-slate-300 sm:mt-6 sm:text-lg">
   Explore Ignisis Solution&apos;s portfolio of web development,
   e-commerce, custom software, branding and digital marketing projects
   created for businesses in Pakistan and beyond.
@@ -174,7 +174,7 @@ export default function PortfolioPage() {
               </Link>
             </div>
 
-            <div className="mt-10 flex items-center gap-3 text-sm text-slate-400">
+            <div className="mt-10 flex items-center justify-center gap-3 text-center text-sm text-slate-400 lg:justify-start lg:text-left">
               <FolderOpen size={17} className="text-[#17A2C7]" />
               Click any project to explore its complete visual gallery.
             </div>
@@ -185,12 +185,12 @@ export default function PortfolioPage() {
             initial={{ opacity: 0, x: 28 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.75, delay: 0.12 }}
-            className="relative"
+            className="relative mx-auto w-full max-w-xl"
           >
             <div className="absolute inset-0 rounded-3xl bg-[#17A2C7]/10 blur-3xl" />
 
             <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-[#0d2542]/85 p-4 shadow-2xl backdrop-blur-xl sm:p-5">
-              <div className="flex items-center justify-between border-b border-white/10 px-2 pb-4">
+              <div className="flex flex-col items-center gap-3 border-b border-white/10 px-2 pb-4 text-center sm:flex-row sm:justify-between sm:text-left">
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#66d4eb]">
                     Featured Project
