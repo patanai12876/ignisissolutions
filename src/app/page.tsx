@@ -177,7 +177,7 @@ export default function Home() {
               We Build, Market &amp; Grow Your Business with
 <span className="mt-3 block overflow-hidden">
   <span className="relative block h-[1.2em] overflow-hidden">
-    <AnimatePresence initial={false} mode="wait">
+    <AnimatePresence initial={false} mode="sync">
       <motion.span
         key={heroServices[heroServiceIndex]}
         initial={{
@@ -195,7 +195,7 @@ export default function Home() {
         }}
         transition={{
           y: {
-            duration: 0.48,
+            duration: 0.32,
             ease: [0.76, 0, 0.24, 1],
           },
           opacity: {
@@ -210,7 +210,7 @@ export default function Home() {
         }}
         style={{
           backgroundImage:
-            'linear-gradient(90deg, #66d4eb 0%, #ffffff 45%, #17a2c7 70%, #66d4eb 100%)',
+            'linear-gradient(90deg, #ffffff 0%, #ffffff 28%, #66d4eb 55%, #17a2c7 78%, #66d4eb 100%)',
           backgroundSize: '260% auto',
           backgroundPosition: '0% 50%',
           backgroundClip: 'text',

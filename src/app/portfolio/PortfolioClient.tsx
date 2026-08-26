@@ -137,24 +137,24 @@ export default function PortfolioPage() {
             initial={{ opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.65 }}
-            className="mx-auto w-full max-w-2xl text-center lg:mx-0 lg:text-left"
+            className="w-full max-w-2xl text-left"
           >
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#66d4eb]">
               Selected Work
             </p>
 
-             <h1 className="mx-auto mt-5 max-w-2xl text-3xl font-bold leading-[1.08] sm:text-5xl lg:mx-0 lg:text-6xl">
+             <h1 className="mt-5 max-w-2xl text-3xl font-bold leading-[1.08] sm:text-5xl lg:text-6xl">
            Ignisis Solution&apos;s{' '}
           <span className="block text-[#66d4eb] sm:inline">Portfolio.</span>
 </h1>
 
-              <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-slate-300 sm:mt-6 sm:text-lg lg:mx-0">
+              <p className="mt-5 max-w-xl text-base leading-relaxed text-slate-300 sm:mt-6 sm:text-lg">
   Explore Ignisis Solution&apos;s portfolio of web development,
   e-commerce, custom software, branding and digital marketing projects
   created for businesses in Pakistan and beyond.
 </p>
 
-            <div className="mt-8 flex flex-wrap justify-center gap-3 lg:justify-start">
+            <div className="mt-8 flex w-full flex-nowrap gap-2 sm:gap-3">
               <button
                 type="button"
                 onClick={() =>
@@ -162,14 +162,14 @@ export default function PortfolioPage() {
                     .getElementById('all-projects')
                     ?.scrollIntoView({ behavior: 'smooth' })
                 }
-                className="inline-flex shrink-0 items-center gap-2 rounded-xl bg-[#17A2C7] px-4 py-3 text-sm font-semibold whitespace-nowrap text-white transition hover:-translate-y-0.5 hover:bg-[#62d7ec] sm:px-6 sm:py-3.5 sm:text-base"
+                className="inline-flex min-w-0 flex-1 items-center justify-center gap-1 rounded-xl bg-[#17A2C7] px-2 py-3 text-[11px] font-semibold whitespace-nowrap text-white transition hover:-translate-y-0.5 hover:bg-[#62d7ec] sm:flex-none sm:gap-2 sm:px-6 sm:py-3.5 sm:text-base"
               >
                 Explore Projects <ArrowRight size={18} />
               </button>
 
               <Link
                 href="/contact"
-                className="inline-flex shrink-0 items-center gap-2 rounded-xl border border-white/20 px-4 py-3 text-sm font-semibold whitespace-nowrap transition hover:border-[#17A2C7]/70 hover:bg-white/5 sm:px-6 sm:py-3.5 sm:text-base"
+                className="inline-flex min-w-0 flex-1 items-center justify-center gap-1 rounded-xl border border-white/20 px-2 py-3 text-[11px] font-semibold whitespace-nowrap transition hover:border-[#17A2C7]/70 hover:bg-white/5 sm:flex-none sm:gap-2 sm:px-6 sm:py-3.5 sm:text-base"
               >
                 Start a Similar Project
               </Link>
