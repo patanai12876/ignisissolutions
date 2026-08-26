@@ -175,8 +175,8 @@ export default function Home() {
 
             <h1 className="max-w-2xl text-4xl font-bold leading-[1.15] sm:text-5xl lg:text-6xl">
               We Build, Market &amp; Grow Your Business with
-<span className="mt-3 block overflow-hidden">
-  <span className="relative block h-[1.2em] overflow-hidden">
+<span className="mt-3 block overflow-visible">
+  <span className="relative block h-[1.35em] overflow-visible">
     <AnimatePresence initial={false} mode="wait">
       <motion.span
         key={heroServices[heroServiceIndex]}
@@ -670,7 +670,7 @@ export default function Home() {
                   animate={selected ? { opacity: [1, 0.55, 1] } : { opacity: 1 }}
                   transition={
                     selected
-                      ? { duration: 2.8, repeat: Infinity, ease: 'easeInOut' }
+                      ? { duration: 1.8, repeat: Infinity, ease: 'easeInOut' }
                       : { duration: 0.2 }
                   }
                   className={`flex min-h-[76px] w-full items-center justify-center rounded-xl border px-2 py-3 text-center transition lg:min-h-0 lg:justify-between lg:px-5 lg:py-5 lg:text-left ${
