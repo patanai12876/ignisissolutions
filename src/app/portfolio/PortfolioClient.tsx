@@ -132,28 +132,29 @@ export default function PortfolioPage() {
           <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:48px_48px]" />
         </div>
 
-        <div className="relative mx-auto grid max-w-7xl gap-12 px-6 py-10 lg:grid-cols-[1fr_1fr] lg:items-center lg:py-16">
+        <div className="relative mx-auto grid min-w-0 max-w-7xl gap-12 px-4 py-10 sm:px-6 lg:grid-cols-[1fr_1fr] lg:items-center lg:py-16">
           <motion.div
             initial={{ opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.65 }}
+            className="mx-auto w-full max-w-2xl text-center lg:mx-0 lg:text-left"
           >
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#66d4eb]">
               Selected Work
             </p>
 
-             <h1 className="mt-5 max-w-2xl text-3xl font-bold leading-[1.08] sm:text-5xl lg:text-6xl">
+             <h1 className="mx-auto mt-5 max-w-2xl text-3xl font-bold leading-[1.08] sm:text-5xl lg:mx-0 lg:text-6xl">
            Ignisis Solution&apos;s{' '}
           <span className="block text-[#66d4eb] sm:inline">Portfolio.</span>
 </h1>
 
-              <p className="mt-5 max-w-xl text-base leading-relaxed text-slate-300 sm:mt-6 sm:text-lg">
+              <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-slate-300 sm:mt-6 sm:text-lg lg:mx-0">
   Explore Ignisis Solution&apos;s portfolio of web development,
   e-commerce, custom software, branding and digital marketing projects
   created for businesses in Pakistan and beyond.
 </p>
 
-            <div className="mt-8 flex flex-nowrap gap-3">
+            <div className="mt-8 flex flex-wrap justify-center gap-3 lg:justify-start">
               <button
                 type="button"
                 onClick={() =>
