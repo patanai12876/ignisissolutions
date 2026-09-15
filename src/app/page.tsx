@@ -20,7 +20,7 @@ import {
   Megaphone,
 } from 'lucide-react'
 import { AnimatePresence, motion } from 'framer-motion'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Testimonials from '@/components/home/Testimonials'
 
 
@@ -137,6 +137,8 @@ export default function Home() {
   const [activeService, setActiveService] = useState('build')
   const [heroServiceIndex, setHeroServiceIndex] = useState(0)
   const [openFaq, setOpenFaq] = useState<number | null>(null)
+  const processRef = useRef<HTMLElement>(null)
+  const [processProgress, setProcessProgress] = useState(0)
 
   const activeGroup =
     serviceGroups.find((service) => service.id === activeService) ||
@@ -151,6 +153,31 @@ export default function Home() {
     }, 2200)
 
     return () => window.clearInterval(interval)
+  }, [])
+
+  useEffect(() => {
+    const updateProcessProgress = () => {
+      const section = processRef.current
+
+      if (!section) return
+
+      const sectionTop = section.offsetTop
+      const sectionHeight = section.offsetHeight
+      const viewportHeight = window.innerHeight
+      const scrollDistance = sectionHeight - viewportHeight * 0.35
+      const progress = (window.scrollY - sectionTop + viewportHeight * 0.35) / scrollDistance
+
+      setProcessProgress(Math.min(1, Math.max(0, progress)))
+    }
+
+    updateProcessProgress()
+    window.addEventListener('scroll', updateProcessProgress, { passive: true })
+    window.addEventListener('resize', updateProcessProgress)
+
+    return () => {
+      window.removeEventListener('scroll', updateProcessProgress)
+      window.removeEventListener('resize', updateProcessProgress)
+    }
   }, [])
 
   return (
@@ -861,49 +888,115 @@ export default function Home() {
 
 
       {/* PROCESS */}
-      <section className="mx-auto max-w-7xl px-6 py-24">
-        <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#66d4eb]">
-              A process you can trust
+      <section ref={processRef} className="border-y border-white/10 bg-[#0A1930] text-white">
+        <div className="mx-auto max-w-7xl px-6 py-24">
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#17A2C7]">
+              Our process
             </p>
             <h2 className="mt-4 text-4xl font-bold sm:text-5xl">
-              Clear steps. No unnecessary confusion.
+              From business idea to digital growth.
             </h2>
-            <p className="mt-6 max-w-md leading-relaxed text-slate-400">
-              We keep the journey transparent, collaborative and connected to
-              the result your business needs.
+            <p className="mx-auto mt-5 max-w-2xl leading-relaxed text-slate-400">
+              Every Ignisis project connects strategy, design, technology and
+              marketing so your next step is always built on the last one.
             </p>
           </div>
 
-          <div className="relative space-y-1">
-            
+          <div className="relative mx-auto mt-16 max-w-6xl">
+            <svg
+              aria-hidden="true"
+              viewBox="0 0 1000 1040"
+              preserveAspectRatio="none"
+              className="pointer-events-none absolute inset-x-[16.66%] top-0 hidden h-full w-[66.68%] lg:block"
+            >
+              <path
+                d="M375 95 C375 175 375 175 375 215 C375 285 625 285 625 333 C625 405 375 405 375 571 C375 645 625 645 625 809 C625 875 375 875 375 1040"
+                fill="none"
+                stroke="#29405b"
+                strokeWidth="7"
+                strokeLinecap="round"
+              />
+              <path
+                d="M375 95 C375 175 375 175 375 215 C375 285 625 285 625 333 C625 405 375 405 375 571 C375 645 625 645 625 809 C625 875 375 875 375 1040"
+                fill="none"
+                stroke="#17A2C7"
+                strokeWidth="7"
+                strokeLinecap="round"
+                pathLength="1"
+                strokeDasharray="1"
+                strokeDashoffset={1 - processProgress}
+                className="transition-[stroke-dashoffset] duration-150 ease-out"
+              />
+            </svg>
 
-            {[
-              ['01', 'Understand', 'We learn about your business, audience, offer and the actual goal behind the project.'],
-              ['02', 'Plan', 'We define the right direction, scope and experience before we start building.'],
-              ['03', 'Create', 'Design, development and content come together into one focused digital solution.'],
-              ['04', 'Launch & improve', 'We launch with confidence and support what comes next.'],
-            ].map(([number, title, text], index) => (
-              <motion.div
-                key={number}
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ x: 7 }}
-                className="relative grid gap-4 rounded-xl p-5 transition hover:bg-white/[0.035] sm:grid-cols-[3.5rem_1fr]"
-              >
-                <span className="relative z-10 flex h-11 w-11 items-center justify-center rounded-full border border-[#17A2C7]/30 bg-[#0A1930] text-sm font-bold text-[#66d4eb]">
-                  {number}
-                </span>
+            <div className="pointer-events-none absolute bottom-0 left-5 top-0 w-0.5 rounded-full bg-[#29405b] lg:hidden">
+              <div
+                className="w-full rounded-full bg-[#17A2C7] transition-[height] duration-150 ease-out"
+                style={{ height: `${processProgress * 100}%` }}
+              />
+            </div>
 
-                <div className="pt-1">
-                  <h3 className="text-xl font-semibold">{title}</h3>
-                  <p className="mt-2 leading-relaxed text-slate-400">{text}</p>
-                </div>
-              </motion.div>
-            ))}
+            <div className="relative grid gap-8 lg:auto-rows-[190px] lg:grid-cols-[1fr_7rem_1fr] lg:gap-y-12">
+              {[
+                {
+                  number: '01',
+                  title: 'Discover the opportunity',
+                  text: 'We understand your business, audience, goals and the challenge that needs solving.',
+                },
+                {
+                  number: '02',
+                  title: 'Shape the strategy',
+                  text: 'We recommend the right mix of consultancy, branding, development and marketing for your goals.',
+                },
+                {
+                  number: '03',
+                  title: 'Build the experience',
+                  text: 'Our designers and developers turn the strategy into a clear brand, website, store or software solution.',
+                },
+                {
+                  number: '04',
+                  title: 'Activate your growth',
+                  text: 'We connect your new digital foundation with SEO, campaigns, content and social media that reach the right people.',
+                },
+                {
+                  number: '05',
+                  title: 'Measure and improve',
+                  text: 'After launch, we use feedback and performance insights to keep your business moving forward.',
+                },
+              ].map(({ number, title, text }, index) => {
+                const isLeft = index % 2 === 0
+
+                return (
+                  <motion.div
+                    key={number}
+                    initial={{ opacity: 0, y: 24 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.25 }}
+                    transition={{ delay: index * 0.08, duration: 0.5 }}
+                    className={`group grid grid-cols-[3rem_1fr] items-start gap-x-3 pb-6 lg:col-span-3 lg:min-h-0 lg:grid-cols-[1fr_7rem_1fr] lg:grid-rows-none lg:items-center lg:pb-0 ${
+                      isLeft ? '' : 'lg:[&>div:first-child]:col-start-3'
+                    }`}
+                  >
+                    <div
+                      className={`col-start-2 row-start-1 h-full rounded-2xl border border-white/10 bg-[#08182e] p-5 shadow-[0_18px_45px_rgba(0,0,0,0.18)] transition duration-300 group-hover:-translate-y-1 group-hover:border-[#17A2C7]/50 group-hover:shadow-[0_22px_50px_rgba(0,0,0,0.25)] sm:p-7 ${
+                        isLeft ? 'lg:col-start-1' : 'lg:col-start-3'
+                      }`}
+                    >
+                      <h3 className="text-xl font-bold sm:text-2xl">{title}</h3>
+                      <p className="mt-3 leading-relaxed text-slate-500">{text}</p>
+                    </div>
+                    <span className={`relative z-10 col-start-1 row-start-1 mx-auto mt-1 flex h-12 w-12 items-center justify-center rounded-full border-2 border-[#17A2C7] bg-[#0A1930] text-sm font-bold text-[#66d4eb] shadow-[0_8px_22px_rgba(23,162,199,0.18)] lg:col-start-2 lg:mt-0 lg:h-16 lg:w-16 lg:text-lg ${
+                      isLeft ? 'lg:-translate-x-10' : 'lg:translate-x-10'
+                    }`}>
+                      <span className="flex h-12 w-12 items-center justify-center rounded-full border border-[#17A2C7]/60">
+                        {number}
+                      </span>
+                    </span>
+                  </motion.div>
+                )
+              })}
+            </div>
           </div>
         </div>
       </section>

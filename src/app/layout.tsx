@@ -4,6 +4,7 @@ import './globals.css'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import WhatsAppButton from '@/components/layout/WhatsAppButton'
+import Chatbot from '@/components/layout/Chatbot'
 import MobileActionBar from '@/components/layout/MobileActionBar'
 import ScrollToTop from '@/components/layout/ScrollToTop'
 
@@ -195,6 +196,7 @@ export default function RootLayout({
           <main className="flex-1 pb-16 md:pb-0">{children}</main>
 
           <WhatsAppButton />
+         
           <MobileActionBar />
           <ScrollToTop />
 
