@@ -973,28 +973,28 @@ export default function Home() {
 
          
 
-          <div className="mt-14 grid grid-cols-3 gap-0 overflow-hidden rounded-2xl border border-white/10 bg-[#0A1930]/70 sm:grid-cols-3 lg:grid-cols-4">
+          <div className="mt-14 grid grid-cols-2 gap-0 overflow-hidden rounded-2xl border border-white/10 bg-[#0A1930]/70 sm:grid-cols-3 lg:grid-cols-4">
             {[
               { name: 'Advisio', src: '/clients/advisio.jpg' },
               { name: 'Bloodline', src: '/clients/bloodline.png' },
               { name: 'SECO', src: '/clients/seco.png' },
               { name: 'Tensile', src: '/clients/tensile.webp' },
-              { name: 'TTT', src: '/clients/TTT.png' },
+              { name: 'TTT', src: '/clients/TTT R.png' },
               { name: 'SwitchU', src: '/clients/switch%20u.png' },
               { name: 'Collab', src: '/clients/collab.png' },
-              { name: 'Fastline', src: '/clients/fastline.png' },
+              { name: 'Fastline', src: '/clients/f2.png' },
               { name: 'FitPro', src: '/clients/fitpro.png' },
             ].map((logo, index) => (
               <div
                 key={`${logo.name}-${index}`}
-                className="flex aspect-[1.8/1] items-center justify-center border-b border-r border-white/10 bg-[#0d2340] p-4 sm:p-6"
+                className="flex aspect-[1.45/1] items-center justify-center border-b border-r border-white/10 bg-[#0d2340] p-2 sm:aspect-[1.8/1] sm:p-6"
               >
                 <Image
                   src={logo.src}
                   alt={`${logo.name} client logo`}
                   width={320}
                   height={180}
-                  className="h-16 w-auto max-w-[72%] object-contain transition duration-300 hover:scale-[1.05] sm:h-24"
+                  className="h-24 w-auto max-w-[90%] object-contain transition duration-300 hover:scale-[1.05] sm:h-24 sm:max-w-[72%]"
                 />
               </div>
             ))}
