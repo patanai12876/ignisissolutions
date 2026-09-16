@@ -1,6 +1,5 @@
 'use client'
 
-import Link from 'next/link'
 import Image from 'next/image'
 import {
   ArrowRight,
@@ -334,20 +333,18 @@ export default function Home() {
               audience, and achieve sustainable growth.
             </p>
             <div className="mt-8 flex flex-nowrap gap-3">
-              <Link
-                href="/contact"
+              <div
                 className="inline-flex shrink-0 items-center gap-2 rounded-xl bg-[#17A2C7] px-4 py-3 text-sm font-semibold whitespace-nowrap text-white transition hover:-translate-y-0.5 hover:bg-[#5cd5eb] hover:shadow-[0_10px_28px_rgba(23,162,199,0.25)] sm:px-6 sm:py-3.5 sm:text-base"
               >
                 Requst Free Audit
                 <ArrowRight size={18} />
-              </Link>
+              </div>
 
-              <Link
-                href="/portfolio"
+              <div
                 className="inline-flex shrink-0 items-center gap-2 rounded-xl border border-white/20 px-4 py-3 text-sm font-semibold whitespace-nowrap transition hover:border-[#17A2C7]/70 hover:bg-white/5 sm:px-6 sm:py-3.5 sm:text-base"
               >
                 View Our Work
-              </Link>
+              </div>
             </div>
 
             <div className="mt-10 flex items-center gap-3 text-sm text-slate-400">
@@ -904,13 +901,13 @@ export default function Home() {
                   whileHover={{ y: -6 }}
                   className="group rounded-2xl border border-white/10 bg-[#0A1930]/80 shadow-[0_14px_36px_rgba(0,0,0,0.14)] transition hover:border-[#17A2C7]/55 hover:bg-[#0d203a] hover:shadow-[0_18px_42px_rgba(0,0,0,0.22)]"
                 >
-                  <Link href={group.href} className="grid min-h-[172px] grid-cols-[3.75rem_1fr_auto] items-center gap-5 p-6 sm:p-8" aria-label={`Explore ${group.label}`}>
+                  <div className="grid min-h-[172px] grid-cols-[3.75rem_1fr_auto] items-center gap-5 p-6 sm:p-8" aria-label={`Explore ${group.label}`}>
                     <span className="flex h-14 w-14 items-center justify-center rounded-full border border-[#17A2C7]/25 bg-[#17A2C7]/10 text-[#66d4eb] shadow-[0_0_0_8px_rgba(23,162,199,0.035)] transition group-hover:bg-[#17A2C7] group-hover:text-[#0A1930]">
                       <Icon size={21} />
                     </span>
                     <span><span className="block text-xl font-bold text-white">{group.label}</span><span className="mt-2.5 block text-sm leading-relaxed text-slate-400">{group.shortLabel}</span></span>
                     <ArrowRight size={19} className="text-slate-500 transition group-hover:translate-x-1 group-hover:text-[#66d4eb]" />
-                  </Link>
+                  </div>
                 </motion.div>
               )
             })}
@@ -987,7 +984,7 @@ export default function Home() {
             ].map((logo, index) => (
               <div
                 key={`${logo.name}-${index}`}
-                className="flex aspect-[1.45/1] items-center justify-center border-b border-r border-white/10 bg-[#0d2340] p-2 sm:aspect-[1.8/1] sm:p-6"
+                className="flex aspect-[1.45/1] items-center justify-center border-b border-r border-white/5 bg-[#0d2340] p-2 sm:aspect-[1.8/1] sm:p-6"
               >
                 <Image
                   src={logo.src}
@@ -1227,12 +1224,11 @@ export default function Home() {
                   <p className="mt-4 max-w-2xl leading-relaxed text-slate-300">
                     {activeGroup.description}
                   </p>
-                  <Link
-                    href="/contact"
+                  <div
                     className="mt-8 inline-flex items-center gap-2 rounded-xl bg-[#17A2C7] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#5cd5eb]"
                   >
                     Discuss your project <ArrowRight size={16} />
-                  </Link>
+                  </div>
                 </div>
                 <div className="relative min-h-[300px] overflow-hidden border-t border-white/10 lg:border-l lg:border-t-0">
                   <Image
@@ -1500,13 +1496,12 @@ export default function Home() {
         you find the right next step.
       </p>
 
-      <Link
-        href="/contact"
+      <div
         className="mt-8 inline-flex items-center gap-3 rounded-full bg-[#17A2C7] px-8 py-3.5 font-semibold text-white shadow-lg"
       >
         Discuss Your Project
         <ArrowRight size={18} />
-      </Link>
+      </div>
     </div>
   </div>
 </section>
