@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import Link from 'next/link'
 import {
   ArrowRight,
   ChevronLeft,
@@ -34,7 +35,7 @@ const serviceGroups = [
     services: ['Paid advertising', 'Social media campaigns', 'Audience targeting', 'Performance tracking'],
     href: '/services/digital-marketing',
     image: '/food/pic1.png',
-    color: 'from-cyan-400/20 to-blue-500/5',
+    color: 'from-[#6E92F2]/20 to-[#2E5DE6]/5',
   },
   {
     id: 'web',
@@ -47,7 +48,7 @@ const serviceGroups = [
     services: ['Custom websites', 'E-commerce', 'Web applications', 'Performance & scalability'],
     href: '/services/web-development',
     image: '/evoo/img-1.png',
-    color: 'from-cyan-400/20 to-blue-500/5',
+    color: 'from-[#6E92F2]/20 to-[#2E5DE6]/5',
   },
   {
     id: 'branding',
@@ -60,7 +61,7 @@ const serviceGroups = [
     services: ['Brand identity', 'Visual direction', 'Graphic design', 'Brand systems'],
     href: '/services/branding',
     image: '/shade/sz1.png',
-    color: 'from-violet-500/20 to-indigo-500/5',
+    color: 'from-[#1A3BB0]/20 to-[#0F2270]/5',
   },
   {
     id: 'seo',
@@ -73,7 +74,7 @@ const serviceGroups = [
     services: ['Technical SEO', 'On-page SEO', 'Content optimization', 'Search visibility'],
     href: '/services/digital-marketing',
     image: '/images/Tradesyncc.png',
-    color: 'from-blue-500/20 to-indigo-500/5',
+    color: 'from-[#2E5DE6]/20 to-[#0F2270]/5',
   },
 ]
 
@@ -93,7 +94,7 @@ const projects = [
   'A modern e-commerce and web application developed for an E-bikes brand, focused on product presentation, user experience and brand growth.',
     href: 'https://e-bikes-gamma.vercel.app/',
     icon: Globe2,
-    visual: 'from-[#1e5559] via-[#12373f] to-[#0A1930]',
+    visual: 'from-[#1e5559] via-[#12373f] to-[#071039]',
     image: '/evoo/img-1.png',
   },
   {
@@ -103,7 +104,7 @@ const projects = [
   'A modern coffee ordering platform designed to give customers a fast, intuitive experience across menus, products and online ordering.',
     href: 'https://brew-and-co-acyz.vercel.app/',
     icon: Layers3,
-    visual: 'from-[#68442c] via-[#31261f] to-[#0A1930]',
+    visual: 'from-[#68442c] via-[#31261f] to-[#071039]',
     image: '/brew/p1.png',
   },
   {
@@ -113,7 +114,7 @@ const projects = [
   'A  fitness website built to showcase services, connect customers with trainers and generate enquiries through a focused digital experience.',
     href: 'https://fit-pro-frontend.vercel.app/',
     icon: Sparkles,
-    visual: 'from-[#542738] via-[#291f30] to-[#0A1930]',
+    visual: 'from-[#542738] via-[#291f30] to-[#071039]',
     image: '/fitpro/piz1.png',
   },
 ]
@@ -254,13 +255,13 @@ export default function Home() {
   }, [])
 
   return (
-    <main className="overflow-x-hidden bg-[#0A1930] pt-20 lg:pt-24 text-white">
+    <main className="company-profile-page overflow-x-hidden bg-white pt-20 lg:pt-24 text-[#071039]">
       {/* HERO */}
-      <section className="relative overflow-hidden">
+      <section className="company-hero relative overflow-hidden">
         <div className="pointer-events-none absolute inset-0">
-          <div className="absolute left-[10%] top-0 h-[28rem] w-[28rem] rounded-full bg-blue-600/15 blur-[130px]" />
-          <div className="absolute right-[-8rem] top-12 h-[32rem] w-[32rem] rounded-full bg-[#17A2C7]/10 blur-[140px]" />
-          <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:48px_48px]" />
+          <div className="absolute left-[10%] top-0 h-[28rem] w-[28rem] rounded-full bg-[#2E5DE6]/15 blur-[130px]" />
+          <div className="absolute right-[-8rem] top-12 h-[32rem] w-[32rem] rounded-full bg-[#2E5DE6]/10 blur-[140px]" />
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(7,16,57,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(7,16,57,0.035)_1px,transparent_1px)] bg-[size:48px_48px]" />
         </div>
 
         <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-6 py-8 lg:grid-cols-2 lg:py-16">
@@ -269,7 +270,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
           >
-            <p className="mb-5 text-xs font-semibold uppercase tracking-[0.18em] text-[#66d4eb]">
+            <p className="company-eyebrow mb-5 text-xs font-semibold uppercase tracking-[0.18em] text-[#AFC5F8]">
               Digital Agency for Modern Businesses
             </p>
 
@@ -310,7 +311,7 @@ export default function Home() {
         }}
         style={{
           backgroundImage:
-            'linear-gradient(90deg, #ffffff 0%, #ffffff 28%, #66d4eb 55%, #17a2c7 78%, #66d4eb 100%)',
+            'linear-gradient(90deg, #1A3BB0 0%, #2E5DE6 48%, #6E92F2 72%, #1A3BB0 100%)',
           backgroundSize: '260% auto',
           backgroundPosition: '0% 50%',
           backgroundClip: 'text',
@@ -332,23 +333,20 @@ export default function Home() {
               businesses build powerful digital experiences, reach the right
               audience, and achieve sustainable growth.
             </p>
-            <div className="mt-8 flex flex-nowrap gap-3">
-              <div
-                className="inline-flex shrink-0 items-center gap-2 rounded-xl bg-[#17A2C7] px-4 py-3 text-sm font-semibold whitespace-nowrap text-white transition hover:-translate-y-0.5 hover:bg-[#5cd5eb] hover:shadow-[0_10px_28px_rgba(23,162,199,0.25)] sm:px-6 sm:py-3.5 sm:text-base"
-              >
-                Requst Free Audit
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link href="/contact" className="company-primary-cta inline-flex min-h-12 items-center gap-2 rounded-xl bg-[#2E5DE6] px-5 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#1A3BB0] hover:shadow-[0_10px_28px_rgba(46,93,230,0.25)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#2E5DE6] sm:px-6 sm:text-base">
+                Request Free Audit
                 <ArrowRight size={18} />
-              </div>
+              </Link>
 
-              <div
-                className="inline-flex shrink-0 items-center gap-2 rounded-xl border border-white/20 px-4 py-3 text-sm font-semibold whitespace-nowrap transition hover:border-[#17A2C7]/70 hover:bg-white/5 sm:px-6 sm:py-3.5 sm:text-base"
-              >
+              <Link href="/portfolio" className="company-secondary-cta inline-flex min-h-12 items-center gap-2 rounded-xl border border-white/20 px-5 py-3 text-sm font-semibold transition hover:border-[#2E5DE6]/70 hover:bg-white/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#2E5DE6] sm:px-6 sm:text-base">
                 View Our Work
-              </div>
+                <ArrowRight size={17} />
+              </Link>
             </div>
 
             <div className="mt-10 flex items-center gap-3 text-sm text-slate-400">
-              <Check size={17} className="text-[#17A2C7]" />
+              <Check size={17} className="text-[#2E5DE6]" />
               One team for strategy, creativity and technology.
             </div>
           </motion.div>
@@ -373,10 +371,10 @@ export default function Home() {
         repeat: Infinity,
         ease: "easeInOut",
       }}
-      className="absolute left-1/2 top-1/2 h-[320px] w-[320px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#17A2C7]/20 blur-[100px]"
+      className="absolute left-1/2 top-1/2 h-[320px] w-[320px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#2E5DE6]/20 blur-[100px]"
     />
 
-    <div className="absolute right-0 top-10 h-48 w-48 rounded-full bg-[#123C6B]/30 blur-[90px]" />
+    <div className="absolute right-0 top-10 h-48 w-48 rounded-full bg-[#1A3BB0]/30 blur-[90px]" />
   </div>
 
   <div className="relative flex min-h-[410px] items-center justify-center overflow-visible lg:min-h-[500px]">
@@ -391,14 +389,14 @@ export default function Home() {
         repeat: Infinity,
         ease: "linear",
       }}
-      className="absolute h-[410px] w-[410px] rounded-full border border-[#17A2C7]/15"
+      className="absolute h-[410px] w-[410px] rounded-full border border-[#2E5DE6]/15"
     >
       {/* orbit particle */}
-      <div className="absolute -top-1 left-1/2 h-2 w-2 -translate-x-1/2 rounded-full bg-[#17A2C7] shadow-[0_0_18px_#17A2C7]" />
+      <div className="absolute -top-1 left-1/2 h-2 w-2 -translate-x-1/2 rounded-full bg-[#2E5DE6] shadow-[0_0_18px_#2E5DE6]" />
 
       <div className="absolute bottom-8 left-10 h-1.5 w-1.5 rounded-full bg-white/50" />
 
-      <div className="absolute right-8 top-24 h-1.5 w-1.5 rounded-full bg-[#17A2C7]/70" />
+      <div className="absolute right-8 top-24 h-1.5 w-1.5 rounded-full bg-[#2E5DE6]/70" />
     </motion.div>
 
     {/* =========================
@@ -413,9 +411,9 @@ export default function Home() {
       }}
       className="absolute h-[300px] w-[300px] rounded-full border border-white/[0.08]"
     >
-      <div className="absolute -right-1 top-1/2 h-2.5 w-2.5 -translate-y-1/2 rounded-full bg-[#66d4eb] shadow-[0_0_20px_rgba(23,162,199,0.8)]" />
+      <div className="absolute -right-1 top-1/2 h-2.5 w-2.5 -translate-y-1/2 rounded-full bg-[#AFC5F8] shadow-[0_0_20px_rgba(46,93,230,0.8)]" />
 
-      <div className="absolute left-10 top-2 h-1.5 w-1.5 rounded-full bg-[#17A2C7]/60" />
+      <div className="absolute left-10 top-2 h-1.5 w-1.5 rounded-full bg-[#2E5DE6]/60" />
     </motion.div>
 
     {/* =========================
@@ -428,11 +426,11 @@ export default function Home() {
       whileHover={{ scale: 1.08, y: -3 }}
       className="absolute left-[5%] top-[24%] z-20"
     >
-      <div className="group flex items-center gap-2 rounded-full border border-white/10 bg-[#0A1930]/90 px-3 py-2 shadow-[0_12px_35px_rgba(0,0,0,0.3)] backdrop-blur-xl">
-        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#123C6B]">
+      <div className="group flex items-center gap-2 rounded-full border border-white/10 bg-[#071039]/90 px-3 py-2 shadow-[0_12px_35px_rgba(0,0,0,0.3)] backdrop-blur-xl">
+        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#1A3BB0]">
           <Globe2
             size={15}
-            className="text-[#66d4eb]"
+            className="text-[#AFC5F8]"
           />
         </div>
 
@@ -465,11 +463,11 @@ export default function Home() {
       whileHover={{ scale: 1.08 }}
       className="absolute right-[3%] top-[18%] z-20"
     >
-      <div className="flex items-center gap-2 rounded-full border border-[#17A2C7]/20 bg-[#0A1930]/90 px-3 py-2 shadow-[0_12px_35px_rgba(0,0,0,0.3)] backdrop-blur-xl">
-        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#17A2C7]/15">
+      <div className="flex items-center gap-2 rounded-full border border-[#2E5DE6]/20 bg-[#071039]/90 px-3 py-2 shadow-[0_12px_35px_rgba(0,0,0,0.3)] backdrop-blur-xl">
+        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#2E5DE6]/15">
           <Megaphone
             size={15}
-            className="text-[#66d4eb]"
+            className="text-[#AFC5F8]"
           />
         </div>
 
@@ -489,11 +487,11 @@ export default function Home() {
       whileHover={{ scale: 1.08, y: -3 }}
       className="absolute bottom-[21%] left-[4%] z-20"
     >
-      <div className="flex items-center gap-2 rounded-full border border-white/10 bg-[#0A1930]/90 px-3 py-2 shadow-[0_12px_35px_rgba(0,0,0,0.3)] backdrop-blur-xl">
-        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#123C6B]">
+      <div className="flex items-center gap-2 rounded-full border border-white/10 bg-[#071039]/90 px-3 py-2 shadow-[0_12px_35px_rgba(0,0,0,0.3)] backdrop-blur-xl">
+        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#1A3BB0]">
           <Search
             size={15}
-            className="text-[#66d4eb]"
+            className="text-[#AFC5F8]"
           />
         </div>
 
@@ -526,11 +524,11 @@ export default function Home() {
       whileHover={{ scale: 1.08 }}
       className="absolute bottom-[20%] right-[2%] z-20"
     >
-      <div className="flex items-center gap-2 rounded-full border border-white/10 bg-[#0A1930]/90 px-3 py-2 shadow-[0_12px_35px_rgba(0,0,0,0.3)] backdrop-blur-xl">
-        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#123C6B]">
+      <div className="flex items-center gap-2 rounded-full border border-white/10 bg-[#071039]/90 px-3 py-2 shadow-[0_12px_35px_rgba(0,0,0,0.3)] backdrop-blur-xl">
+        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#1A3BB0]">
           <Sparkles
             size={15}
-            className="text-[#66d4eb]"
+            className="text-[#AFC5F8]"
           />
         </div>
 
@@ -567,7 +565,7 @@ export default function Home() {
           repeat: Infinity,
           ease: "easeInOut",
         }}
-        className="absolute inset-0 rounded-full bg-[#17A2C7]/25 blur-[45px]"
+        className="absolute inset-0 rounded-full bg-[#2E5DE6]/25 blur-[45px]"
       />
 
       {/* rotating ring */}
@@ -578,15 +576,15 @@ export default function Home() {
           repeat: Infinity,
           ease: "linear",
         }}
-        className="absolute inset-0 rounded-full border border-[#17A2C7]/30"
+        className="absolute inset-0 rounded-full border border-[#2E5DE6]/30"
       >
-        <span className="absolute -top-1 left-1/2 h-2 w-2 -translate-x-1/2 rounded-full bg-[#66d4eb]" />
+        <span className="absolute -top-1 left-1/2 h-2 w-2 -translate-x-1/2 rounded-full bg-[#AFC5F8]" />
       </motion.div>
 
       {/* core */}
-      <div className="relative flex h-[145px] w-[145px] items-center justify-center overflow-hidden rounded-full border border-white/10 bg-gradient-to-br from-[#123C6B] via-[#0d3155] to-[#0A1930] shadow-[0_0_60px_rgba(23,162,199,0.18)]">
+      <div className="relative flex h-[145px] w-[145px] items-center justify-center overflow-hidden rounded-full border border-white/10 bg-gradient-to-br from-[#1A3BB0] via-[#0d3155] to-[#071039] shadow-[0_0_60px_rgba(46,93,230,0.18)]">
         {/* inner radial glow */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_35%_30%,rgba(102,212,235,0.3),transparent_45%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_35%_30%,rgba(175,197,248,0.3),transparent_45%)]" />
 
         {/* center icon */}
         <div className="relative flex flex-col items-center">
@@ -599,12 +597,12 @@ export default function Home() {
               repeat: Infinity,
               ease: "easeInOut",
             }}
-            className="flex h-14 w-14 items-center justify-center rounded-2xl border border-[#17A2C7]/30 bg-[#17A2C7]/10"
+            className="flex h-14 w-14 items-center justify-center rounded-2xl border border-[#2E5DE6]/30 bg-[#2E5DE6]/10"
           >
             <TrendingUp
               size={28}
               strokeWidth={1.7}
-              className="text-[#66d4eb]"
+              className="text-[#AFC5F8]"
             />
           </motion.div>
 
@@ -674,17 +672,17 @@ export default function Home() {
         >
           <stop
             offset="0%"
-            stopColor="#17A2C7"
+            stopColor="#2E5DE6"
             stopOpacity="0"
           />
           <stop
             offset="50%"
-            stopColor="#66d4eb"
+            stopColor="#AFC5F8"
             stopOpacity="0.8"
           />
           <stop
             offset="100%"
-            stopColor="#17A2C7"
+            stopColor="#2E5DE6"
             stopOpacity="0"
           />
         </linearGradient>
@@ -702,7 +700,7 @@ export default function Home() {
         repeat: Infinity,
         ease: "easeInOut",
       }}
-      className="absolute left-[28%] top-[12%] h-1.5 w-1.5 rounded-full bg-[#66d4eb]"
+      className="absolute left-[28%] top-[12%] h-1.5 w-1.5 rounded-full bg-[#AFC5F8]"
     />
 
     <motion.span
@@ -722,7 +720,7 @@ export default function Home() {
         repeat: Infinity,
         ease: "easeInOut",
       }}
-      className="absolute right-[18%] top-[42%] h-1.5 w-1.5 rounded-full bg-[#17A2C7]"
+      className="absolute right-[18%] top-[42%] h-1.5 w-1.5 rounded-full bg-[#2E5DE6]"
     />
 
   </div>
@@ -732,21 +730,21 @@ export default function Home() {
       </section>
 
       {/* ABOUT — MISSION + VISION */}
-      <section className="relative overflow-hidden border-y border-white/10 bg-[#08182e]">
+      <section className="company-mission-section relative overflow-hidden border-y border-white/10 bg-[#0F2270]">
         <div className="pointer-events-none absolute inset-0">
-          <div className="absolute -left-32 top-0 h-80 w-80 rounded-full bg-[#17A2C7]/10 blur-[120px]" />
-          <div className="absolute right-0 bottom-0 h-72 w-72 rounded-full bg-indigo-500/10 blur-[130px]" />
+          <div className="absolute -left-32 top-0 h-80 w-80 rounded-full bg-[#2E5DE6]/10 blur-[120px]" />
+          <div className="absolute right-0 bottom-0 h-72 w-72 rounded-full bg-[#1A3BB0]/10 blur-[130px]" />
         </div>
 
         <div className="relative mx-auto max-w-7xl px-6 py-24 lg:py-32">
-          <div className="grid gap-12 lg:grid-cols-[0.78fr_1.22fr] lg:items-end">
+          <div className="max-w-3xl">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#66d4eb]">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#AFC5F8]">
                 About Ignisis Solutions
               </p>
               <h2 className="mt-5 max-w-lg text-4xl font-bold leading-[1.1] sm:text-5xl">
                 Digital solutions with{' '}
-                <span className="bg-gradient-to-r from-[#66d4eb] via-[#3da7e9] to-[#7187ff] bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#AFC5F8] via-[#6E92F2] to-[#6E92F2] bg-clip-text text-transparent">
                   real business purpose.
                 </span>
               </h2>
@@ -775,12 +773,12 @@ export default function Home() {
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ delay: index * 0.12 }}
                 whileHover={{ y: -5 }}
-                className="group relative overflow-hidden rounded-2xl border border-white/10 bg-[#0A1930]/75 p-7 transition hover:border-[#17A2C7]/50 sm:p-9"
+                className="group relative overflow-hidden rounded-2xl border border-white/10 bg-[#071039]/75 p-7 transition hover:border-[#2E5DE6]/50 sm:p-9"
               >
-                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#17A2C7] to-transparent opacity-60" />
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#2E5DE6] to-transparent opacity-60" />
                 <div className="flex items-start justify-between gap-6">
-                  <span className="text-sm font-semibold tracking-[0.18em] text-[#66d4eb]">{item.number}</span>
-                  <span className="flex h-11 w-11 items-center justify-center rounded-xl border border-[#17A2C7]/25 bg-[#17A2C7]/10 text-[#66d4eb]">
+                  <span className="text-sm font-semibold tracking-[0.18em] text-[#AFC5F8]">{item.number}</span>
+                  <span className="flex h-11 w-11 items-center justify-center rounded-xl border border-[#2E5DE6]/25 bg-[#2E5DE6]/10 text-[#AFC5F8]">
                     {index === 0 ? <Target size={20} /> : <Globe2 size={20} />}
                   </span>
                 </div>
@@ -793,20 +791,20 @@ export default function Home() {
       </section>
 
       {/* OUR APPROACH */}
-      <section className="relative bg-[#0A1930]">
+      <section className="company-approach-section relative bg-[#071039]">
         <div className="pointer-events-none absolute inset-0 overflow-hidden">
-          <div className="absolute left-1/2 top-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#17A2C7]/[0.06] blur-[130px]" />
+          <div className="absolute left-1/2 top-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#2E5DE6]/[0.06] blur-[130px]" />
         </div>
 
         <div className="relative mx-auto max-w-7xl px-6 py-20 lg:py-28">
-          <div className="grid gap-10 lg:grid-cols-[0.86fr_1.14fr] lg:items-start">
+          <div className="max-w-3xl">
             <div className="pt-2">
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#66d4eb]">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#AFC5F8]">
                 Our Approach
               </p>
               <h2 className="mt-5 max-w-xl text-4xl font-bold leading-[1.1] sm:text-5xl">
                 We start with the business,{' '}
-                <span className="bg-gradient-to-r from-[#66d4eb] via-[#3da7e9] to-[#7187ff] bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#AFC5F8] via-[#6E92F2] to-[#6E92F2] bg-clip-text text-transparent">
                   not just the project.
                 </span>
               </h2>
@@ -851,10 +849,10 @@ export default function Home() {
                   viewport={{ once: true, amount: 0.25 }}
                   transition={{ delay: index * 0.1, duration: 0.45 }}
                   whileHover={{ y: -6 }}
-                  className="group relative rounded-2xl border border-white/10 bg-white/[0.025] p-6 transition duration-300 hover:border-[#17A2C7]/50 hover:bg-white/[0.05] sm:p-7"
+                  className="group relative rounded-2xl border border-white/10 bg-white/[0.025] p-6 transition duration-300 hover:border-[#2E5DE6]/50 hover:bg-white/[0.05] sm:p-7"
                 >
                   <div className="relative z-10 flex items-center justify-between">
-                    <span className="flex h-12 w-12 items-center justify-center rounded-xl border border-[#17A2C7]/25 bg-[#17A2C7]/10 text-[#66d4eb] transition group-hover:bg-[#17A2C7] group-hover:text-[#0A1930]">
+                    <span className="flex h-12 w-12 items-center justify-center rounded-xl border border-[#2E5DE6]/25 bg-[#2E5DE6]/10 text-[#AFC5F8] transition group-hover:bg-[#2E5DE6] group-hover:text-white">
                       <Icon size={21} />
                     </span>
                     <span className="text-xs font-semibold tracking-[0.16em] text-slate-500">{number}</span>
@@ -869,22 +867,22 @@ export default function Home() {
       </section>
 
       {/* CORE SERVICES */}
-      <section className="relative overflow-hidden border-b border-white/10 bg-[#08182e]">
+      <section className="company-services-section relative overflow-hidden border-b border-white/10 bg-[#0F2270]">
         <div className="pointer-events-none absolute inset-0">
-          <div className="absolute -left-40 top-8 h-80 w-80 rounded-full bg-[#17A2C7]/10 blur-[110px]" />
-          <div className="absolute right-0 top-1/2 h-72 w-72 rounded-full bg-indigo-500/10 blur-[120px]" />
+          <div className="absolute -left-40 top-8 h-80 w-80 rounded-full bg-[#2E5DE6]/10 blur-[110px]" />
+          <div className="absolute right-0 top-1/2 h-72 w-72 rounded-full bg-[#1A3BB0]/10 blur-[120px]" />
           <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:42px_42px]" />
         </div>
 
         <div className="relative mx-auto max-w-7xl px-6 py-20 lg:py-28">
           <div className="flex flex-col justify-between gap-7 lg:flex-row lg:items-end">
             <div className="max-w-2xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#66d4eb]">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#AFC5F8]">
                 Core Services
               </p>
               <h2 className="mt-5 text-4xl font-bold leading-[1.1] sm:text-5xl">
                 The right expertise for{' '}
-                <span className="bg-gradient-to-r from-[#66d4eb] via-[#3da7e9] to-[#7187ff] bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#AFC5F8] via-[#6E92F2] to-[#6E92F2] bg-clip-text text-transparent">
                   what comes next.
                 </span>
               </h2>
@@ -899,15 +897,15 @@ export default function Home() {
                 <motion.div
                   key={group.id}
                   whileHover={{ y: -6 }}
-                  className="group rounded-2xl border border-white/10 bg-[#0A1930]/80 shadow-[0_14px_36px_rgba(0,0,0,0.14)] transition hover:border-[#17A2C7]/55 hover:bg-[#0d203a] hover:shadow-[0_18px_42px_rgba(0,0,0,0.22)]"
+                  className="group rounded-2xl border border-white/10 bg-[#071039]/80 shadow-[0_14px_36px_rgba(0,0,0,0.14)] transition hover:border-[#2E5DE6]/55 hover:bg-[#0F2270] hover:shadow-[0_18px_42px_rgba(0,0,0,0.22)]"
                 >
-                  <div className="grid min-h-[172px] grid-cols-[3.75rem_1fr_auto] items-center gap-5 p-6 sm:p-8" aria-label={`Explore ${group.label}`}>
-                    <span className="flex h-14 w-14 items-center justify-center rounded-full border border-[#17A2C7]/25 bg-[#17A2C7]/10 text-[#66d4eb] shadow-[0_0_0_8px_rgba(23,162,199,0.035)] transition group-hover:bg-[#17A2C7] group-hover:text-[#0A1930]">
+                  <Link href={group.href} className="company-service-link grid min-h-[172px] grid-cols-[3.75rem_1fr_auto] items-center gap-5 rounded-2xl p-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#2E5DE6] sm:p-8" aria-label={`Explore ${group.label}`}>
+                    <span className="flex h-14 w-14 items-center justify-center rounded-full border border-[#2E5DE6]/25 bg-[#2E5DE6]/10 text-[#AFC5F8] shadow-[0_0_0_8px_rgba(46,93,230,0.035)] transition group-hover:bg-[#2E5DE6] group-hover:text-white">
                       <Icon size={21} />
                     </span>
                     <span><span className="block text-xl font-bold text-white">{group.label}</span><span className="mt-2.5 block text-sm leading-relaxed text-slate-400">{group.shortLabel}</span></span>
-                    <ArrowRight size={19} className="text-slate-500 transition group-hover:translate-x-1 group-hover:text-[#66d4eb]" />
-                  </div>
+                    <ArrowRight size={19} className="text-slate-500 transition group-hover:translate-x-1 group-hover:text-[#AFC5F8]" />
+                  </Link>
                 </motion.div>
               )
             })}
@@ -917,25 +915,25 @@ export default function Home() {
 
       {/* CORE SERVICES — INTERACTIVE EXPLORER */}
       {/* INDUSTRY EXPERIENCE */}
-      <section className="relative overflow-hidden border-y border-white/10 bg-[#08182e]">
-        <div className="pointer-events-none absolute -right-40 top-1/3 h-96 w-96 rounded-full bg-[#17A2C7]/[0.07] blur-[130px]" />
+      <section className="company-industries-section relative overflow-hidden border-y border-white/10 bg-[#0F2270]">
+        <div className="pointer-events-none absolute -right-40 top-1/3 h-96 w-96 rounded-full bg-[#2E5DE6]/[0.07] blur-[130px]" />
 
         <div className="relative mx-auto max-w-7xl px-6 py-20 lg:py-24">
           <div className="mb-8 max-w-xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#66d4eb]">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#AFC5F8]">
               Industry Experience
             </p>
             <h2 className="mt-4 text-4xl font-bold leading-[1.08] sm:text-5xl">
               Different businesses. Different challenges.{' '}
-              <span className="bg-gradient-to-r from-[#66d4eb] via-[#3da7e9] to-[#7187ff] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#AFC5F8] via-[#6E92F2] to-[#6E92F2] bg-clip-text text-transparent">
                 One adaptable approach.
               </span>
             </h2>
           </div>
 
-          <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-[#0A1930]/70 py-5">
-            <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-[#08182e] to-transparent" />
-            <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-[#08182e] to-transparent" />
+          <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-[#071039]/70 py-5">
+            <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-white to-transparent" />
+            <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-white to-transparent" />
 
             <motion.div
               animate={{ x: ['0%', '-50%'] }}
@@ -945,9 +943,9 @@ export default function Home() {
               {[...['Built Environment & Mobility','Education & Learning','Travel & Visa Services','Food & Hospitality','Health & Fitness','Technology & Trading','Built Environment & Mobility','Education & Learning','Travel & Visa Services','Food & Hospitality','Health & Fitness','Technology & Trading']].map((industry, index) => (
                 <div
                   key={`${industry}-${index}`}
-                  className="flex items-center gap-3 rounded-full border border-white/10 bg-white/[0.02] px-5 py-3 text-sm font-medium tracking-[0.02em] text-slate-200 whitespace-nowrap sm:text-base"
+                  className="flex items-center gap-3 rounded-full border border-[#e0e6f2] bg-white px-5 py-3 text-sm font-semibold tracking-[0.02em] text-[#33446c] whitespace-nowrap shadow-[0_4px_14px_rgba(7,16,57,0.04)] sm:text-base"
                 >
-                  <span className="inline-flex h-2.5 w-2.5 rounded-full bg-[#17A2C7] shadow-[0_0_12px_rgba(23,162,199,0.8)]" />
+                  <span className="inline-flex h-2.5 w-2.5 rounded-full bg-[#2E5DE6] shadow-[0_0_12px_rgba(46,93,230,0.8)]" />
                   {industry}
                 </div>
               ))}
@@ -957,11 +955,11 @@ export default function Home() {
       </section>
 
       {/* OUR CLIENTS — LOGOS TO BE SUPPLIED */}
-      <section className="bg-[#0A1930]">
+      <section className="company-clients-section bg-[#071039]">
         <div className="mx-auto max-w-7xl px-6 py-24 lg:py-28">
           <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#66d4eb]">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#AFC5F8]">
                 Our Clients
               </p>
               <h2 className="mt-5 text-4xl font-bold sm:text-5xl">Businesses we&apos;ve worked with.</h2>
@@ -970,7 +968,7 @@ export default function Home() {
 
          
 
-          <div className="mt-14 grid grid-cols-2 gap-0 overflow-hidden rounded-2xl border border-white/10 bg-[#0A1930]/70 sm:grid-cols-3 lg:grid-cols-4">
+          <div className="mt-14 grid grid-cols-2 gap-0 overflow-hidden rounded-2xl border border-white/10 bg-[#071039]/70 sm:grid-cols-3 lg:grid-cols-4">
             {[
               { name: 'Advisio', src: '/clients/advisio.jpg' },
               { name: 'Bloodline', src: '/clients/bloodline.png' },
@@ -984,7 +982,7 @@ export default function Home() {
             ].map((logo, index) => (
               <div
                 key={`${logo.name}-${index}`}
-                className="flex aspect-[1.45/1] items-center justify-center border-b border-r border-white/5 bg-[#0d2340] p-2 sm:aspect-[1.8/1] sm:p-6"
+                className="flex aspect-[1.45/1] items-center justify-center border-b border-r border-white/5 bg-[#0F2270] p-2 sm:aspect-[1.8/1] sm:p-6"
               >
                 <Image
                   src={logo.src}
@@ -1000,12 +998,12 @@ export default function Home() {
       </section>
 
       {/* OUR WORK */}
-      <section className="relative overflow-hidden border-y border-white/10 bg-[#08182e]">
-        <div className="pointer-events-none absolute right-[-8rem] top-16 h-80 w-80 rounded-full bg-[#17A2C7]/10 blur-[130px]" />
+      <section className="company-work-section relative overflow-hidden border-y border-white/10 bg-[#0F2270]">
+        <div className="pointer-events-none absolute right-[-8rem] top-16 h-80 w-80 rounded-full bg-[#2E5DE6]/10 blur-[130px]" />
         <div className="relative mx-auto max-w-7xl px-6 py-24 lg:py-28">
           <div className="max-w-3xl text-left">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#66d4eb]">Our Work</p>
-            <h2 className="mt-5 text-4xl font-bold leading-[1.1] sm:text-5xl">Work connected to the{' '}<span className="bg-gradient-to-r from-[#66d4eb] via-[#3da7e9] to-[#7187ff] bg-clip-text text-transparent">service behind it.</span></h2>
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#AFC5F8]">Our Work</p>
+            <h2 className="mt-5 text-4xl font-bold leading-[1.1] sm:text-5xl">Work connected to the{' '}<span className="bg-gradient-to-r from-[#AFC5F8] via-[#6E92F2] to-[#6E92F2] bg-clip-text text-transparent">service behind it.</span></h2>
           </div>
 
           <div className="mt-14 grid gap-5 lg:grid-cols-[0.72fr_1.28fr] lg:gap-7">
@@ -1018,15 +1016,15 @@ export default function Home() {
                     key={category.id}
                     type="button"
                     onClick={() => { setActiveWorkCategory(category.id); setActiveProjectIndex(0) }}
-                    className={`flex w-full items-center justify-between rounded-2xl border p-4 text-left transition sm:p-5 lg:p-6 ${selected ? 'border-[#17A2C7]/60 bg-[#17A2C7]/10' : 'border-white/10 bg-[#0A1930]/50 hover:border-white/25 hover:bg-white/[0.04]'}`}
+                    className={`flex w-full items-center justify-between rounded-2xl border p-4 text-left transition sm:p-5 lg:p-6 ${selected ? 'border-[#2E5DE6]/60 bg-[#2E5DE6]/10' : 'border-white/10 bg-[#071039]/50 hover:border-white/25 hover:bg-white/[0.04]'}`}
                   >
                     <span className="flex items-center gap-3 lg:gap-4">
-                      <span className={`flex h-10 w-10 items-center justify-center rounded-xl lg:h-11 lg:w-11 ${selected ? 'bg-[#17A2C7] text-[#0A1930]' : 'bg-white/5 text-[#66d4eb]'}`}>
+                      <span className={`flex h-10 w-10 items-center justify-center rounded-xl lg:h-11 lg:w-11 ${selected ? 'bg-[#2E5DE6] text-white' : 'bg-white/5 text-[#AFC5F8]'}`}>
                         <Icon size={18} className="lg:size-[20px]" />
                       </span>
                       <span className="block text-sm font-semibold sm:text-base lg:text-lg">{category.label}</span>
                     </span>
-                    <ArrowRight size={16} className={selected ? 'text-[#66d4eb]' : 'text-slate-500'} />
+                    <ArrowRight size={16} className={selected ? 'text-[#AFC5F8]' : 'text-slate-500'} />
                   </button>
                 )
               })}
@@ -1039,7 +1037,7 @@ export default function Home() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -18 }}
                 transition={{ duration: 0.28 }}
-                className="relative overflow-hidden rounded-3xl border border-white/10 bg-[#0A1930]"
+                className="relative overflow-hidden rounded-3xl border border-white/10 bg-[#071039]"
               >
                 {activeProject ? (
                   activeProject.liveUrl ? (
@@ -1051,7 +1049,7 @@ export default function Home() {
                           fill
                           className="object-cover transition duration-500 group-hover:scale-105"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#08182e]/90 via-[#08182e]/15 to-transparent" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#0F2270]/90 via-[#0F2270]/15 to-transparent" />
 
                         <div className="absolute inset-x-0 bottom-0 flex items-center justify-between p-4 sm:p-5 lg:p-6">
                           <div className="flex gap-3">
@@ -1062,7 +1060,7 @@ export default function Home() {
                                 event.preventDefault()
                                 setActiveProjectIndex((index) => index === 0 ? activeWork.projects.length - 1 : index - 1)
                               }}
-                              className="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-[#08182e]/60 text-white transition hover:border-[#17A2C7] hover:text-[#66d4eb] sm:h-10 sm:w-10"
+                              className="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-[#0F2270]/60 text-white transition hover:border-[#2E5DE6] hover:text-[#AFC5F8] sm:h-10 sm:w-10"
                             >
                               <ChevronLeft size={18} />
                             </button>
@@ -1073,7 +1071,7 @@ export default function Home() {
                                 event.preventDefault()
                                 setActiveProjectIndex((index) => (index + 1) % activeWork.projects.length)
                               }}
-                              className="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-[#08182e]/60 text-white transition hover:border-[#17A2C7] hover:text-[#66d4eb] sm:h-10 sm:w-10"
+                              className="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-[#0F2270]/60 text-white transition hover:border-[#2E5DE6] hover:text-[#AFC5F8] sm:h-10 sm:w-10"
                             >
                               <ChevronRight size={18} />
                             </button>
@@ -1090,7 +1088,7 @@ export default function Home() {
                           fill
                           className="object-cover transition duration-500 group-hover:scale-105"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#08182e]/90 via-[#08182e]/15 to-transparent" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#0F2270]/90 via-[#0F2270]/15 to-transparent" />
 
                         <div className="absolute inset-x-0 bottom-0 flex items-center justify-between p-4 sm:p-5 lg:p-6">
                           <div className="flex gap-3">
@@ -1101,7 +1099,7 @@ export default function Home() {
                                 event.preventDefault()
                                 setActiveProjectIndex((index) => index === 0 ? activeWork.projects.length - 1 : index - 1)
                               }}
-                              className="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-[#08182e]/60 text-white transition hover:border-[#17A2C7] hover:text-[#66d4eb] sm:h-10 sm:w-10"
+                              className="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-[#0F2270]/60 text-white transition hover:border-[#2E5DE6] hover:text-[#AFC5F8] sm:h-10 sm:w-10"
                             >
                               <ChevronLeft size={18} />
                             </button>
@@ -1112,7 +1110,7 @@ export default function Home() {
                                 event.preventDefault()
                                 setActiveProjectIndex((index) => (index + 1) % activeWork.projects.length)
                               }}
-                              className="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-[#08182e]/60 text-white transition hover:border-[#17A2C7] hover:text-[#66d4eb] sm:h-10 sm:w-10"
+                              className="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-[#0F2270]/60 text-white transition hover:border-[#2E5DE6] hover:text-[#AFC5F8] sm:h-10 sm:w-10"
                             >
                               <ChevronRight size={18} />
                             </button>
@@ -1122,7 +1120,7 @@ export default function Home() {
                     </div>
                   )
                 ) : (
-                  <div className="flex h-[260px] items-center justify-center border-t border-white/10 bg-[radial-gradient(circle_at_center,rgba(23,162,199,.14),transparent_55%)] sm:h-[340px] lg:h-[430px]" />
+                  <div className="flex h-[260px] items-center justify-center border-t border-white/10 bg-[radial-gradient(circle_at_center,rgba(46,93,230,.14),transparent_55%)] sm:h-[340px] lg:h-[430px]" />
                 )}
               </motion.div>
             </AnimatePresence>
@@ -1140,11 +1138,11 @@ export default function Home() {
           viewport={{ once: true }}
           className="mx-auto max-w-2xl text-left"
         >
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#66d4eb]">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#AFC5F8]">
             Core Services
           </p>
           <h2 className="mt-4 text-4xl font-bold leading-[1.15] sm:text-5xl">
-            One direction. Four ways to <span className="bg-gradient-to-r from-[#66d4eb] via-[#3da7e9] to-[#7187ff] bg-clip-text text-transparent">move your business forward.</span>
+            One direction. Four ways to <span className="bg-gradient-to-r from-[#AFC5F8] via-[#6E92F2] to-[#6E92F2] bg-clip-text text-transparent">move your business forward.</span>
           </h2>
           <p className="mt-5 leading-relaxed text-slate-400">
             Choose a service to explore the strategy, capability and digital experience behind it.
@@ -1171,7 +1169,7 @@ export default function Home() {
                   }
                   className={`flex min-h-[92px] w-full items-center justify-center rounded-xl border px-2 py-3 text-center transition lg:min-h-0 lg:justify-between lg:px-5 lg:py-5 lg:text-left ${
                     selected
-                      ? 'border-[#17A2C7]/60 bg-[#17A2C7]/10'
+                      ? 'border-[#2E5DE6]/60 bg-[#2E5DE6]/10'
                       : 'border-white/10 bg-white/[0.025] hover:border-white/25 hover:bg-white/[0.05]'
                   }`}
                 >
@@ -1179,7 +1177,7 @@ export default function Home() {
                     <span
                       className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg lg:h-10 lg:w-10 ${
                         selected
-                          ? 'bg-[#17A2C7] text-[#0A1930]'
+                          ? 'bg-[#2E5DE6] text-white'
                           : 'bg-white/5 text-slate-300'
                       }`}
                     >
@@ -1197,7 +1195,7 @@ export default function Home() {
 
                   <ArrowRight
                     size={18}
-                    className={`hidden lg:block ${selected ? 'text-[#66d4eb]' : 'text-slate-500'}`}
+                    className={`hidden lg:block ${selected ? 'text-[#AFC5F8]' : 'text-slate-500'}`}
                   />
                 </motion.button>
               )
@@ -1215,7 +1213,7 @@ export default function Home() {
             >
               <div className="grid lg:grid-cols-[0.9fr_1.1fr]">
                 <div className="p-7 sm:p-9">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#17A2C7]/15 text-[#66d4eb]">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#2E5DE6]/15 text-[#AFC5F8]">
                     <ActiveIcon size={24} />
                   </div>
                   <h3 className="mt-7 max-w-xl text-3xl font-bold leading-tight">
@@ -1225,7 +1223,7 @@ export default function Home() {
                     {activeGroup.description}
                   </p>
                   <div
-                    className="mt-8 inline-flex items-center gap-2 rounded-xl bg-[#17A2C7] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#5cd5eb]"
+                    className="mt-8 inline-flex items-center gap-2 rounded-xl bg-[#2E5DE6] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#1A3BB0]"
                   >
                     Discuss your project <ArrowRight size={16} />
                   </div>
@@ -1237,12 +1235,12 @@ export default function Home() {
                     fill
                     className="object-cover opacity-75 transition duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#08182e] via-[#08182e]/20 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0F2270] via-[#0F2270]/20 to-transparent" />
                   <div className="absolute bottom-5 left-5 right-5 flex flex-wrap gap-2">
                     {activeGroup.services.map((service) => (
                       <span
                         key={service}
-                        className="rounded-full border border-white/20 bg-[#0A1930]/75 px-3 py-1.5 text-xs font-medium text-slate-200 backdrop-blur"
+                        className="rounded-full border border-white/20 bg-[#071039]/75 px-3 py-1.5 text-xs font-medium text-slate-200 backdrop-blur"
                       >
                         {service}
                       </span>
@@ -1263,12 +1261,12 @@ export default function Home() {
   
 
       {/* WHY IGNISIS */}
-      <section className="bg-[#0A1930]">
+      <section className="company-why-section bg-[#071039]">
         <div className="mx-auto max-w-7xl px-6 py-24 lg:py-32">
           <div className="max-w-2xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#66d4eb]">Why Ignisis</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#AFC5F8]">Why Ignisis</p>
             <h2 className="mt-5 text-4xl font-bold leading-[1.1] sm:text-5xl">
-              One partner for the work that makes a digital business <span className="bg-gradient-to-r from-[#66d4eb] via-[#3da7e9] to-[#7187ff] bg-clip-text text-transparent">move forward.</span>
+              One partner for the work that makes a digital business <span className="bg-gradient-to-r from-[#AFC5F8] via-[#6E92F2] to-[#6E92F2] bg-clip-text text-transparent">move forward.</span>
             </h2>
           </div>
           <div className="mt-16 grid border-y border-white/10 md:grid-cols-2 lg:grid-cols-4">
@@ -1286,7 +1284,7 @@ export default function Home() {
                 transition={{ delay: index * 0.08 }}
                 className="border-b border-white/10 p-6 last:border-b-0 md:border-r md:last:border-r-0 lg:border-b-0"
               >
-                <span className="text-3xl font-bold text-[#17A2C7]">0{index + 1}</span>
+                <span className="text-3xl font-bold text-[#2E5DE6]">0{index + 1}</span>
                 <h3 className="mt-10 text-xl font-bold">{title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-slate-400">{text}</p>
               </motion.div>
@@ -1296,10 +1294,10 @@ export default function Home() {
       </section>
 
       {/* PROCESS */}
-      <section ref={processRef} className="border-y border-white/10 bg-[#0A1930] text-white">
+      <section ref={processRef} className="company-process-section border-y border-[#e5eaf3] bg-white text-[#071039]">
         <div className="mx-auto max-w-7xl px-6 py-24">
           <div className="max-w-5xl text-left">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#17A2C7]">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#2E5DE6]">
               How we work
             </p>
             <h2 className="mt-4 text-4xl font-bold sm:text-5xl lg:text-[4.2rem] lg:leading-[0.96]">
@@ -1321,14 +1319,14 @@ export default function Home() {
               <path
                 d="M375 95 C375 175 375 175 375 215 C375 285 625 285 625 333 C625 405 375 405 375 571 C375 645 625 645 625 809 C625 875 375 875 375 1040"
                 fill="none"
-                stroke="#29405b"
+                stroke="#dfe6f3"
                 strokeWidth="7"
                 strokeLinecap="round"
               />
               <path
                 d="M375 95 C375 175 375 175 375 215 C375 285 625 285 625 333 C625 405 375 405 375 571 C375 645 625 645 625 809 C625 875 375 875 375 1040"
                 fill="none"
-                stroke="#17A2C7"
+                stroke="#2E5DE6"
                 strokeWidth="7"
                 strokeLinecap="round"
                 pathLength="1"
@@ -1340,7 +1338,7 @@ export default function Home() {
 
             <div className="pointer-events-none absolute bottom-0 left-5 top-0 w-0.5 rounded-full bg-[#29405b] lg:hidden">
               <div
-                className="w-full rounded-full bg-[#17A2C7] transition-[height] duration-150 ease-out"
+                className="w-full rounded-full bg-[#2E5DE6] transition-[height] duration-150 ease-out"
                 style={{ height: `${processProgress * 100}%` }}
               />
             </div>
@@ -1387,17 +1385,17 @@ export default function Home() {
                     }`}
                   >
                     <div
-                      className={`col-start-2 row-start-1 h-full rounded-2xl border border-white/10 bg-[#08182e] p-5 shadow-[0_18px_45px_rgba(0,0,0,0.18)] transition duration-300 group-hover:-translate-y-1 group-hover:border-[#17A2C7]/50 group-hover:shadow-[0_22px_50px_rgba(0,0,0,0.25)] sm:p-7 ${
+                    className={`col-start-2 row-start-1 h-full rounded-2xl border border-[#e0e6f2] bg-white p-5 shadow-[0_12px_30px_rgba(7,16,57,0.06)] transition duration-300 group-hover:-translate-y-1 group-hover:border-[#afc5f8] group-hover:shadow-[0_18px_38px_rgba(7,16,57,0.1)] sm:p-7 ${
                         isLeft ? 'lg:col-start-1' : 'lg:col-start-3'
                       }`}
                     >
                       <h3 className="text-xl font-bold sm:text-2xl">{title}</h3>
                       <p className="mt-3 leading-relaxed text-slate-500">{text}</p>
                     </div>
-                    <span className={`relative z-10 col-start-1 row-start-1 mx-auto mt-1 flex h-12 w-12 items-center justify-center rounded-full border-2 border-[#17A2C7] bg-[#0A1930] text-sm font-bold text-[#66d4eb] shadow-[0_8px_22px_rgba(23,162,199,0.18)] lg:col-start-2 lg:mt-0 lg:h-16 lg:w-16 lg:text-lg ${
+                    <span className={`relative z-10 col-start-1 row-start-1 mx-auto mt-1 flex h-12 w-12 items-center justify-center rounded-full border-2 border-[#2E5DE6] bg-white text-sm font-bold text-[#1A3BB0] shadow-[0_8px_22px_rgba(46,93,230,0.12)] lg:col-start-2 lg:mt-0 lg:h-16 lg:w-16 lg:text-lg ${
                       isLeft ? 'lg:-translate-x-10' : 'lg:translate-x-10'
                     }`}>
-                      <span className="flex h-12 w-12 items-center justify-center rounded-full border border-[#17A2C7]/60">
+                      <span className="flex h-12 w-12 items-center justify-center rounded-full border border-[#2E5DE6]/35">
                         {number}
                       </span>
                     </span>
@@ -1410,21 +1408,21 @@ export default function Home() {
       </section>
 
       {/* GROWTH IMPACT */}
-      <section className="relative overflow-hidden bg-[#08182e]">
+      <section className="company-growth-section relative overflow-hidden bg-[#0F2270]">
         <div className="pointer-events-none absolute inset-0">
-          <div className="absolute left-1/2 top-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#17A2C7]/10 blur-[140px]" />
+          <div className="absolute left-1/2 top-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#2E5DE6]/10 blur-[140px]" />
         </div>
 
         <div className="relative mx-auto max-w-7xl px-6 py-24 lg:py-28">
           <div className="grid gap-10 xl:grid-cols-[0.85fr_1.15fr] xl:items-start">
             <div className="max-w-xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#66d4eb]">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#AFC5F8]">
                 Growth impact
               </p>
               <h2 className="mt-5 text-4xl font-bold leading-[1.1] sm:text-5xl">
-                The goal is not just a launch it&apos;s a business that keeps
-                <span className="bg-gradient-to-r from-[#66d4eb] via-[#3da7e9] to-[#7187ff] bg-clip-text text-transparent">
-                  {' '}performing after it goes live.
+                The goal isn&apos;t just to launch. It&apos;s to keep your business
+                <span className="bg-gradient-to-r from-[#AFC5F8] via-[#6E92F2] to-[#6E92F2] bg-clip-text text-transparent">
+                  {' '}moving forward.
                 </span>
               </h2>
             </div>
@@ -1458,9 +1456,9 @@ export default function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.2 }}
                   transition={{ delay: index * 0.08 }}
-                  className="rounded-2xl border border-white/10 bg-[#0A1930]/80 p-6"
+                  className="company-growth-card group relative overflow-hidden rounded-2xl border border-[#e0e6f2] bg-white p-6 shadow-[0_12px_30px_rgba(7,16,57,0.06)] transition duration-300 hover:-translate-y-1 hover:border-[#afc5f8] hover:shadow-[0_18px_38px_rgba(7,16,57,0.1)]"
                 >
-                  <span className="text-sm font-semibold uppercase tracking-[0.14em] text-[#66d4eb]">{value}</span>
+                  <span className="text-sm font-semibold uppercase tracking-[0.14em] text-[#AFC5F8]">{value}</span>
                   <h3 className="mt-5 text-2xl font-bold">{label}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-slate-400">{text}</p>
                 </motion.div>
@@ -1470,20 +1468,20 @@ export default function Home() {
         </div>
       </section>
 
-      <Testimonials />
+      <Testimonials className="company-reviews" />
 
      {/* FINAL CTA */}
-<section className="bg-[#0A1930] px-6 py-24">
-  <div className="relative mx-auto max-w-5xl overflow-hidden rounded-3xl bg-[#123C6B] px-6 py-14 text-center lg:px-10 lg:py-16">
+<section className="company-cta-section bg-[#071039] px-6 py-24">
+  <div className="relative mx-auto max-w-5xl overflow-hidden rounded-3xl bg-[#1A3BB0] px-6 py-14 text-center lg:px-10 lg:py-16">
     
     <motion.div
       animate={{ scale: [1, 1.12, 1] }}
       transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-      className="pointer-events-none absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#17A2C7]/20 blur-3xl"
+      className="pointer-events-none absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#2E5DE6]/20 blur-3xl"
     />
 
     <div className="relative">
-      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#66d4eb]">
+      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#AFC5F8]">
         Ready when you are
       </p>
 
@@ -1496,12 +1494,10 @@ export default function Home() {
         you find the right next step.
       </p>
 
-      <div
-        className="mt-8 inline-flex items-center gap-3 rounded-full bg-[#17A2C7] px-8 py-3.5 font-semibold text-white shadow-lg"
-      >
+      <Link href="/contact" className="mt-8 inline-flex min-h-12 items-center gap-3 rounded-full bg-[#2E5DE6] px-8 py-3.5 font-semibold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-[#123cbb] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">
         Discuss Your Project
         <ArrowRight size={18} />
-      </div>
+      </Link>
     </div>
   </div>
 </section>

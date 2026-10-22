@@ -112,12 +112,12 @@ export default function Contact() {
   }
 
   return (
-    <main className="overflow-x-hidden bg-[#0A1930] pt-20 lg:pt-24 text-white">
+    <main className="contact-page overflow-x-hidden bg-white pt-20 lg:pt-24 text-[#071039]">
       {/* PAGE HEADER */}
-      <section className="relative overflow-hidden">
+      <section className="contact-hero relative overflow-hidden">
         <div className="pointer-events-none absolute inset-0">
-          <div className="absolute left-[8%] top-0 h-[24rem] w-[24rem] rounded-full bg-blue-600/15 blur-[120px]" />
-          <div className="absolute right-[-6rem] top-6 h-[26rem] w-[26rem] rounded-full bg-[#17A2C7]/10 blur-[130px]" />
+          <div className="absolute left-[8%] top-0 h-[24rem] w-[24rem] rounded-full bg-[#2E5DE6]/15 blur-[120px]" />
+          <div className="absolute right-[-6rem] top-6 h-[26rem] w-[26rem] rounded-full bg-[#2E5DE6]/10 blur-[130px]" />
           <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:48px_48px]" />
         </div>
 
@@ -126,7 +126,7 @@ export default function Contact() {
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-xs font-semibold uppercase tracking-[0.18em] text-[#66d4eb]"
+            className="text-xs font-semibold uppercase tracking-[0.18em] text-[#AFC5F8]"
           >
             Let&apos;s Talk
           </motion.p>
@@ -138,7 +138,7 @@ export default function Contact() {
             className="mt-5 max-w-3xl text-4xl font-bold leading-[1.15] sm:text-5xl lg:text-6xl"
           >
             Contact Ignisis  {' '}
-            <span className="bg-gradient-to-r from-[#66d4eb] via-[#3da7e9] to-[#7187ff] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#AFC5F8] via-[#6E92F2] to-[#6E92F2] bg-clip-text text-transparent">
               Solutions
             </span>
           </motion.h1>
@@ -155,7 +155,7 @@ export default function Contact() {
       </section>
 
       {/* FORM + CONTACT INFO */}
-      <section className="mx-auto max-w-7xl px-6 pb-24">
+      <section className="contact-form-section mx-auto max-w-7xl px-6 pb-24">
         <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
           {/* FORM CARD */}
           <motion.div
@@ -166,7 +166,7 @@ export default function Contact() {
           >
             {status === 'success' ? (
               <div className="flex min-h-[380px] flex-col items-center justify-center text-center">
-                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#17A2C7]/15 text-[#66d4eb]">
+                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#2E5DE6]/15 text-[#AFC5F8]">
                   <Check size={26} />
                 </div>
                 <h3 className="mt-6 text-2xl font-bold">Message sent.</h3>
@@ -177,7 +177,7 @@ export default function Contact() {
                 <button
                   type="button"
                   onClick={() => setStatus('idle')}
-                  className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[#66d4eb] transition hover:text-white"
+                  className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[#AFC5F8] transition hover:text-white"
                 >
                   Send another message
                 </button>
@@ -202,8 +202,8 @@ export default function Contact() {
                       type="text"
                       value={form.name}
                       onChange={(e) => setForm({ ...form, name: e.target.value })}
-                      className={`mt-2 w-full rounded-xl border bg-[#0A1930] px-4 py-3 text-sm text-white outline-none transition placeholder:text-slate-500 focus:border-[#17A2C7] ${
-                        errors.name ? 'border-red-400/60' : 'border-white/10'
+                      className={`mt-2 w-full rounded-xl border bg-white px-4 py-3 text-sm text-[#071039] outline-none transition placeholder:text-[#707A91] focus:border-[#2E5DE6] focus:ring-2 focus:ring-[#2E5DE6]/15 ${
+                        errors.name ? 'border-red-400/60' : 'border-[#D5DBEA]'
                       }`}
                       placeholder="Your name"
                     />
@@ -220,8 +220,8 @@ export default function Contact() {
                       type="email"
                       value={form.email}
                       onChange={(e) => setForm({ ...form, email: e.target.value })}
-                      className={`mt-2 w-full rounded-xl border bg-[#0A1930] px-4 py-3 text-sm text-white outline-none transition placeholder:text-slate-500 focus:border-[#17A2C7] ${
-                        errors.email ? 'border-red-400/60' : 'border-white/10'
+                      className={`mt-2 w-full rounded-xl border bg-white px-4 py-3 text-sm text-[#071039] outline-none transition placeholder:text-[#707A91] focus:border-[#2E5DE6] focus:ring-2 focus:ring-[#2E5DE6]/15 ${
+                        errors.email ? 'border-red-400/60' : 'border-[#D5DBEA]'
                       }`}
                       placeholder="you@company.com"
                     />
@@ -240,8 +240,8 @@ export default function Contact() {
                       type="text"
                       value={form.company}
                       onChange={(e) => setForm({ ...form, company: e.target.value })}
-                      className={`mt-2 w-full rounded-xl border bg-[#0A1930] px-4 py-3 text-sm text-white outline-none transition placeholder:text-slate-500 focus:border-[#17A2C7] ${
-                        errors.company ? 'border-red-400/60' : 'border-white/10'
+                      className={`mt-2 w-full rounded-xl border bg-white px-4 py-3 text-sm text-[#071039] outline-none transition placeholder:text-[#707A91] focus:border-[#2E5DE6] focus:ring-2 focus:ring-[#2E5DE6]/15 ${
+                        errors.company ? 'border-red-400/60' : 'border-[#D5DBEA]'
                       }`}
                       placeholder="Business name"
                     />
@@ -258,8 +258,8 @@ export default function Contact() {
                       type="tel"
                       value={form.phone}
                       onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                      className={`mt-2 w-full rounded-xl border bg-[#0A1930] px-4 py-3 text-sm text-white outline-none transition placeholder:text-slate-500 focus:border-[#17A2C7] ${
-                        errors.phone ? 'border-red-400/60' : 'border-white/10'
+                      className={`mt-2 w-full rounded-xl border bg-white px-4 py-3 text-sm text-[#071039] outline-none transition placeholder:text-[#707A91] focus:border-[#2E5DE6] focus:ring-2 focus:ring-[#2E5DE6]/15 ${
+                        errors.phone ? 'border-red-400/60' : 'border-[#D5DBEA]'
                       }`}
                       placeholder="+92 302 5708769"
                     />
@@ -277,13 +277,13 @@ export default function Contact() {
                     <select
                       value={form.service}
                       onChange={(e) => setForm({ ...form, service: e.target.value })}
-                      className={`w-full appearance-none rounded-xl border bg-[#0A1930] px-4 py-3 pr-12 text-sm text-white outline-none transition focus:border-[#17A2C7] ${
-                        errors.service ? 'border-red-400/60' : 'border-white/10'
+                      className={`w-full appearance-none rounded-xl border bg-white px-4 py-3 pr-12 text-sm text-[#071039] outline-none transition focus:border-[#2E5DE6] focus:ring-2 focus:ring-[#2E5DE6]/15 ${
+                        errors.service ? 'border-red-400/60' : 'border-[#D5DBEA]'
                       }`}
                     >
-                      <option value="">Select a service</option>
+                      <option value="" className="bg-white text-[#707A91]">Select a service</option>
                       {serviceOptions.map((s) => (
-                        <option key={s} value={s}>
+                        <option key={s} value={s} className="bg-white text-[#071039]">
                           {s}
                         </option>
                       ))}
@@ -307,8 +307,8 @@ export default function Contact() {
                     rows={5}
                     value={form.message}
                     onChange={(e) => setForm({ ...form, message: e.target.value })}
-                    className={`mt-2 w-full resize-none rounded-xl border bg-[#0A1930] px-4 py-3 text-sm text-white outline-none transition placeholder:text-slate-500 focus:border-[#17A2C7] ${
-                      errors.message ? 'border-red-400/60' : 'border-white/10'
+                    className={`mt-2 w-full resize-none rounded-xl border bg-white px-4 py-3 text-sm text-[#071039] outline-none transition placeholder:text-[#707A91] focus:border-[#2E5DE6] focus:ring-2 focus:ring-[#2E5DE6]/15 ${
+                      errors.message ? 'border-red-400/60' : 'border-[#D5DBEA]'
                     }`}
                     placeholder="What are you trying to build, fix or improve?"
                   />
@@ -327,7 +327,7 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={status === 'submitting'}
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#17A2C7] px-6 py-3.5 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#5cd5eb] disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#2E5DE6] px-6 py-3.5 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#1A3BB0] disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
                 >
                   {status === 'submitting' ? (
                     <>
@@ -355,9 +355,9 @@ export default function Contact() {
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.08 }}
                   whileHover={href ? { y: -4 } : undefined}
-                  className="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.025] p-5 transition hover:border-[#17A2C7]/40"
+                  className="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.025] p-5 transition hover:border-[#2E5DE6]/40"
                 >
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#17A2C7]/15 text-[#66d4eb]">
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#2E5DE6]/15 text-[#AFC5F8]">
                     <Icon size={19} />
                   </span>
                   <div>
@@ -383,10 +383,10 @@ export default function Contact() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.25 }}
-              className="rounded-2xl border border-[#17A2C7]/20 bg-[#17A2C7]/5 p-5"
+              className="rounded-2xl border border-[#2E5DE6]/20 bg-[#2E5DE6]/5 p-5"
             >
               <div className="flex items-center gap-3">
-                <Clock size={17} className="text-[#66d4eb]" />
+                <Clock size={17} className="text-[#AFC5F8]" />
                 <p className="text-sm font-semibold">Response time</p>
               </div>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">
@@ -403,7 +403,7 @@ export default function Contact() {
               className="rounded-2xl border border-white/10 bg-white/[0.025] p-5"
             >
               <div className="flex items-center gap-3">
-                <MessageCircle size={17} className="text-[#66d4eb]" />
+                <MessageCircle size={17} className="text-[#AFC5F8]" />
                 <p className="text-sm font-semibold">Not ready to commit?</p>
               </div>
               <p className="mt-2 text-sm leading-relaxed text-slate-300">
@@ -412,7 +412,7 @@ export default function Contact() {
               </p>
               <Link
                 href="/services"
-                className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#66d4eb] transition hover:text-white"
+                className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#AFC5F8] transition hover:text-white"
               >
                 Browse our services <ArrowRight size={15} />
               </Link>
@@ -422,7 +422,7 @@ export default function Contact() {
       </section>
 
       {/* OFFICE LOCATION */}
-      <section className="mx-auto max-w-7xl px-6 pb-24">
+      <section className="contact-office-section mx-auto max-w-7xl px-6 pb-24">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -430,7 +430,7 @@ export default function Contact() {
           className="overflow-hidden rounded-2xl border border-white/10 bg-white/[0.025]"
         >
           <div className="px-6 pb-6 pt-8 sm:px-8">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#66d4eb]">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#AFC5F8]">
               Lahore Office
             </p>
             <h2 className="mt-3 text-3xl font-bold sm:text-4xl">
@@ -441,7 +441,7 @@ export default function Contact() {
             </p>
           </div>
 
-          <div className="relative aspect-[16/8] min-h-[280px] w-full border-y border-white/10 bg-[#102742]">
+          <div className="relative aspect-[16/8] min-h-[280px] w-full border-y border-white/10 bg-[#0F2270]">
             <iframe
               title="Ignisis Solutions office location in Lahore"
               src="https://www.google.com/maps?q=Ignisis%20Solutions%2C%20280%20N%20Block%2C%20Model%20Town%2C%20Lahore&output=embed"
@@ -456,7 +456,7 @@ export default function Contact() {
               href={contactChannels[2].href}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-[#66d4eb] transition hover:text-white"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-[#AFC5F8] transition hover:text-white"
             >
               Open in Google Maps <ArrowRight size={15} />
             </a>

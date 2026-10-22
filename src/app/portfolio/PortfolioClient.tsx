@@ -12,12 +12,9 @@ import {
   ArrowUpRight,
   ChevronLeft,
   ChevronRight,
-  Code2,
   ExternalLink,
   Eye,
   FolderOpen,
-  Grid2X2,
-  Layers3,
   X,
 } from 'lucide-react'
 import { projects } from '@/data/portfolio'
@@ -123,32 +120,32 @@ export default function PortfolioPage() {
   }
 
   return (
-    <main className="overflow-x-hidden bg-[#0A1930] pt-20 lg:pt-20 text-white">
+    <main className="portfolio-page overflow-x-hidden bg-white pt-20 text-[#071039] lg:pt-20">
       {/* HERO */}
-      <section className="relative overflow-hidden border-b border-white/10">
+      <section className="portfolio-hero relative overflow-hidden">
         <div className="pointer-events-none absolute inset-0">
-          <div className="absolute left-[8%] top-0 h-96 w-96 rounded-full bg-blue-600/10 blur-[150px]" />
-          <div className="absolute right-[-7rem] top-10 h-[28rem] w-[28rem] rounded-full bg-[#17A2C7]/10 blur-[150px]" />
+          <div className="absolute left-[8%] top-0 h-96 w-96 rounded-full bg-[#2E5DE6]/10 blur-[150px]" />
+          <div className="absolute right-[-7rem] top-10 h-[28rem] w-[28rem] rounded-full bg-[#2E5DE6]/10 blur-[150px]" />
           <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:48px_48px]" />
         </div>
 
-        <div className="relative mx-auto grid min-w-0 max-w-7xl gap-12 px-4 py-10 sm:px-6 lg:grid-cols-[1fr_1fr] lg:items-center lg:py-16">
+        <div className="portfolio-hero-layout relative mx-auto grid min-w-0 max-w-7xl gap-12 px-4 py-10 sm:px-6 lg:grid-cols-[1fr_1fr] lg:items-center lg:py-16">
           <motion.div
             initial={{ opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.65 }}
-            className="w-full max-w-2xl text-left"
+            className="portfolio-hero-copy w-full max-w-2xl text-left"
           >
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#66d4eb]">
+            <p className="portfolio-hero-eyebrow text-xs font-semibold uppercase tracking-[0.2em] text-[#1A3BB0]">
               Selected Work
             </p>
 
-             <h1 className="mt-5 max-w-2xl text-3xl font-bold leading-[1.08] sm:text-5xl lg:text-6xl">
+             <h1 className="portfolio-hero-title mt-5 max-w-2xl text-3xl font-bold leading-[1.08] sm:text-5xl lg:text-6xl">
            Ignisis Solution&apos;s{' '}
-          <span className="block text-[#66d4eb] sm:inline">Portfolio.</span>
+          <span className="portfolio-hero-highlight block sm:inline">Portfolio.</span>
 </h1>
 
-              <p className="mt-5 max-w-xl text-base leading-relaxed text-slate-300 sm:mt-6 sm:text-lg">
+              <p className="portfolio-hero-description mt-5 max-w-xl text-base leading-relaxed sm:mt-6 sm:text-lg">
   Explore Ignisis Solution&apos;s portfolio of web development,
   e-commerce, custom software, branding and digital marketing projects
   created for businesses in Pakistan and beyond.
@@ -162,21 +159,21 @@ export default function PortfolioPage() {
                     .getElementById('all-projects')
                     ?.scrollIntoView({ behavior: 'smooth' })
                 }
-                className="inline-flex min-w-0 flex-1 items-center justify-center gap-1 rounded-xl bg-[#17A2C7] px-2 py-3 text-[11px] font-semibold whitespace-nowrap text-white transition hover:-translate-y-0.5 hover:bg-[#62d7ec] sm:flex-none sm:gap-2 sm:px-6 sm:py-3.5 sm:text-base"
+                className="portfolio-hero-primary inline-flex min-w-0 flex-1 items-center justify-center gap-1 rounded-full px-2 py-3 text-[11px] font-semibold whitespace-nowrap text-white transition hover:-translate-y-0.5 sm:flex-none sm:gap-2 sm:px-6 sm:py-3.5 sm:text-base"
               >
                 Explore Projects <ArrowRight size={18} />
               </button>
 
               <Link
                 href="/contact"
-                className="inline-flex min-w-0 flex-1 items-center justify-center gap-1 rounded-xl border border-white/20 px-2 py-3 text-[11px] font-semibold whitespace-nowrap transition hover:border-[#17A2C7]/70 hover:bg-white/5 sm:flex-none sm:gap-2 sm:px-6 sm:py-3.5 sm:text-base"
+                className="portfolio-hero-secondary inline-flex min-w-0 flex-1 items-center justify-center gap-1 rounded-xl border px-2 py-3 text-[11px] font-semibold whitespace-nowrap transition sm:flex-none sm:gap-2 sm:px-6 sm:py-3.5 sm:text-base"
               >
                 Start a Similar Project
               </Link>
             </div>
 
-            <div className="mt-10 flex items-center justify-center gap-3 text-center text-sm text-slate-400 lg:justify-start lg:text-left">
-              <FolderOpen size={17} className="text-[#17A2C7]" />
+            <div className="portfolio-hero-note mt-10 flex items-center justify-center gap-3 text-center text-sm lg:justify-start lg:text-left">
+              <FolderOpen size={17} />
               Click any project to explore its complete visual gallery.
             </div>
           </motion.div>
@@ -186,20 +183,20 @@ export default function PortfolioPage() {
             initial={{ opacity: 0, x: 28 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.75, delay: 0.12 }}
-            className="relative mx-auto w-full max-w-xl"
+            className="portfolio-featured-wrap relative mx-auto w-full max-w-xl"
           >
-            <div className="absolute inset-0 rounded-3xl bg-[#17A2C7]/10 blur-3xl" />
+            <div className="absolute inset-0 rounded-3xl bg-[#2E5DE6]/10 blur-3xl" />
 
-            <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-[#0d2542]/85 p-4 shadow-2xl backdrop-blur-xl sm:p-5">
-              <div className="flex flex-col items-center gap-3 border-b border-white/10 px-2 pb-4 text-center sm:flex-row sm:justify-between sm:text-left">
+            <div className="portfolio-featured-panel relative overflow-hidden rounded-3xl p-4 sm:p-5">
+              <div className="portfolio-featured-heading flex flex-col items-center gap-3 border-b px-2 pb-4 text-center sm:flex-row sm:justify-between sm:text-left">
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#66d4eb]">
+                  <p className="portfolio-featured-eyebrow text-xs font-semibold uppercase tracking-[0.16em]">
                     Featured Project
                   </p>
-                  <p className="mt-1 text-xs font-semibold sm:text-sm">{featuredProject.title}</p>
+                  <p className="portfolio-featured-name mt-1 text-xs font-semibold sm:text-sm">{featuredProject.title}</p>
                 </div>
 
-                <span className="rounded-full border border-white/10 px-3 py-1 text-xs text-slate-400">
+                <span className="portfolio-featured-count rounded-full border px-3 py-1 text-xs">
                   0{featuredIndex + 1} / 0{projects.length}
                 </span>
               </div>
@@ -213,17 +210,17 @@ export default function PortfolioPage() {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.98 }}
                   transition={{ duration: 0.35 }}
-                  className="group relative mt-5 block w-full overflow-hidden rounded-2xl bg-[#071426] text-left"
+                  className="portfolio-featured-image group relative mt-5 block w-full overflow-hidden rounded-2xl text-left"
                 >
                   <Image
                     width={1200}
                     height={700}
                     src={featuredProject.thumbnail}
                     alt={featuredProject.title}
-                    className="block h-auto w-full bg-[#071426] transition duration-700"
+                    className="block h-auto w-full transition duration-700"
                   />
 
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#071426] via-transparent to-transparent" />
+                  <div className="portfolio-featured-overlay absolute inset-0 bg-gradient-to-t from-[#071039]/75 via-transparent to-transparent" />
 
                   <div className="absolute inset-x-0 bottom-0 p-3 sm:p-5">
                     <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-white sm:text-xs sm:tracking-[0.16em]">
@@ -235,13 +232,13 @@ export default function PortfolioPage() {
                     </h2>
                   </div>
 
-                  <span className="absolute right-5 top-5 flex h-11 w-11 items-center justify-center rounded-full bg-[#17A2C7] text-white opacity-0 transition group-hover:opacity-100">
+                  <span className="absolute right-5 top-5 flex h-11 w-11 items-center justify-center rounded-full bg-[#2E5DE6] text-white opacity-0 transition group-hover:opacity-100">
                     <Eye size={19} />
                   </span>
                 </motion.button>
               </AnimatePresence>
 
-              <div className="mt-4 flex gap-2">
+              <div className="portfolio-featured-dots mt-4 flex gap-2">
                 {projects.map((project, index) => (
                   <button
                     key={project.id}
@@ -250,7 +247,7 @@ export default function PortfolioPage() {
                     aria-label={`Show ${project.title}`}
                     className={`h-1.5 rounded-full transition-all ${
                       index === featuredIndex
-                        ? 'w-9 bg-[#17A2C7]'
+                        ? 'w-9 bg-[#2E5DE6]'
                         : 'w-3 bg-white/20 hover:bg-white/50'
                     }`}
                   />
@@ -261,50 +258,18 @@ export default function PortfolioPage() {
         </div>
       </section>
 
-      {/* PORTFOLIO INTRO */}
-      <section className="border-b border-white/10 bg-[#08182e]">
-        <div className="mx-auto grid max-w-7xl gap-7 px-6 py-10 md:grid-cols-3">
-          {[
-            [
-              'Real visual work',
-              'Every project includes its original screens and visual direction not just a written summary.',
-            ],
-            [
-              'Built for a purpose',
-              'Each platform begins with a different audience, business model and customer journey.',
-            ],
-            [
-              'Explore the details',
-              'Open a project gallery to view screens, technology and the live experience.',
-            ],
-          ].map(([title, text], index) => (
-            <motion.div
-              key={title}
-              initial={{ opacity: 0, y: 14 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="border-l border-[#17A2C7]/60 pl-5"
-            >
-              <h2 className="font-semibold">{title}</h2>
-              <p className="mt-2 text-sm leading-relaxed text-slate-400">{text}</p>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
       {/* GALLERY */}
       <section
         id="all-projects"
-        className="mx-auto max-w-7xl scroll-mt-28 px-6 py-24 lg:py-28"
+        className="portfolio-gallery-section mx-auto max-w-7xl scroll-mt-28 px-6 py-24 lg:py-28"
       >
         <div className="flex flex-col justify-between gap-7 md:flex-row md:items-end">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#66d4eb]">
+            <p className="portfolio-gallery-eyebrow text-xs font-semibold uppercase tracking-[0.2em] text-[#1A3BB0]">
               Project gallery
             </p>
 
-            <h2 className="mt-4 text-4xl font-bold sm:text-5xl">
+            <h2 className="portfolio-gallery-title mt-4 text-4xl font-bold text-[#071039] sm:text-5xl">
   Our Web Development & Digital Projects.
 </h2>
           </div>
@@ -322,10 +287,10 @@ export default function PortfolioPage() {
                 key={category}
                 type="button"
                 onClick={() => setActiveCategory(category)}
-                className={`rounded-full border px-5 py-2.5 text-sm font-semibold transition ${
+                className={`portfolio-filter-button rounded-full border px-5 py-2.5 text-sm font-semibold transition ${
                   isActive
-                    ? 'border-[#17A2C7] bg-[#17A2C7] text-white'
-                    : 'border-white/10 text-white hover:border-[#17A2C7]/60 hover:text-white'
+                    ? 'is-active border-[#2E5DE6] bg-[#2E5DE6] text-white'
+                    : 'border-[#D5DBEA] bg-white text-[#071039] hover:border-[#2E5DE6]/60 hover:text-[#1A3BB0]'
                 }`}
               >
                 {categoryLabels[category] ||
@@ -346,12 +311,12 @@ export default function PortfolioPage() {
                 exit={{ opacity: 0, scale: 0.96 }}
                 transition={{ duration: 0.35, delay: index * 0.06 }}
                 whileHover={{ y: -7 }}
-                className="group overflow-hidden rounded-2xl border border-white/10 bg-[#0d203a] transition hover:border-[#17A2C7]/50"
+                className="portfolio-project-card group overflow-hidden rounded-2xl border transition"
               >
                 <button
                   type="button"
                   onClick={() => openProject(project.id)}
-                  className="relative block w-full overflow-hidden bg-[#071426] text-left"
+                  className="portfolio-project-preview relative block w-full overflow-hidden text-left"
                   aria-label={`Open ${project.title} gallery`}
                 >
                   <Image
@@ -359,26 +324,26 @@ export default function PortfolioPage() {
                     height={700}
                     src={project.thumbnail}
                     alt={project.title}
-                    className="h-60 w-full bg-[#071426] object-contain transition duration-700"
+                    className="h-60 w-full object-contain transition duration-700"
                   />
 
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#071426]/85 via-transparent to-transparent" />
+                  <div className="portfolio-project-overlay absolute inset-0 bg-gradient-to-t from-[#071039]/50 via-transparent to-transparent" />
 
-                  <span className="absolute left-5 top-5 rounded-full border border-white/15 bg-[#0A1930]/80 px-3 py-1 text-xs font-semibold text-white backdrop-blur-md">
+                  <span className="portfolio-project-category absolute left-5 top-5 rounded-full border px-3 py-1 text-xs font-semibold">
                     {categoryLabels[project.category] || project.category}
                   </span>
 
-                  <span className="absolute bottom-5 right-5 flex h-11 w-11 items-center justify-center rounded-full bg-[#17A2C7] text-white opacity-0 transition group-hover:opacity-100">
+                  <span className="absolute bottom-5 right-5 flex h-11 w-11 items-center justify-center rounded-full bg-[#2E5DE6] text-white opacity-0 transition group-hover:opacity-100">
                     <Eye size={19} />
                   </span>
                 </button>
 
                 <div className="flex min-h-[280px] flex-col p-6">
-                  <h3 className="text-xl font-bold transition group-hover:text-[#66d4eb]">
+                  <h3 className="portfolio-project-title text-xl font-bold transition">
                     {project.title}
                   </h3>
 
-                  <p className="mt-3 line-clamp-2 text-sm leading-relaxed text-slate-400">
+                  <p className="portfolio-project-description mt-3 line-clamp-2 text-sm leading-relaxed">
                     {project.description}
                   </p>
 
@@ -386,14 +351,14 @@ export default function PortfolioPage() {
                     {project.techStack.slice(0, 3).map((tech) => (
                       <span
                         key={tech}
-                        className="rounded-full border border-white/10 px-3 py-1 text-xs text-slate-300"
+                        className="portfolio-tech-pill rounded-full border border-white/10 px-3 py-1 text-xs text-[#36405A]"
                       >
                         {tech}
                       </span>
                     ))}
 
                     {project.techStack.length > 3 && (
-                      <span className="px-2 py-1 text-xs text-slate-500">
+                      <span className="portfolio-tech-more px-2 py-1 text-xs text-[#36405A]">
                         +{project.techStack.length - 3}
                       </span>
                     )}
@@ -403,7 +368,7 @@ export default function PortfolioPage() {
                     <button
                       type="button"
                       onClick={() => openProject(project.id)}
-                      className="inline-flex items-center gap-2 text-sm font-semibold text-[#66d4eb] transition hover:text-white"
+                      className="portfolio-view-gallery inline-flex items-center gap-2 text-sm font-semibold text-[#1A3BB0] transition hover:text-[#2E5DE6]"
                     >
                       View Gallery <ArrowRight size={15} />
                     </button>
@@ -413,7 +378,7 @@ export default function PortfolioPage() {
                         href={project.liveUrl.trim()}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 text-sm font-medium text-slate-400 transition hover:text-white"
+                        className="portfolio-live-demo inline-flex items-center gap-1 text-sm font-medium text-[#36405A] transition hover:text-[#2E5DE6]"
                       >
                         Live Demo <ArrowUpRight size={14} />
                       </a>
@@ -427,41 +392,27 @@ export default function PortfolioPage() {
       </section>
 
       {/* CTA */}
-    {/* FINAL CTA */}
-<section className="border-t border-white/10 bg-[#0A1930] px-4 py-10 sm:px-6 lg:py-14">
-  <div className="relative mx-auto max-w-7xl overflow-hidden rounded-3xl bg-[#123C6B] px-6 py-20 text-center lg:py-24">
-
-    <motion.div
-      animate={{ scale: [1, 1.12, 1] }}
-      transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-      className="pointer-events-none absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#17A2C7]/20 blur-3xl"
-    />
-
-    <div className="relative">
-      <Code2
-        className="mx-auto text-[#66d4eb]"
-        size={30}
-      />
-
-      <h2 className="mx-auto mt-5 max-w-3xl text-4xl font-bold sm:text-5xl">
-        Have a project that deserves this level of attention?
-      </h2>
-
-      <p className="mx-auto mt-5 max-w-xl leading-relaxed text-slate-200">
-        Let&apos;s turn your business idea into a clear, thoughtful digital
-        experience built around the people who will use it.
-      </p>
-
-      <Link
-        href="/contact"
-        className="mt-8 inline-flex items-center gap-2 rounded-xl bg-[#17A2C7] px-6 py-3.5 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#62d7ec]"
-      >
-        Start Your Project
-        <ArrowRight size={18} />
-      </Link>
-    </div>
-  </div>
-</section>
+      <section className="portfolio-final-cta">
+        <div className="portfolio-cta-panel">
+          <div className="portfolio-cta-rings" aria-hidden="true" />
+          <div className="portfolio-cta-copy">
+            <p>Ready when you are</p>
+            <h2>Have a project that deserves this level of attention?</h2>
+            <span>
+              Let&apos;s turn your business idea into a clear, thoughtful digital
+              experience built around the people who will use it.
+            </span>
+          </div>
+          <div className="portfolio-cta-actions">
+            <Link href="/contact" className="portfolio-cta-primary">
+              Start Your Project <ArrowRight size={18} />
+            </Link>
+            <Link href="/contact" className="portfolio-cta-secondary">
+              Request a Free Audit <ArrowRight size={18} />
+            </Link>
+          </div>
+        </div>
+      </section>
 
       {/* FULL PROJECT GALLERY MODAL */}
       <AnimatePresence>
@@ -471,7 +422,7 @@ export default function PortfolioPage() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={closeProject}
-            className="fixed inset-0 z-[100] flex items-center justify-center bg-[#020814]/95 p-4 backdrop-blur-xl"
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-[#071039]/95 p-4 backdrop-blur-xl"
             role="dialog"
             aria-modal="true"
             aria-label={`${selectedProject.title} gallery`}
@@ -482,7 +433,7 @@ export default function PortfolioPage() {
               exit={{ opacity: 0, y: 28, scale: 0.98 }}
               transition={{ duration: 0.3 }}
               onClick={(event) => event.stopPropagation()}
-              className="relative flex max-h-[94vh] w-full max-w-6xl flex-col overflow-hidden rounded-3xl border border-white/10 bg-[#0A1930] shadow-2xl"
+              className="relative flex max-h-[94vh] w-full max-w-6xl flex-col overflow-hidden rounded-3xl border border-white/10 bg-[#071039] shadow-2xl"
             >
               <div className="flex items-center justify-between border-b border-white/10 px-5 py-4 sm:px-7">
                 <div className="min-w-0 pr-4">
@@ -499,13 +450,13 @@ export default function PortfolioPage() {
                   type="button"
                   onClick={closeProject}
                   aria-label="Close project gallery"
-                  className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/10 text-slate-300 transition hover:border-[#17A2C7] hover:bg-[#17A2C7] hover:text-[#0A1930]"
+                  className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/10 text-slate-300 transition hover:border-[#2E5DE6] hover:bg-[#2E5DE6] hover:text-white"
                 >
                   <X size={20} />
                 </button>
               </div>
 
-              <div className="relative flex min-h-0 flex-1 items-center justify-center bg-[#071426] p-4 sm:p-7">
+              <div className="relative flex min-h-0 flex-1 items-center justify-center bg-[#071039] p-4 sm:p-7">
                 <AnimatePresence mode="wait">
                   <MotionImage
                     width={1600}
@@ -529,7 +480,7 @@ export default function PortfolioPage() {
                       type="button"
                       onClick={previousImage}
                       aria-label="Show previous image"
-                      className="absolute left-4 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-[#0A1930]/85 text-white transition hover:border-[#17A2C7] hover:bg-[#17A2C7] hover:text-[#0A1930] sm:left-7"
+                      className="absolute left-4 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-[#071039]/85 text-white transition hover:border-[#2E5DE6] hover:bg-[#2E5DE6] hover:text-white sm:left-7"
                     >
                       <ChevronLeft size={20} />
                     </button>
@@ -538,7 +489,7 @@ export default function PortfolioPage() {
                       type="button"
                       onClick={nextImage}
                       aria-label="Show next image"
-                      className="absolute right-4 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-[#0A1930]/85 text-white transition hover:border-[#17A2C7] hover:bg-[#17A2C7] hover:text-[#0A1930] sm:right-7"
+                      className="absolute right-4 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-[#071039]/85 text-white transition hover:border-[#2E5DE6] hover:bg-[#2E5DE6] hover:text-white sm:right-7"
                     >
                       <ChevronRight size={20} />
                     </button>
@@ -570,7 +521,7 @@ export default function PortfolioPage() {
                       href={selectedProject.liveUrl.trim()}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex h-fit items-center justify-center gap-2 rounded-xl bg-[#17A2C7] px-5 py-3 text-sm font-semibold text-[#0A1930] transition hover:bg-[#62d7ec]"
+                      className="inline-flex h-fit items-center justify-center gap-2 rounded-xl bg-[#2E5DE6] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#1A3BB0]"
                     >
                       Visit Live Demo <ExternalLink size={16} />
                     </a>
@@ -586,7 +537,7 @@ export default function PortfolioPage() {
                         onClick={() => setActiveImageIndex(index)}
                         className={`shrink-0 overflow-hidden rounded-lg border transition ${
                           index === activeImageIndex
-                            ? 'border-[#17A2C7]'
+                            ? 'border-[#2E5DE6]'
                             : 'border-white/10 opacity-60 hover:opacity-100'
                         }`}
                       >

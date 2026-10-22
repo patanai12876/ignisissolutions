@@ -204,37 +204,6 @@ const consultationAreas = [
   'Digital Transformation',
 ]
 
-const process = [
-  {
-    number: '01',
-    title: 'Understand',
-    text: 'We learn about your business, current situation, challenges, audience and goals.',
-  },
-
-  {
-    number: '02',
-    title: 'Audit',
-    text: 'We review your existing digital presence, processes and opportunities to identify what needs attention.',
-  },
-
-  {
-    number: '03',
-    title: 'Prioritize',
-    text: 'We separate what is important from what can wait and create a practical order of execution.',
-  },
-
-  {
-    number: '04',
-    title: 'Recommend',
-    text: 'You receive clear recommendations for technology, marketing, branding and other digital investments.',
-  },
-
-  {
-    number: '05',
-    title: 'Execute',
-    text: 'If you choose to work with us, our team can help turn the strategy into actual digital solutions.',
-  },
-]
 
 const faqs = faqJsonLd.mainEntity.map((item) => ({
   question: item.question,
@@ -243,7 +212,7 @@ const faqs = faqJsonLd.mainEntity.map((item) => ({
 
 export default function BusinessConsultancyPage() {
   return (
-    <main className="overflow-x-hidden bg-[#0A1930] text-white">
+    <main className="service-detail-page overflow-x-hidden bg-white text-[#071039]">
       {/* JSON-LD */}
 
       <script
@@ -264,9 +233,9 @@ export default function BusinessConsultancyPage() {
 
       <section className="relative overflow-hidden border-b border-white/10 pt-8 lg:pt-10">
         <div className="pointer-events-none absolute inset-0">
-          <div className="absolute left-[8%] top-0 h-[25rem] w-[25rem] rounded-full bg-[#17A2C7]/15 blur-[130px]" />
+          <div className="absolute left-[8%] top-0 h-[25rem] w-[25rem] rounded-full bg-[#2E5DE6]/15 blur-[130px]" />
 
-          <div className="absolute right-[-5rem] top-10 h-[28rem] w-[28rem] rounded-full bg-blue-600/10 blur-[140px]" />
+          <div className="absolute right-[-5rem] top-10 h-[28rem] w-[28rem] rounded-full bg-[#2E5DE6]/10 blur-[140px]" />
 
           <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:48px_48px]" />
         </div>
@@ -275,7 +244,7 @@ export default function BusinessConsultancyPage() {
           <div className="max-w-4xl">
             <Link
               href="/services"
-              className="inline-flex items-center gap-2 text-sm font-medium text-[#66d4eb] transition hover:text-white"
+              className="inline-flex items-center gap-2 text-sm font-medium text-[#AFC5F8] transition hover:text-white"
             >
               <ArrowRight
                 size={15}
@@ -284,17 +253,17 @@ export default function BusinessConsultancyPage() {
               All Services
             </Link>
 
-            <div className="mt-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#17A2C7]/15 text-[#66d4eb]">
+            <div className="mt-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#2E5DE6]/15 text-[#AFC5F8]">
               <Target size={28} />
             </div>
 
-            <p className="mt-6 text-xs font-semibold uppercase tracking-[0.18em] text-[#66d4eb]">
+            <p className="mt-6 text-xs font-semibold uppercase tracking-[0.18em] text-[#AFC5F8]">
               Business Consultancy Services in Lahore
             </p>
 
-            <h1 className="mt-4 text-4xl font-bold leading-[1.08] sm:text-5xl lg:text-7xl">
+            <h1 className="mt-4 text-4xl font-bold leading-[1.08] sm:text-5xl lg:text-5xl">
               Better decisions for{' '}
-              <span className="bg-gradient-to-r from-[#66d4eb] via-[#3da7e9] to-[#7187ff] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#AFC5F8] via-[#6E92F2] to-[#6E92F2] bg-clip-text text-transparent">
                 business growth.
               </span>
             </h1>
@@ -309,7 +278,7 @@ export default function BusinessConsultancyPage() {
             <div className="mt-8 flex flex-nowrap gap-2 sm:gap-4 [&>a]:min-w-0 [&>a]:flex-1 [&>a]:justify-center [&>a]:whitespace-nowrap [&>a]:px-2 [&>a]:text-xs sm:[&>a]:flex-none sm:[&>a]:px-6 sm:[&>a]:text-base">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 rounded-xl bg-[#17A2C7] px-6 py-3.5 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#5cd5eb] hover:shadow-[0_10px_30px_rgba(23,162,199,0.2)]"
+                className="inline-flex items-center gap-2 rounded-xl bg-[#2E5DE6] px-6 py-3.5 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#1A3BB0] hover:shadow-[0_10px_30px_rgba(46,93,230,0.2)]"
               >
                 Book a Consultation
                 <ArrowRight size={18} />
@@ -317,7 +286,7 @@ export default function BusinessConsultancyPage() {
 
               <Link
                 href="/portfolio"
-                className="inline-flex items-center gap-2 rounded-xl border border-white/15 px-6 py-3.5 font-semibold text-white transition hover:border-[#17A2C7]/60 hover:bg-white/5"
+                className="inline-flex items-center gap-2 rounded-xl border border-white/15 px-6 py-3.5 font-semibold text-white transition hover:border-[#2E5DE6]/60 hover:bg-white/5"
               >
                 View Our Work
               </Link>
@@ -326,54 +295,13 @@ export default function BusinessConsultancyPage() {
         </div>
       </section>
 
-      {/* INTRO */}
 
-      <section className="border-b border-white/10 bg-[#08182e]">
-        <div className="mx-auto max-w-7xl px-6 py-16 lg:py-20">
-          <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#66d4eb]">
-                Why consultancy matters
-              </p>
-
-              <h2 className="mt-4 text-4xl font-bold leading-tight sm:text-5xl">
-                Know what to do.
-                <span className="block text-[#66d4eb]">
-                  Before you spend.
-                </span>
-              </h2>
-            </div>
-
-            <div className="space-y-5 text-lg leading-relaxed text-slate-300 [&>p:nth-child(3)]:hidden sm:[&>p:nth-child(3)]:block">
-              <p>
-                Businesses often know they need to improve their online
-                presence but are not always sure where to start. Should you
-                build a new website, invest in SEO, run paid advertising,
-                improve your branding or develop custom software?
-              </p>
-
-              <p>
-                Our business consultancy services help answer those questions
-                by looking at your business as a whole. We evaluate your
-                current digital presence, goals, audience and challenges before
-                recommending what should happen next.
-              </p>
-
-              <p>
-                The goal is simple: help you make better digital decisions,
-                avoid unnecessary investments and create a clear path toward
-                sustainable business growth.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* FEATURES */}
 
       <section className="mx-auto max-w-7xl px-6 py-16 lg:py-20">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#66d4eb]">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#AFC5F8]">
             What we provide
           </p>
 
@@ -391,9 +319,9 @@ export default function BusinessConsultancyPage() {
           {features.map(({ icon: Icon, title, text }) => (
             <div
               key={title}
-              className="rounded-2xl border border-white/10 bg-white/[0.025] p-7 transition hover:-translate-y-1 hover:border-[#17A2C7]/40 hover:bg-white/[0.04]"
+              className="rounded-2xl border border-white/10 bg-white/[0.025] p-7 transition hover:-translate-y-1 hover:border-[#2E5DE6]/40 hover:bg-white/[0.04]"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#17A2C7]/15 text-[#66d4eb]">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#2E5DE6]/15 text-[#AFC5F8]">
                 <Icon size={22} />
               </div>
 
@@ -411,11 +339,11 @@ export default function BusinessConsultancyPage() {
 
       {/* CONSULTING AREAS */}
 
-      <section className="border-y border-white/10 bg-[#08182e]">
+      <section className="border-y border-white/10 bg-[#0F2270]">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:py-20">
           <div className="grid gap-10 lg:grid-cols-[1fr_1fr]">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#66d4eb]">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#AFC5F8]">
                 What we can help with
               </p>
 
@@ -434,11 +362,11 @@ export default function BusinessConsultancyPage() {
               {consultationAreas.map((item) => (
                 <div
                   key={item}
-                  className="flex items-center gap-3 rounded-xl border border-white/10 bg-[#0A1930] p-4"
+                  className="flex items-center gap-3 rounded-xl border border-white/10 bg-[#071039] p-4"
                 >
                   <Check
                     size={17}
-                    className="shrink-0 text-[#17A2C7]"
+                    className="shrink-0 text-[#2E5DE6]"
                   />
 
                   <span className="text-sm font-medium text-slate-200">
@@ -453,113 +381,17 @@ export default function BusinessConsultancyPage() {
 
       {/* STRATEGIC APPROACH */}
 
-      
-      {/* PROCESS */}
 
-      <section className="border-y border-white/10 bg-[#08182e]">
-        <div className="mx-auto max-w-7xl px-6 py-16 lg:py-20">
-          <div className="mx-auto max-w-2xl text-center">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#66d4eb]">
-              Our consultancy process
-            </p>
 
-            <h2 className="mt-4 text-4xl font-bold sm:text-5xl">
-              From problem to clear direction.
-            </h2>
 
-            <p className="mt-5 leading-relaxed text-slate-400">
-              A structured process helps us understand your business before
-              recommending what you should do next.
-            </p>
-          </div>
 
-          <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-5">
-            {process.map(({ number, title, text }) => (
-              <div
-                key={number}
-                className="rounded-2xl border border-white/10 bg-[#0A1930] p-6"
-              >
-                <span className="text-sm font-bold text-[#66d4eb]">
-                  {number}
-                </span>
-
-                <h3 className="mt-5 text-lg font-semibold">
-                  {title}
-                </h3>
-
-                <p className="mt-3 text-sm leading-relaxed text-slate-400">
-                  {text}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* BUSINESS GROWTH */}
-
-      <section className="mx-auto max-w-7xl px-6 py-16 lg:py-20">
-        <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#66d4eb]">
-              Built for growth
-            </p>
-
-            <h2 className="mt-4 text-4xl font-bold sm:text-5xl">
-              Turn digital investment into business progress.
-            </h2>
-
-            <p className="mt-6 leading-relaxed text-slate-400">
-              A good digital strategy should ultimately support the things
-              that matter to your business: attracting the right customers,
-              building trust, improving conversions and creating a stronger
-              foundation for growth.
-            </p>
-          </div>
-
-          <div className="rounded-2xl border border-white/10 bg-white/[0.025] p-7">
-            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#17A2C7]/15 text-[#66d4eb]">
-              <TrendingUp size={22} />
-            </div>
-
-            <h3 className="mt-6 text-2xl font-semibold">
-              One strategy. Multiple digital capabilities.
-            </h3>
-
-            <p className="mt-4 leading-relaxed text-slate-400">
-              Because Ignisis Solutions also works across web development,
-              software, branding and digital marketing, we can help connect
-              your strategy directly with implementation when you are ready
-              to execute.
-            </p>
-
-            <div className="mt-6 flex flex-wrap gap-2">
-              {[
-                'Web Development',
-                'Digital Marketing',
-                'SEO',
-                'Branding',
-                'Software',
-                'E-commerce',
-              ].map((item) => (
-                <span
-                  key={item}
-                  className="rounded-lg border border-white/10 bg-[#0A1930] px-3 py-2 text-xs text-slate-300"
-                >
-                  {item}
-                </span>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* FAQ */}
 
-      <section className="border-y border-white/10 bg-[#08182e]">
+      <section className="border-y border-white/10 bg-[#0F2270]">
         <div className="mx-auto max-w-4xl px-6 py-16 lg:py-20">
           <div className="text-center">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#66d4eb]">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#AFC5F8]">
               Frequently asked questions
             </p>
 
@@ -572,11 +404,11 @@ export default function BusinessConsultancyPage() {
             {faqs.map(({ question, answer }) => (
               <details
                 key={question}
-                className="group rounded-2xl border border-white/10 bg-[#0A1930] p-6"
+                className="group rounded-2xl border border-white/10 bg-[#071039] p-6"
               >
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-lg font-semibold marker:hidden">
                   <span>{question}</span>
-                  <ChevronDown size={20} aria-hidden="true" className="shrink-0 text-[#66d4eb] transition-transform duration-200 group-open:rotate-180" />
+                  <ChevronDown size={20} aria-hidden="true" className="shrink-0 text-[#AFC5F8] transition-transform duration-200 group-open:rotate-180" />
                 </summary>
 
                 <p className="mt-4 text-sm leading-relaxed text-slate-400">
@@ -588,75 +420,16 @@ export default function BusinessConsultancyPage() {
         </div>
       </section>
 
-      {/* INTERNAL LINKS */}
 
-      <section className="mx-auto max-w-7xl px-6 py-14">
-        <div className="rounded-2xl border border-white/10 bg-white/[0.025] p-7">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#66d4eb]">
-            Explore Ignisis Solutions
-          </p>
-
-          <div className="mt-5 flex flex-wrap gap-x-6 gap-y-3">
-            <Link
-              href="/services"
-              className="text-sm font-medium text-slate-300 hover:text-[#66d4eb]"
-            >
-              All Services →
-            </Link>
-
-            <Link
-              href="/services/web-development"
-              className="text-sm font-medium text-slate-300 hover:text-[#66d4eb]"
-            >
-              Web Development →
-            </Link>
-
-            <Link
-              href="/services/digital-marketing"
-              className="text-sm font-medium text-slate-300 hover:text-[#66d4eb]"
-            >
-              Digital Marketing →
-            </Link>
-
-            <Link
-              href="/services/branding"
-              className="text-sm font-medium text-slate-300 hover:text-[#66d4eb]"
-            >
-              Branding →
-            </Link>
-
-            <Link
-              href="/services/custom-software-development"
-              className="text-sm font-medium text-slate-300 hover:text-[#66d4eb]"
-            >
-              Custom Software Development →
-            </Link>
-
-            <Link
-              href="/portfolio"
-              className="text-sm font-medium text-slate-300 hover:text-[#66d4eb]"
-            >
-              Our Portfolio →
-            </Link>
-
-            <Link
-              href="/contact"
-              className="text-sm font-medium text-slate-300 hover:text-[#66d4eb]"
-            >
-              Contact Ignisis Solutions →
-            </Link>
-          </div>
-        </div>
-      </section>
 
       {/* CTA */}
 
-      <section className="bg-[#0A1930] px-4 pb-16 pt-2 sm:px-6 lg:pb-20">
-        <div className="relative mx-auto max-w-5xl overflow-hidden rounded-3xl bg-[#123C6B] px-6 py-14 text-center sm:px-10">
-          <div className="pointer-events-none absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#17A2C7]/20 blur-3xl" />
+      <section className="bg-[#071039] px-4 pb-16 pt-2 sm:px-6 lg:pb-20">
+        <div className="relative mx-auto max-w-5xl overflow-hidden rounded-3xl bg-[#1A3BB0] px-6 py-14 text-center sm:px-10">
+          <div className="pointer-events-none absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#2E5DE6]/20 blur-3xl" />
 
           <div className="relative">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#66d4eb]">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#AFC5F8]">
               Need a clear direction?
             </p>
 
@@ -672,7 +445,7 @@ export default function BusinessConsultancyPage() {
 
             <Link
               href="/contact"
-              className="mt-8 inline-flex items-center gap-2 rounded-xl bg-[#17A2C7] px-6 py-3.5 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#5cd5eb]"
+              className="mt-8 inline-flex items-center gap-2 rounded-xl bg-[#2E5DE6] px-6 py-3.5 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#1A3BB0]"
             >
               Book a Consultation
               <ArrowRight size={18} />

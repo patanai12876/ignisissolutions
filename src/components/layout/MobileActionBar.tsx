@@ -13,7 +13,7 @@ export default function MobileActionBar() {
   return (
     <nav
       aria-label="Quick contact actions"
-      className="fixed inset-x-1 bottom-2 z-50 grid grid-cols-3 gap-1 rounded-xl border border-white/10 bg-[#071426]/95 p-1.5 shadow-[0_8px_30px_rgba(0,0,0,0.35)] backdrop-blur-xl md:hidden"
+      className="fixed inset-x-1 bottom-2 z-50 grid grid-cols-3 gap-1 rounded-xl border border-white/10 bg-[#071039]/95 p-1.5 shadow-[0_8px_30px_rgba(0,0,0,0.35)] backdrop-blur-xl md:hidden"
     >
       <a
         href="tel:+923025708769"
@@ -33,7 +33,7 @@ export default function MobileActionBar() {
       </a>
       <Link
         href="/contact"
-        className="flex min-h-11 flex-col items-center justify-center gap-0.5 rounded-lg bg-[#17A2C7] text-[11px] font-bold text-white transition active:bg-[#48c4e0]"
+        className="flex min-h-11 flex-col items-center justify-center gap-0.5 rounded-lg bg-[#2E5DE6] text-[11px] font-bold text-white transition active:bg-[#1A3BB0]"
       >
         <ClipboardCheck size={16} aria-hidden="true" />
         <span>Free Audit</span>

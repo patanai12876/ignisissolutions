@@ -1,158 +1,38 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { AnimatePresence, motion } from 'framer-motion'
-import { ChevronLeft, ChevronRight, Quote } from 'lucide-react'
 
-const testimonials = [
-  {
-    quote:
-      'Working with Ignisis Solutions was a smooth and professional experience. They understood our requirements quickly and delivered a modern digital presence that represents our construction business really well.',
-    name: 'Seco',
-    role: 'Construction Company',
-  },
-  {
-    quote:
-      'Ignisis Solutions did an excellent job understanding our brand and presenting our E-bike business in a clean and modern way. The communication was clear throughout the project and we are very happy with the final result.',
-    name: 'Evoo',
-    role: 'E-Bikes Company',
-  },
-  {
-    quote:
-      'The team understood our business and created a professional online presence that reflects the quality of our tensile shade solutions. The design is clean, modern and easy for our customers to navigate.',
-    name: 'Tensile Shades',
-    role: 'Tensile Shades Company',
-  },
-  {
-    quote:
-      'Ignisis Solutions turned our ideas into a professional digital experience that feels both modern and practical. They were responsive, creative and paid attention to the small details that made a big difference.',
-    name: 'TTT Global Services',
-    role: 'International Company',
-  },
-  {
-    quote:
-      'From the initial discussion to the final delivery, the process was straightforward and well organized. The team brought a fresh perspective to our brand and delivered a website that looks professional and works beautifully.',
-    name: 'M.Burhan',
-    role: 'Growing Business',
-  },
+const reviews = [
+  { quote: 'Working with Ignisis Solutions was a smooth and professional experience. They understood our requirements quickly and delivered a modern digital presence that represents our construction business really well.', name: 'Seco', role: 'Construction Company' },
+  { quote: 'Ignisis Solutions did an excellent job understanding our brand and presenting our E-bike business in a clean and modern way. The communication was clear throughout the project and we are very happy with the final result.', name: 'Evoo', role: 'E-Bikes Company' },
+  { quote: 'The team understood our business and created a professional online presence that reflects the quality of our tensile shade solutions. The design is clean, modern and easy for our customers to navigate.', name: 'Tensile Shades', role: 'Tensile Shades Company' },
+  { quote: 'Ignisis Solutions turned our ideas into a professional digital experience that feels both modern and practical. They were responsive, creative and paid attention to the small details that made a big difference.', name: 'TTT Global Services', role: 'International Company' },
+  { quote: 'From the initial discussion to the final delivery, the process was straightforward and well organized. The team brought a fresh perspective to our brand and delivered a website that looks professional and works beautifully.', name: 'M.Burhan', role: 'Growing Business' },
 ]
 
-export default function Testimonials() {
-  const [activeIndex, setActiveIndex] = useState(0)
+function GoogleMark() {
+  return <svg className="google-mark" viewBox="0 0 48 48" role="img" aria-label="Google"><path fill="#4285F4" d="M43.6 20.1H42V20H24v8h11.3A12 12 0 0 1 24 36a12 12 0 1 1 8-20.9l5.7-5.7A20 20 0 1 0 44 24c0-1.3-.1-2.6-.4-3.9Z"/><path fill="#34A853" d="M6.3 14.7 12.9 19A12 12 0 0 1 24 12c3.1 0 5.8 1.2 8 3.1l5.7-5.7A20 20 0 0 0 6.3 14.7Z"/><path fill="#FBBC05" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2A12 12 0 0 1 12.7 28l-6.5 5A20 20 0 0 0 24 44Z"/><path fill="#EA4335" d="M43.6 20.1H42V20H24v8h11.3a12 12 0 0 1-4.1 5.6l6.2 5.2C41 35.4 44 30 44 24c0-1.3-.1-2.6-.4-3.9Z"/></svg>
+}
 
-  useEffect(() => {
-    const interval = window.setInterval(() => {
-      setActiveIndex((current) =>
-        current === testimonials.length - 1 ? 0 : current + 1
-      )
-    }, 5500)
+export default function Testimonials({ className = '' }: { className?: string }) {
+ const [index, setIndex] = useState(0)
+ const [paused, setPaused] = useState(false)
+ const [focused, setFocused] = useState(false)
+ const [optedIn, setOptedIn] = useState(false)
+ useEffect(() => {
+   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)')
+   if (reducedMotion.matches && !optedIn) setPaused(true)
+   if (paused || focused || (reducedMotion.matches && !optedIn)) return
+   const timer = window.setInterval(() => setIndex((current) => (current + 1) % reviews.length), 4000)
+   return () => window.clearInterval(timer)
+ }, [paused, focused, optedIn])
+ const select = (next: number) => setIndex((next + reviews.length) % reviews.length)
 
-    return () => window.clearInterval(interval)
-  }, [])
-
-  const activeTestimonial = testimonials[activeIndex]
-
-  const previous = () => {
-    setActiveIndex((current) =>
-      current === 0 ? testimonials.length - 1 : current - 1
-    )
-  }
-
-  const next = () => {
-    setActiveIndex((current) =>
-      current === testimonials.length - 1 ? 0 : current + 1
-    )
-  }
-
-  return (
-    <section className="border-t border-white/10 bg-[#0d203a]">
-      <div className="mx-auto grid max-w-7xl gap-10 px-6 py-20 lg:grid-cols-[0.7fr_1.3fr] lg:py-24">
-        <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#66d4eb]">
-            Client feedback
-          </p>
-
-          <h2 className="mt-4 text-4xl font-bold">
-            Built with clarity. Remembered for the result.
-          </h2>
-
-          <p className="mt-5 max-w-sm leading-relaxed text-slate-400">
-            We believe the best digital work starts with listening properly,
-            communicating clearly and staying focused on what the business needs.
-          </p>
-
-          <div className="mt-8 flex items-center gap-3">
-            <button
-              type="button"
-              onClick={previous}
-              aria-label="Show previous testimonial"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-white transition hover:border-[#17A2C7] hover:bg-[#17A2C7] hover:text-[#0A1930]"
-            >
-              <ChevronLeft size={18} />
-            </button>
-
-            <button
-              type="button"
-              onClick={next}
-              aria-label="Show next testimonial"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-white transition hover:border-[#17A2C7] hover:bg-[#17A2C7] hover:text-[#0A1930]"
-            >
-              <ChevronRight size={18} />
-            </button>
-
-            <span className="ml-2 text-sm text-slate-500">
-              0{activeIndex + 1} / 0{testimonials.length}
-            </span>
-          </div>
-        </div>
-
-        <div className="relative min-h-[310px] overflow-hidden rounded-2xl border border-white/10 bg-[#0A1930]/65 p-7 sm:p-10">
-          <Quote
-            size={58}
-            className="absolute right-7 top-7 text-[#17A2C7]/20 sm:right-10 sm:top-10"
-          />
-
-          <AnimatePresence mode="wait">
-            <motion.figure
-              key={activeIndex}
-              initial={{ opacity: 0, y: 22 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -22 }}
-              transition={{ duration: 0.45 }}
-              className="flex min-h-[230px] flex-col justify-between"
-            >
-              <blockquote className="max-w-2xl text-xl font-medium leading-relaxed text-white sm:text-2xl">
-                “{activeTestimonial.quote}”
-              </blockquote>
-
-              <figcaption className="mt-8 border-t border-white/10 pt-5">
-                <p className="font-semibold text-[#66d4eb]">
-                  {activeTestimonial.name}
-                </p>
-                <p className="mt-1 text-sm text-slate-400">
-                  {activeTestimonial.role}
-                </p>
-              </figcaption>
-            </motion.figure>
-          </AnimatePresence>
-
-          <div className="absolute bottom-5 right-7 flex gap-2 sm:right-10">
-            {testimonials.map((testimonial, index) => (
-              <button
-                key={testimonial.name}
-                type="button"
-                aria-label={`Show testimonial ${index + 1}`}
-                onClick={() => setActiveIndex(index)}
-                className={`h-1.5 rounded-full transition-all ${
-                  index === activeIndex
-                    ? 'w-7 bg-[#17A2C7]'
-                    : 'w-2 bg-white/20 hover:bg-white/50'
-                }`}
-              />
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  )
+ return <section className={`section reviews ${className}`.trim()} id="reviews"><div className="section-inner">
+   <div className="review-top"><div className="section-heading"><span className="eyebrow">Client reviews</span><h2>What our clients say.</h2></div><div className="rating"><GoogleMark /><span className="rating-label">Google reviews</span><b aria-label="5 out of 5 stars">★★★★★</b></div></div>
+   <div className={`review-carousel ${optedIn ? 'review-motion-opt-in' : ''}`} aria-label="Client review carousel" onFocusCapture={() => setFocused(true)} onBlurCapture={(event) => { if (!event.currentTarget.contains(event.relatedTarget as Node | null)) setFocused(false) }}>
+     <div className="review-stage" aria-live="off">{reviews.map((review, i) => <article className={`review-card ${i === index ? 'is-active' : ''}`} aria-hidden={i !== index} key={review.name}><div className="stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“{review.quote}”</blockquote><div className="review-person"><span className="review-avatar" aria-hidden="true">{review.name.charAt(0)}</span><span><strong>{review.name}</strong><small>{review.role}</small></span></div></article>)}</div>
+     <div className="review-controls" aria-label="Review controls"><button className="review-control" type="button" aria-label="Previous review" onClick={() => select(index - 1)}>←</button><div className="review-dots" aria-label="Choose a review">{reviews.map((review, i) => <button className="review-dot" type="button" key={review.name} aria-label={`Show review ${i + 1}`} aria-current={i === index} onClick={() => select(i)} />)}</div><button className="review-control" type="button" aria-label="Next review" onClick={() => select(index + 1)}>→</button><button className="review-control review-pause" type="button" aria-pressed={paused} onClick={() => { if (paused) setOptedIn(true); setPaused((current) => !current) }}>{paused ? 'Play' : 'Pause'}</button></div>
+   </div>
+ </div></section>
 }

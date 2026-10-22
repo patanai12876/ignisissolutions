@@ -153,39 +153,12 @@ const features = [
 
 const technologies = ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Node.js', 'PostgreSQL']
 
-const process = [
-  {
-    number: '01',
-    title: 'Discovery',
-    text: 'We learn about your business, audience, goals and the purpose of your website before writing a single line of code.',
-  },
-  {
-    number: '02',
-    title: 'Planning',
-    text: 'We map out the website structure, pages, features and technical direction so the project has a clear foundation.',
-  },
-  {
-    number: '03',
-    title: 'Design & Development',
-    text: 'Your website is designed and built with responsive layouts, clean code and performance in mind from day one.',
-  },
-  {
-    number: '04',
-    title: 'Testing & Optimization',
-    text: 'We test across devices and browsers, then refine usability, performance and technical SEO details.',
-  },
-  {
-    number: '05',
-    title: 'Launch',
-    text: 'Your website goes live, ready for ongoing updates, SEO growth and future improvements.',
-  },
-]
 
 const faqs = faqJsonLd.mainEntity.map((item) => ({ question: item.question, answer: item.answer }))
 
 export default function WebDevelopmentPage() {
   return (
-    <main className="overflow-x-hidden bg-[#0A1930] text-white">
+    <main className="service-detail-page overflow-x-hidden bg-white text-[#071039]">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -198,8 +171,8 @@ export default function WebDevelopmentPage() {
       {/* HERO */}
       <section className="relative overflow-hidden border-b border-white/10 pt-8 lg:pt-10">
         <div className="pointer-events-none absolute inset-0">
-          <div className="absolute left-[8%] top-0 h-[25rem] w-[25rem] rounded-full bg-[#17A2C7]/15 blur-[130px]" />
-          <div className="absolute right-[-5rem] top-10 h-[28rem] w-[28rem] rounded-full bg-blue-600/10 blur-[140px]" />
+          <div className="absolute left-[8%] top-0 h-[25rem] w-[25rem] rounded-full bg-[#2E5DE6]/15 blur-[130px]" />
+          <div className="absolute right-[-5rem] top-10 h-[28rem] w-[28rem] rounded-full bg-[#2E5DE6]/10 blur-[140px]" />
           <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:48px_48px]" />
         </div>
 
@@ -207,23 +180,23 @@ export default function WebDevelopmentPage() {
           <div className="max-w-4xl">
             <Link
               href="/services"
-              className="inline-flex items-center gap-2 text-sm font-medium text-[#66d4eb] transition hover:text-white"
+              className="inline-flex items-center gap-2 text-sm font-medium text-[#AFC5F8] transition hover:text-white"
             >
               <ArrowRight size={15} className="rotate-180" />
               All Services
             </Link>
 
-            <div className="mt-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#17A2C7]/15 text-[#66d4eb]">
+            <div className="mt-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#2E5DE6]/15 text-[#AFC5F8]">
               <Code2 size={28} />
             </div>
 
-            <p className="mt-6 text-xs font-semibold uppercase tracking-[0.18em] text-[#66d4eb]">
+            <p className="mt-6 text-xs font-semibold uppercase tracking-[0.18em] text-[#AFC5F8]">
               Web Development Services in Lahore
             </p>
 
-            <h1 className="mt-4 text-4xl font-bold leading-[1.08] sm:text-5xl lg:text-7xl">
+            <h1 className="mt-4 text-4xl font-bold leading-[1.08] sm:text-5xl lg:text-5xl">
               Websites built for{' '}
-              <span className="bg-gradient-to-r from-[#66d4eb] via-[#3da7e9] to-[#7187ff] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#AFC5F8] via-[#6E92F2] to-[#6E92F2] bg-clip-text text-transparent">
                 business growth.
               </span>
             </h1>
@@ -238,7 +211,7 @@ export default function WebDevelopmentPage() {
             <div className="mt-8 flex flex-nowrap gap-2 sm:gap-4 [&>a]:min-w-0 [&>a]:flex-1 [&>a]:justify-center [&>a]:whitespace-nowrap [&>a]:px-2 [&>a]:text-xs sm:[&>a]:flex-none sm:[&>a]:px-6 sm:[&>a]:text-base">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 rounded-xl bg-[#17A2C7] px-6 py-3.5 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#5cd5eb] hover:shadow-[0_10px_30px_rgba(23,162,199,0.2)]"
+                className="inline-flex items-center gap-2 rounded-xl bg-[#2E5DE6] px-6 py-3.5 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#1A3BB0] hover:shadow-[0_10px_30px_rgba(46,93,230,0.2)]"
               >
                 Start Your Project
                 <ArrowRight size={18} />
@@ -246,7 +219,7 @@ export default function WebDevelopmentPage() {
 
               <Link
                 href="/portfolio"
-                className="inline-flex items-center gap-2 rounded-xl border border-white/15 px-6 py-3.5 font-semibold text-white transition hover:border-[#17A2C7]/60 hover:bg-white/5"
+                className="inline-flex items-center gap-2 rounded-xl border border-white/15 px-6 py-3.5 font-semibold text-white transition hover:border-[#2E5DE6]/60 hover:bg-white/5"
               >
                 View Our Work
               </Link>
@@ -255,50 +228,12 @@ export default function WebDevelopmentPage() {
         </div>
       </section>
 
-      {/* INTRO */}
-      <section className="border-b border-white/10 bg-[#08182e]">
-        <div className="mx-auto max-w-7xl px-6 py-16 lg:py-20">
-          <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#66d4eb]">
-                Why your website matters
-              </p>
 
-              <h2 className="mt-4 text-4xl font-bold leading-tight sm:text-5xl">
-                More than a website.
-                <span className="block text-[#66d4eb]">A digital asset.</span>
-              </h2>
-            </div>
-
-            <div className="space-y-5 text-lg leading-relaxed text-slate-300 [&>p:nth-child(3)]:hidden sm:[&>p:nth-child(3)]:block">
-              <p>
-                Your website is often the first interaction a potential
-                customer has with your business. A slow, outdated or
-                confusing website can cost you opportunities before a
-                conversation even starts.
-              </p>
-
-              <p>
-                As a web development company in Lahore, we combine design,
-                development, performance and SEO fundamentals to build
-                websites that are visually strong and built to support your
-                business goals — not just online, but working for you.
-              </p>
-
-              <p>
-                Whether you need a new business website, a high-converting
-                landing page, a web application or a complete redesign, we
-                build the solution around your audience and requirements.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* FEATURES */}
       <section className="mx-auto max-w-7xl px-6 py-16 lg:py-20">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#66d4eb]">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#AFC5F8]">
             What we provide
           </p>
 
@@ -317,9 +252,9 @@ export default function WebDevelopmentPage() {
           {features.map(({ icon: Icon, title, text }) => (
             <div
               key={title}
-              className="rounded-2xl border border-white/10 bg-white/[0.025] p-7 transition hover:-translate-y-1 hover:border-[#17A2C7]/40 hover:bg-white/[0.04]"
+              className="rounded-2xl border border-white/10 bg-white/[0.025] p-7 transition hover:-translate-y-1 hover:border-[#2E5DE6]/40 hover:bg-white/[0.04]"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#17A2C7]/15 text-[#66d4eb]">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#2E5DE6]/15 text-[#AFC5F8]">
                 <Icon size={22} />
               </div>
 
@@ -334,11 +269,11 @@ export default function WebDevelopmentPage() {
       </section>
 
       {/* TYPES OF WEBSITES */}
-      <section className="border-y border-white/10 bg-[#08182e]">
+      <section className="border-y border-white/10 bg-[#0F2270]">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:py-20">
           <div className="grid gap-10 lg:grid-cols-[1fr_1fr]">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#66d4eb]">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#AFC5F8]">
                 What we build
               </p>
 
@@ -366,9 +301,9 @@ export default function WebDevelopmentPage() {
               ].map((item) => (
                 <div
                   key={item}
-                  className="flex items-center gap-3 rounded-xl border border-white/10 bg-[#0A1930] p-4"
+                  className="flex items-center gap-3 rounded-xl border border-white/10 bg-[#071039] p-4"
                 >
-                  <Check size={17} className="shrink-0 text-[#17A2C7]" />
+                  <Check size={17} className="shrink-0 text-[#2E5DE6]" />
                   <span className="text-sm font-medium text-slate-200">{item}</span>
                 </div>
               ))}
@@ -378,83 +313,44 @@ export default function WebDevelopmentPage() {
       </section>
 
       {/* TECHNOLOGY */}
-      
 
-      {/* PROCESS */}
-      
-      {/* SEO / BUSINESS BENEFITS */}
-      
+
+
+
+
+
       {/* FAQ */}
-      <section className="border-y border-white/10 bg-[#08182e]">
-        <div className="mx-auto max-w-4xl px-6 py-16 lg:py-20">
+      <section className="border-y border-white/10 bg-[#0F2270]">
+        <div className="mx-auto max-w-4xl px-6 py-14 lg:py-16">
           <div className="text-center">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#66d4eb]">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#AFC5F8]">
               Frequently asked questions
             </p>
-
-            <h2 className="mt-4 text-4xl font-bold sm:text-5xl">
+            <h2 className="mt-4 text-3xl font-bold sm:text-4xl">
               Web development FAQs.
             </h2>
           </div>
-
-          <div className="mt-10 space-y-4">
+          <div className="mt-8 space-y-3">
             {faqs.map(({ question, answer }) => (
-              <details
-                key={question}
-                className="group rounded-2xl border border-white/10 bg-[#0A1930] p-6"
-              >
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-lg font-semibold marker:hidden">
+              <details key={question} className="group rounded-2xl border border-white/10 bg-[#071039] p-5">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold marker:hidden">
                   <span>{question}</span>
-                  <ChevronDown
-                    size={20}
-                    aria-hidden="true"
-                    className="shrink-0 text-[#66d4eb] transition-transform duration-200 group-open:rotate-180"
-                  />
+                  <ChevronDown size={20} aria-hidden="true" className="shrink-0 text-[#AFC5F8] transition-transform duration-200 group-open:rotate-180" />
                 </summary>
-                <p className="mt-4 text-sm leading-relaxed text-slate-400">{answer}</p>
+                <p className="mt-3 text-sm leading-relaxed text-slate-400">{answer}</p>
               </details>
             ))}
           </div>
         </div>
       </section>
 
-      {/* INTERNAL LINKS */}
-      <section className="mx-auto max-w-7xl px-6 py-14">
-        <div className="rounded-2xl border border-white/10 bg-white/[0.025] p-7">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#66d4eb]">
-            Explore Ignisis Solutions
-          </p>
-
-          <div className="mt-5 flex flex-wrap gap-x-6 gap-y-3">
-            <Link href="/services" className="text-sm font-medium text-slate-300 hover:text-[#66d4eb]">
-              All Services →
-            </Link>
-            <Link href="/services/saas-development" className="text-sm font-medium text-slate-300 hover:text-[#66d4eb]">
-              SaaS Development →
-            </Link>
-            <Link href="/services/custom-software-development" className="text-sm font-medium text-slate-300 hover:text-[#66d4eb]">
-              Custom Software Development →
-            </Link>
-            <Link href="/services/ecommerce-solutions" className="text-sm font-medium text-slate-300 hover:text-[#66d4eb]">
-              E-commerce Solutions →
-            </Link>
-            <Link href="/portfolio" className="text-sm font-medium text-slate-300 hover:text-[#66d4eb]">
-              Our Portfolio →
-            </Link>
-            <Link href="/contact" className="text-sm font-medium text-slate-300 hover:text-[#66d4eb]">
-              Contact Ignisis Solutions →
-            </Link>
-          </div>
-        </div>
-      </section>
-
       {/* CTA */}
-      <section className="bg-[#0A1930] px-4 pb-16 pt-2 sm:px-6 lg:pb-20">
-        <div className="relative mx-auto max-w-5xl overflow-hidden rounded-3xl bg-[#123C6B] px-6 py-14 text-center sm:px-10">
-          <div className="pointer-events-none absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#17A2C7]/20 blur-3xl" />
+      <section className="bg-[#071039] px-4 pb-16 pt-2 sm:px-6 lg:pb-20">
+        <div className="relative mx-auto max-w-5xl overflow-hidden rounded-3xl bg-[#1A3BB0] px-6 py-14 text-center sm:px-10">
+          <div className="pointer-events-none absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#2E5DE6]/20 blur-3xl" />
 
           <div className="relative">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#66d4eb]">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#AFC5F8]">
               Have a project in mind?
             </p>
 
@@ -470,7 +366,7 @@ export default function WebDevelopmentPage() {
 
             <Link
               href="/contact"
-              className="mt-8 inline-flex items-center gap-2 rounded-xl bg-[#17A2C7] px-6 py-3.5 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#5cd5eb]"
+              className="mt-8 inline-flex items-center gap-2 rounded-xl bg-[#2E5DE6] px-6 py-3.5 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#1A3BB0]"
             >
               Discuss Your Project
               <ArrowRight size={18} />

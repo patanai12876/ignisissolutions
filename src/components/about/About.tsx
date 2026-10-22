@@ -1,443 +1,278 @@
 'use client'
 
 import Link from 'next/link'
-import {
-  ArrowRight,
-  Check,
-  Code2,
-  Compass,
-  Globe2,
-  Handshake,
-  Layers3,
-  Lightbulb,
-  Palette,
-  Rocket,
-  ShieldCheck,
-  Sparkles,
-  Target,
-} from 'lucide-react'
+import Image from 'next/image'
+import { ArrowRight } from 'lucide-react'
 import { motion } from 'framer-motion'
+
+const projects = [
+  {
+    name: 'Char & Ember',
+    category: 'Food · Online ordering',
+    description: 'An online ordering experience for exploring a menu, customizing orders, and making payments.',
+    image: '/food/pic1.png',
+    alt: 'Char & Ember online food ordering website preview',
+    href: 'https://char-ember.vercel.app/',
+  },
+  {
+    name: 'Tensile Shades',
+    category: 'Architecture · Shade solutions',
+    description: 'A responsive business website presenting shade solutions, services, and customer stories.',
+    image: '/shade/sz1.png',
+    alt: 'S.Z. Tensile shade solutions website preview',
+    href: 'https://www.sztensile.com/',
+  },
+  {
+    name: 'Seco Developers',
+    category: 'Construction · Corporate website',
+    description: 'A corporate website introducing construction and infrastructure services and projects.',
+    image: '/seco/s1.png',
+    alt: 'Seco Developers construction company website preview',
+    href: 'https://secodevelopers.com/',
+  },
+]
 
 const approach = [
   {
-    icon: Compass,
-    label: 'Understand',
-    text: 'Every engagement starts with your business goal, not a template what you need to grow, not just what you need built.',
+    number: '01',
+    title: 'Understand',
+    copy: 'We learn about your business, audience, and objectives before defining the right direction.',
   },
   {
-    icon: Layers3,
-    label: 'Connect',
-    text: 'Technology, design and marketing are handled by one team, working from the same direction instead of separate vendors.',
+    number: '02',
+    title: 'Strategize',
+    copy: 'We develop a focused plan that connects the right solutions with your business goals.',
   },
   {
-    icon: Target,
-    label: 'Execute',
-    text: 'We build with intent, clean code, considered design and messaging that moves people to act.',
+    number: '03',
+    title: 'Create',
+    copy: 'We turn ideas into purposeful websites and marketing campaigns through thoughtful execution.',
   },
   {
-    icon: Rocket,
-    label: 'Sustain',
-    text: 'Launch is a starting point. Every solution is structured to evolve as your business and audience grow.',
+    number: '04',
+    title: 'Refine',
+    copy: 'We look for opportunities to improve, adapt, and make our work more effective over time.',
   },
-]
-
-const values = [
-  {
-    icon: ShieldCheck,
-    title: 'Clarity',
-    text: 'No jargon, no inflated promises. You always know what is being built, why, and what it will do for your business.',
-  },
-  {
-    icon: Sparkles,
-    title: 'Craft',
-    text: 'Every detail from a button state to a headline is made deliberately, not defaulted to a template.',
-  },
-  {
-    icon: Handshake,
-    title: 'Accountability',
-    text: 'We treat your project like our own. Deadlines, scope and communication are commitments, not estimates.',
-  },
-  {
-    icon: Lightbulb,
-    title: 'Momentum',
-    text: 'Good work should keep working. We design for the next stage of your business, not just the launch date.',
-  },
-]
-
-const capabilities = [
-  { icon: Code2, label: 'Web Development' },
-  { icon: Globe2, label: 'E-commerce Solutions' },
-  { icon: Layers3, label: 'Custom Software' },
-  { icon: Rocket, label: 'Digital Marketing' },
-  { icon: Target, label: 'Business Consultancy' },
-  { icon: Palette, label: 'Branding' },
-  { icon: Sparkles, label: 'Graphic Designing' },
 ]
 
 export default function About() {
   return (
-    <main className="overflow-x-hidden bg-[#0A1930] pt-20 lg:pt-24 text-white">
-      {/* PAGE HEADER */}
-      {/* PAGE HEADER — editorial style, no side panel */}
-<section className="relative overflow-hidden border-b border-white/10">
-  <div className="pointer-events-none absolute inset-0">
-    <div className="absolute left-1/2 top-0 h-[26rem] w-[40rem] -translate-x-1/2 rounded-full bg-[#17A2C7]/10 blur-[140px]" />
-    <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:48px_48px]" />
-  </div>
-
-  <div className="relative mx-auto max-w-7xl px-6 py-16 lg:py-16">
-    <motion.p
-      initial={{ opacity: 0, y: 14 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      className="text-xs font-semibold uppercase tracking-[0.18em] text-[#66d4eb]"
-    >
-      About Ignisis Solutions | Digital Agency in Lahore
-    </motion.p>
-
-    <motion.h1
-      initial={{ opacity: 0, y: 24 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7, delay: 0.05 }}
-      className="mt-6 max-w-5xl text-5xl font-bold leading-[1.08] sm:text-6xl lg:text-6xl"
-    >
-        A digital agency built for{' '}
-      <span className="bg-gradient-to-r from-[#66d4eb] via-[#3da7e9] to-[#7187ff] bg-clip-text text-transparent">
-            business growth.
-
-      </span>
-      
-    </motion.h1>
-
-    {/* ASYMMETRIC SPLIT — intro + manifesto highlight */}
-    <div className="mt-14 grid gap-8 lg:grid-cols-[1fr_1.3fr]">
-      <motion.p
-        initial={{ opacity: 0, y: 16 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, delay: 0.15 }}
-        className="text-lg leading-relaxed text-slate-300"
-      >
-        Ignisis Solutions is a digital agency in Lahore, helping
-  businesses in Pakistan and abroad build a stronger digital presence through web development,
-  custom software, e-commerce, branding, SEO and digital marketing.
-      </motion.p>
-
-     
-    </div>
-
-    <motion.div
-      initial={{ opacity: 0, y: 16 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay: 0.25 }}
-      className="mt-10 flex flex-nowrap gap-3"
-    >
-      <Link
-        href="/contact"
-        className="inline-flex shrink-0 items-center gap-2 rounded-xl bg-[#17A2C7] px-4 py-3 text-sm font-semibold whitespace-nowrap text-white transition hover:-translate-y-0.5 hover:bg-[#5cd5eb] hover:shadow-[0_10px_28px_rgba(23,162,199,0.25)] sm:px-6 sm:py-3.5 sm:text-base"
-      >
-        Work With Us
-        <ArrowRight size={18} />
-      </Link>
-      <Link
-        href="/portfolio"
-        className="inline-flex shrink-0 items-center gap-2 rounded-xl border border-white/20 px-4 py-3 text-sm font-semibold whitespace-nowrap transition hover:border-[#17A2C7]/70 hover:bg-white/5 sm:px-6 sm:py-3.5 sm:text-base"
-      >
-        View Our Work
-      </Link>
-    </motion.div>
-  </div>
-
-  
-
-      {/* STORY */}
-      <section className="border-y border-white/10 bg-[#08182e]">
-        <div className="mx-auto grid max-w-7xl gap-10 px-6 py-24 lg:grid-cols-[0.85fr_1.15fr]">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#66d4eb]">
-              Why we exist
-            </p>
-            <h2 className="mt-4 text-4xl font-bold sm:text-5xl">Our story.</h2>
-          </div>
-
-          <div className="space-y-5">
-<motion.p
-  initial={{ opacity: 0, y: 16 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  viewport={{ once: true }}
-  className="text-lg leading-relaxed text-slate-300"
->
-  Ignisis Solutions was built on a simple belief:
-   
-    technology, design and marketing work better when they work together.
-  
-  As a digital agency in Lahore, we help businesses avoid disconnected
-  solutions by bringing web development, branding, software and digital
-  marketing under one direction.
-</motion.p>
-           <motion.p
-  initial={{ opacity: 0, y: 16 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  viewport={{ once: true }}
-  transition={{ delay: 0.1 }}
-  className="text-lg leading-relaxed text-slate-300"
->
-  From business websites and e-commerce stores to custom software,
-  search engine optimization and digital marketing campaigns, we build
-  solutions around the actual goals of each business.
-</motion.p>
-
-           <motion.p
-  initial={{ opacity: 0, y: 16 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  viewport={{ once: true }}
-  transition={{ delay: 0.2 }}
-  className="text-lg leading-relaxed text-slate-300"
->
-  Our goal is not simply to launch a website or campaign. We create
-  scalable digital solutions that give businesses a clearer online
-  presence and a stronger foundation for long-term growth.
-</motion.p>
-          </div>
+    <main className="about-page overflow-x-hidden bg-[#071039] pt-20 text-white lg:pt-24">
+      {/* Keep the existing About hero intact. */}
+      <section className="about-hero relative overflow-hidden">
+        <div className="pointer-events-none absolute inset-0">
+          <div className="about-hero-glow absolute left-1/2 top-0 h-[26rem] w-[40rem] -translate-x-1/2 rounded-full blur-[140px]" />
+          <div className="about-hero-grid absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:48px_48px]" />
         </div>
-      </section>
-      {/* SCROLLING CAPABILITIES MARQUEE */}
-  <div className="relative border-t border-white/10 bg-[#08182e] py-5">
-    <div className="flex overflow-hidden">
-      <motion.div
-        animate={{ x: ['0%', '-50%'] }}
-        transition={{ duration: 22, repeat: Infinity, ease: 'linear' }}
-        className="flex shrink-0 items-center gap-10 pr-10"
-      >
-        {[...capabilities, ...capabilities].map(({ icon: Icon, label }, i) => (
-          <span
-            key={`${label}-${i}`}
-            className="flex shrink-0 items-center gap-2.5 text-sm font-semibold uppercase tracking-[0.1em] text-slate-400"
+
+        <div className="about-hero-content relative mx-auto max-w-7xl px-6 py-16 lg:py-16">
+          <motion.p
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="about-hero-eyebrow text-xs font-semibold uppercase tracking-[0.18em] text-[#AFC5F8]"
           >
-            <Icon size={15} className="text-[#66d4eb]" />
-            {label}
-            <span className="ml-8 text-[#17A2C7]/40">/</span>
-          </span>
-        ))}
-      </motion.div>
-    </div>
-  </div>
-</section>
+            About Ignisis Solutions | Digital Agency in Lahore
+          </motion.p>
 
-      {/* APPROACH */}
-      <section className="mx-auto max-w-7xl px-6 py-24">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mx-auto max-w-2xl text-center"
-        >
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#66d4eb]">
-            How we work
-          </p>
-          <h2 className="mt-4 text-4xl font-bold sm:text-5xl">
-            One approach, from first call to launch.
-          </h2>
-        </motion.div>
+          <motion.h1
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.05 }}
+            className="about-hero-title mt-6 max-w-5xl text-5xl font-bold leading-[1.08] sm:text-6xl lg:text-6xl"
+          >
+            A digital agency built for{' '}
+            <span className="about-hero-highlight bg-gradient-to-r from-[#AFC5F8] via-[#6E92F2] to-[#6E92F2] bg-clip-text text-transparent">
+              business growth.
+            </span>
+          </motion.h1>
 
-        <div className="relative mt-14 grid gap-5 md:grid-cols-4">
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.15 }}
+            className="about-hero-copy mt-10 max-w-2xl text-lg leading-relaxed text-slate-300"
+          >
+            Ignisis Solutions is a digital agency in Lahore, helping businesses in Pakistan and abroad build a stronger digital presence through web development, custom software, e-commerce, branding, SEO and digital marketing.
+          </motion.p>
 
-          {approach.map(({ icon: Icon, label, text }, index) => (
-            <motion.div
-              key={label}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              whileHover={{ y: -6 }}
-              className="relative rounded-2xl border border-white/10 bg-white/[0.025] p-6 transition hover:border-[#17A2C7]/40 hover:bg-white/[0.05]"
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.25 }}
+            className="mt-8 flex flex-wrap gap-3"
+          >
+            <Link
+              href="/contact"
+              className="about-hero-primary inline-flex items-center gap-2 rounded-xl bg-[#2E5DE6] px-5 py-3.5 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#1A3BB0] hover:shadow-[0_10px_28px_rgba(46,93,230,0.25)] sm:px-6 sm:text-base"
             >
-              <div className="relative z-10 flex h-11 w-11 items-center justify-center rounded-xl bg-[#17A2C7]/15 text-[#66d4eb]">
-                <Icon size={20} />
-              </div>
-              <h3 className="mt-5 text-lg font-semibold">{label}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-slate-400">
-                {text}
-              </p>
-            </motion.div>
-          ))}
+              Work With Us <ArrowRight size={18} />
+            </Link>
+            <Link
+              href="/portfolio"
+              className="about-hero-secondary inline-flex items-center gap-2 rounded-xl border border-white/20 px-5 py-3.5 text-sm font-semibold text-white transition hover:border-white/50 hover:bg-white/5 sm:px-6 sm:text-base"
+            >
+              View Our Work
+            </Link>
+          </motion.div>
         </div>
       </section>
 
-      {/* CORE VALUES */}
-      <section className="border-y border-white/10 bg-[#08182e]">
-        <div className="mx-auto max-w-7xl px-6 py-24">
-          <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
-            <div className="max-w-2xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#66d4eb]">
-                What we hold ourselves to
-              </p>
-              <h2 className="mt-4 text-4xl font-bold sm:text-5xl">
-                Our working principles.
-              </h2>
-            </div>
-            
-          </div>
+      <section className="about-who-section">
+        <div className="about-content about-who-layout">
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.25 }}
+          >
+            <p className="about-eyebrow">Who We Are</p>
+            <h2>More Than Digital. Built Around Business.</h2>
+          </motion.div>
+          <motion.div
+            className="about-who-copy"
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.25 }}
+            transition={{ delay: 0.08 }}
+          >
+            <p>
+              Ignisis Solutions is a digital agency bringing strategy, technology, and creativity together to help businesses move forward.
+            </p>
+            <p>
+              We create purposeful digital experiences and marketing solutions that connect businesses with their audiences, strengthen their online presence, and support meaningful growth.
+            </p>
+            <p>
+              Our approach is simple: understand the business, find the right direction, and turn ideas into work that makes a difference.
+            </p>
+          </motion.div>
+        </div>
+      </section>
 
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {values.map(({ icon: Icon, title, text }, index) => (
-              <motion.div
-                key={title}
-                initial={{ opacity: 0, y: 20 }}
+      <section className="about-mission-section">
+        <div className="about-content about-mission-grid">
+          <motion.article
+            className="about-purpose-card"
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+          >
+            <p className="about-purpose-label">Our Mission</p>
+            <h2>To Turn Digital Potential Into Real Progress.</h2>
+            <p className="about-purpose-copy">
+              Our mission is to help businesses grow through purposeful web solutions and strategic digital marketing. We combine creativity, technology, and clear thinking to turn business goals into meaningful digital outcomes.
+            </p>
+          </motion.article>
+
+          <motion.article
+            className="about-purpose-card about-purpose-card-alt"
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ delay: 0.08 }}
+          >
+            <p className="about-purpose-label">Our Vision</p>
+            <h2>To Shape What&apos;s Next in Digital Growth.</h2>
+            <p className="about-purpose-copy">
+              Our vision is to become a trusted digital partner for businesses worldwide, creating impactful digital experiences and growth solutions that help brands evolve, compete, and thrive.
+            </p>
+          </motion.article>
+        </div>
+      </section>
+
+      <section className="about-driven-section">
+        <div className="about-content about-driven-layout">
+          <motion.div
+            className="about-approach-heading"
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.25 }}
+          >
+            <p className="about-eyebrow">Our Approach</p>
+            <h2>Thoughtful Strategy. Meaningful Execution.</h2>
+            
+          </motion.div>
+          <div className="about-approach-steps">
+            {approach.map((step, index) => (
+              <motion.article
+                key={step.number}
+                className="about-approach-step"
+                initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.08 }}
-                whileHover={{ y: -6 }}
-                className="rounded-2xl border border-white/10 bg-[#0A1930] p-6 transition hover:border-[#17A2C7]/40"
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ delay: index * 0.07, duration: 0.45 }}
               >
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#17A2C7]/15 text-[#66d4eb]">
-                  <Icon size={20} />
-                </div>
-                <h3 className="mt-5 text-lg font-semibold">{title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-slate-400">
-                  {text}
-                </p>
-              </motion.div>
+                <p className="about-approach-number">{step.number}</p>
+                <h3>{step.title}</h3>
+                <p className="about-approach-copy">{step.copy}</p>
+              </motion.article>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CAPABILITIES / SERVICES STRIP */}
-      <section className="mx-auto max-w-7xl px-6 py-24">
-        <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
-          <div className="max-w-2xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#66d4eb]">
-              Our Digital Servcies
-            </p>
-            <h2 className="mt-4 text-4xl font-bold sm:text-5xl">
-              Everything your business needs, under one roof.
-            </h2>
+      <section className="about-work-section">
+        <div className="about-content about-work-inner">
+          <div className="about-work-heading">
+            <div>
+              <p className="about-eyebrow">Ideas Into Reality</p>
+              <h2>Work made for the real world.</h2>
+            </div>
+            <Link href="/portfolio" className="about-work-all">
+              See complete portfolio <ArrowRight size={17} />
+            </Link>
           </div>
 
-          <Link
-            href="/services"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-[#66d4eb] transition hover:text-white"
-          >
-            See all services <ArrowRight size={17} />
-          </Link>
-        </div>
-
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {[
-   {
-    icon: Rocket,
-    title: 'Digital Marketing',
-    text: 'Campaigns connected to real goals.',
-    href: '/services/digital-marketing',
-  },
-  {
-    icon: Code2,
-    title: 'Web Development',
-    text: 'Fast, scalable websites and web apps.',
-    href: '/services/web-development',
-  },
-  {
-    icon: Globe2,
-    title: 'E-commerce Solutions',
-    text: 'Stores built to convert and scale.',
-    href: '/services/ecommerce-solutions',
-  },
-  {
-    icon: Layers3,
-    title: 'Custom Software',
-    text: 'Tools built around how you work.',
-    href: '/services/custom-software-development',
-  },
- 
-  {
-    icon: Palette,
-    title: 'Branding',
-    text: 'Identities people remember and trust.',
-    href: '/services/branding',
-  },
-  {
-    icon: Sparkles,
-    title: 'Graphic Designing',
-    text: 'On-brand design, every touchpoint.',
-    href: '/services/graphic-designing',
-  },
-].map(({ icon: Icon, title, text, href }, index) => (
-  <motion.div
-    key={title}
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    transition={{ delay: index * 0.06 }}
-  >
-    <Link
-      href={href}
-      className="group flex h-full items-start gap-4 rounded-xl border border-white/10 bg-white/[0.025] p-5 transition-all duration-300 hover:-translate-y-1 hover:border-[#17A2C7]/40 hover:bg-white/[0.05]"
-    >
-      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#17A2C7]/15 text-[#66d4eb] transition group-hover:bg-[#17A2C7]/25">
-        <Icon size={18} />
-      </span>
-
-      <div className="flex-1">
-        <h3 className="font-semibold transition group-hover:text-[#66d4eb]">
-          {title}
-        </h3>
-
-        <p className="mt-1 text-sm text-slate-400">
-          {text}
-        </p>
-      </div>
-
-      <ArrowRight
-        size={16}
-        className="mt-1 shrink-0 text-slate-500 transition-all duration-300 group-hover:translate-x-1 group-hover:text-[#66d4eb]"
-      />
-    </Link>
-  </motion.div>
-))}
-          
+          <div className="about-project-grid">
+            {projects.map((project, index) => (
+              <motion.article
+                key={project.name}
+                className={`about-project-card${index === 1 ? ' is-featured' : ''}`}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.15 }}
+                transition={{ delay: index * 0.08, duration: 0.5 }}
+              >
+                <a href={project.href} target="_blank" rel="noopener noreferrer" className="about-project-image" aria-label={`View the ${project.name} project`}>
+                  <Image src={project.image} alt={project.alt} width={800} height={500} sizes="(max-width: 760px) 100vw, 34vw" />
+                  <span className="about-project-open" aria-hidden="true"><ArrowRight size={18} /></span>
+                </a>
+                <div className="about-project-info">
+                  <p>{project.category}</p>
+                  <h3>{project.name}</h3>
+                  <span>{project.description}</span>
+                  <a href={project.href} target="_blank" rel="noopener noreferrer" className="about-project-link">View live project <ArrowRight size={15} /></a>
+                </div>
+              </motion.article>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* FINAL CTA */}
-   {/* FINAL CTA */}
-<section className="bg-[#0A1930] px-4 py-24 sm:px-6">
-  <div className="relative mx-auto max-w-5xl overflow-hidden rounded-3xl bg-[#123C6B] px-6 py-14 text-center sm:px-10 lg:py-16">
-
-    <motion.div
-      animate={{ scale: [1, 1.12, 1] }}
-      transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-      className="pointer-events-none absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#17A2C7]/20 blur-3xl"
-    />
-
-    <div className="relative">
-      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#66d4eb]">
-        Let&apos;s build together
-      </p>
-
-      <h2 className="mx-auto mt-5 max-w-3xl text-4xl font-bold sm:text-5xl">
-        One team. Every part of your digital presence.
-      </h2>
-
-      <p className="mx-auto mt-5 max-w-xl leading-relaxed text-slate-200">
-   Ignisis Solutions helps startups,
-  small businesses and growing companies.
-      </p>
-
-      <Link
-        href="/contact"
-        className="mt-8 inline-flex items-center gap-2 rounded-xl bg-[#17A2C7] px-6 py-3.5 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#5cd5eb]"
-      >
-        Work With Us
-        <ArrowRight size={18} />
-      </Link>
-
-      <div className="mx-auto mt-8 flex max-w-md items-center justify-center gap-3 text-sm text-slate-300">
-       
-        One team for strategy, creativity and technology.
-      </div>
-    </div>
-  </div>
-</section>
+      <section className="about-cta-section">
+        <div className="about-content about-cta-inner">
+          <div className="about-cta-orbit" aria-hidden="true" />
+          <motion.div
+            className="about-cta-copy-block"
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.25 }}
+          >
+            <p className="about-eyebrow">Ready when you are</p>
+            <h2>Let&apos;s create something your business can grow with.</h2>
+            <p className="about-cta-copy">
+              Tell us what you want to build, improve or launch. We&apos;ll help you find the right next step.
+            </p>
+          </motion.div>
+          <div className="about-cta-actions">
+            <Link href="/contact" className="about-cta-button">
+              Discuss Your Project <ArrowRight size={18} />
+            </Link>
+            <Link href="/contact" className="about-cta-outline">
+              Request a Free Audit <ArrowRight size={18} />
+            </Link>
+          </div>
+        </div>
+      </section>
     </main>
   )
 }

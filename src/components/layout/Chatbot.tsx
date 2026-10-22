@@ -66,12 +66,12 @@ export default function Chatbot() {
       {isOpen && (
         <section
           aria-label="Ignisis Solutions chat"
-          className="mb-4 flex w-[min( calc(100vw-2rem),_22rem)] flex-col overflow-hidden rounded-2xl border border-white/10 bg-[#071426] shadow-[0_18px_60px_rgba(0,0,0,0.45)]"
+          className="mb-4 flex w-[min( calc(100vw-2rem),_22rem)] flex-col overflow-hidden rounded-2xl border border-white/10 bg-[#071039] shadow-[0_18px_60px_rgba(0,0,0,0.45)]"
         >
-          <header className="flex items-center justify-between bg-[#123C6B] px-4 py-4">
+          <header className="flex items-center justify-between bg-[#1A3BB0] px-4 py-4">
             <div>
               <p className="font-semibold text-white">Ignisis Assistant</p>
-              <p className="mt-0.5 text-xs text-cyan-100/75">Usually replies instantly</p>
+              <p className="mt-0.5 text-xs text-[#AFC5F8]/75">Usually replies instantly</p>
             </div>
             <button
               type="button"
@@ -92,7 +92,7 @@ export default function Chatbot() {
                 <p
                   className={`max-w-[90%] rounded-xl px-3 py-2 text-sm leading-relaxed ${
                     message.sender === 'user'
-                      ? 'bg-[#17A2C7] text-white'
+                      ? 'bg-[#2E5DE6] text-white'
                       : 'bg-white/[0.08] text-slate-200'
                   }`}
                 >
@@ -109,7 +109,7 @@ export default function Chatbot() {
                   key={reply}
                   type="button"
                   onClick={() => addReply(reply)}
-                  className="shrink-0 rounded-full border border-[#17A2C7]/45 px-3 py-1.5 text-left text-xs text-cyan-100 transition hover:bg-[#17A2C7]/15"
+                  className="shrink-0 rounded-full border border-[#2E5DE6]/45 px-3 py-1.5 text-left text-xs text-[#AFC5F8] transition hover:bg-[#2E5DE6]/15"
                 >
                   {reply}
                 </button>
@@ -125,12 +125,12 @@ export default function Chatbot() {
                 value={input}
                 onChange={(event) => setInput(event.target.value)}
                 placeholder="Type your question..."
-                className="min-w-0 flex-1 rounded-lg border border-white/10 bg-white/[0.06] px-3 py-2 text-sm text-white outline-none placeholder:text-slate-500 focus:border-[#17A2C7]"
+                className="min-w-0 flex-1 rounded-lg border border-white/10 bg-white/[0.06] px-3 py-2 text-sm text-white outline-none placeholder:text-slate-500 focus:border-[#2E5DE6]"
               />
               <button
                 type="submit"
                 aria-label="Send message"
-                className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#17A2C7] text-white transition hover:bg-[#48c4e0]"
+                className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#2E5DE6] text-white transition hover:bg-[#1A3BB0]"
               >
                 <Send size={16} />
               </button>
@@ -154,7 +154,7 @@ export default function Chatbot() {
         onClick={() => setIsOpen((current) => !current)}
         aria-label={isOpen ? 'Close chat assistant' : 'Open chat assistant'}
         aria-expanded={isOpen}
-        className="ml-auto flex h-14 w-14 items-center justify-center rounded-full border border-cyan-200/30 bg-[#17A2C7] text-white shadow-[0_8px_30px_rgba(23,162,199,0.4)] transition hover:scale-105 hover:bg-[#48c4e0]"
+        className="ml-auto flex h-14 w-14 items-center justify-center rounded-full border border-[#AFC5F8]/30 bg-[#2E5DE6] text-white shadow-[0_8px_30px_rgba(46,93,230,0.4)] transition hover:scale-105 hover:bg-[#1A3BB0]"
       >
         {isOpen ? <X size={24} /> : <MessageCircle size={25} />}
       </button>

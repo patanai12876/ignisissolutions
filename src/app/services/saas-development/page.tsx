@@ -186,33 +186,6 @@ const technologies = [
   'Prisma',
 ]
 
-const process = [
-  {
-    number: '01',
-    title: 'Product Discovery',
-    text: 'We understand your SaaS idea, target users, business model, core features and the problem your product needs to solve.',
-  },
-  {
-    number: '02',
-    title: 'Architecture & Planning',
-    text: 'We define the application structure, database, user roles, core workflows and technical architecture before development begins.',
-  },
-  {
-    number: '03',
-    title: 'Design & Development',
-    text: 'The product interface and functionality are developed together, keeping usability, performance and scalability in mind.',
-  },
-  {
-    number: '04',
-    title: 'Testing & Optimization',
-    text: 'We test the application, user flows, permissions, responsiveness and performance before preparing it for production.',
-  },
-  {
-    number: '05',
-    title: 'Launch & Scale',
-    text: 'Your SaaS product is deployed and structured for future improvements, additional features and growing users.',
-  },
-]
 
 const faqs = faqJsonLd.mainEntity.map((item) => ({
   question: item.question,
@@ -221,7 +194,7 @@ const faqs = faqJsonLd.mainEntity.map((item) => ({
 
 export default function SaaSDevelopmentPage() {
   return (
-    <main className="overflow-x-hidden bg-[#0A1930] text-white">
+    <main className="service-detail-page overflow-x-hidden bg-white text-[#071039]">
 
       {/* STRUCTURED DATA */}
 
@@ -245,9 +218,9 @@ export default function SaaSDevelopmentPage() {
 
         <div className="pointer-events-none absolute inset-0">
 
-          <div className="absolute left-[8%] top-0 h-[25rem] w-[25rem] rounded-full bg-[#17A2C7]/15 blur-[130px]" />
+          <div className="absolute left-[8%] top-0 h-[25rem] w-[25rem] rounded-full bg-[#2E5DE6]/15 blur-[130px]" />
 
-          <div className="absolute right-[-5rem] top-10 h-[28rem] w-[28rem] rounded-full bg-blue-600/10 blur-[140px]" />
+          <div className="absolute right-[-5rem] top-10 h-[28rem] w-[28rem] rounded-full bg-[#2E5DE6]/10 blur-[140px]" />
 
           <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:48px_48px]" />
 
@@ -259,7 +232,7 @@ export default function SaaSDevelopmentPage() {
 
             <Link
               href="/services"
-              className="inline-flex items-center gap-2 text-sm font-medium text-[#66d4eb] transition hover:text-white"
+              className="inline-flex items-center gap-2 text-sm font-medium text-[#AFC5F8] transition hover:text-white"
             >
               <ArrowRight
                 size={15}
@@ -268,17 +241,17 @@ export default function SaaSDevelopmentPage() {
               All Services
             </Link>
 
-            <div className="mt-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#17A2C7]/15 text-[#66d4eb]">
+            <div className="mt-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#2E5DE6]/15 text-[#AFC5F8]">
               <Cloud size={28} />
             </div>
 
-            <p className="mt-6 text-xs font-semibold uppercase tracking-[0.18em] text-[#66d4eb]">
+            <p className="mt-6 text-xs font-semibold uppercase tracking-[0.18em] text-[#AFC5F8]">
               SaaS Development Services in Lahore
             </p>
 
-            <h1 className="mt-4 text-4xl font-bold leading-[1.08] sm:text-5xl lg:text-7xl">
+            <h1 className="mt-4 text-4xl font-bold leading-[1.08] sm:text-5xl lg:text-5xl">
               Build a SaaS product{' '}
-              <span className="bg-gradient-to-r from-[#66d4eb] via-[#3da7e9] to-[#7187ff] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#AFC5F8] via-[#6E92F2] to-[#6E92F2] bg-clip-text text-transparent">
                 ready to scale.
               </span>
             </h1>
@@ -294,7 +267,7 @@ export default function SaaSDevelopmentPage() {
 
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 rounded-xl bg-[#17A2C7] px-6 py-3.5 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#5cd5eb] hover:shadow-[0_10px_30px_rgba(23,162,199,0.2)]"
+                className="inline-flex items-center gap-2 rounded-xl bg-[#2E5DE6] px-6 py-3.5 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#1A3BB0] hover:shadow-[0_10px_30px_rgba(46,93,230,0.2)]"
               >
                 Build Your SaaS
                 <ArrowRight size={18} />
@@ -302,7 +275,7 @@ export default function SaaSDevelopmentPage() {
 
               <Link
                 href="/portfolio"
-                className="inline-flex items-center gap-2 rounded-xl border border-white/15 px-6 py-3.5 font-semibold text-white transition hover:border-[#17A2C7]/60 hover:bg-white/5"
+                className="inline-flex items-center gap-2 rounded-xl border border-white/15 px-6 py-3.5 font-semibold text-white transition hover:border-[#2E5DE6]/60 hover:bg-white/5"
               >
                 View Our Work
               </Link>
@@ -315,59 +288,7 @@ export default function SaaSDevelopmentPage() {
 
       </section>
 
-      {/* INTRO */}
 
-      <section className="border-b border-white/10 bg-[#08182e]">
-
-        <div className="mx-auto max-w-7xl px-6 py-16 lg:py-20">
-
-          <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
-
-            <div>
-
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#66d4eb]">
-                Why SaaS development matters
-              </p>
-
-              <h2 className="mt-4 text-4xl font-bold leading-tight sm:text-5xl">
-                More than software.
-                <span className="block text-[#66d4eb]">
-                  A scalable product.
-                </span>
-              </h2>
-
-            </div>
-
-            <div className="space-y-5 text-lg leading-relaxed text-slate-300 [&>p:nth-child(3)]:hidden sm:[&>p:nth-child(3)]:block">
-
-              <p>
-                A SaaS product needs more than a good-looking interface.
-                It needs reliable architecture, secure user management,
-                scalable infrastructure and workflows that make the
-                product useful for real customers.
-              </p>
-
-              <p>
-                As a SaaS development company in Lahore, Ignisis Solutions
-                helps businesses turn software ideas into functional,
-                scalable web-based products that can evolve as their
-                customer base grows.
-              </p>
-
-              <p>
-                Whether you are validating a new SaaS idea, launching an
-                MVP or improving an existing platform, we build around
-                your product requirements instead of forcing your business
-                into a generic software solution.
-              </p>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
 
       {/* FEATURES */}
 
@@ -375,7 +296,7 @@ export default function SaaSDevelopmentPage() {
 
         <div className="mx-auto max-w-2xl text-center">
 
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#66d4eb]">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#AFC5F8]">
             What we provide
           </p>
 
@@ -397,10 +318,10 @@ export default function SaaSDevelopmentPage() {
 
             <div
               key={title}
-              className="rounded-2xl border border-white/10 bg-white/[0.025] p-7 transition hover:-translate-y-1 hover:border-[#17A2C7]/40 hover:bg-white/[0.04]"
+              className="rounded-2xl border border-white/10 bg-white/[0.025] p-7 transition hover:-translate-y-1 hover:border-[#2E5DE6]/40 hover:bg-white/[0.04]"
             >
 
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#17A2C7]/15 text-[#66d4eb]">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#2E5DE6]/15 text-[#AFC5F8]">
                 <Icon size={22} />
               </div>
 
@@ -422,7 +343,7 @@ export default function SaaSDevelopmentPage() {
 
       {/* TYPES OF SAAS */}
 
-      <section className="border-y border-white/10 bg-[#08182e]">
+      <section className="border-y border-white/10 bg-[#0F2270]">
 
         <div className="mx-auto max-w-7xl px-6 py-16 lg:py-20">
 
@@ -430,7 +351,7 @@ export default function SaaSDevelopmentPage() {
 
             <div>
 
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#66d4eb]">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#AFC5F8]">
                 What we build
               </p>
 
@@ -452,12 +373,12 @@ export default function SaaSDevelopmentPage() {
 
                 <div
                   key={item}
-                  className="flex items-center gap-3 rounded-xl border border-white/10 bg-[#0A1930] p-4"
+                  className="flex items-center gap-3 rounded-xl border border-white/10 bg-[#071039] p-4"
                 >
 
                   <Check
                     size={17}
-                    className="shrink-0 text-[#17A2C7]"
+                    className="shrink-0 text-[#2E5DE6]"
                   />
 
                   <span className="text-sm font-medium text-slate-200">
@@ -478,20 +399,20 @@ export default function SaaSDevelopmentPage() {
 
       {/* TECHNOLOGY */}
 
-      
-          
 
-     
+
+
+
 
       {/* FAQ */}
 
-      <section className="border-y border-white/10 bg-[#08182e]">
+      <section className="border-y border-white/10 bg-[#0F2270]">
 
         <div className="mx-auto max-w-4xl px-6 py-16 lg:py-20">
 
           <div className="text-center">
 
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#66d4eb]">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#AFC5F8]">
               Frequently asked questions
             </p>
 
@@ -507,7 +428,7 @@ export default function SaaSDevelopmentPage() {
 
               <details
                 key={question}
-                className="group rounded-2xl border border-white/10 bg-[#0A1930] p-6"
+                className="group rounded-2xl border border-white/10 bg-[#071039] p-6"
               >
 
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-lg font-semibold marker:hidden">
@@ -515,7 +436,7 @@ export default function SaaSDevelopmentPage() {
                   <ChevronDown
                     size={20}
                     aria-hidden="true"
-                    className="shrink-0 text-[#66d4eb] transition-transform duration-200 group-open:rotate-180"
+                    className="shrink-0 text-[#AFC5F8] transition-transform duration-200 group-open:rotate-180"
                   />
                 </summary>
 
@@ -533,77 +454,19 @@ export default function SaaSDevelopmentPage() {
 
       </section>
 
-      {/* INTERNAL LINKS */}
 
-      <section className="mx-auto max-w-7xl px-6 py-14">
-
-        <div className="rounded-2xl border border-white/10 bg-white/[0.025] p-7">
-
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#66d4eb]">
-            Explore Ignisis Solutions
-          </p>
-
-          <div className="mt-5 flex flex-wrap gap-x-6 gap-y-3">
-
-            <Link
-              href="/services"
-              className="text-sm font-medium text-slate-300 hover:text-[#66d4eb]"
-            >
-              All Services →
-            </Link>
-
-            <Link
-              href="/services/web-development"
-              className="text-sm font-medium text-slate-300 hover:text-[#66d4eb]"
-            >
-              Web Development →
-            </Link>
-
-            <Link
-              href="/services/custom-software-development"
-              className="text-sm font-medium text-slate-300 hover:text-[#66d4eb]"
-            >
-              Custom Software Development →
-            </Link>
-
-            <Link
-              href="/services/ecommerce-solutions"
-              className="text-sm font-medium text-slate-300 hover:text-[#66d4eb]"
-            >
-              E-commerce Solutions →
-            </Link>
-
-            <Link
-              href="/portfolio"
-              className="text-sm font-medium text-slate-300 hover:text-[#66d4eb]"
-            >
-              Our Portfolio →
-            </Link>
-
-            <Link
-              href="/contact"
-              className="text-sm font-medium text-slate-300 hover:text-[#66d4eb]"
-            >
-              Contact Ignisis Solutions →
-            </Link>
-
-          </div>
-
-        </div>
-
-      </section>
 
       {/* CTA */}
 
-      <section className="bg-[#0A1930] px-4 pb-16 pt-2 sm:px-6 lg:pb-20">
+      <section className="bg-[#071039] px-4 pb-16 pt-2 sm:px-6 lg:pb-20">
 
-        <div className="relative mx-auto max-w-5xl overflow-hidden rounded-3xl bg-[#123C6B] px-6 py-14 text-center sm:px-10">
+        <div className="relative mx-auto max-w-5xl overflow-hidden rounded-3xl bg-[#1A3BB0] px-6 py-14 text-center sm:px-10">
 
-          <div className="pointer-events-none absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#17A2C7]/20 blur-3xl" />
+          <div className="pointer-events-none absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#2E5DE6]/20 blur-3xl" />
 
           <div className="relative">
 
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#66d4eb]">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#AFC5F8]">
               Have a SaaS idea?
             </p>
 
@@ -619,7 +482,7 @@ export default function SaaSDevelopmentPage() {
 
             <Link
               href="/contact"
-              className="mt-8 inline-flex items-center gap-2 rounded-xl bg-[#17A2C7] px-6 py-3.5 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#5cd5eb]"
+              className="mt-8 inline-flex items-center gap-2 rounded-xl bg-[#2E5DE6] px-6 py-3.5 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#1A3BB0]"
             >
               Discuss Your SaaS Project
               <ArrowRight size={18} />

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Montserrat, Poppins } from 'next/font/google'
 import './globals.css'
+import './home-concept.css'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import WhatsAppButton from '@/components/layout/WhatsAppButton'
@@ -8,9 +9,18 @@ import Chatbot from '@/components/layout/Chatbot'
 import MobileActionBar from '@/components/layout/MobileActionBar'
 import ScrollToTop from '@/components/layout/ScrollToTop'
 
-const inter = Inter({
+const poppins = Poppins({
   subsets: ['latin'],
   display: 'swap',
+  weight: ['400', '500', '600', '700', '800'],
+  variable: '--font-poppins',
+})
+
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  display: 'swap',
+  weight: ['600', '700', '800'],
+  variable: '--font-montserrat',
 })
 
 const siteUrl = 'https://ignisissolutions.com'
@@ -176,7 +186,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-[#0A1930] text-white`}>
+      <body className={`${poppins.variable} ${montserrat.variable} ${poppins.className} bg-white text-[#071039]`}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

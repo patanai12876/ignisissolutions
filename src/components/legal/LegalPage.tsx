@@ -33,11 +33,11 @@ export default function LegalPage({
   const [openSection, setOpenSection] = useState(sections[0]?.id ?? '')
 
   return (
-    <main className="overflow-x-hidden bg-[#0A1930] pt-20 lg:pt-24 text-white">
+    <main className="overflow-x-hidden bg-[#071039] pt-20 lg:pt-24 text-white">
       <section className="relative overflow-hidden border-b border-white/10">
         <div className="pointer-events-none absolute inset-0">
-          <div className="absolute left-[8%] top-0 h-[24rem] w-[24rem] rounded-full bg-blue-600/15 blur-[120px]" />
-          <div className="absolute right-[-6rem] top-8 h-[28rem] w-[28rem] rounded-full bg-[#17A2C7]/10 blur-[130px]" />
+          <div className="absolute left-[8%] top-0 h-[24rem] w-[24rem] rounded-full bg-[#2E5DE6]/15 blur-[120px]" />
+          <div className="absolute right-[-6rem] top-8 h-[28rem] w-[28rem] rounded-full bg-[#2E5DE6]/10 blur-[130px]" />
           <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:48px_48px]" />
         </div>
 
@@ -47,13 +47,13 @@ export default function LegalPage({
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.65 }}
           >
-            <div className="flex items-center gap-3 text-[#66d4eb]">
+            <div className="flex items-center gap-3 text-[#AFC5F8]">
               <ShieldCheck size={18} />
               <p className="text-xs font-semibold uppercase tracking-[0.18em]">{eyebrow}</p>
             </div>
             <h1 className="mt-6 max-w-4xl text-5xl font-bold leading-[1.08] sm:text-6xl">
               {title}{' '}
-              <span className="bg-gradient-to-r from-[#66d4eb] via-[#3da7e9] to-[#7187ff] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#AFC5F8] via-[#6E92F2] to-[#6E92F2] bg-clip-text text-transparent">
                 {highlightedTitle}
               </span>
             </h1>
@@ -65,7 +65,7 @@ export default function LegalPage({
 
       <section className="mx-auto grid max-w-7xl gap-12 px-6 py-16 lg:grid-cols-[220px_1fr] lg:gap-20">
         <aside className="h-fit lg:sticky lg:top-28">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#66d4eb]">On this page</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#AFC5F8]">On this page</p>
           <nav className="mt-5 space-y-2 border-l border-white/10 pl-4">
             {sections.map((section, index) => (
               <a
@@ -73,14 +73,14 @@ export default function LegalPage({
                 href={`#${section.id}`}
                 className="flex items-start gap-2 py-1.5 text-sm text-slate-400 transition hover:text-white"
               >
-                <span className="font-mono text-xs text-[#17A2C7]">0{index + 1}</span>
+                <span className="font-mono text-xs text-[#2E5DE6]">0{index + 1}</span>
                 <span>{section.title}</span>
               </a>
             ))}
           </nav>
           <Link
             href="/contact"
-            className="mt-10 inline-flex items-center gap-2 text-sm font-semibold text-white transition hover:text-[#66d4eb]"
+            className="mt-10 inline-flex items-center gap-2 text-sm font-semibold text-white transition hover:text-[#AFC5F8]"
           >
             Questions? Contact us <ArrowRight size={16} />
           </Link>
@@ -106,7 +106,7 @@ export default function LegalPage({
                   className="flex w-full items-center justify-between gap-6 py-7 text-left"
                 >
                   <span className="flex items-start gap-4">
-                    <span className="mt-1 font-mono text-sm text-[#17A2C7]">0{index + 1}</span>
+                    <span className="mt-1 font-mono text-sm text-[#2E5DE6]">0{index + 1}</span>
                     <span>
                       <span className="block text-2xl font-semibold">{section.title}</span>
                       <span className="mt-2 block text-sm leading-relaxed text-slate-400">{section.summary}</span>
@@ -114,7 +114,7 @@ export default function LegalPage({
                   </span>
                   <ChevronDown
                     size={20}
-                    className={`shrink-0 text-[#66d4eb] transition-transform ${isOpen ? 'rotate-180' : ''}`}
+                    className={`shrink-0 text-[#AFC5F8] transition-transform ${isOpen ? 'rotate-180' : ''}`}
                   />
                 </button>
 
@@ -127,7 +127,7 @@ export default function LegalPage({
                       <ul className="mt-5 space-y-3">
                         {section.bullets.map((bullet) => (
                           <li key={bullet} className="flex gap-3">
-                            <Check size={17} className="mt-1 shrink-0 text-[#17A2C7]" />
+                            <Check size={17} className="mt-1 shrink-0 text-[#2E5DE6]" />
                             <span>{bullet}</span>
                           </li>
                         ))}
@@ -139,14 +139,14 @@ export default function LegalPage({
             )
           })}
 
-          <div className="mt-12 flex items-start gap-4 border border-[#17A2C7]/25 bg-[#0d2542] p-6">
-            <FileText className="mt-0.5 shrink-0 text-[#66d4eb]" size={20} />
+          <div className="mt-12 flex items-start gap-4 border border-[#2E5DE6]/25 bg-[#0F2270] p-6">
+            <FileText className="mt-0.5 shrink-0 text-[#AFC5F8]" size={20} />
             <div>
               <p className="font-semibold text-white">Need something clarified?</p>
               <p className="mt-1 text-sm leading-relaxed text-slate-400">
                 We are happy to explain how these terms apply to your project or answer a privacy question directly.
               </p>
-              <Link href="/contact" className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#66d4eb] hover:text-white">
+              <Link href="/contact" className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#AFC5F8] hover:text-white">
                 Talk to Ignisis <ArrowRight size={16} />
               </Link>
             </div>
