@@ -29,31 +29,29 @@ export const metadata: Metadata = {
   applicationName: 'Ignisis Solutions',
 
   icons: {
-    icon: '/images/favicon.png',
-    shortcut: '/images/favicon.png',
-    apple: '/images/favicon.png',
+    icon: '/IS%20favicon.png',
+    shortcut: '/IS%20favicon.png',
+    apple: '/IS%20favicon.png',
   },
 
   title: {
-default:
-  'Digital Marketing & Web Development Agency in Lahore | Ignisis Solutions',    template: '%s | Ignisis Solutions',
+    default: 'Digital Agency in Lahore | Ignisis Solutions',
+    template: '%s | Ignisis Solutions',
   },
 
   description:
-  'Ignisis Solutions is a digital marketing and web development agency in Lahore, Pakistan, helping businesses grow with web development, SEO, custom software, e-commerce, branding, Google Ads and Meta Ads.' ,
+    'Ignisis Solutions is a Lahore-based digital agency offering digital marketing, web development, branding, social media management, SaaS development, graphic design and digital business growth.',
 
   keywords: [
-  'Ignisis Solutions',
-  'digital marketing agency Lahore',
-  'digital marketing agency Pakistan',
-  'web development company Lahore',
-  'web development agency Pakistan',
-  'SEO agency Lahore',
-  'branding agency Lahore',
-  'branding agency Pakistan',
-  'custom software development Pakistan',
-  'SaaS development company Pakistan',
-  'e-commerce development company Pakistan',
+    'Ignisis Solutions',
+    'digital agency Lahore',
+    'digital marketing agency Lahore',
+    'web development company Lahore',
+    'branding agency Lahore',
+    'social media management Lahore',
+    'SaaS development Pakistan',
+    'graphic design services Lahore',
+    'digital business growth Lahore',
 ],
 
   alternates: {
@@ -65,16 +63,14 @@ default:
     locale: 'en_PK',
     url: siteUrl,
     siteName: 'Ignisis Solutions',
-title:
-  'Digital Marketing & Web Development Agency in Lahore | Ignisis Solutions',
-      description:
-  'Ignisis Solutions provides web development, custom software, SEO, e-commerce, branding, Google Ads, Meta Ads and digital marketing services for businesses in Lahore, Pakistan and beyond.',  },
+    title: 'Digital Agency in Lahore | Ignisis Solutions',
+    description: 'Digital marketing, web development, branding, social media, SaaS, graphic design and business growth for Lahore businesses.',
+  },
 
   twitter: {
     card: 'summary_large_image',
     title: 'Ignisis Solutions | Digital Agency in Lahore',
-    description:
-      'Web development, software, SEO, e-commerce, branding and digital marketing services in Lahore, Pakistan and beyond.',
+    description: 'Digital marketing, web development, branding, social media, SaaS, graphic design and business growth in Lahore, Pakistan.',
   },
 
   robots: {
@@ -100,7 +96,7 @@ const organizationSchema = {
   logo: `${siteUrl}/images/logo.png`,
   image: `${siteUrl}/images/logo.png`,
   description:
-    'Digital agency offering web development, custom software, e-commerce, branding and digital marketing services.',
+    'Lahore-based digital agency offering digital marketing, web development, branding, social media management, SaaS development, graphic design and digital business growth.',
   telephone: '+92 302 5708769',
   email: 'ignisissolutions@gmail.com',
   priceRange: '$$',
@@ -121,6 +117,7 @@ const organizationSchema = {
     { '@type': 'Country', name: 'Pakistan' },
   ],
   sameAs: [
+    'https://www.facebook.com/profile.php?id=61592162813345',
     'https://instagram.com/ignisissolutions',
     'https://www.linkedin.com/company/ignisis-solutions/',
   ],
@@ -128,42 +125,20 @@ const organizationSchema = {
     '@type': 'OfferCatalog',
     name: 'Ignisis Solutions Services',
     itemListElement: [
-      {
-        '@type': 'Offer',
-        itemOffered: {
-          '@type': 'Service',
-          name: 'Web Development',
-        },
+      'Digital Marketing',
+      'Web Development',
+      'Branding',
+      'Social Media Management',
+      'SaaS Development',
+      'Graphic Designing',
+      'Digital Business Growth',
+    ].map((name) => ({
+      '@type': 'Offer',
+      itemOffered: {
+        '@type': 'Service',
+        name,
       },
-      {
-        '@type': 'Offer',
-        itemOffered: {
-          '@type': 'Service',
-          name: 'Custom Software Development',
-        },
-      },
-      {
-        '@type': 'Offer',
-        itemOffered: {
-          '@type': 'Service',
-          name: 'Digital Marketing',
-        },
-      },
-      {
-        '@type': 'Offer',
-        itemOffered: {
-          '@type': 'Service',
-          name: 'Branding and Graphic Design',
-        },
-      },
-      {
-        '@type': 'Offer',
-        itemOffered: {
-          '@type': 'Service',
-          name: 'E-commerce Solutions',
-        },
-      },
-    ],
+    })),
   },
 }
 

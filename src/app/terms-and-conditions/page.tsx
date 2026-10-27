@@ -21,7 +21,7 @@ const sections = [
     title: 'Services and scope',
     summary: 'Every project is shaped around an agreed scope, timeline and set of deliverables.',
     paragraphs: [
-      'We provide services such as web development, software development, e-commerce, branding, design, marketing and consultancy. The exact deliverables, milestones, fees and assumptions will be confirmed before work begins.',
+      'We provide digital marketing, web development, branding, social media management, SaaS development, graphic design and digital business growth services. The exact deliverables, milestones, fees and assumptions will be confirmed before work begins.',
       'Requests outside the agreed scope may affect the timeline or fee. We will discuss meaningful changes with you before proceeding.',
     ],
     bullets: ['The client provides accurate content, feedback and access when needed', 'Approvals and feedback should be provided within the agreed timeframes', 'Third-party fees, subscriptions and paid media budgets are separate unless stated otherwise'],
@@ -70,7 +70,6 @@ export default function TermsAndConditionsPage() {
       title="Good work needs"
       highlightedTitle="clear ground rules."
       intro="These terms keep expectations clear from the first conversation to the final handover, so every project can move forward with confidence."
-      updated="August 19, 2026"
       sections={sections}
     />
   )

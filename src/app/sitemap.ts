@@ -51,12 +51,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
-      url: `${siteUrl}/services/custom-software-development`,
-      lastModified: siteLaunchDate,
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
-    {
       url: `${siteUrl}/services/digital-marketing`,
       lastModified: siteLaunchDate,
       changeFrequency: 'monthly',
@@ -81,19 +75,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
-      url: `${siteUrl}/services/business-consultancy`,
-      lastModified: siteLaunchDate,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
       url: `${siteUrl}/services/digital-business-growth`,
-      lastModified: siteLaunchDate,
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
-    {
-      url: `${siteUrl}/services/ecommerce-solutions`,
       lastModified: siteLaunchDate,
       changeFrequency: 'monthly',
       priority: 0.9,

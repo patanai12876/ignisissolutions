@@ -14,7 +14,7 @@ const quickReplies = [
 
 const scriptedReplies: Record<string, string> = {
   'What services do you offer?':
-    'We offer web development, e-commerce, custom software, SEO, digital marketing, branding, graphic design and business consultancy.',
+    'We offer digital marketing, web development, branding, social media management, SaaS development, graphic designing and digital business growth services.',
   'How much does a website cost?':
     'Website pricing depends on pages, features and integrations. Share your requirements and our team will prepare a suitable plan for you.',
   'How do I get started?':

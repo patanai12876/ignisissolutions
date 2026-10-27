@@ -24,7 +24,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 
 
-const services = [
+const allServices = [
 
    {
     id: 'marketing',
@@ -216,6 +216,20 @@ const services = [
   },
  
 ]
+
+const serviceOrder = [
+  'digital-marketing',
+  'web-development',
+  'branding',
+  'social-media-management',
+  'saas-development',
+  'graphic-designing',
+  'digital-business-growth',
+]
+const services = serviceOrder.flatMap((slug) => {
+  const service = allServices.find((item) => item.slug === slug)
+  return service ? [service] : []
+})
 
 export default function Services() {
   const [activeId, setActiveId] = useState<string | null>(null)

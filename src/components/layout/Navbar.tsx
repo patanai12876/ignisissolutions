@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { ChevronDown, Menu } from 'lucide-react'
 import { usePathname } from 'next/navigation'
 
@@ -14,20 +15,19 @@ const links = [
 
 const serviceLinks = [
   { href: '/services/digital-marketing', label: 'Digital Marketing' },
-  { href: '/services/social-media-management', label: 'Social Media Management' },
   { href: '/services/web-development', label: 'Web Development' },
-  { href: '/services/ecommerce-solutions', label: 'E-commerce Solutions' },
-  { href: '/services/saas-development', label: 'SaaS Development' },
-  { href: '/services/custom-software-development', label: 'Custom Software Development' },
   { href: '/services/branding', label: 'Branding' },
+  { href: '/services/social-media-management', label: 'Social Media Management' },
+  { href: '/services/saas-development', label: 'SaaS Development' },
   { href: '/services/graphic-designing', label: 'Graphic Designing' },
+  { href: '/services/digital-business-growth', label: 'Digital Business Growth' },
 ]
 
 export default function Navbar() {
   const pathname = usePathname()
   return <header className="site-header">
     <div className="nav">
-      <Link className="brand" href="/" aria-label="Ignisis Solutions home"><span className="brand-mark">IS</span><span className="brand-name">Ignisis<small>Solutions</small></span></Link>
+      <Link className="brand" href="/" aria-label="Ignisis Solutions home"><Image className="brand-logo" src="/nav%20logo.png" alt="Ignisis Solutions" width={1921} height={819} priority /></Link>
       <nav className="desktop-nav" aria-label="Main navigation">{links.map((link) => link.href === '/services' ? (
         <div
           className={`desktop-services${pathname.startsWith('/services') ? ' is-active' : ''}`}

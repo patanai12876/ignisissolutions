@@ -17,13 +17,13 @@ import { motion } from 'framer-motion'
 import { useState } from 'react'
 
 const serviceOptions = [
-  'Web Development',
-  'E-commerce Solutions',
-  'Custom Software Development',
   'Digital Marketing',
-  'Business Consultancy',
+  'Web Development',
   'Branding',
+  'Social Media Management',
+  'SaaS Development',
   'Graphic Designing',
+  'Digital Business Growth',
   'Other',
 ]
 

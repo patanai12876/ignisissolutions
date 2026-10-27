@@ -49,7 +49,7 @@ const sections = [
     title: 'Contact and updates',
     summary: 'We will keep this policy current as our website and services evolve.',
     paragraphs: [
-      'For privacy questions or requests, please use our contact page or email ignisissolutions@gmail.com. We may update this policy from time to time; the latest version will always be published on this page with its updated date.',
+      'For privacy questions or requests, please use our contact page or email ignisissolutions@gmail.com. We may update this policy from time to time; the latest version will always be published on this page.',
     ],
   },
 ]
@@ -61,7 +61,6 @@ export default function PrivacyPolicyPage() {
       title="Your information,"
       highlightedTitle="handled with care."
       intro="We believe good digital work starts with trust. This policy explains what information we collect, why we use it and the choices available to you."
-      updated="August 19, 2026"
       sections={sections}
     />
   )

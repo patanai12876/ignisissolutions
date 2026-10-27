@@ -4,7 +4,7 @@ import Services from './Services'
 export const metadata: Metadata = {
   title: 'Digital Services in Lahore | Web Development, SEO & Marketing',
   description:
-    'Ignisis Solutions offers professional web development, SaaS and custom software development, e-commerce solutions, SEO, digital marketing, branding, graphic design and business growth services in Lahore, Pakistan.',
+    'Explore digital marketing, web development, branding, social media management, SaaS development, graphic design and digital business growth services from Ignisis Solutions.',
 
   keywords: [
     'ignisis solutions services',
@@ -12,15 +12,11 @@ export const metadata: Metadata = {
     'digital marketing agency Lahore',
     'web development company Lahore',
     'web development agency Lahore',
-    'software development company Lahore',
     'SaaS development company Pakistan',
-    'custom software development Pakistan',
-    'ecommerce development Lahore',
-    'SEO services Lahore',
+    'digital business growth Lahore',
     'branding agency Lahore',
     'social media management Lahore',
     'graphic design services Lahore',
-    'business consultancy Lahore',
     'Ignisis Solutions',
   ],
 
@@ -31,7 +27,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Digital Services in Lahore | Ignisis Solutions',
     description:
-      'Explore web development, custom software, SaaS, e-commerce, SEO, digital marketing, branding and business growth services from Ignisis Solutions.',
+      'Explore digital marketing, web development, branding, social media management, SaaS development, graphic design and digital business growth services from Ignisis Solutions.',
     url: 'https://ignisissolutions.com/services',
     siteName: 'Ignisis Solutions',
     locale: 'en_PK',
@@ -41,8 +37,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Digital Services in Lahore | Ignisis Solutions',
-    description:
-      'Web development, software, SaaS, e-commerce, SEO, digital marketing, branding and business growth services.',
+    description: 'Digital marketing, web development, branding, social media, SaaS, graphic design and business growth services.',
   },
 
   robots: {
@@ -55,60 +50,26 @@ const servicesSchema = {
   '@type': 'ItemList',
   name: 'Digital Services by Ignisis Solutions',
   description:
-    'Professional web development, software, SaaS, e-commerce, digital marketing, SEO, branding and business growth services.',
+    'Digital marketing, web development, branding, social media management, SaaS development, graphic design and digital business growth services.',
   itemListElement: [
-    {
-      '@type': 'Service',
-      position: 1,
-      name: 'Web Development',
-      serviceType: 'Web Development',
-      provider: {
-        '@type': 'Organization',
-        name: 'Ignisis Solutions',
-        url: 'https://ignisissolutions.com',
-      },
+    'Digital Marketing',
+    'Web Development',
+    'Branding',
+    'Social Media Management',
+    'SaaS Development',
+    'Graphic Designing',
+    'Digital Business Growth',
+  ].map((name, index) => ({
+    '@type': 'Service',
+    position: index + 1,
+    name,
+    serviceType: name,
+    provider: {
+      '@type': 'Organization',
+      name: 'Ignisis Solutions',
+      url: 'https://ignisissolutions.com',
     },
-    {
-      '@type': 'Service',
-      position: 2,
-      name: 'SaaS Development',
-      serviceType: 'SaaS Development',
-      provider: {
-        '@type': 'Organization',
-        name: 'Ignisis Solutions',
-      },
-    },
-    {
-      '@type': 'Service',
-      position: 3,
-      name: 'Custom Software Development',
-      serviceType: 'Custom Software Development',
-      provider: {
-        '@type': 'Organization',
-        name: 'Ignisis Solutions',
-      },
-    },
-    {
-      '@type': 'Service',
-      position: 4,
-      name: 'Digital Marketing',
-      serviceType: 'Digital Marketing',
-      provider: {
-        '@type': 'Organization',
-        name: 'Ignisis Solutions',
-      },
-    },
-    {
-      '@type': 'Service',
-      position: 5,
-      name: 'E-commerce Solutions',
-      serviceType: 'E-commerce Development',
-      provider: {
-        '@type': 'Organization',
-        name: 'Ignisis Solutions',
-      },
-    },
-  ],
+  })),
 }
 
 export default function ServicesPage() {
