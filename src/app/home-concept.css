@@ -157,19 +157,24 @@ main.home-theme { color: var(--concept-ink); background: var(--concept-canvas); 
     main.home-theme .section-heading h2 { margin: 14px 0 0; color: var(--concept-midnight); font-size: clamp(34px, 4.4vw, 54px); line-height: 1.08; letter-spacing: -.065em; }
     main.home-theme .section-heading p { margin: 0; color: var(--concept-muted); font-size: 15px; line-height: 1.75; }
     main.home-theme .services { background: var(--concept-canvas); }
-    main.home-theme .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 17px; }
+    main.home-theme .service-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
     main.home-theme .service-card {
-      min-height: 350px; padding: 25px 22px 19px; display: flex; flex-direction: column; align-items: center; text-align: center;
-      border: 1px solid #e0e5ef; border-radius: 19px; background: #fff; box-shadow: 0 9px 25px rgba(7,16,57,.09),0 0 15px rgba(46,93,230,.035);
+      min-height: 390px; padding: 27px 25px 22px; display: flex; flex-direction: column; align-items: flex-start; text-align: left;
+      border: 1px solid #e0e5ef; border-radius: 20px; background: #fff; box-shadow: 0 9px 25px rgba(7,16,57,.06);
       transition: transform .24s ease, box-shadow .24s ease, border-color .24s ease;
     }
-    main.home-theme .service-card:hover, main.home-theme .service-card:focus-within { transform: translateY(-4px); border-color: rgba(46,93,230,.4); background: #fff; box-shadow: 0 16px 34px rgba(7,16,57,.12),0 0 20px rgba(46,93,230,.07); }
-    main.home-theme .service-top { width: 66px; height: 66px; display: grid; flex: 0 0 auto; place-items: center; border-radius: 50%; color: #fff; background: var(--concept-royal); box-shadow: 0 7px 17px rgba(26,59,176,.2); }
+    main.home-theme .service-card:hover, main.home-theme .service-card:focus-within { transform: translateY(-4px); border-color: rgba(46,93,230,.4); background: #fff; box-shadow: 0 16px 34px rgba(7,16,57,.1); }
+    main.home-theme .service-card-top { width: 100%; display: flex; align-items: center; justify-content: space-between; }
+    main.home-theme .service-number { color: #8290aa; font-size: 10px; font-weight: 800; letter-spacing: .12em; }
+    main.home-theme .service-top { width: 54px; height: 54px; display: grid; flex: 0 0 auto; place-items: center; border: 1px solid #e1e9ff; border-radius: 16px; color: var(--concept-royal); background: #f0f4ff; }
     main.home-theme .service-top svg { width: 29px; height: 29px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-    main.home-theme .service-card h3 { max-width: 310px; margin: 22px 0 9px; color: var(--concept-midnight); font-size: 20px; line-height: 1.25; letter-spacing: -.045em; }
-    main.home-theme .service-card p { max-width: 340px; margin: 0 auto 20px; color: #59657a; font-size: 14px; line-height: 1.7; }
-    main.home-theme .service-link { display: flex; width: 100%; align-items: center; justify-content: center; gap: 9px; margin-top: auto; padding: 13px 15px; border-radius: 10px; color: #fff; background: var(--concept-royal); font-size: 13px; font-weight: 800; transition: background .2s ease; }
-    main.home-theme .service-link:hover, main.home-theme .service-link:focus-visible { color: #fff; background: var(--concept-blue); outline: 2px solid var(--concept-pale); outline-offset: 2px; }
+    main.home-theme .service-card h3 { max-width: none; margin: 23px 0 9px; color: var(--concept-midnight); font-size: 23px; line-height: 1.2; letter-spacing: -.045em; }
+    main.home-theme .service-card p { max-width: 360px; margin: 0; color: #59657a; font-size: 14px; line-height: 1.7; }
+    main.home-theme .service-deliverables { width: 100%; display: grid; gap: 11px; margin: 19px 0 21px; padding: 18px 0 0; border-top: 1px solid #edf0f6; list-style: none; }
+    main.home-theme .service-deliverables li { display: flex; align-items: flex-start; gap: 10px; color: #35415c; font-size: 13px; line-height: 1.45; }
+    main.home-theme .service-deliverables svg { flex: 0 0 auto; margin-top: 1px; color: var(--concept-blue); }
+    main.home-theme .service-link { display: inline-flex; min-height: 42px; align-items: center; justify-content: center; gap: 9px; margin-top: auto; padding: 0 15px; border: 1px solid var(--concept-royal); border-radius: 999px; color: #fff; background: var(--concept-royal); font-size: 12px; font-weight: 800; transition: color .2s ease, background .2s ease, border-color .2s ease; }
+    main.home-theme .service-link:hover, main.home-theme .service-link:focus-visible { border-color: var(--concept-navy); color: #fff; background: var(--concept-navy); outline: 2px solid var(--concept-pale); outline-offset: 2px; }
     main.home-theme .services-heading-row { display: flex; justify-content: space-between; align-items: flex-end; gap: 30px; }
     main.home-theme .services-heading-row .section-heading { margin-bottom: 42px; }
     main.home-theme .services-all-link { margin-bottom: 50px; }
@@ -394,7 +399,7 @@ main.home-theme { color: var(--concept-ink); background: var(--concept-canvas); 
       main.home-theme .next-panel { padding: 22px 17px; }
       main.home-theme .next-panel h3 { font-size: 21px; }
       main.home-theme .service-grid { grid-template-columns: 1fr; }
-      main.home-theme .service-card { min-height: 230px; padding: 23px; }
+      main.home-theme .service-card { min-height: 0; padding: 23px; }
       main.home-theme .work-heading-row, main.home-theme .review-top, main.home-theme .services-heading-row { align-items: flex-start; flex-direction: column; gap: 18px; }
       main.home-theme .services-heading-row .section-heading { margin-bottom: 0; }
       main.home-theme .services-all-link { margin: -6px 0 4px; }

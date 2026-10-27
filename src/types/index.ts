@@ -17,6 +17,11 @@ export interface Project {
   thumbnail: string
   images: string[]
   description: string
+  caseStudy: {
+    challenge: string
+    solution: string
+    result: string
+  }
   techStack: string[]
   liveUrl?: string | null
   completedDate: string
@@ -39,4 +44,3 @@ export interface ContactFormData {
   message: string
   _honeypot?: string
 }
-

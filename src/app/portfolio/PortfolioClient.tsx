@@ -174,7 +174,7 @@ export default function PortfolioPage() {
 
             <div className="portfolio-hero-note mt-10 flex items-center justify-center gap-3 text-center text-sm lg:justify-start lg:text-left">
               <FolderOpen size={17} />
-              Click any project to explore its complete visual gallery.
+              Select a project to read its case study and explore the gallery.
             </div>
           </motion.div>
 
@@ -317,7 +317,7 @@ export default function PortfolioPage() {
                   type="button"
                   onClick={() => openProject(project.id)}
                   className="portfolio-project-preview relative block w-full overflow-hidden text-left"
-                  aria-label={`Open ${project.title} gallery`}
+                  aria-label={`Open ${project.title} case study`}
                 >
                   <Image
                     width={1200}
@@ -370,7 +370,7 @@ export default function PortfolioPage() {
                       onClick={() => openProject(project.id)}
                       className="portfolio-view-gallery inline-flex items-center gap-2 text-sm font-semibold text-[#1A3BB0] transition hover:text-[#2E5DE6]"
                     >
-                      View Gallery <ArrowRight size={15} />
+                      View Case Study <ArrowRight size={15} />
                     </button>
 
                     {project.liveUrl && (
@@ -422,10 +422,10 @@ export default function PortfolioPage() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={closeProject}
-            className="fixed inset-0 z-[100] flex items-center justify-center bg-[#071039]/95 p-4 backdrop-blur-xl"
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-[#071039]/25 p-2 sm:p-4"
             role="dialog"
             aria-modal="true"
-            aria-label={`${selectedProject.title} gallery`}
+            aria-label={`${selectedProject.title} case study`}
           >
             <motion.div
               initial={{ opacity: 0, y: 28, scale: 0.98 }}
@@ -433,15 +433,11 @@ export default function PortfolioPage() {
               exit={{ opacity: 0, y: 28, scale: 0.98 }}
               transition={{ duration: 0.3 }}
               onClick={(event) => event.stopPropagation()}
-              className="relative flex max-h-[94vh] w-full max-w-6xl flex-col overflow-hidden rounded-3xl border border-white/10 bg-[#071039] shadow-2xl"
+              className="relative flex max-h-[94dvh] w-full max-w-6xl flex-col overflow-hidden rounded-2xl border border-[#dce4f4] bg-white text-[#071039] shadow-[0_28px_90px_rgba(7,16,57,0.24)] sm:rounded-3xl"
             >
-              <div className="flex items-center justify-between border-b border-white/10 px-5 py-4 sm:px-7">
+              <div className="flex items-center justify-between border-b border-[#e5eaf3] bg-white px-4 py-3.5 sm:px-7 sm:py-4">
                 <div className="min-w-0 pr-4">
-                  <p className="text-xs font-semibold uppercase tracking-[0.16em] text-white">
-                    {categoryLabels[selectedProject.category] ||
-                      selectedProject.category}
-                  </p>
-                  <h2 className="mt-1 truncate text-lg font-semibold sm:text-xl">
+                  <h2 className="truncate text-base font-bold sm:text-xl">
                     {selectedProject.title}
                   </h2>
                 </div>
@@ -449,109 +445,148 @@ export default function PortfolioPage() {
                 <button
                   type="button"
                   onClick={closeProject}
-                  aria-label="Close project gallery"
-                  className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/10 text-slate-300 transition hover:border-[#2E5DE6] hover:bg-[#2E5DE6] hover:text-white"
+                  aria-label="Close project case study"
+                  className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#2E5DE6] bg-[#2E5DE6] text-white shadow-[0_4px_12px_rgba(46,93,230,0.22)] transition hover:border-[#1A3BB0] hover:bg-[#1A3BB0] hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#2E5DE6]"
                 >
                   <X size={20} />
                 </button>
               </div>
 
-              <div className="relative flex min-h-0 flex-1 items-center justify-center bg-[#071039] p-4 sm:p-7">
-                <AnimatePresence mode="wait">
-                  <MotionImage
-                    width={1600}
-                    height={1000}
-                    key={activeImageIndex}
-                    initial={{ opacity: 0, scale: 0.985 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 1.015 }}
-                    transition={{ duration: 0.28 }}
-                    src={selectedProject.images[activeImageIndex].trim()}
-                    alt={`${selectedProject.title} screenshot ${
-                      activeImageIndex + 1
-                    }`}
-                    className="max-h-[52vh] w-auto max-w-full rounded-lg object-contain shadow-2xl"
-                  />
-                </AnimatePresence>
+              <div className="min-h-0 flex-1 overflow-y-auto">
+                <section className="px-4 pb-5 pt-6 sm:px-8 sm:pb-7 sm:pt-8">
+                  <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-[#1A3BB0]">Project overview</p>
+                  <p className="mt-3 max-w-3xl text-sm leading-7 text-[#52617f] sm:text-base">
+                    {selectedProject.description}
+                  </p>
+                </section>
 
-                {selectedProject.images.length > 1 && (
-                  <>
-                    <button
-                      type="button"
-                      onClick={previousImage}
-                      aria-label="Show previous image"
-                      className="absolute left-4 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-[#071039]/85 text-white transition hover:border-[#2E5DE6] hover:bg-[#2E5DE6] hover:text-white sm:left-7"
-                    >
-                      <ChevronLeft size={20} />
-                    </button>
+                <section className="border-y border-[#e5eaf3] bg-[#f7f9ff] px-4 py-5 sm:px-8 sm:py-7">
+                  <div className="mb-4 flex items-center justify-between gap-4">
+                    <div>
+                      <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-[#1A3BB0]">Project gallery</p>
+                      <p className="mt-1 text-xs text-[#71809e]">Screenshot {activeImageIndex + 1} of {selectedProject.images.length}</p>
+                    </div>
+                    {selectedProject.images.length > 1 && (
+                      <div className="flex gap-2">
+                        <button
+                          type="button"
+                          onClick={previousImage}
+                          aria-label="Show previous screenshot"
+                          className="flex h-10 w-10 items-center justify-center rounded-full border border-[#2E5DE6] bg-[#2E5DE6] text-white shadow-[0_4px_12px_rgba(46,93,230,0.18)] transition hover:border-[#1A3BB0] hover:bg-[#1A3BB0] hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#2E5DE6]"
+                        >
+                          <ChevronLeft size={20} />
+                        </button>
+                        <button
+                          type="button"
+                          onClick={nextImage}
+                          aria-label="Show next screenshot"
+                          className="flex h-10 w-10 items-center justify-center rounded-full border border-[#2E5DE6] bg-[#2E5DE6] text-white shadow-[0_4px_12px_rgba(46,93,230,0.18)] transition hover:border-[#1A3BB0] hover:bg-[#1A3BB0] hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#2E5DE6]"
+                        >
+                          <ChevronRight size={20} />
+                        </button>
+                      </div>
+                    )}
+                  </div>
 
-                    <button
-                      type="button"
-                      onClick={nextImage}
-                      aria-label="Show next image"
-                      className="absolute right-4 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-[#071039]/85 text-white transition hover:border-[#2E5DE6] hover:bg-[#2E5DE6] hover:text-white sm:right-7"
-                    >
-                      <ChevronRight size={20} />
-                    </button>
-                  </>
-                )}
-              </div>
+                  <div className="relative mx-auto aspect-video w-full max-w-5xl overflow-hidden rounded-xl border border-[#dce4f4] bg-white">
+                    <AnimatePresence mode="wait">
+                      <MotionImage
+                        fill
+                        key={activeImageIndex}
+                        initial={{ opacity: 0, scale: 0.985 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 1.015 }}
+                        transition={{ duration: 0.28 }}
+                        src={selectedProject.images[activeImageIndex].trim()}
+                        alt={`${selectedProject.title} project screenshot ${activeImageIndex + 1}`}
+                        sizes="(max-width: 768px) 100vw, 90vw"
+                        className="object-contain"
+                      />
+                    </AnimatePresence>
+                  </div>
 
-              <div className="max-h-[34vh] overflow-y-auto border-t border-white/10 p-5 sm:p-7">
-                <div className="grid gap-7 lg:grid-cols-[1fr_auto]">
-                  <div>
-                    <p className="leading-relaxed text-slate-300">
-                      {selectedProject.description}
+                  {selectedProject.images.length > 1 && (
+                    <div className="mx-auto mt-4 flex max-w-5xl gap-2 overflow-x-auto pb-1">
+                      {selectedProject.images.map((image, index) => (
+                        <button
+                          key={`${image}-${index}`}
+                          type="button"
+                          onClick={() => setActiveImageIndex(index)}
+                          aria-label={`Show project screenshot ${index + 1}`}
+                          aria-current={index === activeImageIndex}
+                          className={`relative aspect-video w-24 shrink-0 overflow-hidden rounded-lg border transition sm:w-32 ${
+                            index === activeImageIndex
+                              ? 'border-[#2E5DE6] ring-2 ring-[#2E5DE6]/15'
+                              : 'border-[#dce4f4] opacity-70 hover:opacity-100'
+                          }`}
+                        >
+                          <Image
+                            fill
+                            src={image.trim()}
+                            alt=""
+                            sizes="128px"
+                            className="object-cover"
+                          />
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                </section>
+
+                <section className="grid gap-3 px-4 py-5 sm:grid-cols-2 sm:gap-4 sm:px-8 sm:py-7">
+                  <article className="rounded-2xl border border-[#e0e6f2] bg-white p-4 sm:p-5">
+                    <p className="text-xs font-extrabold uppercase tracking-[0.14em] text-[#1A3BB0]">The challenge</p>
+                    <p className="mt-3 text-sm leading-6 text-[#52617f]">{selectedProject.caseStudy.challenge}</p>
+                  </article>
+                  <article className="rounded-2xl border border-[#e0e6f2] bg-white p-4 sm:p-5">
+                    <p className="text-xs font-extrabold uppercase tracking-[0.14em] text-[#1A3BB0]">Our solution</p>
+                    <p className="mt-3 text-sm leading-6 text-[#52617f]">{selectedProject.caseStudy.solution}</p>
+                  </article>
+                  <article className="rounded-2xl border border-[#e0e6f2] bg-white p-4 sm:p-5">
+                    <p className="text-xs font-extrabold uppercase tracking-[0.14em] text-[#1A3BB0]">Final result</p>
+                    <p className="mt-3 text-sm leading-6 text-[#52617f]">{selectedProject.caseStudy.result}</p>
+                    {selectedProject.liveUrl && (
+                      <a
+                        href={selectedProject.liveUrl.trim()}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-[#1A3BB0] transition hover:text-[#2E5DE6]"
+                      >
+                        Visit live website <ExternalLink size={15} />
+                      </a>
+                    )}
+                  </article>
+                  <article className="rounded-2xl border border-[#e0e6f2] bg-white p-4 sm:p-5">
+                    <p className="text-xs font-extrabold uppercase tracking-[0.14em] text-[#1A3BB0]">Services &amp; technologies</p>
+                    <p className="mt-3 text-sm text-[#52617f]">
+                      {categoryLabels[selectedProject.category] || selectedProject.category}
                     </p>
-
-                    <div className="mt-5 flex flex-wrap gap-2">
+                    <div className="mt-3 flex flex-wrap gap-2">
                       {selectedProject.techStack.map((tech) => (
                         <span
                           key={tech}
-                          className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5 text-xs text-slate-300"
+                          className="rounded-full border border-[#dce4f4] bg-[#f7f9ff] px-3 py-1.5 text-xs font-medium text-[#33446c]"
                         >
                           {tech}
                         </span>
                       ))}
                     </div>
-                  </div>
+                  </article>
+                </section>
 
-                  {selectedProject.liveUrl && (
-                    <a
-                      href={selectedProject.liveUrl.trim()}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex h-fit items-center justify-center gap-2 rounded-xl bg-[#2E5DE6] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#1A3BB0]"
-                    >
-                      Visit Live Demo <ExternalLink size={16} />
-                    </a>
-                  )}
-                </div>
-
-                {selectedProject.images.length > 1 && (
-                  <div className="mt-6 flex gap-2 overflow-x-auto pb-1">
-                    {selectedProject.images.map((image, index) => (
-                      <button
-                        key={`${image}-${index}`}
-                        type="button"
-                        onClick={() => setActiveImageIndex(index)}
-                        className={`shrink-0 overflow-hidden rounded-lg border transition ${
-                          index === activeImageIndex
-                            ? 'border-[#2E5DE6]'
-                            : 'border-white/10 opacity-60 hover:opacity-100'
-                        }`}
-                      >
-                        <Image
-                          width={80}
-                          height={56}
-                          src={image.trim()}
-                          alt={`${selectedProject.title} preview ${index + 1}`}
-                          className="h-14 w-20 object-cover"
-                        />
-                      </button>
-                    ))}
+                <section className="mx-4 mb-5 flex flex-col gap-4 rounded-2xl bg-[#1A3BB0] p-5 sm:mx-8 sm:mb-8 sm:flex-row sm:items-center sm:justify-between sm:p-6">
+                  <div>
+                    <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#DCE6FF]">Have a similar project?</p>
+                    <p className="mt-2 text-lg font-semibold text-white">Let&apos;s talk about what you&apos;re building.</p>
                   </div>
-                )}
+                  <Link
+                    href="/contact"
+                    onClick={closeProject}
+                    className="inline-flex min-h-11 shrink-0 items-center justify-center gap-2 rounded-full bg-white px-5 text-sm font-bold text-[#1A3BB0] transition hover:bg-[#E6EDFD]"
+                  >
+                    Discuss a project <ArrowRight size={16} />
+                  </Link>
+                </section>
               </div>
             </motion.div>
           </motion.div>

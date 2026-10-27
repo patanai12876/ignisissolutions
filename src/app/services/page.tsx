@@ -73,5 +73,10 @@ const servicesSchema = {
 }
 
 export default function ServicesPage() {
-  return <Services />
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesSchema) }} />
+      <Services />
+    </>
+  )
 }
