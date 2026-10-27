@@ -135,7 +135,7 @@ export default function ServicePage({ service, features }: { service: keyof type
                 <div className="relative flex min-h-[300px] flex-col justify-between sm:min-h-[340px]">
                   <div className="flex items-center justify-between gap-4">
                     <span className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-[#1A3BB0]">A connected approach</span>
-                    <span className="rounded-full border border-[#dfe6f3] bg-white px-3 py-1.5 text-[10px] font-bold text-[#61708f]">IGNISIS / {String(service).replaceAll('-', ' ').toUpperCase()}</span>
+                    <span className="rounded-full border border-[#dfe6f3] bg-white px-3 py-1.5 text-[10px] font-bold text-[#61708f]">IGNISIS / {String(service).replace(/-/g, ' ').toUpperCase()}</span>
                   </div>
                   <div className="relative mx-auto flex h-36 w-36 items-center justify-center rounded-full border border-[#2E5DE6]/20 bg-white shadow-[0_0_0_14px_rgba(46,93,230,0.04),0_14px_40px_rgba(7,16,57,0.08)] sm:h-40 sm:w-40">
                     <div aria-hidden="true" className="absolute inset-3 rounded-full border border-dashed border-[#6E92F2]/40" />
@@ -209,7 +209,7 @@ export default function ServicePage({ service, features }: { service: keyof type
               <div className="relative mx-auto max-w-3xl">
                 <p className="service-eyebrow text-xs font-extrabold uppercase tracking-[0.16em] text-[#dbe6ff]">Ready to take the next step?</p>
                 <h2 className="mt-4 text-3xl font-bold leading-tight tracking-[-0.04em] text-white sm:text-5xl">Let&apos;s make this service work for your business.</h2>
-                <p className="mx-auto mt-5 max-w-2xl leading-relaxed text-[#e6edfd]">Tell us what you are working towards. We&apos;ll help you find a practical starting point for {String(service).replaceAll('-', ' ')}.</p>
+                <p className="mx-auto mt-5 max-w-2xl leading-relaxed text-[#e6edfd]">Tell us what you are working towards. We&apos;ll help you find a practical starting point for {String(service).replace(/-/g, ' ')}.</p>
                 <Link href="/contact" className="mt-8 inline-flex min-h-[52px] items-center justify-center gap-2 rounded-full bg-[#2E5DE6] px-7 text-sm font-bold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-[#123cbb] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">Discuss Your Project <ArrowRight size={17} /></Link>
               </div>
             </div>
