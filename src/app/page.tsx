@@ -86,11 +86,10 @@ export default function Home() {
           <div className="section-heading">
             <span className="eyebrow">One partner. Three ways to grow.</span>
             <h2>What your business needs to move forward</h2>
-            <p>Explore the work we do across digital experiences, growth and brand identity.</p>
           </div>
           <Link className="text-link services-all-link" href="/services">View all services <span>→</span></Link>
         </motion.div>
-        <div className="service-grid">
+        <div className="service-grid mt-10">
           {services.map(({ icon: Icon, number, title, body, deliverables, link, label }, index) => (
             <motion.article
               className="service-card"
