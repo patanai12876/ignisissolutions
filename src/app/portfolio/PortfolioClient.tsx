@@ -137,16 +137,16 @@ export default function PortfolioPage() {
             className="portfolio-hero-copy w-full max-w-2xl text-left"
           >
             <p className="portfolio-hero-eyebrow text-xs font-semibold uppercase tracking-[0.2em] text-[#1A3BB0]">
-              Selected Work
+              Our Work
             </p>
 
              <h1 className="portfolio-hero-title mt-5 max-w-2xl text-3xl font-bold leading-[1.08] sm:text-5xl lg:text-6xl">
-           Ignisis Solution&apos;s{' '}
+           Ignisis Solutions{' '}
           <span className="portfolio-hero-highlight block sm:inline">Portfolio.</span>
 </h1>
 
               <p className="portfolio-hero-description mt-5 max-w-xl text-base leading-relaxed sm:mt-6 sm:text-lg">
-  Explore Ignisis Solution&apos;s portfolio of web development,
+  Explore Ignisis Solutions&apos;s portfolio of web development,
   e-commerce, custom software, branding and digital marketing projects
   created for businesses in Pakistan and beyond.
 </p>
@@ -222,7 +222,7 @@ export default function PortfolioPage() {
 
                   <div className="portfolio-featured-overlay absolute inset-0 bg-gradient-to-t from-[#071039]/75 via-transparent to-transparent" />
 
-                  <div className="absolute inset-x-0 bottom-0 p-3 sm:p-5">
+                  <div className="portfolio-featured-copy absolute inset-x-0 bottom-0 p-3 sm:p-5">
                     <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-white sm:text-xs sm:tracking-[0.16em]">
                       {categoryLabels[featuredProject.category] ||
                         featuredProject.category}
@@ -245,10 +245,10 @@ export default function PortfolioPage() {
                     type="button"
                     onClick={() => setFeaturedIndex(index)}
                     aria-label={`Show ${project.title}`}
-                    className={`h-1.5 rounded-full transition-all ${
-                      index === featuredIndex
-                        ? 'w-9 bg-[#2E5DE6]'
-                        : 'w-3 bg-white/20 hover:bg-white/50'
+                    aria-current={index === featuredIndex ? 'true' : undefined}
+                    aria-pressed={index === featuredIndex}
+                    className={`portfolio-featured-dot shrink-0 rounded-full transition-all duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#2E5DE6] ${
+                      index === featuredIndex ? 'is-active' : ''
                     }`}
                   />
                 ))}

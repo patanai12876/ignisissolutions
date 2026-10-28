@@ -2678,18 +2678,23 @@ main.portfolio-page .portfolio-featured-panel .portfolio-featured-heading {
 .portfolio-featured-name { color: #071039 !important; }
 .portfolio-featured-count { border-color: #d5dbea !important; color: #52617f !important; }
 .portfolio-featured-image, .portfolio-featured-image img { background: #f7f9ff !important; }
-.portfolio-featured-dots button {
+.portfolio-featured-copy :is(p, h2) { color: #fff !important; text-shadow: 0 2px 12px rgb(7 16 57 / 45%); }
+.portfolio-featured-image .portfolio-featured-overlay { background: linear-gradient(to top, rgb(7 16 57 / 88%), rgb(7 16 57 / 34%) 36%, transparent 72%) !important; }
+.portfolio-featured-dots .portfolio-featured-dot {
+  display: block;
+  width: 8px !important;
   height: 8px !important;
-  border-radius: 999px !important;
-  background: #6e92f2 !important;
-  box-shadow: 0 0 0 3px rgb(110 146 242 / 10%);
+  padding: 0;
+  border-radius: 999px;
+  background-color: #c7ced8 !important;
+  box-shadow: none;
+  transition: width .2s ease, background-color .2s ease;
 }
-.portfolio-featured-dots button[class*="w-9"] {
-  width: 36px !important;
-  background: #2e5de6 !important;
-  box-shadow: 0 0 0 3px rgb(46 93 230 / 14%);
+.portfolio-featured-dots .portfolio-featured-dot.is-active {
+  width: 24px !important;
+  background-color: #2e5de6 !important;
 }
-.portfolio-featured-dots button[class*="w-3"] { width: 12px !important; }
+.portfolio-featured-dots .portfolio-featured-dot:hover { filter: brightness(.92); }
 main.portfolio-page:not(.home-theme) > section.portfolio-gallery-section { color: #071039 !important; background: #fff !important; border: 0 !important; }
 .portfolio-gallery-eyebrow { color: #1a3bb0 !important; }
 .portfolio-gallery-title { color: #071039 !important; }
@@ -2772,9 +2777,12 @@ main.contact-page > section.contact-hero > div:first-child > div:last-child {
 }
 main.contact-page > section.contact-hero h1 { color: #071039 !important; }
 main.contact-page > section.contact-hero h1 span {
-  background-image: linear-gradient(90deg, #1a3bb0, #2e5de6, #6e92f2) !important;
+  background: none !important;
+  color: #2e5de6 !important;
+  -webkit-text-fill-color: #2e5de6 !important;
 }
 main.contact-page > section.contact-hero p { color: #52617f !important; }
+main.contact-page > section.contact-hero p[class*="uppercase"] { color: #1a3bb0 !important; }
 main.contact-page > section.contact-hero [class*="text-[#AFC5F8]"] { color: #1a3bb0 !important; }
 main.contact-page:not(.home-theme) > section.contact-form-section,
 main.contact-page:not(.home-theme) > section.contact-office-section {
@@ -2782,10 +2790,14 @@ main.contact-page:not(.home-theme) > section.contact-office-section {
   background: #fff !important;
   border: 0 !important;
 }
+main.contact-page:not(.home-theme) > section.contact-form-section {
+  padding-top: 44px;
+  background: #f7f9ff !important;
+}
 main.contact-page > section.contact-form-section > div > div:first-child {
   border-color: #e0e6f2 !important;
   background: #fff !important;
-  box-shadow: 0 16px 42px rgb(7 16 57 / 8%) !important;
+  box-shadow: 0 20px 55px rgb(7 16 57 / 9%) !important;
 }
 main.contact-page > section.contact-form-section label { color: #36405a !important; }
 main.contact-page > section.contact-form-section input,
@@ -2811,8 +2823,8 @@ main.contact-page > section.contact-form-section > div > div:last-child > a > di
 main.contact-page > section.contact-form-section > div > div:last-child > div {
   color: #071039 !important;
   border-color: #e0e6f2 !important;
-  background: #fff !important;
-  box-shadow: 0 10px 26px rgb(7 16 57 / 5%);
+  background: linear-gradient(135deg, #fff 0%, #f7f9ff 100%) !important;
+  box-shadow: 0 10px 28px rgb(7 16 57 / 6%);
 }
 main.contact-page > section.contact-form-section > div > div:last-child > a > div:hover { border-color: #afc5f8 !important; }
 main.contact-page > section.contact-form-section > div > div:last-child > a > div p,
@@ -2829,7 +2841,7 @@ main.contact-page > section.contact-form-section > div > div:last-child > div:nt
 }
 main.contact-page > section.contact-form-section > div > div:last-child > div:nth-child(4) {
   border-color: #dce5fb !important;
-  background: #f7f9ff !important;
+  background: linear-gradient(135deg, #edf3ff 0%, #fff 100%) !important;
 }
 main.contact-page > section.contact-form-section > div > div:last-child > div:nth-child(4) p,
 main.contact-page > section.contact-form-section > div > div:last-child > div:nth-child(5) p { color: #52617f !important; }
@@ -2838,10 +2850,18 @@ main.contact-page > section.contact-form-section > div > div:last-child > div:nt
 main.contact-page > section.contact-form-section > div > div:last-child > div:nth-child(4) svg,
 main.contact-page > section.contact-form-section > div > div:last-child > div:nth-child(5) svg { color: #1a3bb0 !important; }
 main.contact-page > section.contact-form-section > div > div:last-child > div:nth-child(3) a { color: #1a3bb0 !important; }
+main.contact-page > section.contact-form-section .text-slate-300,
+main.contact-page > section.contact-form-section .text-slate-400 { color: #52617f !important; }
+main.contact-page > section.contact-form-section .text-red-400 { color: #b42318 !important; }
+main.contact-page > section.contact-form-section [class*="bg-[#2E5DE6]/15"] { background: #eaf0ff !important; }
+main.contact-page > section.contact-form-section [class*="text-[#AFC5F8]"] { color: #2e5de6 !important; }
+main.contact-page > section.contact-form-section > div > div:last-child > a > div { border-left: 3px solid #2e5de6 !important; }
+main.contact-page > section.contact-form-section > div > div:last-child > a:nth-child(2) > div { border-left-color: #17a2c7 !important; }
+main.contact-page > section.contact-form-section > div > div:last-child > a:nth-child(3) > div { border-left-color: #6e92f2 !important; }
 main.contact-page > section.contact-office-section > div {
   border-color: #e0e6f2 !important;
   background: #fff !important;
-  box-shadow: 0 16px 42px rgb(7 16 57 / 7%);
+  box-shadow: 0 18px 48px rgb(7 16 57 / 8%);
 }
 main.contact-page > section.contact-office-section h2 { color: #071039 !important; }
 main.contact-page > section.contact-office-section p { color: #52617f !important; }
@@ -2850,5 +2870,6 @@ main.contact-page > section.contact-office-section > div > div:nth-child(2) {
   border-color: #e0e6f2 !important;
   background: #f4f7ff !important;
 }
-main.contact-page > section.contact-office-section iframe { filter: saturate(.8); }
+main.contact-page > section.contact-office-section iframe { filter: saturate(1.08); }
+main.contact-page > section.contact-office-section a { color: #2e5de6 !important; }
 

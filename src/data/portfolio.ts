@@ -19,7 +19,7 @@ export const projects: Project[] = [
       solution: 'Organized the AS Digital experience around its website, digital marketing and practical training offerings.',
       result: 'The project brings AS Digital’s services and training into one web experience. No measured business outcomes were provided.',
     },
-    techStack: ['Web Development', 'Digital Marketing', 'Practical Training'],
+    techStack: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Vercel'],
     liveUrl: 'https://as-digital-umcg.vercel.app/',
     completedDate: '',
   },

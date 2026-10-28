@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { ChevronDown, Menu } from 'lucide-react'
 import { usePathname } from 'next/navigation'
+import { useState } from 'react'
 
 const links = [
   { href: '/', label: 'Home' },
@@ -25,6 +26,7 @@ const serviceLinks = [
 
 export default function Navbar() {
   const pathname = usePathname()
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
   return <header className="site-header">
     <div className="nav">
       <Link className="brand" href="/" aria-label="Ignisis Solutions home"><Image className="brand-logo" src="/nav%20logo.png" alt="Ignisis Solutions" width={1921} height={819} priority /></Link>
@@ -47,10 +49,25 @@ export default function Navbar() {
       ) : <Link key={link.href} href={link.href} aria-current={pathname === link.href ? 'page' : undefined}>{link.label}</Link>)}</nav>
       <div className="nav-actions"><Link className="button button-primary" href="/contact">Get Free Audit <span>↗</span></Link>
         <details className="mobile-menu"><summary aria-label="Open menu"><Menu size={20} /></summary><nav className="mobile-links" aria-label="Mobile navigation">{links.map((link) => link.href === '/services' ? (
-          <details className="mobile-services" key={link.href}>
-            <summary><Link href="/services">Services</Link><ChevronDown size={15} aria-hidden="true" /></summary>
-            <div>{serviceLinks.map((service) => <Link key={service.href} href={service.href}>{service.label}</Link>)}</div>
-          </details>
+          <div className="mobile-services" key={link.href}>
+            <div className="mobile-services-row">
+              <Link href="/services" aria-current={pathname === '/services' ? 'page' : undefined}>Services</Link>
+              <button
+                type="button"
+                className="mobile-services-toggle"
+                aria-label={mobileServicesOpen ? 'Hide services list' : 'Show services list'}
+                aria-expanded={mobileServicesOpen}
+                onClick={() => setMobileServicesOpen((open) => !open)}
+              >
+                <ChevronDown size={16} aria-hidden="true" />
+              </button>
+            </div>
+            {mobileServicesOpen && (
+              <div className="mobile-services-list">
+                {serviceLinks.map((service) => <Link key={service.href} href={service.href} aria-current={pathname === service.href ? 'page' : undefined}>{service.label}</Link>)}
+              </div>
+            )}
+          </div>
         ) : <Link key={link.href} href={link.href}>{link.label}</Link>)}<Link className="mobile-audit-link" href="/contact">Get Free Audit <span aria-hidden="true">↗</span></Link></nav></details>
       </div>
     </div>
